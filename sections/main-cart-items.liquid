@@ -133,6 +133,13 @@
                         {%- for property in item.properties -%}
                           {%- assign property_first_char = property.first | slice: 0 -%}
                           {%- if property.last != blank and property_first_char != '_' -%}
+                            {%- if property.first == 'To'
+                              or property.first == 'From'
+                              or property.first == 'Gift message'
+                              or property.first == 'Wrap as a gift'
+                            -%}
+                              {%- continue -%}
+                            {%- endif -%}
                             <div class="product-option">
                               <dt>{{ property.first }}:</dt>
                               <dd>
@@ -160,6 +167,8 @@
                         </li>
                       {%- endfor -%}
                     </ul>
+
+                    {% render 'gift-wrapping-cart-item', item: item %}
                   </td>
 
                   <td class="cart-item__totals right medium-hide large-up-hide">

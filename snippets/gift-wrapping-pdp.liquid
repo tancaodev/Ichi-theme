@@ -1,0 +1,137 @@
+{% comment %}
+  Gift Wrapping PDP
+  Renders the gift wrapping toggle and message configuration form on the product page.
+
+  Accepts:
+  - product_form_id: {String} ID of the product form to attach inputs to
+  - block: {Object} Block settings from section (Optional)
+  - section_id: {String} Section ID for unique scoping (Optional)
+
+  Usage:
+  {% render 'gift-wrapping-pdp', product_form_id: product_form_id, block: block, section_id: section.id %}
+{% endcomment %}
+
+{% liquid
+  assign default_title = 'gift_wrapping.title' | t
+  assign label_text = block.settings.label | default: settings.gift_wrapping_label | default: default_title
+  assign price_text = block.settings.price_text | default: settings.gift_wrapping_price_text | default: '+£15'
+  assign max_to = block.settings.max_to | default: settings.gift_wrapping_max_to | default: 50
+  assign max_from = block.settings.max_from | default: settings.gift_wrapping_max_from | default: 50
+  assign max_message = block.settings.max_message | default: settings.gift_wrapping_max_message | default: 200
+  assign uid = section_id | default: 'pdp'
+%}
+
+<gift-wrapping
+  class="gift-wrapping-component tw-block tw-w-full tw-my-4 tw-font-normal tw-text-gift tw-leading-gift tw-tracking-gift tw-text-gift-text"
+  data-section-id="{{ uid }}"
+  {{ block.shopify_attributes }}
+>
+  <div class="gift-wrapping__trigger-wrapper tw-flex tw-items-center tw-justify-between">
+    <label
+      for="GiftWrap-Checkbox-{{ uid }}"
+      class="tw-group tw-flex tw-items-center tw-gap-3 tw-cursor-pointer tw-select-none tw-font-normal tw-text-gift tw-leading-gift tw-tracking-gift tw-text-gift-text"
+    >
+      <input
+        type="checkbox"
+        id="GiftWrap-Checkbox-{{ uid }}"
+        class="gift-wrapping__checkbox tw-w-gift-checkbox tw-h-gift-checkbox tw-shrink-0 tw-rounded-gift tw-border tw-border-gift-border tw-text-gift-text focus:tw-ring-gift-text focus:tw-ring-offset-0 tw-cursor-pointer"
+        style="width: 20px; height: 20px; flex: none; order: 0; flex-grow: 0; accent-color: #1e1e1e;"
+        aria-expanded="false"
+        aria-controls="GiftWrap-Fields-{{ uid }}"
+      >
+      <span class="gift-wrapping__label-text tw-text-gift-text tw-font-normal tw-text-gift tw-leading-gift tw-tracking-gift">
+        {{ label_text }}
+      </span>
+    </label>
+  </div>
+
+  <div
+    id="GiftWrap-Fields-{{ uid }}"
+    class="gift-wrapping__fields tw-hidden tw-pt-gift-gap tw-space-y-gift-gap"
+    aria-hidden="true"
+  >
+    <!-- Field: To -->
+    <div class="gift-wrapping__field">
+      <div class="tw-flex tw-justify-between tw-items-center tw-mb-1.5">
+        <label for="GiftWrap-To-{{ uid }}" class="tw-block tw-font-normal tw-text-gift tw-leading-gift tw-tracking-gift tw-text-gift-text">
+          {{ 'gift_wrapping.to' | t }}
+        </label>
+        <span class="gift-wrapping__counter tw-text-gift-counter tw-text-gift-border">
+          <span class="js-char-count">0</span>/{{ max_to }}
+        </span>
+      </div>
+      <input
+        type="text"
+        id="GiftWrap-To-{{ uid }}"
+        name="properties[To]"
+        form="{{ product_form_id }}"
+        maxlength="{{ max_to }}"
+        placeholder="{{ 'gift_wrapping.to_placeholder' | t }}"
+        disabled
+        class="gift-wrapping__input tw-w-full tw-rounded-gift tw-py-gift-y tw-px-gift-x tw-bg-white tw-border tw-border-solid tw-border-gift-border tw-appearance-none tw-font-normal tw-text-gift tw-leading-gift tw-tracking-gift tw-text-gift-text placeholder:tw-text-gift-border focus:tw-outline-none focus:tw-border-gift-text focus:tw-ring-1 focus:tw-ring-gift-text tw-transition-colors"
+      >
+    </div>
+
+    <!-- Field: From -->
+    <div class="gift-wrapping__field">
+      <div class="tw-flex tw-justify-between tw-items-center tw-mb-1.5">
+        <label for="GiftWrap-From-{{ uid }}" class="tw-block tw-font-normal tw-text-gift tw-leading-gift tw-tracking-gift tw-text-gift-text">
+          {{ 'gift_wrapping.from' | t }}
+        </label>
+        <span class="gift-wrapping__counter tw-text-gift-counter tw-text-gift-border">
+          <span class="js-char-count">0</span>/{{ max_from }}
+        </span>
+      </div>
+      <input
+        type="text"
+        id="GiftWrap-From-{{ uid }}"
+        name="properties[From]"
+        form="{{ product_form_id }}"
+        maxlength="{{ max_from }}"
+        placeholder="{{ 'gift_wrapping.from_placeholder' | t }}"
+        disabled
+        class="gift-wrapping__input tw-w-full tw-rounded-gift tw-py-gift-y tw-px-gift-x tw-bg-white tw-border tw-border-solid tw-border-gift-border tw-appearance-none tw-font-normal tw-text-gift tw-leading-gift tw-tracking-gift tw-text-gift-text placeholder:tw-text-gift-border focus:tw-outline-none focus:tw-border-gift-text focus:tw-ring-1 focus:tw-ring-gift-text tw-transition-colors"
+      >
+    </div>
+
+    <!-- Field: Gift message -->
+    <div class="gift-wrapping__field">
+      <div class="tw-flex tw-justify-between tw-items-center tw-mb-1.5">
+        <label for="GiftWrap-Message-{{ uid }}" class="tw-block tw-font-normal tw-text-gift tw-leading-gift tw-tracking-gift tw-text-gift-text">
+          {{ 'gift_wrapping.message' | t }}
+        </label>
+        <span class="gift-wrapping__counter tw-text-gift-counter tw-text-gift-border">
+          <span class="js-char-count">0</span>/{{ max_message }}
+        </span>
+      </div>
+      <textarea
+        id="GiftWrap-Message-{{ uid }}"
+        name="properties[Gift message]"
+        form="{{ product_form_id }}"
+        rows="3"
+        maxlength="{{ max_message }}"
+        placeholder="{{ 'gift_wrapping.message_placeholder' | t }}"
+        disabled
+        class="gift-wrapping__input tw-w-full tw-rounded-gift tw-py-gift-y tw-px-gift-x tw-bg-white tw-border tw-border-solid tw-border-gift-border tw-appearance-none tw-font-normal tw-text-gift tw-leading-gift tw-tracking-gift tw-text-gift-text placeholder:tw-text-gift-border focus:tw-outline-none focus:tw-border-gift-text focus:tw-ring-1 focus:tw-ring-gift-text tw-resize-y tw-transition-colors"
+      ></textarea>
+    </div>
+
+    <!-- Hidden tracking properties -->
+    <input
+      type="hidden"
+      name="properties[_Gift Wrap]"
+      value="Yes"
+      form="{{ product_form_id }}"
+      disabled
+      class="gift-wrapping__hidden-prop"
+    >
+    <input
+      type="hidden"
+      name="properties[_Gift Wrap Price]"
+      value="{{ price_text }}"
+      form="{{ product_form_id }}"
+      disabled
+      class="gift-wrapping__hidden-prop"
+    >
+  </div>
+</gift-wrapping>
