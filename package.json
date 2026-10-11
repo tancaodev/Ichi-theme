@@ -1,0 +1,24 @@
+{
+  "name": "ichi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently -n \"tailwind,shopify\" -c \"blue,green\" \"npm run tailwind:dev\" \"shopify theme dev --store ichi-eqdepwbe\"",
+    "tailwind:dev": "tailwindcss -i ./src/tailwind.css -o ./assets/tailwind.css --watch",
+    "tailwind:build": "tailwindcss -i ./src/tailwind.css -o ./assets/tailwind.css --minify",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com-tancao:tancaodev/Ichi-theme.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "concurrently": "^10.0.6",
+    "tailwindcss": "^3.4.19"
+  }
+}
