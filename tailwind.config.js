@@ -35,6 +35,7 @@ module.exports = {
         'gift-x': '16px',
         'gift-gap': '16px',
         'gift-checkbox': '20px',
+        'gift-icon': '16px',
       },
       borderRadius: {
         'gift': '4px',

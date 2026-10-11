@@ -1557,5 +1557,46 @@
         "info": "t:settings_schema.cart.settings.cart_drawer.collection.info"
       }
     ]
+  },
+  {
+    "name": "Gift wrapping",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "gift_wrapping_enabled",
+        "default": true,
+        "label": "Enable gift wrapping"
+      },
+      {
+        "type": "text",
+        "id": "gift_wrapping_label",
+        "default": "Wrap as a gift? (+£15)",
+        "label": "Checkbox label"
+      },
+      {
+        "type": "text",
+        "id": "gift_wrapping_price_text",
+        "default": "+£15",
+        "label": "Price text"
+      },
+      {
+        "type": "number",
+        "id": "gift_wrapping_max_to",
+        "default": 50,
+        "label": "Maximum characters for 'To' field"
+      },
+      {
+        "type": "number",
+        "id": "gift_wrapping_max_from",
+        "default": 50,
+        "label": "Maximum characters for 'From' field"
+      },
+      {
+        "type": "number",
+        "id": "gift_wrapping_max_message",
+        "default": 200,
+        "label": "Maximum characters for 'Gift message' field"
+      }
+    ]
   }
 ]

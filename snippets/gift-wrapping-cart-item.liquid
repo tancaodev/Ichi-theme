@@ -1,0 +1,207 @@
+{% comment %}
+  Gift Wrapping Cart Item
+  Renders gift wrapping summary and inline edit form inside a cart drawer and cart page line item.
+
+  Accepts:
+  - item: {Object} Cart line item object
+  - line_index: {Number} 1-based index of the line item in cart
+  - section_id: {String} Cart section ID (Optional)
+
+  Usage:
+  {% render 'gift-wrapping-cart-item', item: item, line_index: forloop.index %}
+{% endcomment %}
+
+{% liquid
+  if line_index == blank
+    assign line_index = item.index | plus: 1
+  endif
+
+  assign is_gift_wrapped = false
+  if item.properties['_Gift Wrap'] == 'Yes' or item.properties['Wrap as a gift'] != blank or item.properties['To'] != blank
+    assign is_gift_wrapped = true
+  endif
+
+  assign gift_to = item.properties['To'] | default: ''
+  assign gift_from = item.properties['From'] | default: ''
+  assign gift_message = item.properties['Gift message'] | default: ''
+  assign default_title = 'gift_wrapping.title' | t
+  assign title_label = settings.gift_wrapping_label | default: default_title
+  assign max_to = settings.gift_wrapping_max_to | default: 50
+  assign max_from = settings.gift_wrapping_max_from | default: 50
+  assign max_message = settings.gift_wrapping_max_message | default: 200
+
+  assign summary_parts = ''
+  if gift_to != blank
+    assign summary_parts = summary_parts | append: 'To: ' | append: gift_to
+  endif
+  if gift_from != blank
+    if summary_parts != ''
+      assign summary_parts = summary_parts | append: ' / '
+    endif
+    assign summary_parts = summary_parts | append: 'From: ' | append: gift_from
+  endif
+  if gift_message != blank
+    if summary_parts != ''
+      assign summary_parts = summary_parts | append: ' / '
+    endif
+    assign summary_parts = summary_parts | append: '“' | append: gift_message | append: '”'
+  endif
+%}
+
+{%- if is_gift_wrapped -%}
+  <cart-gift-wrapping
+    class="cart-gift-wrapping tw-block tw-w-full tw-col-span-full tw-mt-3"
+    data-line="{{ line_index }}"
+    data-item-key="{{ item.key }}"
+    data-quantity="{{ item.quantity }}"
+  >
+    <!-- View Mode (Preview Card) -->
+    <div class="cart-gift-wrapping__view tw-bg-gift-bg tw-rounded-gift tw-p-3.5">
+      <div class="tw-flex tw-items-center tw-justify-between">
+        <label
+          for="CartGiftWrap-Checkbox-{{ line_index }}"
+          class="tw-group tw-flex tw-items-center tw-gap-3 tw-cursor-pointer tw-select-none tw-font-normal tw-text-gift tw-leading-gift tw-tracking-gift tw-text-gift-text"
+        >
+          <input
+            type="checkbox"
+            id="CartGiftWrap-Checkbox-{{ line_index }}"
+            checked
+            class="cart-gift-wrapping__checkbox tw-w-gift-checkbox tw-h-gift-checkbox tw-shrink-0 tw-rounded-gift tw-border tw-border-gift-border tw-text-gift-text focus:tw-ring-gift-text focus:tw-ring-offset-0 tw-cursor-pointer"
+            style="width: 20px; height: 20px; flex: none; order: 0; flex-grow: 0; accent-color: #1e1e1e;"
+            aria-label="{{ title_label }}"
+          >
+          <span class="cart-gift-wrapping__label-text tw-text-gift-text tw-font-normal tw-text-gift tw-leading-gift tw-tracking-gift">
+            {{ title_label }}
+          </span>
+        </label>
+
+        <button
+          type="button"
+          class="cart-gift-wrapping__edit-btn tw-inline-flex tw-items-center tw-gap-1.5 tw-font-normal tw-text-gift tw-leading-gift tw-tracking-gift tw-text-gift-text hover:tw-opacity-70 tw-transition-opacity tw-cursor-pointer tw-bg-transparent tw-border-0 tw-p-0"
+          aria-label="{{ 'gift_wrapping.edit' | t }} gift options"
+        >
+          <span class="tw-underline">{{ 'gift_wrapping.edit' | t }}</span>
+          <!-- Pencil Icon -->
+          <svg class="tw-w-gift-icon tw-h-gift-icon tw-text-gift-text" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Preview Summary Line -->
+      <p class="cart-gift-wrapping__summary tw-text-sm tw-text-gift-preview tw-mt-2.5 tw-leading-relaxed tw-break-words{% if summary_parts == '' %} tw-hidden{% endif %}">
+        {{ summary_parts }}
+      </p>
+    </div>
+
+    <!-- Edit Mode (Expanded Form) -->
+    <div class="cart-gift-wrapping__edit tw-hidden tw-bg-gift-bg tw-rounded-gift tw-p-3.5 tw-space-y-3">
+      <div class="tw-flex tw-items-center tw-justify-between">
+        <label
+          for="CartGiftWrap-EditCheckbox-{{ line_index }}"
+          class="tw-group tw-flex tw-items-center tw-gap-3 tw-cursor-pointer tw-select-none tw-font-normal tw-text-gift tw-leading-gift tw-tracking-gift tw-text-gift-text"
+        >
+          <input
+            type="checkbox"
+            id="CartGiftWrap-EditCheckbox-{{ line_index }}"
+            checked
+            class="cart-gift-wrapping__checkbox tw-w-gift-checkbox tw-h-gift-checkbox tw-shrink-0 tw-rounded-gift tw-border tw-border-gift-border tw-text-gift-text focus:tw-ring-gift-text focus:tw-ring-offset-0 tw-cursor-pointer"
+            style="width: 20px; height: 20px; flex: none; order: 0; flex-grow: 0; accent-color: #1e1e1e;"
+            aria-label="{{ title_label }}"
+          >
+          <span class="cart-gift-wrapping__label-text tw-text-gift-text tw-font-normal tw-text-gift tw-leading-gift tw-tracking-gift">
+            {{ title_label }}
+          </span>
+        </label>
+
+        <button
+          type="button"
+          class="cart-gift-wrapping__cancel-btn tw-inline-flex tw-items-center tw-gap-1.5 tw-font-normal tw-text-gift tw-leading-gift tw-tracking-gift tw-text-gift-text hover:tw-opacity-70 tw-transition-opacity tw-cursor-pointer tw-bg-transparent tw-border-0 tw-p-0"
+          aria-label="{{ 'gift_wrapping.cancel' | t }}"
+        >
+          <span class="tw-underline">{{ 'gift_wrapping.cancel' | t }}</span>
+          <!-- X Close Icon -->
+          <svg class="tw-w-gift-icon tw-h-gift-icon tw-text-gift-text" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Edit Fields -->
+      <div class="tw-space-y-3">
+        <!-- Field: To -->
+        <div>
+          <div class="tw-flex tw-justify-between tw-items-center tw-mb-1.5">
+            <label class="tw-block tw-font-normal tw-text-gift tw-leading-gift tw-tracking-gift tw-text-gift-text">
+              {{ 'gift_wrapping.to' | t }}
+            </label>
+            <span class="tw-text-gift-counter tw-text-gift-border">
+              <span class="js-char-count">{{ gift_to | size }}</span>/{{ max_to }}
+            </span>
+          </div>
+          <input
+            type="text"
+            name="To"
+            value="{{ gift_to }}"
+            maxlength="{{ max_to }}"
+            placeholder="{{ 'gift_wrapping.to_placeholder' | t }}"
+            class="cart-gift-wrapping__input-to tw-w-full tw-rounded-gift tw-py-gift-y tw-px-gift-x tw-bg-white tw-border tw-border-solid tw-border-gift-border tw-appearance-none tw-font-normal tw-text-gift tw-leading-gift tw-tracking-gift tw-text-gift-text placeholder:tw-text-gift-border focus:tw-outline-none focus:tw-border-gift-text focus:tw-ring-1 focus:tw-ring-gift-text tw-transition-colors"
+          >
+        </div>
+
+        <!-- Field: From -->
+        <div>
+          <div class="tw-flex tw-justify-between tw-items-center tw-mb-1.5">
+            <label class="tw-block tw-font-normal tw-text-gift tw-leading-gift tw-tracking-gift tw-text-gift-text">
+              {{ 'gift_wrapping.from' | t }}
+            </label>
+            <span class="tw-text-gift-counter tw-text-gift-border">
+              <span class="js-char-count">{{ gift_from | size }}</span>/{{ max_from }}
+            </span>
+          </div>
+          <input
+            type="text"
+            name="From"
+            value="{{ gift_from }}"
+            maxlength="{{ max_from }}"
+            placeholder="{{ 'gift_wrapping.from_placeholder' | t }}"
+            class="cart-gift-wrapping__input-from tw-w-full tw-rounded-gift tw-py-gift-y tw-px-gift-x tw-bg-white tw-border tw-border-solid tw-border-gift-border tw-appearance-none tw-font-normal tw-text-gift tw-leading-gift tw-tracking-gift tw-text-gift-text placeholder:tw-text-gift-border focus:tw-outline-none focus:tw-border-gift-text focus:tw-ring-1 focus:tw-ring-gift-text tw-transition-colors"
+          >
+        </div>
+
+        <!-- Field: Gift message -->
+        <div>
+          <div class="tw-flex tw-justify-between tw-items-center tw-mb-1.5">
+            <label class="tw-block tw-font-normal tw-text-gift tw-leading-gift tw-tracking-gift tw-text-gift-text">
+              {{ 'gift_wrapping.message' | t }}
+            </label>
+            <span class="tw-text-gift-counter tw-text-gift-border">
+              <span class="js-char-count">{{ gift_message | size }}</span>/{{ max_message }}
+            </span>
+          </div>
+          <textarea
+            name="Gift message"
+            rows="3"
+            maxlength="{{ max_message }}"
+            placeholder="{{ 'gift_wrapping.message_placeholder' | t }}"
+            class="cart-gift-wrapping__input-message tw-w-full tw-rounded-gift tw-py-gift-y tw-px-gift-x tw-bg-white tw-border tw-border-solid tw-border-gift-border tw-appearance-none tw-font-normal tw-text-gift tw-leading-gift tw-tracking-gift tw-text-gift-text placeholder:tw-text-gift-border focus:tw-outline-none focus:tw-border-gift-text focus:tw-ring-1 focus:tw-ring-gift-text tw-resize-y tw-transition-colors"
+          >{{ gift_message }}</textarea>
+        </div>
+
+        <!-- Update Button -->
+        <button
+          type="button"
+          class="cart-gift-wrapping__submit-btn tw-w-full tw-bg-[#1E1E1E] hover:tw-bg-black tw-text-white tw-py-2.5 tw-rounded-gift tw-font-normal tw-text-gift tw-leading-gift tw-tracking-gift tw-transition-colors tw-flex tw-items-center tw-justify-center tw-gap-2 tw-cursor-pointer tw-border-0"
+        >
+          <span class="btn-text">{{ 'gift_wrapping.update' | t }}</span>
+          <span class="btn-loading tw-hidden">
+            <svg class="tw-animate-spin tw-w-gift-icon tw-h-gift-icon tw-text-white" width="16" height="16" fill="none" viewBox="0 0 24 24">
+              <circle class="tw-opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+              <path class="tw-opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"></path>
+            </svg>
+          </span>
+        </button>
+      </div>
+    </div>
+  </cart-gift-wrapping>
+{%- endif -%}

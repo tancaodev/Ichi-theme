@@ -479,5 +479,18 @@
       "message": "Message",
       "max_characters": "{{ max_chars }} characters max"
     }
+  },
+  "gift_wrapping": {
+    "title": "Wrap as a gift? (+£15)",
+    "to": "To",
+    "to_placeholder": "Recipient's name",
+    "from": "From",
+    "from_placeholder": "Sender's name",
+    "message": "Gift message",
+    "message_placeholder": "Type your message here",
+    "edit": "Edit",
+    "cancel": "Cancel",
+    "update": "Update",
+    "updating": "Updating..."
   }
 }

@@ -38,6 +38,16 @@
           "type": "price",
           "settings": {}
         },
+        "gift_wrapping": {
+          "type": "gift_wrapping",
+          "settings": {
+            "label": "Wrap as a gift? (+£15)",
+            "price_text": "+£15",
+            "max_to": 50,
+            "max_from": 50,
+            "max_message": 200
+          }
+        },
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
@@ -63,6 +73,7 @@
         "variant_picker",
         "quantity_selector",
         "price",
+        "gift_wrapping",
         "buy_buttons",
         "description",
         "share"
