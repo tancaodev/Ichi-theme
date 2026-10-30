@@ -8,6 +8,220 @@
  * ------------------------------------------------------------
  */
 {
+  "blocks": {
+    "shared": {
+      "settings": {
+        "custom_mobile": {
+          "label": "移动设备上自定义"
+        },
+        "header_layout": {
+          "content": "布局"
+        },
+        "header_spacing": {
+          "content": "间距"
+        },
+        "margin_top": {
+          "label": "上"
+        },
+        "margin_bottom": {
+          "label": "下"
+        },
+        "margin_left": {
+          "label": "左"
+        },
+        "margin_right": {
+          "label": "右"
+        }
+      }
+    },
+    "heading": {
+      "name": "标题",
+      "settings": {
+        "heading": {
+          "label": "标题"
+        },
+        "header_typography": {
+          "content": "排版"
+        },
+        "size": {
+          "label": "大小",
+          "info": "在主题设置 > 排版中编辑大小",
+          "options__display": "展示",
+          "options__h1": "标题 1",
+          "options__h2": "标题 2",
+          "options__h3": "标题 3",
+          "options__h4": "标题 4",
+          "options__h5": "标题 5",
+          "options__h6": "标题 6",
+          "options__subheading": "副标题",
+          "options__custom": "自定义"
+        },
+        "heading_tag": {
+          "label": "HTML 标签",
+          "info": "选择适合页面结构的标题级别，以优化 SEO"
+        },
+        "font_family": {
+          "label": "字体系列",
+          "options__heading": "标题",
+          "options__body": "正文",
+          "options__highlight": "强调"
+        },
+        "font_size": {
+          "label": "字体大小",
+          "info": "px"
+        },
+        "width": {
+          "label": "宽度",
+          "options__fit": "适应",
+          "options__fill": "填充",
+          "options__custom": "自定义"
+        },
+        "width_unit": {
+          "label": "单位",
+          "options__percent": "百分比",
+          "options__pixel": "像素"
+        },
+        "custom_width": {
+          "label": "自定义宽度"
+        },
+        "alignment": {
+          "label": "对齐方式"
+        },
+        "header_highlight": {
+          "content": "文本突出显示",
+          "info": "要应用突出显示，请将文本设为斜体"
+        },
+        "highlight_style": {
+          "label": "突出显示样式",
+          "options__none": "无",
+          "options__text_color": "文本颜色",
+          "options__underline_soft": "下划线（柔和）",
+          "options__underline_double": "下划线（双线）",
+          "options__underline_wavy": "下划线（波浪）",
+          "options__circle_outline": "圆圈（轮廓）",
+          "options__highlight_bar": "突出显示（条形）",
+          "options__highlight_solid": "突出显示（实心）"
+        },
+        "highlight_color": {
+          "label": "突出显示颜色",
+          "info": "默认为强调色"
+        },
+        "margin": {
+          "label": "外边距"
+        }
+      }
+    },
+    "divider": {
+      "name": "分隔线",
+      "settings": {
+        "direction": {
+          "label": "方向",
+          "options__horizontal": "水平",
+          "options__vertical": "垂直"
+        },
+        "width": {
+          "label": "宽度"
+        },
+        "height": {
+          "label": "高度"
+        },
+        "thickness": {
+          "label": "粗细"
+        },
+        "header_style": {
+          "content": "样式"
+        },
+        "style": {
+          "label": "样式",
+          "options__line": "线条",
+          "options__dot": "圆点"
+        },
+        "corner_radius": {
+          "label": "圆角半径",
+          "options__square": "方形",
+          "options__rounded": "圆角"
+        }
+      }
+    },
+    "icon": {
+      "name": "图标",
+      "settings": {
+        "icon_source": {
+          "label": "选择图标",
+          "options__library": "库",
+          "options__upload": "上传"
+        },
+        "icon": {
+          "label": "图标",
+          "options__arrow_up_right": "右上箭头"
+        },
+        "icon_image": {
+          "label": "图片图标"
+        },
+        "icon_size": {
+          "label": "图标大小",
+          "options__custom": "自定义"
+        },
+        "custom_size": {
+          "label": "自定义大小"
+        },
+        "header_style": {
+          "content": "样式"
+        },
+        "icon_style": {
+          "label": "样式",
+          "info": "方框样式默认添加 12px 内边距，经典样式不添加",
+          "options__classic": "经典",
+          "options__boxed": "方框"
+        },
+        "icon_box_style": {
+          "label": "方框样式",
+          "options__fill": "填充",
+          "options__outline": "轮廓"
+        },
+        "icon_shape": {
+          "label": "形状",
+          "options__square": "方形",
+          "options__rounded": "圆角",
+          "options__circle": "圆形"
+        },
+        "icon_corner_radius": {
+          "label": "圆角半径",
+          "info": "使用主题设置中的圆角半径",
+          "options__main": "主要内容",
+          "options__buttons": "按钮",
+          "options__media": "媒体"
+        },
+        "icon_color": {
+          "label": "颜色",
+          "options__strong": "深色",
+          "options__light": "浅色"
+        },
+        "padding": {
+          "label": "内边距"
+        },
+        "padding_value": {
+          "label": "值"
+        },
+        "margin": {
+          "label": "外边距"
+        }
+      }
+    },
+    "spacer": {
+      "name": "间隔",
+      "settings": {
+        "unit": {
+          "label": "单位",
+          "options__percent": "百分比",
+          "options__pixel": "像素"
+        },
+        "size": {
+          "label": "大小"
+        }
+      }
+    }
+  },
   "settings_schema": {
     "colors": {
       "name": "颜色",
@@ -60,25 +274,97 @@
     "typography": {
       "name": "版式",
       "settings": {
+        "header_font_family": {
+          "content": "字体系列"
+        },
+        "header_paragraph": {
+          "content": "段落"
+        },
+        "header_highlight": {
+          "content": "突出显示"
+        },
+        "header_display": {
+          "content": "展示标题"
+        },
+        "header_h1": {
+          "content": "标题 1"
+        },
+        "header_h2": {
+          "content": "标题 2"
+        },
+        "header_h3": {
+          "content": "标题 3"
+        },
+        "header_h4": {
+          "content": "标题 4"
+        },
+        "header_h5": {
+          "content": "标题 5"
+        },
+        "header_h6": {
+          "content": "标题 6"
+        },
+        "header_subheading": {
+          "content": "副标题"
+        },
+        "header_description": {
+          "content": "描述"
+        },
+        "header_label": {
+          "content": "标签"
+        },
         "type_header_font": {
           "label": "字体",
           "info": "选择其他字体可能会影响您商店的速度。[详细了解系统字体。](https:\/\/help.shopify.com\/manual\/online-store\/os\/store-speed\/improving-speed#fonts)"
         },
-        "header__1": {
-          "content": "标题"
-        },
-        "header__2": {
-          "content": "正文"
+        "type_highlight_font": {
+          "label": "突出显示",
+          "info": "用于标题中突出显示的文字。"
         },
         "type_body_font": {
           "label": "字体",
           "info": "选择其他字体可能会影响您商店的速度。[详细了解系统字体。](https:\/\/help.shopify.com\/manual\/online-store\/os\/store-speed\/improving-speed#fonts)"
         },
-        "heading_scale": {
-          "label": "字号比例"
+        "font_size": {
+          "label": "大小"
         },
-        "body_scale": {
-          "label": "字号比例"
+        "mobile_font_size": {
+          "label": "移动设备大小"
+        },
+        "line_height": {
+          "label": "行高"
+        },
+        "letter_spacing": {
+          "label": "字母间距"
+        },
+        "paragraph_spacing": {
+          "label": "段落间距"
+        },
+        "font_weight": {
+          "label": "字重",
+          "options__light": "细体",
+          "options__regular": "常规",
+          "options__medium": "中等",
+          "options__semibold": "半粗体",
+          "options__bold": "粗体",
+          "options__extrabold": "特粗体"
+        },
+        "case": {
+          "label": "大小写",
+          "options__normal": "正常",
+          "options__uppercase": "大写",
+          "options__lowercase": "小写",
+          "options__capitalize": "首字母大写"
+        },
+        "font_style": {
+          "label": "字体样式",
+          "options__normal": "正常",
+          "options__italic": "斜体"
+        },
+        "subheading_font": {
+          "label": "字体系列",
+          "options__heading": "标题",
+          "options__body": "正文"
         }
       }
     },
@@ -99,6 +385,43 @@
     "social-media": {
       "name": "社交媒体",
       "settings": {
+        "header__style": {
+          "content": "样式"
+        },
+        "social_type": {
+          "label": "类型",
+          "options__icon": "图标",
+          "options__text": "文本"
+        },
+        "social_style": {
+          "label": "样式",
+          "options__classic": "经典",
+          "options__boxed": "方框"
+        },
+        "social_box_style": {
+          "label": "方框样式",
+          "options__fill": "填充",
+          "options__outline": "轮廓"
+        },
+        "social_shape": {
+          "label": "形状",
+          "options__square": "方形",
+          "options__rounded": "圆角",
+          "options__full": "圆形 \/ 胶囊形"
+        },
+        "social_radius": {
+          "label": "圆角半径",
+          "info": "基于按钮圆角半径。",
+          "options__main": "主要圆角",
+          "options__small": "小",
+          "options__extra_small": "特小"
+        },
+        "social_size": {
+          "label": "大小",
+          "options__small": "小",
+          "options__medium": "中等",
+          "options__large": "大"
+        },
         "social_twitter_link": {
           "label": "Twitter",
           "info": "https:\/\/twitter.com\/shopify"
@@ -135,6 +458,30 @@
           "label": "Vimeo",
           "info": "https:\/\/vimeo.com\/shopify"
         },
+        "header__sharing": {
+          "content": "分享选项"
+        },
+        "share_facebook": {
+          "label": "分享到 Facebook"
+        },
+        "share_x": {
+          "label": "分享到 X（原 Twitter）"
+        },
+        "share_pinterest": {
+          "label": "在 Pinterest 上收藏"
+        },
+        "share_telegram": {
+          "label": "分享到 Telegram"
+        },
+        "share_whatsapp": {
+          "label": "分享到 WhatsApp"
+        },
+        "share_line": {
+          "label": "分享到 LINE"
+        },
+        "share_email": {
+          "label": "通过电子邮件分享"
+        },
         "header": {
           "content": "社交媒体账户"
         }
@@ -148,29 +495,6 @@
           "label": "显示货币代码"
         },
         "paragraph": "购物车和结账价格将始终显示货币代码。示例：1.00 USD。"
-      }
-    },
-    "layout": {
-      "name": "布局",
-      "settings": {
-        "page_width": {
-          "label": "页面宽度"
-        },
-        "spacing_sections": {
-          "label": "模板分区之间的间距"
-        },
-        "header__grid": {
-          "content": "网格"
-        },
-        "paragraph__grid": {
-          "content": "影响具有多列或行的区域。"
-        },
-        "spacing_grid_horizontal": {
-          "label": "水平间距"
-        },
-        "spacing_grid_vertical": {
-          "label": "垂直间距"
-        }
       }
     },
     "search_input": {
@@ -311,6 +635,61 @@
             "label": "产品系列",
             "info": "在购物车抽屉为空时可见。"
           }
+        }
+      }
+    },
+    "section": {
+      "name": "分区",
+      "settings": {
+        "header__layout": {
+          "content": "布局"
+        },
+        "section_layout": {
+          "label": "布局",
+          "options__classic": "经典",
+          "options__bento": "便当"
+        },
+        "section_spacing": {
+          "label": "分区间距",
+          "info": "页面上各分区之间的距离。"
+        },
+        "section_gutter": {
+          "label": "网格间距",
+          "info": "分区内网格列与行之间的间距。"
+        },
+        "section_radius": {
+          "label": "圆角半径",
+          "options__main": "主要圆角",
+          "options__small": "小",
+          "options__extra_small": "特小",
+          "options__none": "无",
+          "options__custom": "自定义"
+        },
+        "section_radius_custom": {
+          "label": "自定义圆角半径"
+        },
+        "page_width": {
+          "label": "页面宽度"
+        },
+        "header__padding": {
+          "content": "内边距"
+        },
+        "section_padding_device": {
+          "label": "设备",
+          "options__desktop": "桌面",
+          "options__mobile": "移动设备"
+        },
+        "section_padding_top": {
+          "label": "上"
+        },
+        "section_padding_bottom": {
+          "label": "下"
+        },
+        "section_padding_left": {
+          "label": "左"
+        },
+        "section_padding_right": {
+          "label": "右"
         }
       }
     },

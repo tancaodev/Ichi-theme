@@ -8,6 +8,220 @@
  * ------------------------------------------------------------
  */
 {
+  "blocks": {
+    "shared": {
+      "settings": {
+        "custom_mobile": {
+          "label": "Tilpasset på mobil"
+        },
+        "header_layout": {
+          "content": "Layout"
+        },
+        "header_spacing": {
+          "content": "Afstand"
+        },
+        "margin_top": {
+          "label": "Top"
+        },
+        "margin_bottom": {
+          "label": "Bund"
+        },
+        "margin_left": {
+          "label": "Venstre"
+        },
+        "margin_right": {
+          "label": "Højre"
+        }
+      }
+    },
+    "heading": {
+      "name": "Overskrift",
+      "settings": {
+        "heading": {
+          "label": "Overskrift"
+        },
+        "header_typography": {
+          "content": "Typografi"
+        },
+        "size": {
+          "label": "Størrelse",
+          "info": "Rediger størrelser i Temaindstillinger > Typografi",
+          "options__display": "Display",
+          "options__h1": "Overskrift 1",
+          "options__h2": "Overskrift 2",
+          "options__h3": "Overskrift 3",
+          "options__h4": "Overskrift 4",
+          "options__h5": "Overskrift 5",
+          "options__h6": "Overskrift 6",
+          "options__subheading": "Underoverskrifter",
+          "options__custom": "Tilpasset"
+        },
+        "heading_tag": {
+          "label": "HTML-tag",
+          "info": "Vælg det overskriftsniveau, der passer til sidens struktur, af hensyn til SEO"
+        },
+        "font_family": {
+          "label": "Skrifttypefamilie",
+          "options__heading": "Overskrift",
+          "options__body": "Brødtekst",
+          "options__highlight": "Accent"
+        },
+        "font_size": {
+          "label": "Skriftstørrelse",
+          "info": "px"
+        },
+        "width": {
+          "label": "Bredde",
+          "options__fit": "Tilpas",
+          "options__fill": "Udfyld",
+          "options__custom": "Tilpasset"
+        },
+        "width_unit": {
+          "label": "Enhed",
+          "options__percent": "Procent",
+          "options__pixel": "Pixel"
+        },
+        "custom_width": {
+          "label": "Tilpasset bredde"
+        },
+        "alignment": {
+          "label": "Justering"
+        },
+        "header_highlight": {
+          "content": "Tekstfremhævning",
+          "info": "Gør teksten kursiv for at anvende en fremhævning"
+        },
+        "highlight_style": {
+          "label": "Fremhævningsstil",
+          "options__none": "Ingen",
+          "options__text_color": "Tekstfarve",
+          "options__underline_soft": "Understregning (blød)",
+          "options__underline_double": "Understregning (dobbelt)",
+          "options__underline_wavy": "Understregning (bølget)",
+          "options__circle_outline": "Cirkel (omrids)",
+          "options__highlight_bar": "Fremhævning (bjælke)",
+          "options__highlight_solid": "Fremhævning (udfyldt)"
+        },
+        "highlight_color": {
+          "label": "Fremhævningsfarve",
+          "info": "Bruger som standard accentfarven"
+        },
+        "margin": {
+          "label": "Margen"
+        }
+      }
+    },
+    "divider": {
+      "name": "Skillelinje",
+      "settings": {
+        "direction": {
+          "label": "Retning",
+          "options__horizontal": "Vandret",
+          "options__vertical": "Lodret"
+        },
+        "width": {
+          "label": "Bredde"
+        },
+        "height": {
+          "label": "Højde"
+        },
+        "thickness": {
+          "label": "Tykkelse"
+        },
+        "header_style": {
+          "content": "Stil"
+        },
+        "style": {
+          "label": "Stil",
+          "options__line": "Linje",
+          "options__dot": "Prik"
+        },
+        "corner_radius": {
+          "label": "Hjørneradius",
+          "options__square": "Firkantet",
+          "options__rounded": "Afrundet"
+        }
+      }
+    },
+    "icon": {
+      "name": "Ikon",
+      "settings": {
+        "icon_source": {
+          "label": "Vælg ikon",
+          "options__library": "Bibliotek",
+          "options__upload": "Upload"
+        },
+        "icon": {
+          "label": "Ikon",
+          "options__arrow_up_right": "Pil op til højre"
+        },
+        "icon_image": {
+          "label": "Billedikon"
+        },
+        "icon_size": {
+          "label": "Ikonstørrelse",
+          "options__custom": "Tilpasset"
+        },
+        "custom_size": {
+          "label": "Tilpasset størrelse"
+        },
+        "header_style": {
+          "content": "Stil"
+        },
+        "icon_style": {
+          "label": "Stil",
+          "info": "Boks tilføjer som standard 12 px indvendig margen, Klassisk tilføjer ingen",
+          "options__classic": "Klassisk",
+          "options__boxed": "Boks"
+        },
+        "icon_box_style": {
+          "label": "Boksstil",
+          "options__fill": "Udfyldt",
+          "options__outline": "Omrids"
+        },
+        "icon_shape": {
+          "label": "Form",
+          "options__square": "Firkantet",
+          "options__rounded": "Afrundet",
+          "options__circle": "Cirkel"
+        },
+        "icon_corner_radius": {
+          "label": "Hjørneradius",
+          "info": "Bruger hjørneradius fra temaindstillingerne",
+          "options__main": "Hovedindhold",
+          "options__buttons": "Knapper",
+          "options__media": "Medier"
+        },
+        "icon_color": {
+          "label": "Farve",
+          "options__strong": "Kraftig",
+          "options__light": "Lys"
+        },
+        "padding": {
+          "label": "Indvendig margen"
+        },
+        "padding_value": {
+          "label": "Værdi"
+        },
+        "margin": {
+          "label": "Margen"
+        }
+      }
+    },
+    "spacer": {
+      "name": "Afstandsblok",
+      "settings": {
+        "unit": {
+          "label": "Enhed",
+          "options__percent": "Procent",
+          "options__pixel": "Pixel"
+        },
+        "size": {
+          "label": "Størrelse"
+        }
+      }
+    }
+  },
   "settings_schema": {
     "colors": {
       "name": "Farver",
@@ -60,25 +274,97 @@
     "typography": {
       "name": "Typografi",
       "settings": {
+        "header_font_family": {
+          "content": "Skrifttypefamilie"
+        },
+        "header_paragraph": {
+          "content": "Afsnit"
+        },
+        "header_highlight": {
+          "content": "Fremhævning"
+        },
+        "header_display": {
+          "content": "Display-overskrift"
+        },
+        "header_h1": {
+          "content": "Overskrift 1"
+        },
+        "header_h2": {
+          "content": "Overskrift 2"
+        },
+        "header_h3": {
+          "content": "Overskrift 3"
+        },
+        "header_h4": {
+          "content": "Overskrift 4"
+        },
+        "header_h5": {
+          "content": "Overskrift 5"
+        },
+        "header_h6": {
+          "content": "Overskrift 6"
+        },
+        "header_subheading": {
+          "content": "Underoverskrifter"
+        },
+        "header_description": {
+          "content": "Beskrivelse"
+        },
+        "header_label": {
+          "content": "Etiket"
+        },
         "type_header_font": {
           "label": "Skrifttype",
           "info": "Valget af en anden skrifttype kan påvirke hastigheden i din butik. [Få mere at vide om systemskrifttyper.](https:\/\/help.shopify.com\/manual\/online-store\/os\/store-speed\/improving-speed#fonts)"
         },
-        "header__1": {
-          "content": "Overskrifter"
-        },
-        "header__2": {
-          "content": "Brødtekst"
+        "type_highlight_font": {
+          "label": "Fremhævning",
+          "info": "Bruges til fremhævede ord i overskrifter."
         },
         "type_body_font": {
           "label": "Skrifttype",
           "info": "Valget af en anden skrifttype kan påvirke hastigheden i din butik. [Få mere at vide om systemskrifttyper.](https:\/\/help.shopify.com\/manual\/online-store\/os\/store-speed\/improving-speed#fonts)"
         },
-        "heading_scale": {
-          "label": "Størrelsesskala for skrifttype"
+        "font_size": {
+          "label": "Størrelse"
         },
-        "body_scale": {
-          "label": "Størrelsesskala for skrifttype"
+        "mobile_font_size": {
+          "label": "Størrelse på mobil"
+        },
+        "line_height": {
+          "label": "Linjehøjde"
+        },
+        "letter_spacing": {
+          "label": "Bogstavafstand"
+        },
+        "paragraph_spacing": {
+          "label": "Afsnitsafstand"
+        },
+        "font_weight": {
+          "label": "Skrifttykkelse",
+          "options__light": "Tynd",
+          "options__regular": "Normal",
+          "options__medium": "Medium",
+          "options__semibold": "Halvfed",
+          "options__bold": "Fed",
+          "options__extrabold": "Ekstra fed"
+        },
+        "case": {
+          "label": "Store\/små bogstaver",
+          "options__normal": "Normal",
+          "options__uppercase": "Store bogstaver",
+          "options__lowercase": "Små bogstaver",
+          "options__capitalize": "Stort begyndelsesbogstav"
+        },
+        "font_style": {
+          "label": "Skriftstil",
+          "options__normal": "Normal",
+          "options__italic": "Kursiv"
+        },
+        "subheading_font": {
+          "label": "Skrifttypefamilie",
+          "options__heading": "Overskrift",
+          "options__body": "Brødtekst"
         }
       }
     },
@@ -99,6 +385,43 @@
     "social-media": {
       "name": "Sociale medier",
       "settings": {
+        "header__style": {
+          "content": "Stil"
+        },
+        "social_type": {
+          "label": "Type",
+          "options__icon": "Ikon",
+          "options__text": "Tekst"
+        },
+        "social_style": {
+          "label": "Stil",
+          "options__classic": "Klassisk",
+          "options__boxed": "Boks"
+        },
+        "social_box_style": {
+          "label": "Boksstil",
+          "options__fill": "Udfyldt",
+          "options__outline": "Omrids"
+        },
+        "social_shape": {
+          "label": "Form",
+          "options__square": "Firkantet",
+          "options__rounded": "Afrundet",
+          "options__full": "Cirkel\/pille"
+        },
+        "social_radius": {
+          "label": "Hjørneradius",
+          "info": "Baseret på knappernes hjørneradius.",
+          "options__main": "Primært hjørne",
+          "options__small": "Lille",
+          "options__extra_small": "Ekstra lille"
+        },
+        "social_size": {
+          "label": "Størrelse",
+          "options__small": "Lille",
+          "options__medium": "Medium",
+          "options__large": "Stor"
+        },
         "social_twitter_link": {
           "label": "Twitter",
           "info": "https:\/\/twitter.com\/shopify"
@@ -135,6 +458,30 @@
           "label": "Vimeo",
           "info": "https:\/\/vimeo.com\/shopify"
         },
+        "header__sharing": {
+          "content": "Delingsmuligheder"
+        },
+        "share_facebook": {
+          "label": "Del på Facebook"
+        },
+        "share_x": {
+          "label": "Del på X (tidligere Twitter)"
+        },
+        "share_pinterest": {
+          "label": "Pin på Pinterest"
+        },
+        "share_telegram": {
+          "label": "Del på Telegram"
+        },
+        "share_whatsapp": {
+          "label": "Del på WhatsApp"
+        },
+        "share_line": {
+          "label": "Del på LINE"
+        },
+        "share_email": {
+          "label": "Del via e-mail"
+        },
         "header": {
           "content": "SoMe-konti"
         }
@@ -148,29 +495,6 @@
           "label": "Vis valutakoder"
         },
         "paragraph": "Priser i indkøbskurv og betalingsproces viser altid valutakoder. Eksempel: 1,00 USD."
-      }
-    },
-    "layout": {
-      "name": "Layout",
-      "settings": {
-        "page_width": {
-          "label": "Sidebredde"
-        },
-        "spacing_sections": {
-          "label": "Mellemrum mellem skabelonafsnit"
-        },
-        "header__grid": {
-          "content": "Gitter"
-        },
-        "paragraph__grid": {
-          "content": "Påvirker områder med flere kolonner eller rækker."
-        },
-        "spacing_grid_horizontal": {
-          "label": "Lodret afstand"
-        },
-        "spacing_grid_vertical": {
-          "label": "Vandret afstand"
-        }
       }
     },
     "search_input": {
@@ -311,6 +635,61 @@
             "label": "Kollektion",
             "info": "Synlig, når indkøbskurvskuffen er tom."
           }
+        }
+      }
+    },
+    "section": {
+      "name": "Afsnit",
+      "settings": {
+        "header__layout": {
+          "content": "Layout"
+        },
+        "section_layout": {
+          "label": "Layout",
+          "options__classic": "Klassisk",
+          "options__bento": "Bento"
+        },
+        "section_spacing": {
+          "label": "Afstand mellem afsnit",
+          "info": "Afstand mellem afsnit på siden."
+        },
+        "section_gutter": {
+          "label": "Gitterafstand",
+          "info": "Afstand mellem gitterets kolonner og rækker i et afsnit."
+        },
+        "section_radius": {
+          "label": "Hjørneradius",
+          "options__main": "Primært hjørne",
+          "options__small": "Lille",
+          "options__extra_small": "Ekstra lille",
+          "options__none": "Ingen",
+          "options__custom": "Tilpasset"
+        },
+        "section_radius_custom": {
+          "label": "Tilpasset hjørneradius"
+        },
+        "page_width": {
+          "label": "Sidebredde"
+        },
+        "header__padding": {
+          "content": "Indvendig margen"
+        },
+        "section_padding_device": {
+          "label": "Enhed",
+          "options__desktop": "Computer",
+          "options__mobile": "Mobil"
+        },
+        "section_padding_top": {
+          "label": "Top"
+        },
+        "section_padding_bottom": {
+          "label": "Bund"
+        },
+        "section_padding_left": {
+          "label": "Venstre"
+        },
+        "section_padding_right": {
+          "label": "Højre"
         }
       }
     },

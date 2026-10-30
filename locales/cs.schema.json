@@ -8,6 +8,220 @@
  * ------------------------------------------------------------
  */
 {
+  "blocks": {
+    "shared": {
+      "settings": {
+        "custom_mobile": {
+          "label": "Vlastní na mobilu"
+        },
+        "header_layout": {
+          "content": "Rozvržení"
+        },
+        "header_spacing": {
+          "content": "Rozestupy"
+        },
+        "margin_top": {
+          "label": "Nahoře"
+        },
+        "margin_bottom": {
+          "label": "Dole"
+        },
+        "margin_left": {
+          "label": "Vlevo"
+        },
+        "margin_right": {
+          "label": "Vpravo"
+        }
+      }
+    },
+    "heading": {
+      "name": "Nadpis",
+      "settings": {
+        "heading": {
+          "label": "Nadpis"
+        },
+        "header_typography": {
+          "content": "Typografie"
+        },
+        "size": {
+          "label": "Velikost",
+          "info": "Velikosti upravte v Nastavení motivu > Typografie",
+          "options__display": "Display",
+          "options__h1": "Nadpis 1",
+          "options__h2": "Nadpis 2",
+          "options__h3": "Nadpis 3",
+          "options__h4": "Nadpis 4",
+          "options__h5": "Nadpis 5",
+          "options__h6": "Nadpis 6",
+          "options__subheading": "Podnadpisy",
+          "options__custom": "Vlastní"
+        },
+        "heading_tag": {
+          "label": "Značka HTML",
+          "info": "Zvolte úroveň nadpisu odpovídající struktuře stránky kvůli SEO"
+        },
+        "font_family": {
+          "label": "Rodina písma",
+          "options__heading": "Nadpis",
+          "options__body": "Hlavní text",
+          "options__highlight": "Zvýraznění"
+        },
+        "font_size": {
+          "label": "Velikost písma",
+          "info": "px"
+        },
+        "width": {
+          "label": "Šířka",
+          "options__fit": "Přizpůsobit",
+          "options__fill": "Vyplnit",
+          "options__custom": "Vlastní"
+        },
+        "width_unit": {
+          "label": "Jednotka",
+          "options__percent": "Procenta",
+          "options__pixel": "Pixel"
+        },
+        "custom_width": {
+          "label": "Vlastní šířka"
+        },
+        "alignment": {
+          "label": "Zarovnání"
+        },
+        "header_highlight": {
+          "content": "Zvýraznění textu",
+          "info": "Chcete-li text zvýraznit, nastavte ho jako kurzívu"
+        },
+        "highlight_style": {
+          "label": "Styl zvýraznění",
+          "options__none": "Žádné",
+          "options__text_color": "Barva textu",
+          "options__underline_soft": "Podtržení (jemné)",
+          "options__underline_double": "Podtržení (dvojité)",
+          "options__underline_wavy": "Podtržení (vlnité)",
+          "options__circle_outline": "Kruh (obrys)",
+          "options__highlight_bar": "Zvýraznění (pruh)",
+          "options__highlight_solid": "Zvýraznění (plné)"
+        },
+        "highlight_color": {
+          "label": "Barva zvýraznění",
+          "info": "Ve výchozím nastavení barva zvýraznění motivu"
+        },
+        "margin": {
+          "label": "Okraj"
+        }
+      }
+    },
+    "divider": {
+      "name": "Oddělovač",
+      "settings": {
+        "direction": {
+          "label": "Směr",
+          "options__horizontal": "Vodorovně",
+          "options__vertical": "Svisle"
+        },
+        "width": {
+          "label": "Šířka"
+        },
+        "height": {
+          "label": "Výška"
+        },
+        "thickness": {
+          "label": "Tloušťka"
+        },
+        "header_style": {
+          "content": "Styl"
+        },
+        "style": {
+          "label": "Styl",
+          "options__line": "Čára",
+          "options__dot": "Tečka"
+        },
+        "corner_radius": {
+          "label": "Poloměr rohů",
+          "options__square": "Hranaté",
+          "options__rounded": "Zaoblené"
+        }
+      }
+    },
+    "icon": {
+      "name": "Ikona",
+      "settings": {
+        "icon_source": {
+          "label": "Vybrat ikonu",
+          "options__library": "Knihovna",
+          "options__upload": "Nahrát"
+        },
+        "icon": {
+          "label": "Ikona",
+          "options__arrow_up_right": "Šipka vpravo nahoru"
+        },
+        "icon_image": {
+          "label": "Obrázková ikona"
+        },
+        "icon_size": {
+          "label": "Velikost ikony",
+          "options__custom": "Vlastní"
+        },
+        "custom_size": {
+          "label": "Vlastní velikost"
+        },
+        "header_style": {
+          "content": "Styl"
+        },
+        "icon_style": {
+          "label": "Styl",
+          "info": "Styl V rámečku ve výchozím nastavení přidá 12 px odsazení, Klasický žádné",
+          "options__classic": "Klasický",
+          "options__boxed": "V rámečku"
+        },
+        "icon_box_style": {
+          "label": "Styl rámečku",
+          "options__fill": "Vyplněný",
+          "options__outline": "Obrys"
+        },
+        "icon_shape": {
+          "label": "Tvar",
+          "options__square": "Hranaté",
+          "options__rounded": "Zaoblené",
+          "options__circle": "Kruh"
+        },
+        "icon_corner_radius": {
+          "label": "Poloměr rohů",
+          "info": "Používá poloměr rohů z nastavení motivu",
+          "options__main": "Hlavní obsah",
+          "options__buttons": "Tlačítka",
+          "options__media": "Média"
+        },
+        "icon_color": {
+          "label": "Barva",
+          "options__strong": "Výrazná",
+          "options__light": "Světlá"
+        },
+        "padding": {
+          "label": "Odsazení"
+        },
+        "padding_value": {
+          "label": "Hodnota"
+        },
+        "margin": {
+          "label": "Okraj"
+        }
+      }
+    },
+    "spacer": {
+      "name": "Mezera",
+      "settings": {
+        "unit": {
+          "label": "Jednotka",
+          "options__percent": "Procenta",
+          "options__pixel": "Pixel"
+        },
+        "size": {
+          "label": "Velikost"
+        }
+      }
+    }
+  },
   "settings_schema": {
     "colors": {
       "name": "Barvy",
@@ -60,25 +274,97 @@
     "typography": {
       "name": "Typografie",
       "settings": {
+        "header_font_family": {
+          "content": "Rodina písma"
+        },
+        "header_paragraph": {
+          "content": "Odstavec"
+        },
+        "header_highlight": {
+          "content": "Zvýraznění"
+        },
+        "header_display": {
+          "content": "Nadpis Display"
+        },
+        "header_h1": {
+          "content": "Nadpis 1"
+        },
+        "header_h2": {
+          "content": "Nadpis 2"
+        },
+        "header_h3": {
+          "content": "Nadpis 3"
+        },
+        "header_h4": {
+          "content": "Nadpis 4"
+        },
+        "header_h5": {
+          "content": "Nadpis 5"
+        },
+        "header_h6": {
+          "content": "Nadpis 6"
+        },
+        "header_subheading": {
+          "content": "Podnadpisy"
+        },
+        "header_description": {
+          "content": "Popis"
+        },
+        "header_label": {
+          "content": "Štítek"
+        },
         "type_header_font": {
           "label": "Písmo",
           "info": "Výběr jiného písma může ovlivnit rychlost obchodu. [Zjistěte více o systémových písmech.](https:\/\/help.shopify.com\/manual\/online-store\/os\/store-speed\/improving-speed#fonts)"
         },
-        "header__1": {
-          "content": "Nadpisy"
-        },
-        "header__2": {
-          "content": "Hlavní část"
+        "type_highlight_font": {
+          "label": "Zvýraznění",
+          "info": "Používá se pro zvýrazněná slova v nadpisech."
         },
         "type_body_font": {
           "label": "Písmo",
           "info": "Výběr jiného písma může ovlivnit rychlost obchodu. [Zjistěte více o systémových písmech.](https:\/\/help.shopify.com\/manual\/online-store\/os\/store-speed\/improving-speed#fonts)"
         },
-        "heading_scale": {
-          "label": "Škála velikostí písem"
+        "font_size": {
+          "label": "Velikost"
         },
-        "body_scale": {
-          "label": "Škála velikostí písem"
+        "mobile_font_size": {
+          "label": "Velikost na mobilu"
+        },
+        "line_height": {
+          "label": "Výška řádku"
+        },
+        "letter_spacing": {
+          "label": "Rozestup písmen"
+        },
+        "paragraph_spacing": {
+          "label": "Rozestup odstavců"
+        },
+        "font_weight": {
+          "label": "Tloušťka písma",
+          "options__light": "Tenké",
+          "options__regular": "Normální",
+          "options__medium": "Střední",
+          "options__semibold": "Polotučné",
+          "options__bold": "Tučné",
+          "options__extrabold": "Extra tučné"
+        },
+        "case": {
+          "label": "Velikost písmen",
+          "options__normal": "Normální",
+          "options__uppercase": "Velká písmena",
+          "options__lowercase": "Malá písmena",
+          "options__capitalize": "Velká počáteční písmena"
+        },
+        "font_style": {
+          "label": "Styl písma",
+          "options__normal": "Normální",
+          "options__italic": "Kurzíva"
+        },
+        "subheading_font": {
+          "label": "Rodina písma",
+          "options__heading": "Nadpis",
+          "options__body": "Hlavní text"
         }
       }
     },
@@ -99,6 +385,43 @@
     "social-media": {
       "name": "Sociální sítě",
       "settings": {
+        "header__style": {
+          "content": "Styl"
+        },
+        "social_type": {
+          "label": "Typ",
+          "options__icon": "Ikona",
+          "options__text": "Text"
+        },
+        "social_style": {
+          "label": "Styl",
+          "options__classic": "Klasický",
+          "options__boxed": "V rámečku"
+        },
+        "social_box_style": {
+          "label": "Styl rámečku",
+          "options__fill": "Vyplněný",
+          "options__outline": "Obrys"
+        },
+        "social_shape": {
+          "label": "Tvar",
+          "options__square": "Hranaté",
+          "options__rounded": "Zaoblené",
+          "options__full": "Kruh \/ Pilulka"
+        },
+        "social_radius": {
+          "label": "Poloměr rohů",
+          "info": "Vychází z poloměru rohů tlačítek.",
+          "options__main": "Hlavní roh",
+          "options__small": "Malá",
+          "options__extra_small": "Extra malá"
+        },
+        "social_size": {
+          "label": "Velikost",
+          "options__small": "Malá",
+          "options__medium": "Střední",
+          "options__large": "Velká"
+        },
         "social_twitter_link": {
           "label": "Twitter",
           "info": "https:\/\/twitter.com\/shopify"
@@ -135,6 +458,30 @@
           "label": "Vimeo",
           "info": "https:\/\/vimeo.com\/shopify"
         },
+        "header__sharing": {
+          "content": "Možnosti sdílení"
+        },
+        "share_facebook": {
+          "label": "Sdílet na Facebooku"
+        },
+        "share_x": {
+          "label": "Sdílet na X (dříve Twitter)"
+        },
+        "share_pinterest": {
+          "label": "Připnout na Pinterest"
+        },
+        "share_telegram": {
+          "label": "Sdílet na Telegramu"
+        },
+        "share_whatsapp": {
+          "label": "Sdílet na WhatsAppu"
+        },
+        "share_line": {
+          "label": "Sdílet na LINE"
+        },
+        "share_email": {
+          "label": "Sdílet e-mailem"
+        },
         "header": {
           "content": "Účty na sociálních sítích"
         }
@@ -148,29 +495,6 @@
           "label": "Zobrazit kódy měn"
         },
         "paragraph": "Košík a ceny na pokladně vždy zahrnují kódy měn. Příklad: 1,00 USD ($)"
-      }
-    },
-    "layout": {
-      "name": "Rozvržení",
-      "settings": {
-        "page_width": {
-          "label": "Šířka stránky"
-        },
-        "spacing_sections": {
-          "label": "Mezera mezi sekcemi šablony"
-        },
-        "header__grid": {
-          "content": "Mřížka"
-        },
-        "paragraph__grid": {
-          "content": "Ovlivňuje oblasti s více sloupci nebo řádky."
-        },
-        "spacing_grid_horizontal": {
-          "label": "Mezera ve vodorovném směru"
-        },
-        "spacing_grid_vertical": {
-          "label": "Mezera ve svislém směru"
-        }
       }
     },
     "search_input": {
@@ -311,6 +635,61 @@
             "label": "Kolekce",
             "info": "Zobrazí se v případě, že je výsuvný košík prázdný."
           }
+        }
+      }
+    },
+    "section": {
+      "name": "Sekce",
+      "settings": {
+        "header__layout": {
+          "content": "Rozvržení"
+        },
+        "section_layout": {
+          "label": "Rozvržení",
+          "options__classic": "Klasický",
+          "options__bento": "Bento"
+        },
+        "section_spacing": {
+          "label": "Rozestup mezi sekcemi",
+          "info": "Vzdálenost mezi sekcemi na stránce."
+        },
+        "section_gutter": {
+          "label": "Mezera mřížky",
+          "info": "Mezera mezi sloupci a řádky mřížky uvnitř sekce."
+        },
+        "section_radius": {
+          "label": "Poloměr rohů",
+          "options__main": "Hlavní roh",
+          "options__small": "Malá",
+          "options__extra_small": "Extra malá",
+          "options__none": "Žádné",
+          "options__custom": "Vlastní"
+        },
+        "section_radius_custom": {
+          "label": "Vlastní poloměr rohů"
+        },
+        "page_width": {
+          "label": "Šířka stránky"
+        },
+        "header__padding": {
+          "content": "Odsazení"
+        },
+        "section_padding_device": {
+          "label": "Zařízení",
+          "options__desktop": "Počítač",
+          "options__mobile": "Mobil"
+        },
+        "section_padding_top": {
+          "label": "Nahoře"
+        },
+        "section_padding_bottom": {
+          "label": "Dole"
+        },
+        "section_padding_left": {
+          "label": "Vlevo"
+        },
+        "section_padding_right": {
+          "label": "Vpravo"
         }
       }
     },

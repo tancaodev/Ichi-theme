@@ -8,6 +8,373 @@
  * ------------------------------------------------------------
  */
 {
+  "blocks": {
+    "shared": {
+      "settings": {
+        "custom_mobile": {
+          "label": "Custom on mobile"
+        },
+        "header_layout": {
+          "content": "Layout"
+        },
+        "header_spacing": {
+          "content": "Spacing"
+        },
+        "margin_top": {
+          "label": "Top"
+        },
+        "margin_bottom": {
+          "label": "Bottom"
+        },
+        "margin_left": {
+          "label": "Left"
+        },
+        "margin_right": {
+          "label": "Right"
+        }
+      }
+    },
+    "heading": {
+      "name": "Heading",
+      "settings": {
+        "heading": {
+          "label": "Heading"
+        },
+        "header_typography": {
+          "content": "Typography"
+        },
+        "size": {
+          "label": "Size",
+          "info": "Edit sizes in theme settings > Typography",
+          "options__display": "Display",
+          "options__h1": "Heading 1",
+          "options__h2": "Heading 2",
+          "options__h3": "Heading 3",
+          "options__h4": "Heading 4",
+          "options__h5": "Heading 5",
+          "options__h6": "Heading 6",
+          "options__subheading": "Subheadings",
+          "options__custom": "Custom"
+        },
+        "heading_tag": {
+          "label": "HTML tag",
+          "info": "Choose the heading level that fits the page structure for SEO"
+        },
+        "font_family": {
+          "label": "Font family",
+          "options__heading": "Heading",
+          "options__body": "Body",
+          "options__highlight": "Accent"
+        },
+        "font_size": {
+          "label": "Font size",
+          "info": "px"
+        },
+        "width": {
+          "label": "Width",
+          "options__fit": "Fit",
+          "options__fill": "Fill",
+          "options__custom": "Custom"
+        },
+        "width_unit": {
+          "label": "Unit",
+          "options__percent": "Percent",
+          "options__pixel": "Pixel"
+        },
+        "custom_width": {
+          "label": "Custom width"
+        },
+        "alignment": {
+          "label": "Alignment"
+        },
+        "header_highlight": {
+          "content": "Text highlight",
+          "info": "To apply a highlight, make the text italic"
+        },
+        "highlight_style": {
+          "label": "Highlight style",
+          "options__none": "None",
+          "options__text_color": "Text color",
+          "options__underline_soft": "Underline (soft)",
+          "options__underline_double": "Underline (double)",
+          "options__underline_wavy": "Underline (wavy)",
+          "options__circle_outline": "Circle (outline)",
+          "options__highlight_bar": "Highlight (bar)",
+          "options__highlight_solid": "Highlight (solid)"
+        },
+        "highlight_color": {
+          "label": "Highlight color",
+          "info": "Defaults to the accent color"
+        },
+        "margin": {
+          "label": "Margin"
+        }
+      }
+    },
+    "divider": {
+      "name": "Divider",
+      "settings": {
+        "direction": {
+          "label": "Direction",
+          "options__horizontal": "Horizontal",
+          "options__vertical": "Vertical"
+        },
+        "width": {
+          "label": "Width"
+        },
+        "height": {
+          "label": "Height"
+        },
+        "thickness": {
+          "label": "Thickness"
+        },
+        "header_style": {
+          "content": "Style"
+        },
+        "style": {
+          "label": "Style",
+          "options__line": "Line",
+          "options__dot": "Dot"
+        },
+        "corner_radius": {
+          "label": "Corner radius",
+          "options__square": "Square",
+          "options__rounded": "Rounded"
+        }
+      }
+    },
+    "icon": {
+      "name": "Icon",
+      "settings": {
+        "icon_source": {
+          "label": "Choose icon",
+          "options__library": "Library",
+          "options__upload": "Upload"
+        },
+        "icon": {
+          "label": "Icon",
+          "options__arrow_up_right": "Arrow up right"
+        },
+        "icon_image": {
+          "label": "Image icon"
+        },
+        "icon_size": {
+          "label": "Icon size",
+          "options__custom": "Custom"
+        },
+        "custom_size": {
+          "label": "Custom size"
+        },
+        "header_style": {
+          "content": "Style"
+        },
+        "icon_style": {
+          "label": "Style",
+          "info": "Boxed adds 12px padding by default, Classic has none",
+          "options__classic": "Classic",
+          "options__boxed": "Boxed"
+        },
+        "icon_box_style": {
+          "label": "Box style",
+          "options__fill": "Fill",
+          "options__outline": "Outline"
+        },
+        "icon_shape": {
+          "label": "Shape",
+          "options__square": "Square",
+          "options__rounded": "Rounded",
+          "options__circle": "Circle"
+        },
+        "icon_corner_radius": {
+          "label": "Corner radius",
+          "info": "Uses the corner radius from theme settings",
+          "options__main": "Main content",
+          "options__buttons": "Buttons",
+          "options__media": "Media"
+        },
+        "icon_color": {
+          "label": "Color",
+          "options__strong": "Strong",
+          "options__light": "Light"
+        },
+        "padding": {
+          "label": "Padding"
+        },
+        "padding_value": {
+          "label": "Value"
+        },
+        "margin": {
+          "label": "Margin"
+        }
+      }
+    },
+    "spacer": {
+      "name": "Spacer",
+      "settings": {
+        "unit": {
+          "label": "Unit",
+          "options__percent": "Percent",
+          "options__pixel": "Pixel"
+        },
+        "size": {
+          "label": "Size"
+        }
+      }
+    },
+    "logo": {
+      "name": "Logo",
+      "settings": {
+        "edit_logo": {
+          "content": "Edit logo in [theme settings](/admin/themes/current/editor?context=theme&category=logo)"
+        },
+        "use_inverse": {
+          "label": "Use inverse logo"
+        },
+        "inverse_color": {
+          "label": "Inverse color",
+          "info": "Overrides the logo color for the inverse (text) logo, ideal for dark mode."
+        },
+        "link": {
+          "label": "Link to homepage"
+        },
+        "header_size": {
+          "content": "Size"
+        },
+        "unit": {
+          "label": "Unit",
+          "options__percent": "Percent",
+          "options__pixel": "Pixel"
+        },
+        "width": {
+          "label": "Width"
+        },
+        "height": {
+          "label": "Height"
+        },
+        "margin": {
+          "label": "Margin"
+        }
+      }
+    },
+    "video": {
+      "name": "Video",
+      "settings": {
+        "source": {
+          "label": "Source",
+          "options__uploaded": "Uploaded",
+          "options__external": "External URL"
+        },
+        "video": {
+          "label": "Video"
+        },
+        "video_url": {
+          "label": "URL",
+          "info": "Use a YouTube or Vimeo URL",
+          "placeholder": "Paste a link"
+        },
+        "cover_image": {
+          "label": "Cover image"
+        },
+        "alt": {
+          "label": "Video alt text",
+          "info": "Describe the video for customers using screen readers. [Learn more](https://help.shopify.com/manual/online-store/images/theme-images#best-practices-for-mobile-friendly-images)"
+        },
+        "autoplay": {
+          "label": "Enable video autoplay",
+          "info": "Videos are muted automatically to allow autoplay."
+        },
+        "controls": {
+          "label": "Enable media controls"
+        },
+        "loop": {
+          "label": "Enable video loop"
+        },
+        "orientation": {
+          "label": "Orientation",
+          "options__auto": "Auto",
+          "options__landscape": "Landscape",
+          "options__portrait": "Portrait",
+          "options__square": "Square"
+        },
+        "ratio": {
+          "label": "Ratio"
+        },
+        "width": {
+          "label": "Width",
+          "options__fill": "Fill",
+          "options__custom": "Custom"
+        },
+        "width_unit": {
+          "label": "Unit",
+          "options__percent": "Percent",
+          "options__pixel": "Pixel"
+        },
+        "custom_width": {
+          "label": "Custom width"
+        },
+        "header_style": {
+          "content": "Style"
+        },
+        "corner_radius": {
+          "label": "Corner radius",
+          "info": "Uses the corner radius from theme settings",
+          "options__none": "None",
+          "options__main": "Main corner",
+          "options__buttons": "Buttons",
+          "options__media": "Media"
+        },
+        "overlay": {
+          "label": "Overlay"
+        },
+        "overlay_color": {
+          "label": "Overlay color"
+        },
+        "filter": {
+          "label": "Filter presets",
+          "options__normal": "Normal",
+          "options__grayscale": "Grayscale",
+          "options__vintage": "Vintage",
+          "options__warm": "Warm",
+          "options__high_contrast": "High contrast",
+          "options__fade": "Fade"
+        },
+        "margin": {
+          "label": "Margin"
+        }
+      }
+    },
+    "copyright": {
+      "name": "Copyright",
+      "settings": {
+        "show_powered_by": {
+          "label": "Show \"Powered by Shopify\""
+        },
+        "manage_store_name": {
+          "content": "[Manage store name](/admin/settings/general?edit=storeName)"
+        },
+        "header_text": {
+          "content": "Text"
+        },
+        "size": {
+          "label": "Preset",
+          "info": "Edit presets in theme settings > Typography",
+          "options__paragraph": "Paragraph",
+          "options__description": "Description",
+          "options__label": "Label",
+          "options__custom": "Custom"
+        },
+        "font_family": {
+          "label": "Font family",
+          "options__heading": "Heading",
+          "options__body": "Body"
+        },
+        "font_size": {
+          "label": "Font size",
+          "info": "px"
+        }
+      }
+    }
+  },
   "settings_schema": {
     "global": {
       "settings": {
@@ -174,6 +541,10 @@
         "logo_image": {
           "label": "Logo"
         },
+        "logo_inverse": {
+          "label": "Inverse logo",
+          "info": "Used by logo blocks with \"Use inverse logo\" on, e.g. over dark backgrounds"
+        },
         "logo_width": {
           "label": "Desktop logo width",
           "info": "Logo width is automatically optimized for mobile."
@@ -207,25 +578,97 @@
     "typography": {
       "name": "Typography",
       "settings": {
+        "header_font_family": {
+          "content": "Font family"
+        },
+        "header_paragraph": {
+          "content": "Paragraph"
+        },
+        "header_highlight": {
+          "content": "Highlight"
+        },
+        "header_display": {
+          "content": "Display heading"
+        },
+        "header_h1": {
+          "content": "Heading 1"
+        },
+        "header_h2": {
+          "content": "Heading 2"
+        },
+        "header_h3": {
+          "content": "Heading 3"
+        },
+        "header_h4": {
+          "content": "Heading 4"
+        },
+        "header_h5": {
+          "content": "Heading 5"
+        },
+        "header_h6": {
+          "content": "Heading 6"
+        },
+        "header_subheading": {
+          "content": "Subheadings"
+        },
+        "header_description": {
+          "content": "Description"
+        },
+        "header_label": {
+          "content": "Label"
+        },
         "type_header_font": {
-          "label": "Font",
+          "label": "Heading",
           "info": "Selecting a different font can affect the speed of your store. [Learn more about system fonts.](https:\/\/help.shopify.com\/manual\/online-store\/os\/store-speed\/improving-speed#fonts)"
         },
-        "heading_scale": {
-          "label": "Font size scale"
-        },
-        "header__1": {
-          "content": "Headings"
-        },
-        "header__2": {
-          "content": "Body"
+        "type_highlight_font": {
+          "label": "Highlight",
+          "info": "Used for highlighted words inside headings."
         },
         "type_body_font": {
-          "label": "Font",
+          "label": "Body",
           "info": "Selecting a different font can affect the speed of your store. [Learn more about system fonts.](https:\/\/help.shopify.com\/manual\/online-store\/os\/store-speed\/improving-speed#fonts)"
         },
-        "body_scale": {
-          "label": "Font size scale"
+        "font_size": {
+          "label": "Size"
+        },
+        "mobile_font_size": {
+          "label": "Mobile size"
+        },
+        "line_height": {
+          "label": "Line height"
+        },
+        "letter_spacing": {
+          "label": "Letter spacing"
+        },
+        "paragraph_spacing": {
+          "label": "Paragraph spacing"
+        },
+        "font_weight": {
+          "label": "Font weight",
+          "options__light": "Light",
+          "options__regular": "Regular",
+          "options__medium": "Medium",
+          "options__semibold": "Semi-bold",
+          "options__bold": "Bold",
+          "options__extrabold": "Extra-bold"
+        },
+        "case": {
+          "label": "Case",
+          "options__normal": "Normal",
+          "options__uppercase": "Uppercase",
+          "options__lowercase": "Lowercase",
+          "options__capitalize": "Capitalize"
+        },
+        "font_style": {
+          "label": "Font style",
+          "options__normal": "Normal",
+          "options__italic": "Italic"
+        },
+        "subheading_font": {
+          "label": "Font family",
+          "options__heading": "Heading",
+          "options__body": "Body"
         }
       }
     },
@@ -269,20 +712,49 @@
     "social-media": {
       "name": "Social media",
       "settings": {
+        "header__style": {
+          "content": "Style"
+        },
+        "social_type": {
+          "label": "Type",
+          "options__icon": "Icon",
+          "options__text": "Text"
+        },
+        "social_style": {
+          "label": "Style",
+          "options__classic": "Classic",
+          "options__boxed": "Boxed"
+        },
+        "social_box_style": {
+          "label": "Box style",
+          "options__fill": "Fill",
+          "options__outline": "Outline"
+        },
+        "social_shape": {
+          "label": "Shape",
+          "options__square": "Square",
+          "options__rounded": "Rounded",
+          "options__full": "Pill"
+        },
+        "social_radius": {
+          "label": "Corner radius",
+          "info": "Based on the button corner radius.",
+          "options__main": "Main corner",
+          "options__small": "Small",
+          "options__extra_small": "Extra small"
+        },
+        "social_size": {
+          "label": "Size",
+          "options__small": "Small",
+          "options__medium": "Medium",
+          "options__large": "Large"
+        },
         "header": {
           "content": "Social accounts"
-        },
-        "social_twitter_link": {
-          "label": "Twitter",
-          "info": "https:\/\/twitter.com\/shopify"
         },
         "social_facebook_link": {
           "label": "Facebook",
           "info": "https:\/\/facebook.com\/shopify"
-        },
-        "social_pinterest_link": {
-          "label": "Pinterest",
-          "info": "https:\/\/pinterest.com\/shopify"
         },
         "social_instagram_link": {
           "label": "Instagram",
@@ -292,13 +764,21 @@
           "label": "TikTok",
           "info": "https:\/\/tiktok.com\/@shopify"
         },
-        "social_tumblr_link": {
-          "label": "Tumblr",
-          "info": "https:\/\/shopify.tumblr.com"
+        "social_twitter_link": {
+          "label": "X (formerly Twitter)",
+          "info": "https:\/\/x.com\/shopify"
         },
         "social_snapchat_link": {
           "label": "Snapchat",
           "info": "https:\/\/www.snapchat.com\/add\/shopify"
+        },
+        "social_pinterest_link": {
+          "label": "Pinterest",
+          "info": "https:\/\/pinterest.com\/shopify"
+        },
+        "social_tumblr_link": {
+          "label": "Tumblr",
+          "info": "https:\/\/shopify.tumblr.com"
         },
         "social_youtube_link": {
           "label": "YouTube",
@@ -307,6 +787,30 @@
         "social_vimeo_link": {
           "label": "Vimeo",
           "info": "https:\/\/vimeo.com\/shopify"
+        },
+        "header__sharing": {
+          "content": "Sharing options"
+        },
+        "share_facebook": {
+          "label": "Share on Facebook"
+        },
+        "share_x": {
+          "label": "Share on X (formerly Twitter)"
+        },
+        "share_pinterest": {
+          "label": "Pin on Pinterest"
+        },
+        "share_telegram": {
+          "label": "Share on Telegram"
+        },
+        "share_whatsapp": {
+          "label": "Share on WhatsApp"
+        },
+        "share_line": {
+          "label": "Share on LINE"
+        },
+        "share_email": {
+          "label": "Share by email"
         }
       }
     },
@@ -369,31 +873,143 @@
         }
       }
     },
-    "layout": {
-      "name": "Layout",
+    "section": {
+      "name": "Section",
       "settings": {
+        "header__layout": {
+          "content": "Layout"
+        },
+        "section_layout": {
+          "label": "Layout",
+          "options__classic": "Classic",
+          "options__bento": "Bento"
+        },
+        "section_spacing": {
+          "label": "Spacing between section",
+          "info": "Distance between sections on the page."
+        },
+        "section_gutter": {
+          "label": "Gutter",
+          "info": "Space between grid columns and rows inside a section."
+        },
+        "section_radius": {
+          "label": "Corner radius",
+          "options__main": "Main corner",
+          "options__small": "Small",
+          "options__extra_small": "Extra small",
+          "options__none": "None",
+          "options__custom": "Custom"
+        },
+        "section_radius_custom": {
+          "label": "Custom corner radius"
+        },
         "page_width": {
           "label": "Page width"
         },
-        "spacing_sections": {
-          "label": "Space between template sections"
+        "header__padding": {
+          "content": "Padding"
         },
-        "header__grid": {
-          "content": "Grid"
+        "section_padding_device": {
+          "label": "Device",
+          "options__desktop": "Desktop",
+          "options__mobile": "Mobile"
         },
-        "paragraph__grid": {
-          "content": "Affects areas with multiple columns or rows."
+        "section_padding_top": {
+          "label": "Top"
         },
-        "spacing_grid_horizontal": {
-          "label": "Horizontal space"
+        "section_padding_bottom": {
+          "label": "Bottom"
         },
-        "spacing_grid_vertical": {
-          "label": "Vertical space"
+        "section_padding_left": {
+          "label": "Left"
+        },
+        "section_padding_right": {
+          "label": "Right"
         }
       }
     }
   },
   "sections": {
+    "custom_section": {
+      "name": "Custom section",
+      "presets": {
+        "name": "Custom section"
+      },
+      "settings": {
+        "direction": {
+          "label": "Direction",
+          "options__vertical": "Vertical",
+          "options__horizontal": "Horizontal"
+        },
+        "horizontal_alignment": {
+          "label": "Horizontal alignment",
+          "options__left": "Left",
+          "options__center": "Center",
+          "options__right": "Right"
+        },
+        "vertical_alignment": {
+          "label": "Vertical alignment",
+          "options__top": "Top",
+          "options__center": "Center",
+          "options__bottom": "Bottom"
+        },
+        "alignment": {
+          "options__space_between": "Space between"
+        },
+        "gap": {
+          "label": "Gap"
+        },
+        "header_size": {
+          "content": "Size"
+        },
+        "width": {
+          "label": "Width",
+          "options__page": "Page",
+          "options__full": "Full"
+        },
+        "height": {
+          "label": "Height",
+          "options__auto": "Auto",
+          "options__small": "Small",
+          "options__medium": "Medium",
+          "options__large": "Large",
+          "options__full_screen": "Full screen",
+          "options__custom": "Custom"
+        },
+        "custom_height": {
+          "label": "Custom height"
+        },
+        "header_appearance": {
+          "content": "Appearance"
+        },
+        "background_image": {
+          "label": "Background image"
+        },
+        "background_fit": {
+          "label": "Image fit",
+          "options__cover": "Cover",
+          "options__contain": "Contain"
+        },
+        "overlay": {
+          "label": "Overlay"
+        },
+        "overlay_color": {
+          "label": "Overlay color"
+        },
+        "header_border": {
+          "content": "Border"
+        },
+        "border_width": {
+          "label": "Thickness"
+        },
+        "border_color": {
+          "label": "Border color"
+        },
+        "border_radius": {
+          "label": "Corner radius"
+        }
+      }
+    },
     "all": {
       "animation": {
         "content": "Animations",

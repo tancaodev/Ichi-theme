@@ -1,0 +1,230 @@
+{% render 'snip_logo', component_settings: block.settings, component_id: block.id, attributes: block.shopify_attributes %}
+
+{% schema %}
+{
+  "name": "t:blocks.logo.name",
+  "tag": null,
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "t:blocks.logo.settings.edit_logo.content"
+    },
+    {
+      "type": "checkbox",
+      "id": "logo_use_inverse",
+      "label": "t:blocks.logo.settings.use_inverse.label",
+      "default": false
+    },
+    {
+      "type": "color",
+      "id": "logo_inverse_color",
+      "label": "t:blocks.logo.settings.inverse_color.label",
+      "info": "t:blocks.logo.settings.inverse_color.info",
+      "visible_if": "{{ block.settings.logo_use_inverse }}"
+    },
+    {
+      "type": "checkbox",
+      "id": "logo_link",
+      "label": "t:blocks.logo.settings.link.label",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "t:blocks.logo.settings.header_size.content"
+    },
+    {
+      "type": "select",
+      "id": "logo_unit",
+      "label": "t:blocks.logo.settings.unit.label",
+      "options": [
+        {
+          "value": "percent",
+          "label": "t:blocks.logo.settings.unit.options__percent"
+        },
+        {
+          "value": "pixel",
+          "label": "t:blocks.logo.settings.unit.options__pixel"
+        }
+      ],
+      "default": "pixel"
+    },
+    {
+      "type": "range",
+      "id": "logo_width_percent",
+      "label": "t:blocks.logo.settings.width.label",
+      "min": 10,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "default": 100,
+      "visible_if": "{{ block.settings.logo_unit == 'percent' }}"
+    },
+    {
+      "type": "range",
+      "id": "logo_height_pixel",
+      "label": "t:blocks.logo.settings.height.label",
+      "min": 16,
+      "max": 320,
+      "step": 2,
+      "unit": "px",
+      "default": 160,
+      "visible_if": "{{ block.settings.logo_unit == 'pixel' }}"
+    },
+    {
+      "type": "checkbox",
+      "id": "logo_size_custom_mobile",
+      "label": "t:blocks.shared.settings.custom_mobile.label",
+      "default": false
+    },
+    {
+      "type": "select",
+      "id": "logo_unit_mobile",
+      "label": "t:blocks.logo.settings.unit.label",
+      "options": [
+        {
+          "value": "percent",
+          "label": "t:blocks.logo.settings.unit.options__percent"
+        },
+        {
+          "value": "pixel",
+          "label": "t:blocks.logo.settings.unit.options__pixel"
+        }
+      ],
+      "default": "pixel",
+      "visible_if": "{{ block.settings.logo_size_custom_mobile }}"
+    },
+    {
+      "type": "range",
+      "id": "logo_width_percent_mobile",
+      "label": "t:blocks.logo.settings.width.label",
+      "min": 10,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "default": 100,
+      "visible_if": "{{ block.settings.logo_size_custom_mobile and block.settings.logo_unit_mobile == 'percent' }}"
+    },
+    {
+      "type": "range",
+      "id": "logo_height_pixel_mobile",
+      "label": "t:blocks.logo.settings.height.label",
+      "min": 16,
+      "max": 160,
+      "step": 2,
+      "unit": "px",
+      "default": 80,
+      "visible_if": "{{ block.settings.logo_size_custom_mobile and block.settings.logo_unit_mobile == 'pixel' }}"
+    },
+    {
+      "type": "header",
+      "content": "t:blocks.shared.settings.header_spacing.content"
+    },
+    {
+      "type": "checkbox",
+      "id": "logo_margin",
+      "label": "t:blocks.logo.settings.margin.label",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "logo_margin_top",
+      "label": "t:blocks.shared.settings.margin_top.label",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "default": 0,
+      "visible_if": "{{ block.settings.logo_margin }}"
+    },
+    {
+      "type": "range",
+      "id": "logo_margin_bottom",
+      "label": "t:blocks.shared.settings.margin_bottom.label",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "default": 0,
+      "visible_if": "{{ block.settings.logo_margin }}"
+    },
+    {
+      "type": "range",
+      "id": "logo_margin_left",
+      "label": "t:blocks.shared.settings.margin_left.label",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "default": 0,
+      "visible_if": "{{ block.settings.logo_margin }}"
+    },
+    {
+      "type": "range",
+      "id": "logo_margin_right",
+      "label": "t:blocks.shared.settings.margin_right.label",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "default": 0,
+      "visible_if": "{{ block.settings.logo_margin }}"
+    },
+    {
+      "type": "checkbox",
+      "id": "logo_margin_custom_mobile",
+      "label": "t:blocks.shared.settings.custom_mobile.label",
+      "default": false,
+      "visible_if": "{{ block.settings.logo_margin }}"
+    },
+    {
+      "type": "range",
+      "id": "logo_margin_top_mobile",
+      "label": "t:blocks.shared.settings.margin_top.label",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "default": 0,
+      "visible_if": "{{ block.settings.logo_margin and block.settings.logo_margin_custom_mobile }}"
+    },
+    {
+      "type": "range",
+      "id": "logo_margin_bottom_mobile",
+      "label": "t:blocks.shared.settings.margin_bottom.label",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "default": 0,
+      "visible_if": "{{ block.settings.logo_margin and block.settings.logo_margin_custom_mobile }}"
+    },
+    {
+      "type": "range",
+      "id": "logo_margin_left_mobile",
+      "label": "t:blocks.shared.settings.margin_left.label",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "default": 0,
+      "visible_if": "{{ block.settings.logo_margin and block.settings.logo_margin_custom_mobile }}"
+    },
+    {
+      "type": "range",
+      "id": "logo_margin_right_mobile",
+      "label": "t:blocks.shared.settings.margin_right.label",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "default": 0,
+      "visible_if": "{{ block.settings.logo_margin and block.settings.logo_margin_custom_mobile }}"
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:blocks.logo.name"
+    }
+  ]
+}
+{% endschema %}

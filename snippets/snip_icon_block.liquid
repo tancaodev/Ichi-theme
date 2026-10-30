@@ -1,0 +1,122 @@
+{%- doc -%}
+  Renders a library or uploaded icon with size, Classic/Boxed style, color, padding and margin.
+  Settings are read by the `icon_` prefix, so any block or section exposing the same setting ids
+  can reuse this snippet.
+
+  @param {object} component_settings - Settings object holding the `icon_*` settings (block.settings or section.settings).
+  @param {string} component_id - Unique id used to scope the instance CSS variables (block.id or section.id).
+  @param {string} [attributes] - Theme editor attributes for the wrapper (block.shopify_attributes).
+
+  @example
+  {% render 'snip_icon_block', component_settings: block.settings, component_id: block.id, attributes: block.shopify_attributes %}
+{%- enddoc -%}
+{%- liquid
+  assign st = component_settings
+  assign icon_id = 'Icon-' | append: component_id
+  assign is_upload = false
+  if st.icon_source == 'upload'
+    assign is_upload = true
+  endif
+
+  assign has_icon = true
+  if is_upload and st.icon_image == blank
+    assign has_icon = false
+  elsif is_upload == false and st.icon == blank
+    assign has_icon = false
+  endif
+-%}
+{%- if has_icon -%}
+  {% render 'icon_block_styles', component_settings: st, icon_id: icon_id %}
+  <div
+    id="{{ icon_id }}"
+    class="icon-block"
+    data-style="{{ st.icon_style | default: 'classic' }}"
+    data-box-style="{{ st.icon_box_style | default: 'fill' }}"
+    data-shape="{{ st.icon_shape | default: 'rounded' }}"
+    data-color="{{ st.icon_color | default: 'strong' }}"
+    {{ attributes }}
+  >
+    <span class="icon-block__media">
+      {%- if is_upload -%}
+        {{
+          st.icon_image
+          | image_url: width: 200
+          | image_tag: loading: 'lazy', alt: st.icon_image.alt, class: 'icon-block__image'
+        }}
+      {%- else -%}
+        {% render 'icon-accordion', icon: st.icon %}
+      {%- endif -%}
+    </span>
+  </div>
+{%- endif -%}
+
+{% stylesheet %}
+  .icon-block {
+    --icon-color: rgb(var(--color-foreground));
+    --icon-box-color: rgba(var(--color-foreground), 0.08);
+    --icon-border-color: rgba(var(--color-foreground), 0.15);
+
+    display: flex;
+    width: fit-content;
+    margin: var(--icon-margin-top-mobile, 0) var(--icon-margin-right-mobile, 0) var(--icon-margin-bottom-mobile, 0)
+      var(--icon-margin-left-mobile, 0);
+  }
+
+  .icon-block[data-color='light'] {
+    --icon-color: rgba(var(--color-foreground), 0.75);
+  }
+
+  .icon-block .icon-block__media {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--icon-padding-mobile);
+    color: var(--icon-color);
+    border: 0.1rem solid transparent;
+    border-radius: var(--icon-radius, 0);
+  }
+
+  .icon-block .icon-block__media > svg,
+  .icon-block .icon-block__media > .icon-block__image {
+    display: block;
+    width: var(--icon-size-mobile);
+    height: var(--icon-size-mobile);
+    margin: 0;
+    color: inherit;
+    fill: currentColor;
+    object-fit: contain;
+  }
+
+  .icon-block[data-style='boxed'][data-box-style='fill'] .icon-block__media {
+    background-color: var(--icon-box-color);
+  }
+
+  .icon-block[data-style='boxed'][data-box-style='outline'] .icon-block__media {
+    border-color: var(--icon-border-color);
+  }
+
+  .icon-block[data-style='boxed'][data-shape='circle'] .icon-block__media {
+    border-radius: 50%;
+  }
+
+  .icon-block[data-style='classic'] .icon-block__media {
+    border-radius: 0;
+  }
+
+  @media screen and (min-width: 750px) {
+    .icon-block {
+      margin: var(--icon-margin-top, 0) var(--icon-margin-right, 0) var(--icon-margin-bottom, 0)
+        var(--icon-margin-left, 0);
+    }
+
+    .icon-block .icon-block__media {
+      padding: var(--icon-padding);
+    }
+
+    .icon-block .icon-block__media > svg,
+    .icon-block .icon-block__media > .icon-block__image {
+      width: var(--icon-size);
+      height: var(--icon-size);
+    }
+  }
+{% endstylesheet %}

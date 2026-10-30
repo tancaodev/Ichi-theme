@@ -1,0 +1,127 @@
+{%- doc -%}
+  Renders a flexible section wrapper that lays out theme blocks in a row or column, with
+  color scheme, size, background image, overlay, border and padding.
+  Settings are read by the `custom_section_` prefix.
+
+  @param {object} component_settings - Settings object holding the `custom_section_*` settings (section.settings).
+  @param {string} component_id - Unique id used to scope the instance CSS variables (section.id).
+  @param {string} children - Rendered block content, captured from `{% content_for 'blocks' %}`.
+  @param {number} [section_index] - Position of the section on the page (section.index), used to eager-load the first background image.
+
+  @example
+  {% render 'snip_custom_section', component_settings: section.settings, component_id: section.id, children: children, section_index: section.index %}
+{%- enddoc -%}
+{%- liquid
+  assign st = component_settings
+  assign section_dom_id = 'CustomSection-' | append: component_id
+  assign color_scheme = st.color_scheme | default: 'background-1'
+
+  assign media_class = 'custom-section__media'
+  if st.custom_section_background_fit == 'contain'
+    assign media_class = media_class | append: ' custom-section__media--contain'
+  endif
+
+  assign image_loading = 'lazy'
+  if section_index == 1
+    assign image_loading = 'eager'
+  endif
+-%}
+{% render 'custom_section_styles', component_settings: st, section_dom_id: section_dom_id %}
+<div
+  id="{{ section_dom_id }}"
+  class="custom-section color-{{ color_scheme }} gradient"
+  data-width="{{ st.custom_section_width | default: 'page' }}"
+>
+  {%- if st.custom_section_background_image != blank -%}
+    {{
+      st.custom_section_background_image
+      | image_url: width: 3840
+      | image_tag:
+        class: media_class,
+        widths: '750, 1100, 1500, 1920, 2560, 3840',
+        sizes: '100vw',
+        loading: image_loading,
+        alt: ''
+    }}
+  {%- endif -%}
+  {%- if st.custom_section_overlay -%}
+    <div class="custom-section__overlay" aria-hidden="true"></div>
+  {%- endif -%}
+  <div class="custom-section__inner{% if st.custom_section_width != 'full' %} page-width{% endif %}">
+    <div class="custom-section__content">
+      {{ children }}
+    </div>
+  </div>
+</div>
+
+{% stylesheet %}
+  .custom-section {
+    --custom-section-border-color: rgba(var(--color-foreground), 0.15);
+    --custom-section-overlay-color: rgba(0, 0, 0, 0.25);
+
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: var(--custom-section-min-height, auto);
+    overflow: hidden;
+    border: var(--custom-section-border-width, 0) solid var(--custom-section-border-color);
+    border-radius: var(--custom-section-radius, 0);
+  }
+
+  .custom-section__media,
+  .custom-section__overlay {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .custom-section__media {
+    object-fit: cover;
+  }
+
+  .custom-section__media--contain {
+    object-fit: contain;
+  }
+
+  .custom-section__overlay {
+    background: var(--custom-section-overlay-color);
+  }
+
+  .custom-section__inner {
+    position: relative;
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .custom-section__content {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: var(--custom-section-direction-mobile);
+    justify-content: var(--custom-section-justify-mobile);
+    align-items: var(--custom-section-align-mobile);
+    gap: var(--custom-section-gap-mobile);
+    padding: var(--custom-section-padding-top-mobile, 0) var(--custom-section-padding-right-mobile, 0)
+      var(--custom-section-padding-bottom-mobile, 0) var(--custom-section-padding-left-mobile, 0);
+    text-align: var(--custom-section-text-align-mobile);
+  }
+
+  /* Children in a row share the space instead of overflowing. */
+  .custom-section__content > * {
+    min-width: 0;
+  }
+
+  @media screen and (min-width: 750px) {
+    .custom-section__content {
+      flex-direction: var(--custom-section-direction);
+      justify-content: var(--custom-section-justify);
+      align-items: var(--custom-section-align);
+      gap: var(--custom-section-gap);
+      padding: var(--custom-section-padding-top, 0) var(--custom-section-padding-right, 0)
+        var(--custom-section-padding-bottom, 0) var(--custom-section-padding-left, 0);
+      text-align: var(--custom-section-text-align);
+    }
+  }
+{% endstylesheet %}

@@ -1,0 +1,54 @@
+{%- doc -%}
+  Renders a horizontal or vertical divider with line or dot style, thickness and margin.
+  Settings are read by the `divider_` prefix, so any block or section exposing the same setting ids
+  can reuse this snippet.
+
+  @param {object} component_settings - Settings object holding the `divider_*` settings (block.settings or section.settings).
+  @param {string} component_id - Unique id used to scope the instance CSS variables (block.id or section.id).
+  @param {string} [attributes] - Theme editor attributes for the divider (block.shopify_attributes).
+
+  @example
+  {% render 'snip_divider', component_settings: block.settings, component_id: block.id, attributes: block.shopify_attributes %}
+{%- enddoc -%}
+{%- liquid
+  assign st = component_settings
+  assign divider_id = 'Divider-' | append: component_id
+-%}
+{% render 'divider_styles', component_settings: st, divider_id: divider_id %}
+<div
+  id="{{ divider_id }}"
+  class="divider"
+  role="separator"
+  aria-orientation="{{ st.divider_direction | default: 'horizontal' }}"
+  {{ attributes }}
+></div>
+
+{% stylesheet %}
+  .divider {
+    --divider-color: rgba(var(--color-foreground), 0.15);
+
+    flex-shrink: 0;
+    align-self: var(--divider-align-self-mobile);
+    width: var(--divider-width-mobile);
+    height: var(--divider-height-mobile);
+    min-height: var(--divider-min-height-mobile);
+    margin: var(--divider-margin-top-mobile, 0) var(--divider-margin-right-mobile, 0)
+      var(--divider-margin-bottom-mobile, 0) var(--divider-margin-left-mobile, 0);
+    border-radius: var(--divider-radius);
+    background: var(--divider-background-mobile);
+    background-size: var(--divider-background-size-mobile);
+  }
+
+  @media screen and (min-width: 750px) {
+    .divider {
+      align-self: var(--divider-align-self);
+      width: var(--divider-width);
+      height: var(--divider-height);
+      min-height: var(--divider-min-height);
+      margin: var(--divider-margin-top, 0) var(--divider-margin-right, 0) var(--divider-margin-bottom, 0)
+        var(--divider-margin-left, 0);
+      background: var(--divider-background);
+      background-size: var(--divider-background-size);
+    }
+  }
+{% endstylesheet %}

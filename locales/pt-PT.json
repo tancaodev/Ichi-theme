@@ -23,10 +23,15 @@
       "alt_text": {
         "share_on_facebook": "Partilhar no Facebook",
         "share_on_twitter": "Twittar no Twitter",
-        "share_on_pinterest": "Marcar com um pin no Pinterest"
+        "share_on_pinterest": "Marcar com um pin no Pinterest",
+        "share_on_x": "Partilhar no X",
+        "share_on_telegram": "Partilhar no Telegram",
+        "share_on_whatsapp": "Partilhar no WhatsApp",
+        "share_on_line": "Partilhar no LINE",
+        "share_by_email": "Partilhar por e-mail"
       },
       "links": {
-        "twitter": "Twitter",
+        "twitter": "X",
         "facebook": "Facebook",
         "pinterest": "Pinterest",
         "instagram": "Instagram",
@@ -135,6 +140,9 @@
         "regular_price": "Preço normal",
         "sale_price": "Preço de saldo",
         "unit_price": "Preço unitário"
+      },
+      "selling_plans": {
+        "one_time_purchase": "Compra única"
       },
       "share": "Partilhar este produto",
       "sold_out": "Esgotado",
@@ -486,5 +494,18 @@
       "message": "Mensagem",
       "max_characters": "Máximo de {{ max_chars }} caracteres"
     }
+  },
+  "gift_wrapping": {
+    "title": "Embrulhar para oferta? (+£15)",
+    "to": "Para",
+    "to_placeholder": "Nome do destinatário",
+    "from": "De",
+    "from_placeholder": "Nome do remetente",
+    "message": "Mensagem de oferta",
+    "message_placeholder": "Escreva a sua mensagem aqui",
+    "edit": "Editar",
+    "cancel": "Cancelar",
+    "update": "Atualizar",
+    "updating": "A atualizar..."
   }
 }

@@ -23,10 +23,15 @@
       "alt_text": {
         "share_on_facebook": "Facebook에서 공유",
         "share_on_twitter": "Twitter에서 트윗 작성",
-        "share_on_pinterest": "Pinterest에 고정하기"
+        "share_on_pinterest": "Pinterest에 고정하기",
+        "share_on_x": "X에 공유",
+        "share_on_telegram": "Telegram에 공유",
+        "share_on_whatsapp": "WhatsApp에 공유",
+        "share_on_line": "LINE에 공유",
+        "share_by_email": "이메일로 공유"
       },
       "links": {
-        "twitter": "Twitter",
+        "twitter": "X",
         "facebook": "Facebook",
         "pinterest": "Pinterest",
         "instagram": "Instagram",
@@ -134,6 +139,9 @@
         "regular_price": "정가",
         "sale_price": "할인가",
         "unit_price": "단가"
+      },
+      "selling_plans": {
+        "one_time_purchase": "1회 구매"
       },
       "share": "이 제품 공유",
       "sold_out": "품절",
@@ -476,5 +484,18 @@
       "message": "메시지",
       "max_characters": "최대 {{ max_chars }}자"
     }
+  },
+  "gift_wrapping": {
+    "title": "선물 포장하시겠습니까? (+£15)",
+    "to": "받는 사람",
+    "to_placeholder": "받는 사람 이름",
+    "from": "보내는 사람",
+    "from_placeholder": "보내는 사람 이름",
+    "message": "선물 메시지",
+    "message_placeholder": "여기에 메시지를 입력하세요",
+    "edit": "편집",
+    "cancel": "취소",
+    "update": "업데이트",
+    "updating": "업데이트 중..."
   }
 }

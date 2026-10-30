@@ -8,6 +8,220 @@
  * ------------------------------------------------------------
  */
 {
+  "blocks": {
+    "shared": {
+      "settings": {
+        "custom_mobile": {
+          "label": "Personnalisé sur mobile"
+        },
+        "header_layout": {
+          "content": "Mise en page"
+        },
+        "header_spacing": {
+          "content": "Espacement"
+        },
+        "margin_top": {
+          "label": "Haut"
+        },
+        "margin_bottom": {
+          "label": "Bas"
+        },
+        "margin_left": {
+          "label": "Gauche"
+        },
+        "margin_right": {
+          "label": "Droite"
+        }
+      }
+    },
+    "heading": {
+      "name": "Titre",
+      "settings": {
+        "heading": {
+          "label": "Titre"
+        },
+        "header_typography": {
+          "content": "Typographie"
+        },
+        "size": {
+          "label": "Taille",
+          "info": "Modifier les tailles dans Paramètres du thème > Typographie",
+          "options__display": "Display",
+          "options__h1": "Titre 1",
+          "options__h2": "Titre 2",
+          "options__h3": "Titre 3",
+          "options__h4": "Titre 4",
+          "options__h5": "Titre 5",
+          "options__h6": "Titre 6",
+          "options__subheading": "Sous-titres",
+          "options__custom": "Personnalisé"
+        },
+        "heading_tag": {
+          "label": "Balise HTML",
+          "info": "Choisissez le niveau de titre adapté à la structure de la page pour le SEO"
+        },
+        "font_family": {
+          "label": "Famille de polices",
+          "options__heading": "Titre",
+          "options__body": "Corps",
+          "options__highlight": "Accent"
+        },
+        "font_size": {
+          "label": "Taille de police",
+          "info": "px"
+        },
+        "width": {
+          "label": "Largeur",
+          "options__fit": "Ajustée",
+          "options__fill": "Remplir",
+          "options__custom": "Personnalisé"
+        },
+        "width_unit": {
+          "label": "Unité",
+          "options__percent": "Pourcentage",
+          "options__pixel": "Pixel"
+        },
+        "custom_width": {
+          "label": "Largeur personnalisée"
+        },
+        "alignment": {
+          "label": "Alignement"
+        },
+        "header_highlight": {
+          "content": "Mise en évidence du texte",
+          "info": "Pour mettre en évidence, mettez le texte en italique"
+        },
+        "highlight_style": {
+          "label": "Style de mise en évidence",
+          "options__none": "Aucun",
+          "options__text_color": "Couleur du texte",
+          "options__underline_soft": "Soulignement (doux)",
+          "options__underline_double": "Soulignement (double)",
+          "options__underline_wavy": "Soulignement (ondulé)",
+          "options__circle_outline": "Cercle (contour)",
+          "options__highlight_bar": "Surlignage (barre)",
+          "options__highlight_solid": "Surlignage (plein)"
+        },
+        "highlight_color": {
+          "label": "Couleur de mise en évidence",
+          "info": "Par défaut, la couleur d'accent"
+        },
+        "margin": {
+          "label": "Marge"
+        }
+      }
+    },
+    "divider": {
+      "name": "Séparateur",
+      "settings": {
+        "direction": {
+          "label": "Direction",
+          "options__horizontal": "Horizontal",
+          "options__vertical": "Vertical"
+        },
+        "width": {
+          "label": "Largeur"
+        },
+        "height": {
+          "label": "Hauteur"
+        },
+        "thickness": {
+          "label": "Épaisseur"
+        },
+        "header_style": {
+          "content": "Style"
+        },
+        "style": {
+          "label": "Style",
+          "options__line": "Ligne",
+          "options__dot": "Point"
+        },
+        "corner_radius": {
+          "label": "Rayon d'angle",
+          "options__square": "Carré",
+          "options__rounded": "Arrondi"
+        }
+      }
+    },
+    "icon": {
+      "name": "Icône",
+      "settings": {
+        "icon_source": {
+          "label": "Choisir une icône",
+          "options__library": "Bibliothèque",
+          "options__upload": "Importer"
+        },
+        "icon": {
+          "label": "Icône",
+          "options__arrow_up_right": "Flèche en haut à droite"
+        },
+        "icon_image": {
+          "label": "Icône image"
+        },
+        "icon_size": {
+          "label": "Taille de l'icône",
+          "options__custom": "Personnalisé"
+        },
+        "custom_size": {
+          "label": "Taille personnalisée"
+        },
+        "header_style": {
+          "content": "Style"
+        },
+        "icon_style": {
+          "label": "Style",
+          "info": "Le style Encadré ajoute 12 px de marge intérieure par défaut, le style Classique aucune",
+          "options__classic": "Classique",
+          "options__boxed": "Encadré"
+        },
+        "icon_box_style": {
+          "label": "Style du cadre",
+          "options__fill": "Plein",
+          "options__outline": "Contour"
+        },
+        "icon_shape": {
+          "label": "Forme",
+          "options__square": "Carré",
+          "options__rounded": "Arrondi",
+          "options__circle": "Cercle"
+        },
+        "icon_corner_radius": {
+          "label": "Rayon d'angle",
+          "info": "Utilise le rayon d'angle des paramètres du thème",
+          "options__main": "Contenu principal",
+          "options__buttons": "Boutons",
+          "options__media": "Médias"
+        },
+        "icon_color": {
+          "label": "Couleur",
+          "options__strong": "Forte",
+          "options__light": "Claire"
+        },
+        "padding": {
+          "label": "Marge intérieure"
+        },
+        "padding_value": {
+          "label": "Valeur"
+        },
+        "margin": {
+          "label": "Marge"
+        }
+      }
+    },
+    "spacer": {
+      "name": "Espaceur",
+      "settings": {
+        "unit": {
+          "label": "Unité",
+          "options__percent": "Pourcentage",
+          "options__pixel": "Pixel"
+        },
+        "size": {
+          "label": "Taille"
+        }
+      }
+    }
+  },
   "settings_schema": {
     "colors": {
       "name": "Couleurs",
@@ -60,25 +274,97 @@
     "typography": {
       "name": "Typographie",
       "settings": {
+        "header_font_family": {
+          "content": "Famille de polices"
+        },
+        "header_paragraph": {
+          "content": "Paragraphe"
+        },
+        "header_highlight": {
+          "content": "Mise en évidence"
+        },
+        "header_display": {
+          "content": "Titre Display"
+        },
+        "header_h1": {
+          "content": "Titre 1"
+        },
+        "header_h2": {
+          "content": "Titre 2"
+        },
+        "header_h3": {
+          "content": "Titre 3"
+        },
+        "header_h4": {
+          "content": "Titre 4"
+        },
+        "header_h5": {
+          "content": "Titre 5"
+        },
+        "header_h6": {
+          "content": "Titre 6"
+        },
+        "header_subheading": {
+          "content": "Sous-titres"
+        },
+        "header_description": {
+          "content": "Description"
+        },
+        "header_label": {
+          "content": "Libellé"
+        },
         "type_header_font": {
           "label": "Police",
           "info": "La sélection d'une police différente peut influencer la vitesse de votre boutique. [En savoir plus sur les polices système.](https:\/\/help.shopify.com\/manual\/online-store\/os\/store-speed\/improving-speed#fonts)"
         },
-        "header__1": {
-          "content": "Titres"
-        },
-        "header__2": {
-          "content": "Corps"
+        "type_highlight_font": {
+          "label": "Mise en évidence",
+          "info": "Utilisée pour les mots mis en évidence dans les titres."
         },
         "type_body_font": {
           "label": "Police",
           "info": "La sélection d'une police différente peut influencer la vitesse de votre boutique. [En savoir plus sur les polices système.](https:\/\/help.shopify.com\/manual\/online-store\/os\/store-speed\/improving-speed#fonts)"
         },
-        "heading_scale": {
-          "label": "Échelle de taille de police"
+        "font_size": {
+          "label": "Taille"
         },
-        "body_scale": {
-          "label": "Échelle de taille de police"
+        "mobile_font_size": {
+          "label": "Taille sur mobile"
+        },
+        "line_height": {
+          "label": "Hauteur de ligne"
+        },
+        "letter_spacing": {
+          "label": "Espacement des lettres"
+        },
+        "paragraph_spacing": {
+          "label": "Espacement des paragraphes"
+        },
+        "font_weight": {
+          "label": "Graisse de police",
+          "options__light": "Fine",
+          "options__regular": "Normale",
+          "options__medium": "Moyenne",
+          "options__semibold": "Semi-grasse",
+          "options__bold": "Grasse",
+          "options__extrabold": "Extra-grasse"
+        },
+        "case": {
+          "label": "Casse",
+          "options__normal": "Normale",
+          "options__uppercase": "Majuscules",
+          "options__lowercase": "Minuscules",
+          "options__capitalize": "Majuscule initiale"
+        },
+        "font_style": {
+          "label": "Style de police",
+          "options__normal": "Normale",
+          "options__italic": "Italique"
+        },
+        "subheading_font": {
+          "label": "Famille de polices",
+          "options__heading": "Titre",
+          "options__body": "Corps"
         }
       }
     },
@@ -99,6 +385,43 @@
     "social-media": {
       "name": "Médias sociaux",
       "settings": {
+        "header__style": {
+          "content": "Style"
+        },
+        "social_type": {
+          "label": "Type",
+          "options__icon": "Icône",
+          "options__text": "Texte"
+        },
+        "social_style": {
+          "label": "Style",
+          "options__classic": "Classique",
+          "options__boxed": "Encadré"
+        },
+        "social_box_style": {
+          "label": "Style du cadre",
+          "options__fill": "Plein",
+          "options__outline": "Contour"
+        },
+        "social_shape": {
+          "label": "Forme",
+          "options__square": "Carré",
+          "options__rounded": "Arrondi",
+          "options__full": "Cercle \/ Pilule"
+        },
+        "social_radius": {
+          "label": "Rayon d'angle",
+          "info": "Basé sur le rayon d'angle des boutons.",
+          "options__main": "Angle principal",
+          "options__small": "Petit",
+          "options__extra_small": "Très petit"
+        },
+        "social_size": {
+          "label": "Taille",
+          "options__small": "Petit",
+          "options__medium": "Moyenne",
+          "options__large": "Grand"
+        },
         "social_twitter_link": {
           "label": "Twitter",
           "info": "https:\/\/twitter.com\/shopify"
@@ -135,6 +458,30 @@
           "label": "Vimeo",
           "info": "https:\/\/vimeo.com\/shopify"
         },
+        "header__sharing": {
+          "content": "Options de partage"
+        },
+        "share_facebook": {
+          "label": "Partager sur Facebook"
+        },
+        "share_x": {
+          "label": "Partager sur X (anciennement Twitter)"
+        },
+        "share_pinterest": {
+          "label": "Épingler sur Pinterest"
+        },
+        "share_telegram": {
+          "label": "Partager sur Telegram"
+        },
+        "share_whatsapp": {
+          "label": "Partager sur WhatsApp"
+        },
+        "share_line": {
+          "label": "Partager sur LINE"
+        },
+        "share_email": {
+          "label": "Partager par e-mail"
+        },
         "header": {
           "content": "Comptes sociaux"
         }
@@ -148,29 +495,6 @@
           "label": "Afficher les codes de devise"
         },
         "paragraph": "Le panier et les prix au moment du paiement indiquent toujours les codes de devise. Exemple : 1 EUR."
-      }
-    },
-    "layout": {
-      "name": "Mise en page",
-      "settings": {
-        "page_width": {
-          "label": "Largeur de la page"
-        },
-        "spacing_sections": {
-          "label": "Espace entre les sections du modèle"
-        },
-        "header__grid": {
-          "content": "Grille"
-        },
-        "paragraph__grid": {
-          "content": "Affecte les zones présentant plusieurs colonnes ou lignes."
-        },
-        "spacing_grid_horizontal": {
-          "label": "Espace horizontal"
-        },
-        "spacing_grid_vertical": {
-          "label": "Espace vertical"
-        }
       }
     },
     "search_input": {
@@ -311,6 +635,61 @@
             "label": "Collection",
             "info": "Visible lorsque le panier coulissant est vide."
           }
+        }
+      }
+    },
+    "section": {
+      "name": "Section",
+      "settings": {
+        "header__layout": {
+          "content": "Mise en page"
+        },
+        "section_layout": {
+          "label": "Mise en page",
+          "options__classic": "Classique",
+          "options__bento": "Bento"
+        },
+        "section_spacing": {
+          "label": "Espacement entre les sections",
+          "info": "Distance entre les sections de la page."
+        },
+        "section_gutter": {
+          "label": "Gouttière",
+          "info": "Espace entre les colonnes et les lignes de la grille à l'intérieur d'une section."
+        },
+        "section_radius": {
+          "label": "Rayon d'angle",
+          "options__main": "Angle principal",
+          "options__small": "Petit",
+          "options__extra_small": "Très petit",
+          "options__none": "Aucun",
+          "options__custom": "Personnalisé"
+        },
+        "section_radius_custom": {
+          "label": "Rayon d'angle personnalisé"
+        },
+        "page_width": {
+          "label": "Largeur de page"
+        },
+        "header__padding": {
+          "content": "Marge intérieure"
+        },
+        "section_padding_device": {
+          "label": "Appareil",
+          "options__desktop": "Ordinateur",
+          "options__mobile": "Mobile"
+        },
+        "section_padding_top": {
+          "label": "Haut"
+        },
+        "section_padding_bottom": {
+          "label": "Bas"
+        },
+        "section_padding_left": {
+          "label": "Gauche"
+        },
+        "section_padding_right": {
+          "label": "Droite"
         }
       }
     },

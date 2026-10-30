@@ -23,10 +23,15 @@
       "alt_text": {
         "share_on_facebook": "Zdielať na Facebooku",
         "share_on_twitter": "Tweetovať na Twitteri",
-        "share_on_pinterest": "Pripnúť na Pintereste"
+        "share_on_pinterest": "Pripnúť na Pintereste",
+        "share_on_x": "Zdieľať na X",
+        "share_on_telegram": "Zdieľať na Telegrame",
+        "share_on_whatsapp": "Zdieľať na WhatsAppe",
+        "share_on_line": "Zdieľať na LINE",
+        "share_by_email": "Zdieľať e-mailom"
       },
       "links": {
-        "twitter": "Twitter",
+        "twitter": "X",
         "facebook": "Facebook",
         "pinterest": "Pinterest",
         "instagram": "Instagram",
@@ -143,6 +148,9 @@
         "regular_price": "Normálna cena",
         "sale_price": "Cena po zľave",
         "unit_price": "Jednotková cena"
+      },
+      "selling_plans": {
+        "one_time_purchase": "Jednorazový nákup"
       },
       "pickup_availability": {
         "view_store_info": "Zobraziť informácie o obchode",
@@ -496,5 +504,18 @@
       "message": "Správa",
       "max_characters": "Maximálny počet znakov: {{ max_chars }}"
     }
+  },
+  "gift_wrapping": {
+    "title": "Zabaliť ako darček? (+£15)",
+    "to": "Pre",
+    "to_placeholder": "Meno príjemcu",
+    "from": "Od",
+    "from_placeholder": "Meno odosielateľa",
+    "message": "Darčeková správa",
+    "message_placeholder": "Sem napíšte svoju správu",
+    "edit": "Upraviť",
+    "cancel": "Zrušiť",
+    "update": "Aktualizovať",
+    "updating": "Aktualizuje sa..."
   }
 }

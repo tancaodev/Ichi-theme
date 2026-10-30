@@ -23,10 +23,15 @@
       "alt_text": {
         "share_on_facebook": "Distribuiți pe Facebook",
         "share_on_twitter": "Dați un Tweet pe Twitter",
-        "share_on_pinterest": "Postați un Pin pe Pinterest"
+        "share_on_pinterest": "Postați un Pin pe Pinterest",
+        "share_on_x": "Distribuie pe X",
+        "share_on_telegram": "Distribuie pe Telegram",
+        "share_on_whatsapp": "Distribuie pe WhatsApp",
+        "share_on_line": "Distribuie pe LINE",
+        "share_by_email": "Distribuie prin e-mail"
       },
       "links": {
-        "twitter": "Twitter",
+        "twitter": "X",
         "facebook": "Facebook",
         "pinterest": "Pinterest",
         "instagram": "Instagram",
@@ -142,6 +147,9 @@
         "regular_price": "Preț obișnuit",
         "sale_price": "Preț redus",
         "unit_price": "Preț unitar"
+      },
+      "selling_plans": {
+        "one_time_purchase": "Achiziție unică"
       },
       "pickup_availability": {
         "view_store_info": "Vizualizați informațiile despre magazin",
@@ -486,5 +494,18 @@
       "message": "Mesaj",
       "max_characters": "Maximum {{ max_chars }} (de) caractere"
     }
+  },
+  "gift_wrapping": {
+    "title": "Ambalare cadou? (+£15)",
+    "to": "Către",
+    "to_placeholder": "Numele destinatarului",
+    "from": "De la",
+    "from_placeholder": "Numele expeditorului",
+    "message": "Mesaj cadou",
+    "message_placeholder": "Scrie mesajul aici",
+    "edit": "Editează",
+    "cancel": "Anulează",
+    "update": "Actualizează",
+    "updating": "Se actualizează..."
   }
 }

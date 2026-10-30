@@ -23,10 +23,15 @@
       "alt_text": {
         "share_on_facebook": "在 Facebook 上共享",
         "share_on_twitter": "在 Twitter 上发推文",
-        "share_on_pinterest": "固定在 Pinterest 上"
+        "share_on_pinterest": "固定在 Pinterest 上",
+        "share_on_x": "分享到 X",
+        "share_on_telegram": "分享到 Telegram",
+        "share_on_whatsapp": "分享到 WhatsApp",
+        "share_on_line": "分享到 LINE",
+        "share_by_email": "通过电子邮件分享"
       },
       "links": {
-        "twitter": "Twitter",
+        "twitter": "X",
         "facebook": "Facebook",
         "pinterest": "Pinterest",
         "instagram": "Instagram",
@@ -134,6 +139,9 @@
         "regular_price": "常规价格",
         "sale_price": "促销价",
         "unit_price": "单价"
+      },
+      "selling_plans": {
+        "one_time_purchase": "一次性购买"
       },
       "share": "分享此产品",
       "sold_out": "售罄",
@@ -476,5 +484,18 @@
       "message": "消息",
       "max_characters": "不超过 {{ max_chars }} 个字符"
     }
+  },
+  "gift_wrapping": {
+    "title": "包装成礼品？(+£15)",
+    "to": "收件人",
+    "to_placeholder": "收件人姓名",
+    "from": "寄件人",
+    "from_placeholder": "寄件人姓名",
+    "message": "礼品留言",
+    "message_placeholder": "在此输入您的留言",
+    "edit": "编辑",
+    "cancel": "取消",
+    "update": "更新",
+    "updating": "正在更新..."
   }
 }

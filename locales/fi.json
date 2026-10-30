@@ -23,10 +23,15 @@
       "alt_text": {
         "share_on_facebook": "Jaa Facebookissa",
         "share_on_twitter": "Twiittaa Twitterissä",
-        "share_on_pinterest": "Pinnaa Pinterestissä"
+        "share_on_pinterest": "Pinnaa Pinterestissä",
+        "share_on_x": "Jaa X:ssä",
+        "share_on_telegram": "Jaa Telegramissa",
+        "share_on_whatsapp": "Jaa WhatsAppissa",
+        "share_on_line": "Jaa LINEssa",
+        "share_by_email": "Jaa sähköpostitse"
       },
       "links": {
-        "twitter": "Twitter",
+        "twitter": "X",
         "facebook": "Facebook",
         "pinterest": "Pinterest",
         "instagram": "Instagram",
@@ -134,6 +139,9 @@
         "regular_price": "Normaalihinta",
         "sale_price": "Alennushinta",
         "unit_price": "Yksikköhinta"
+      },
+      "selling_plans": {
+        "one_time_purchase": "Kertaostos"
       },
       "share": "Jaa tämä tuote",
       "sold_out": "Loppuunmyyty",
@@ -476,5 +484,18 @@
       "message": "Viesti",
       "max_characters": "enintään {{ max_chars }} merkkiä"
     }
+  },
+  "gift_wrapping": {
+    "title": "Paketoidaanko lahjaksi? (+£15)",
+    "to": "Vastaanottaja",
+    "to_placeholder": "Vastaanottajan nimi",
+    "from": "Lähettäjä",
+    "from_placeholder": "Lähettäjän nimi",
+    "message": "Lahjaviesti",
+    "message_placeholder": "Kirjoita viestisi tähän",
+    "edit": "Muokkaa",
+    "cancel": "Peruuta",
+    "update": "Päivitä",
+    "updating": "Päivitetään..."
   }
 }

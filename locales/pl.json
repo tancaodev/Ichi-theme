@@ -23,10 +23,15 @@
       "alt_text": {
         "share_on_facebook": "Udostępnij na Facebooku",
         "share_on_twitter": "Tweetuj na Twitterze",
-        "share_on_pinterest": "Przypnij do tablicy Pinterest"
+        "share_on_pinterest": "Przypnij do tablicy Pinterest",
+        "share_on_x": "Udostępnij na X",
+        "share_on_telegram": "Udostępnij na Telegramie",
+        "share_on_whatsapp": "Udostępnij na WhatsAppie",
+        "share_on_line": "Udostępnij na LINE",
+        "share_by_email": "Udostępnij przez e-mail"
       },
       "links": {
-        "twitter": "Twitter",
+        "twitter": "X",
         "facebook": "Facebook",
         "pinterest": "Pinterest",
         "instagram": "Instagram",
@@ -143,6 +148,9 @@
         "regular_price": "Cena regularna",
         "sale_price": "Cena promocyjna",
         "unit_price": "Cena jednostkowa"
+      },
+      "selling_plans": {
+        "one_time_purchase": "Zakup jednorazowy"
       },
       "pickup_availability": {
         "view_store_info": "Wyświetl informacje o sklepie",
@@ -496,5 +504,18 @@
       "message": "Wiadomość",
       "max_characters": "Maks. {{ max_chars }} znaki(-ów)"
     }
+  },
+  "gift_wrapping": {
+    "title": "Zapakować na prezent? (+£15)",
+    "to": "Do",
+    "to_placeholder": "Imię odbiorcy",
+    "from": "Od",
+    "from_placeholder": "Imię nadawcy",
+    "message": "Wiadomość do prezentu",
+    "message_placeholder": "Wpisz tutaj swoją wiadomość",
+    "edit": "Edytuj",
+    "cancel": "Anuluj",
+    "update": "Aktualizuj",
+    "updating": "Aktualizowanie..."
   }
 }

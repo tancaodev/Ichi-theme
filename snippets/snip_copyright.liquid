@@ -1,0 +1,69 @@
+{%- doc -%}
+  Renders the store copyright line, optionally followed by "Powered by Shopify".
+  Typography uses a preset (Paragraph, Description, Label) or custom values, with an optional mobile override.
+  Settings are read by the `copyright_` prefix, so any block or section exposing the same setting ids
+  can reuse this snippet.
+
+  @param {object} component_settings - Settings object holding the `copyright_*` settings (block.settings or section.settings).
+  @param {string} component_id - Unique id used to scope the instance CSS variables (block.id or section.id).
+  @param {string} [attributes] - Theme editor attributes for the wrapper (block.shopify_attributes).
+
+  @example
+  {% render 'snip_copyright', component_settings: block.settings, component_id: block.id, attributes: block.shopify_attributes %}
+{%- enddoc -%}
+{%- liquid
+  assign st = component_settings
+  assign copyright_id = 'Copyright-' | append: component_id
+  assign year = 'now' | date: '%Y'
+  assign store_link = shop.name | link_to: routes.root_url, class: 'copyright__strong'
+-%}
+{% render 'copyright_styles', component_settings: st, copyright_id: copyright_id %}
+<p id="{{ copyright_id }}" class="copyright" {{ attributes }}>
+  {{- 'blocks.copyright.copyright_html' | t: year: year, store_name: store_link -}}
+  {%- if st.copyright_show_powered_by -%}
+    {%- capture shopify_link -%}
+      <a
+        class="copyright__strong"
+        href="https://www.shopify.com?utm_campaign=poweredby&utm_medium=shopify&utm_source=onlinestore"
+        target="_blank"
+        rel="nofollow"
+      >Shopify</a>
+    {%- endcapture %}
+    {{ 'blocks.copyright.powered_by_html' | t: shopify: shopify_link -}}
+  {%- endif -%}
+</p>
+
+{% stylesheet %}
+  .copyright {
+    margin: 0;
+    color: rgba(var(--color-foreground), 0.6);
+    font-family: var(--copyright-font-family-mobile);
+    font-size: var(--copyright-font-size-mobile);
+    line-height: var(--copyright-line-height-mobile);
+    letter-spacing: var(--copyright-letter-spacing-mobile);
+    font-weight: var(--copyright-font-weight-mobile);
+    text-transform: var(--copyright-text-transform-mobile);
+  }
+
+  .copyright .copyright__strong {
+    color: rgb(var(--color-foreground));
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .copyright a.copyright__strong:hover {
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+  }
+
+  @media screen and (min-width: 750px) {
+    .copyright {
+      font-family: var(--copyright-font-family);
+      font-size: var(--copyright-font-size);
+      line-height: var(--copyright-line-height);
+      letter-spacing: var(--copyright-letter-spacing);
+      font-weight: var(--copyright-font-weight);
+      text-transform: var(--copyright-text-transform);
+    }
+  }
+{% endstylesheet %}

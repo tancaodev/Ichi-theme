@@ -23,10 +23,15 @@
       "alt_text": {
         "share_on_facebook": "Поделиться в Facebook",
         "share_on_twitter": "Опубликовать в Твиттере",
-        "share_on_pinterest": "Сохранить в Pinterest"
+        "share_on_pinterest": "Сохранить в Pinterest",
+        "share_on_x": "Поделиться в X",
+        "share_on_telegram": "Поделиться в Telegram",
+        "share_on_whatsapp": "Поделиться в WhatsApp",
+        "share_on_line": "Поделиться в LINE",
+        "share_by_email": "Поделиться по эл. почте"
       },
       "links": {
-        "twitter": "Твиттер",
+        "twitter": "X",
         "facebook": "Facebook",
         "pinterest": "Pinterest",
         "instagram": "Instagram",
@@ -143,6 +148,9 @@
         "regular_price": "Обычная цена",
         "sale_price": "Цена со скидкой",
         "unit_price": "Цена за единицу"
+      },
+      "selling_plans": {
+        "one_time_purchase": "Разовая покупка"
       },
       "pickup_availability": {
         "view_store_info": "Сведения о магазине",
@@ -496,5 +504,18 @@
       "message": "Сообщение",
       "max_characters": "Не больше {{ max_chars }} симв."
     }
+  },
+  "gift_wrapping": {
+    "title": "Упаковать как подарок? (+£15)",
+    "to": "Кому",
+    "to_placeholder": "Имя получателя",
+    "from": "От кого",
+    "from_placeholder": "Имя отправителя",
+    "message": "Подарочное сообщение",
+    "message_placeholder": "Введите сообщение здесь",
+    "edit": "Изменить",
+    "cancel": "Отмена",
+    "update": "Обновить",
+    "updating": "Обновление..."
   }
 }

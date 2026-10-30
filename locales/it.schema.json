@@ -8,6 +8,220 @@
  * ------------------------------------------------------------
  */
 {
+  "blocks": {
+    "shared": {
+      "settings": {
+        "custom_mobile": {
+          "label": "Personalizzato su dispositivi mobili"
+        },
+        "header_layout": {
+          "content": "Layout"
+        },
+        "header_spacing": {
+          "content": "Spaziatura"
+        },
+        "margin_top": {
+          "label": "In alto"
+        },
+        "margin_bottom": {
+          "label": "In basso"
+        },
+        "margin_left": {
+          "label": "A sinistra"
+        },
+        "margin_right": {
+          "label": "A destra"
+        }
+      }
+    },
+    "heading": {
+      "name": "Titolo",
+      "settings": {
+        "heading": {
+          "label": "Titolo"
+        },
+        "header_typography": {
+          "content": "Tipografia"
+        },
+        "size": {
+          "label": "Dimensione",
+          "info": "Modifica le dimensioni in Impostazioni del tema > Tipografia",
+          "options__display": "Display",
+          "options__h1": "Titolo 1",
+          "options__h2": "Titolo 2",
+          "options__h3": "Titolo 3",
+          "options__h4": "Titolo 4",
+          "options__h5": "Titolo 5",
+          "options__h6": "Titolo 6",
+          "options__subheading": "Sottotitoli",
+          "options__custom": "Personalizzato"
+        },
+        "heading_tag": {
+          "label": "Tag HTML",
+          "info": "Scegli il livello di titolo adatto alla struttura della pagina per la SEO"
+        },
+        "font_family": {
+          "label": "Famiglia di caratteri",
+          "options__heading": "Titolo",
+          "options__body": "Corpo",
+          "options__highlight": "Accento"
+        },
+        "font_size": {
+          "label": "Dimensione carattere",
+          "info": "px"
+        },
+        "width": {
+          "label": "Larghezza",
+          "options__fit": "Adatta",
+          "options__fill": "Riempi",
+          "options__custom": "Personalizzato"
+        },
+        "width_unit": {
+          "label": "Unità",
+          "options__percent": "Percentuale",
+          "options__pixel": "Pixel"
+        },
+        "custom_width": {
+          "label": "Larghezza personalizzata"
+        },
+        "alignment": {
+          "label": "Allineamento"
+        },
+        "header_highlight": {
+          "content": "Evidenziazione del testo",
+          "info": "Per applicare un’evidenziazione, imposta il testo in corsivo"
+        },
+        "highlight_style": {
+          "label": "Stile di evidenziazione",
+          "options__none": "Nessuno",
+          "options__text_color": "Colore del testo",
+          "options__underline_soft": "Sottolineatura (morbida)",
+          "options__underline_double": "Sottolineatura (doppia)",
+          "options__underline_wavy": "Sottolineatura (ondulata)",
+          "options__circle_outline": "Cerchio (contorno)",
+          "options__highlight_bar": "Evidenziazione (barra)",
+          "options__highlight_solid": "Evidenziazione (piena)"
+        },
+        "highlight_color": {
+          "label": "Colore di evidenziazione",
+          "info": "Per impostazione predefinita, il colore di accento"
+        },
+        "margin": {
+          "label": "Margine"
+        }
+      }
+    },
+    "divider": {
+      "name": "Divisore",
+      "settings": {
+        "direction": {
+          "label": "Direzione",
+          "options__horizontal": "Orizzontale",
+          "options__vertical": "Verticale"
+        },
+        "width": {
+          "label": "Larghezza"
+        },
+        "height": {
+          "label": "Altezza"
+        },
+        "thickness": {
+          "label": "Spessore"
+        },
+        "header_style": {
+          "content": "Stile"
+        },
+        "style": {
+          "label": "Stile",
+          "options__line": "Linea",
+          "options__dot": "Punto"
+        },
+        "corner_radius": {
+          "label": "Raggio degli angoli",
+          "options__square": "Quadrato",
+          "options__rounded": "Arrotondato"
+        }
+      }
+    },
+    "icon": {
+      "name": "Icona",
+      "settings": {
+        "icon_source": {
+          "label": "Scegli icona",
+          "options__library": "Libreria",
+          "options__upload": "Carica"
+        },
+        "icon": {
+          "label": "Icona",
+          "options__arrow_up_right": "Freccia in alto a destra"
+        },
+        "icon_image": {
+          "label": "Icona immagine"
+        },
+        "icon_size": {
+          "label": "Dimensione icona",
+          "options__custom": "Personalizzato"
+        },
+        "custom_size": {
+          "label": "Dimensione personalizzata"
+        },
+        "header_style": {
+          "content": "Stile"
+        },
+        "icon_style": {
+          "label": "Stile",
+          "info": "Lo stile Riquadro aggiunge 12 px di spaziatura interna per impostazione predefinita, lo stile Classico nessuna",
+          "options__classic": "Classico",
+          "options__boxed": "Riquadro"
+        },
+        "icon_box_style": {
+          "label": "Stile riquadro",
+          "options__fill": "Pieno",
+          "options__outline": "Contorno"
+        },
+        "icon_shape": {
+          "label": "Forma",
+          "options__square": "Quadrato",
+          "options__rounded": "Arrotondato",
+          "options__circle": "Cerchio"
+        },
+        "icon_corner_radius": {
+          "label": "Raggio degli angoli",
+          "info": "Usa il raggio degli angoli delle impostazioni del tema",
+          "options__main": "Contenuto principale",
+          "options__buttons": "Pulsanti",
+          "options__media": "Contenuti multimediali"
+        },
+        "icon_color": {
+          "label": "Colore",
+          "options__strong": "Intenso",
+          "options__light": "Chiaro"
+        },
+        "padding": {
+          "label": "Spaziatura interna"
+        },
+        "padding_value": {
+          "label": "Valore"
+        },
+        "margin": {
+          "label": "Margine"
+        }
+      }
+    },
+    "spacer": {
+      "name": "Spaziatore",
+      "settings": {
+        "unit": {
+          "label": "Unità",
+          "options__percent": "Percentuale",
+          "options__pixel": "Pixel"
+        },
+        "size": {
+          "label": "Dimensione"
+        }
+      }
+    }
+  },
   "settings_schema": {
     "colors": {
       "name": "Colori",
@@ -60,25 +274,97 @@
     "typography": {
       "name": "Caratteri tipografici",
       "settings": {
+        "header_font_family": {
+          "content": "Famiglia di caratteri"
+        },
+        "header_paragraph": {
+          "content": "Paragrafo"
+        },
+        "header_highlight": {
+          "content": "Evidenziazione"
+        },
+        "header_display": {
+          "content": "Titolo Display"
+        },
+        "header_h1": {
+          "content": "Titolo 1"
+        },
+        "header_h2": {
+          "content": "Titolo 2"
+        },
+        "header_h3": {
+          "content": "Titolo 3"
+        },
+        "header_h4": {
+          "content": "Titolo 4"
+        },
+        "header_h5": {
+          "content": "Titolo 5"
+        },
+        "header_h6": {
+          "content": "Titolo 6"
+        },
+        "header_subheading": {
+          "content": "Sottotitoli"
+        },
+        "header_description": {
+          "content": "Descrizione"
+        },
+        "header_label": {
+          "content": "Etichetta"
+        },
         "type_header_font": {
           "label": "Font",
           "info": "La selezione di un font diverso può influenzare la velocità del tuo negozio. [Maggiori informazioni sui font di sistema.](https:\/\/help.shopify.com\/manual\/online-store\/os\/store-speed\/improving-speed#fonts)"
         },
-        "header__1": {
-          "content": "Titoli"
-        },
-        "header__2": {
-          "content": "Testo"
+        "type_highlight_font": {
+          "label": "Evidenziazione",
+          "info": "Usato per le parole evidenziate nei titoli."
         },
         "type_body_font": {
           "label": "Font",
           "info": "La selezione di un font diverso può influenzare la velocità del tuo negozio. [Maggiori informazioni sui font di sistema.](https:\/\/help.shopify.com\/manual\/online-store\/os\/store-speed\/improving-speed#fonts)"
         },
-        "heading_scale": {
-          "label": "Scalabilità dimensione font"
+        "font_size": {
+          "label": "Dimensione"
         },
-        "body_scale": {
-          "label": "Scalabilità dimensione font"
+        "mobile_font_size": {
+          "label": "Dimensione su dispositivi mobili"
+        },
+        "line_height": {
+          "label": "Altezza riga"
+        },
+        "letter_spacing": {
+          "label": "Spaziatura lettere"
+        },
+        "paragraph_spacing": {
+          "label": "Spaziatura paragrafi"
+        },
+        "font_weight": {
+          "label": "Spessore carattere",
+          "options__light": "Sottile",
+          "options__regular": "Normale",
+          "options__medium": "Medio",
+          "options__semibold": "Semigrassetto",
+          "options__bold": "Grassetto",
+          "options__extrabold": "Extragrassetto"
+        },
+        "case": {
+          "label": "Maiuscole\/minuscole",
+          "options__normal": "Normale",
+          "options__uppercase": "Maiuscolo",
+          "options__lowercase": "Minuscolo",
+          "options__capitalize": "Iniziali maiuscole"
+        },
+        "font_style": {
+          "label": "Stile carattere",
+          "options__normal": "Normale",
+          "options__italic": "Corsivo"
+        },
+        "subheading_font": {
+          "label": "Famiglia di caratteri",
+          "options__heading": "Titolo",
+          "options__body": "Corpo"
         }
       }
     },
@@ -99,6 +385,43 @@
     "social-media": {
       "name": "Social media",
       "settings": {
+        "header__style": {
+          "content": "Stile"
+        },
+        "social_type": {
+          "label": "Tipo",
+          "options__icon": "Icona",
+          "options__text": "Testo"
+        },
+        "social_style": {
+          "label": "Stile",
+          "options__classic": "Classico",
+          "options__boxed": "Riquadro"
+        },
+        "social_box_style": {
+          "label": "Stile riquadro",
+          "options__fill": "Pieno",
+          "options__outline": "Contorno"
+        },
+        "social_shape": {
+          "label": "Forma",
+          "options__square": "Quadrato",
+          "options__rounded": "Arrotondato",
+          "options__full": "Cerchio \/ Pillola"
+        },
+        "social_radius": {
+          "label": "Raggio degli angoli",
+          "info": "Basato sul raggio degli angoli dei pulsanti.",
+          "options__main": "Angolo principale",
+          "options__small": "Piccolo",
+          "options__extra_small": "Molto piccolo"
+        },
+        "social_size": {
+          "label": "Dimensione",
+          "options__small": "Piccolo",
+          "options__medium": "Medio",
+          "options__large": "Grande"
+        },
         "social_twitter_link": {
           "label": "Twitter",
           "info": "https:\/\/twitter.com\/shopify"
@@ -135,6 +458,30 @@
           "label": "Vimeo",
           "info": "https:\/\/vimeo.com\/shopify"
         },
+        "header__sharing": {
+          "content": "Opzioni di condivisione"
+        },
+        "share_facebook": {
+          "label": "Condividi su Facebook"
+        },
+        "share_x": {
+          "label": "Condividi su X (in precedenza Twitter)"
+        },
+        "share_pinterest": {
+          "label": "Aggiungi pin su Pinterest"
+        },
+        "share_telegram": {
+          "label": "Condividi su Telegram"
+        },
+        "share_whatsapp": {
+          "label": "Condividi su WhatsApp"
+        },
+        "share_line": {
+          "label": "Condividi su LINE"
+        },
+        "share_email": {
+          "label": "Condividi via e-mail"
+        },
         "header": {
           "content": "Account social"
         }
@@ -148,29 +495,6 @@
           "label": "Mostra i codici valuta"
         },
         "paragraph": "I prezzi del carrello e del check-out mostrano sempre i codici valuta. Esempio: 1,00 EUR."
-      }
-    },
-    "layout": {
-      "name": "Layout",
-      "settings": {
-        "page_width": {
-          "label": "Larghezza pagina"
-        },
-        "spacing_sections": {
-          "label": "Spazio tra le sezioni del modello"
-        },
-        "header__grid": {
-          "content": "Griglia"
-        },
-        "paragraph__grid": {
-          "content": "Incide sulle aree con colonne o righe multiple."
-        },
-        "spacing_grid_horizontal": {
-          "label": "Spazio orizzontale"
-        },
-        "spacing_grid_vertical": {
-          "label": "Spazio verticale"
-        }
       }
     },
     "search_input": {
@@ -311,6 +635,61 @@
             "label": "Collezione",
             "info": "Visibile quando la finestra del carrello è vuota."
           }
+        }
+      }
+    },
+    "section": {
+      "name": "Sezione",
+      "settings": {
+        "header__layout": {
+          "content": "Layout"
+        },
+        "section_layout": {
+          "label": "Layout",
+          "options__classic": "Classico",
+          "options__bento": "Bento"
+        },
+        "section_spacing": {
+          "label": "Spaziatura tra le sezioni",
+          "info": "Distanza tra le sezioni della pagina."
+        },
+        "section_gutter": {
+          "label": "Spaziatura della griglia",
+          "info": "Spazio tra le colonne e le righe della griglia all’interno di una sezione."
+        },
+        "section_radius": {
+          "label": "Raggio degli angoli",
+          "options__main": "Angolo principale",
+          "options__small": "Piccolo",
+          "options__extra_small": "Molto piccolo",
+          "options__none": "Nessuno",
+          "options__custom": "Personalizzato"
+        },
+        "section_radius_custom": {
+          "label": "Raggio degli angoli personalizzato"
+        },
+        "page_width": {
+          "label": "Larghezza pagina"
+        },
+        "header__padding": {
+          "content": "Spaziatura interna"
+        },
+        "section_padding_device": {
+          "label": "Dispositivo",
+          "options__desktop": "Desktop",
+          "options__mobile": "Mobile"
+        },
+        "section_padding_top": {
+          "label": "In alto"
+        },
+        "section_padding_bottom": {
+          "label": "In basso"
+        },
+        "section_padding_left": {
+          "label": "A sinistra"
+        },
+        "section_padding_right": {
+          "label": "A destra"
         }
       }
     },

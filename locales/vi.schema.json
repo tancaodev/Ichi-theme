@@ -8,6 +8,220 @@
  * ------------------------------------------------------------
  */
 {
+  "blocks": {
+    "shared": {
+      "settings": {
+        "custom_mobile": {
+          "label": "Tùy chỉnh trên di động"
+        },
+        "header_layout": {
+          "content": "Bố cục"
+        },
+        "header_spacing": {
+          "content": "Khoảng cách"
+        },
+        "margin_top": {
+          "label": "Trên"
+        },
+        "margin_bottom": {
+          "label": "Dưới"
+        },
+        "margin_left": {
+          "label": "Trái"
+        },
+        "margin_right": {
+          "label": "Phải"
+        }
+      }
+    },
+    "heading": {
+      "name": "Tiêu đề",
+      "settings": {
+        "heading": {
+          "label": "Tiêu đề"
+        },
+        "header_typography": {
+          "content": "Kiểu chữ"
+        },
+        "size": {
+          "label": "Kích thước",
+          "info": "Chỉnh sửa kích thước trong Cài đặt chủ đề > Kiểu chữ",
+          "options__display": "Hiển thị",
+          "options__h1": "Tiêu đề 1",
+          "options__h2": "Tiêu đề 2",
+          "options__h3": "Tiêu đề 3",
+          "options__h4": "Tiêu đề 4",
+          "options__h5": "Tiêu đề 5",
+          "options__h6": "Tiêu đề 6",
+          "options__subheading": "Tiêu đề phụ",
+          "options__custom": "Tùy chỉnh"
+        },
+        "heading_tag": {
+          "label": "Thẻ HTML",
+          "info": "Chọn cấp tiêu đề phù hợp với cấu trúc trang để tối ưu SEO"
+        },
+        "font_family": {
+          "label": "Họ phông chữ",
+          "options__heading": "Tiêu đề",
+          "options__body": "Nội dung",
+          "options__highlight": "Nhấn mạnh"
+        },
+        "font_size": {
+          "label": "Cỡ chữ",
+          "info": "px"
+        },
+        "width": {
+          "label": "Chiều rộng",
+          "options__fit": "Vừa nội dung",
+          "options__fill": "Lấp đầy",
+          "options__custom": "Tùy chỉnh"
+        },
+        "width_unit": {
+          "label": "Đơn vị",
+          "options__percent": "Phần trăm",
+          "options__pixel": "Pixel"
+        },
+        "custom_width": {
+          "label": "Chiều rộng tùy chỉnh"
+        },
+        "alignment": {
+          "label": "Căn chỉnh"
+        },
+        "header_highlight": {
+          "content": "Làm nổi bật văn bản",
+          "info": "Để làm nổi bật, hãy chuyển văn bản sang chữ nghiêng"
+        },
+        "highlight_style": {
+          "label": "Kiểu làm nổi bật",
+          "options__none": "Không có",
+          "options__text_color": "Màu chữ",
+          "options__underline_soft": "Gạch chân (mềm)",
+          "options__underline_double": "Gạch chân (kép)",
+          "options__underline_wavy": "Gạch chân (lượn sóng)",
+          "options__circle_outline": "Khoanh tròn (viền)",
+          "options__highlight_bar": "Tô sáng (thanh)",
+          "options__highlight_solid": "Tô sáng (đặc)"
+        },
+        "highlight_color": {
+          "label": "Màu làm nổi bật",
+          "info": "Mặc định là màu nhấn"
+        },
+        "margin": {
+          "label": "Lề"
+        }
+      }
+    },
+    "divider": {
+      "name": "Đường phân cách",
+      "settings": {
+        "direction": {
+          "label": "Hướng",
+          "options__horizontal": "Ngang",
+          "options__vertical": "Dọc"
+        },
+        "width": {
+          "label": "Chiều rộng"
+        },
+        "height": {
+          "label": "Chiều cao"
+        },
+        "thickness": {
+          "label": "Độ dày"
+        },
+        "header_style": {
+          "content": "Kiểu"
+        },
+        "style": {
+          "label": "Kiểu",
+          "options__line": "Đường kẻ",
+          "options__dot": "Chấm"
+        },
+        "corner_radius": {
+          "label": "Bán kính góc",
+          "options__square": "Vuông",
+          "options__rounded": "Bo tròn"
+        }
+      }
+    },
+    "icon": {
+      "name": "Biểu tượng",
+      "settings": {
+        "icon_source": {
+          "label": "Chọn biểu tượng",
+          "options__library": "Thư viện",
+          "options__upload": "Tải lên"
+        },
+        "icon": {
+          "label": "Biểu tượng",
+          "options__arrow_up_right": "Mũi tên lên phải"
+        },
+        "icon_image": {
+          "label": "Biểu tượng hình ảnh"
+        },
+        "icon_size": {
+          "label": "Kích thước biểu tượng",
+          "options__custom": "Tùy chỉnh"
+        },
+        "custom_size": {
+          "label": "Kích thước tùy chỉnh"
+        },
+        "header_style": {
+          "content": "Kiểu"
+        },
+        "icon_style": {
+          "label": "Kiểu",
+          "info": "Kiểu Hộp mặc định thêm khoảng đệm 12px, kiểu Cổ điển không có",
+          "options__classic": "Cổ điển",
+          "options__boxed": "Hộp"
+        },
+        "icon_box_style": {
+          "label": "Kiểu hộp",
+          "options__fill": "Tô màu",
+          "options__outline": "Viền ngoài"
+        },
+        "icon_shape": {
+          "label": "Hình dạng",
+          "options__square": "Vuông",
+          "options__rounded": "Bo tròn",
+          "options__circle": "Tròn"
+        },
+        "icon_corner_radius": {
+          "label": "Bán kính góc",
+          "info": "Sử dụng bán kính góc từ cài đặt chủ đề",
+          "options__main": "Nội dung chính",
+          "options__buttons": "Nút",
+          "options__media": "Phương tiện"
+        },
+        "icon_color": {
+          "label": "Màu sắc",
+          "options__strong": "Đậm",
+          "options__light": "Nhạt"
+        },
+        "padding": {
+          "label": "Khoảng đệm"
+        },
+        "padding_value": {
+          "label": "Giá trị"
+        },
+        "margin": {
+          "label": "Lề"
+        }
+      }
+    },
+    "spacer": {
+      "name": "Khoảng trống",
+      "settings": {
+        "unit": {
+          "label": "Đơn vị",
+          "options__percent": "Phần trăm",
+          "options__pixel": "Pixel"
+        },
+        "size": {
+          "label": "Kích thước"
+        }
+      }
+    }
+  },
   "settings_schema": {
     "colors": {
       "name": "Màu sắc",
@@ -60,25 +274,97 @@
     "typography": {
       "name": "Kiểu chữ",
       "settings": {
+        "header_font_family": {
+          "content": "Họ phông chữ"
+        },
+        "header_paragraph": {
+          "content": "Đoạn văn"
+        },
+        "header_highlight": {
+          "content": "Nhấn mạnh"
+        },
+        "header_display": {
+          "content": "Tiêu đề hiển thị"
+        },
+        "header_h1": {
+          "content": "Tiêu đề 1"
+        },
+        "header_h2": {
+          "content": "Tiêu đề 2"
+        },
+        "header_h3": {
+          "content": "Tiêu đề 3"
+        },
+        "header_h4": {
+          "content": "Tiêu đề 4"
+        },
+        "header_h5": {
+          "content": "Tiêu đề 5"
+        },
+        "header_h6": {
+          "content": "Tiêu đề 6"
+        },
+        "header_subheading": {
+          "content": "Tiêu đề phụ"
+        },
+        "header_description": {
+          "content": "Mô tả"
+        },
+        "header_label": {
+          "content": "Nhãn"
+        },
         "type_header_font": {
-          "label": "Phông chữ",
+          "label": "Tiêu đề",
           "info": "Việc chọn phông chữ khác có thể ảnh hưởng đến tốc độ của cửa hàng. [Tìm hiểu thêm về phông chữ hệ thống.](https:\/\/help.shopify.com\/manual\/online-store\/os\/store-speed\/improving-speed#fonts)"
         },
-        "header__1": {
-          "content": "Tiêu đề"
-        },
-        "header__2": {
-          "content": "Nội dung"
+        "type_highlight_font": {
+          "label": "Nhấn mạnh",
+          "info": "Dùng cho các từ được làm nổi bật trong tiêu đề."
         },
         "type_body_font": {
-          "label": "Phông chữ",
+          "label": "Nội dung",
           "info": "Việc chọn phông chữ khác có thể ảnh hưởng đến tốc độ của cửa hàng. [Tìm hiểu thêm về phông chữ hệ thống.](https:\/\/help.shopify.com\/manual\/online-store\/os\/store-speed\/improving-speed#fonts)"
         },
-        "heading_scale": {
-          "label": "Tỷ lệ cỡ phông chữ"
+        "font_size": {
+          "label": "Kích thước"
         },
-        "body_scale": {
-          "label": "Tỷ lệ cỡ phông chữ"
+        "mobile_font_size": {
+          "label": "Kích thước trên di động"
+        },
+        "line_height": {
+          "label": "Chiều cao dòng"
+        },
+        "letter_spacing": {
+          "label": "Khoảng cách chữ"
+        },
+        "paragraph_spacing": {
+          "label": "Khoảng cách đoạn"
+        },
+        "font_weight": {
+          "label": "Độ đậm phông chữ",
+          "options__light": "Mảnh",
+          "options__regular": "Thường",
+          "options__medium": "Vừa",
+          "options__semibold": "Hơi đậm",
+          "options__bold": "Đậm",
+          "options__extrabold": "Rất đậm"
+        },
+        "case": {
+          "label": "Kiểu chữ hoa\/thường",
+          "options__normal": "Bình thường",
+          "options__uppercase": "Chữ hoa",
+          "options__lowercase": "Chữ thường",
+          "options__capitalize": "Viết hoa chữ cái đầu"
+        },
+        "font_style": {
+          "label": "Kiểu phông chữ",
+          "options__normal": "Bình thường",
+          "options__italic": "Nghiêng"
+        },
+        "subheading_font": {
+          "label": "Họ phông chữ",
+          "options__heading": "Tiêu đề",
+          "options__body": "Nội dung"
         }
       }
     },
@@ -99,17 +385,49 @@
     "social-media": {
       "name": "Truyền thông xã hội",
       "settings": {
-        "social_twitter_link": {
-          "label": "Twitter",
-          "info": "https:\/\/twitter.com\/shopify"
+        "header__style": {
+          "content": "Kiểu"
+        },
+        "social_type": {
+          "label": "Loại",
+          "options__icon": "Biểu tượng",
+          "options__text": "Văn bản"
+        },
+        "social_style": {
+          "label": "Kiểu",
+          "options__classic": "Cổ điển",
+          "options__boxed": "Hộp"
+        },
+        "social_box_style": {
+          "label": "Kiểu hộp",
+          "options__fill": "Tô màu",
+          "options__outline": "Viền ngoài"
+        },
+        "social_shape": {
+          "label": "Hình dạng",
+          "options__square": "Vuông",
+          "options__rounded": "Bo tròn",
+          "options__full": "Tròn \/ Viên thuốc"
+        },
+        "social_radius": {
+          "label": "Bán kính góc",
+          "info": "Dựa trên bán kính góc của nút.",
+          "options__main": "Góc chính",
+          "options__small": "Nhỏ",
+          "options__extra_small": "Rất nhỏ"
+        },
+        "social_size": {
+          "label": "Kích thước",
+          "options__small": "Nhỏ",
+          "options__medium": "Vừa",
+          "options__large": "Lớn"
+        },
+        "header": {
+          "content": "Tài khoản mạng xã hội"
         },
         "social_facebook_link": {
           "label": "Facebook",
           "info": "https:\/\/facebook.com\/shopify"
-        },
-        "social_pinterest_link": {
-          "label": "Pinterest",
-          "info": "https:\/\/pinterest.com\/shopify"
         },
         "social_instagram_link": {
           "label": "Instagram",
@@ -119,13 +437,21 @@
           "label": "TikTok",
           "info": "https:\/\/tiktok.com\/@shopify"
         },
-        "social_tumblr_link": {
-          "label": "Tumblr",
-          "info": "https:\/\/shopify.tumblr.com"
+        "social_twitter_link": {
+          "label": "X (trước đây là Twitter)",
+          "info": "https:\/\/x.com\/shopify"
         },
         "social_snapchat_link": {
           "label": "Snapchat",
           "info": "https:\/\/www.snapchat.com\/add\/shopify"
+        },
+        "social_pinterest_link": {
+          "label": "Pinterest",
+          "info": "https:\/\/pinterest.com\/shopify"
+        },
+        "social_tumblr_link": {
+          "label": "Tumblr",
+          "info": "https:\/\/shopify.tumblr.com"
         },
         "social_youtube_link": {
           "label": "YouTube",
@@ -135,8 +461,29 @@
           "label": "Vimeo",
           "info": "https:\/\/vimeo.com\/shopify"
         },
-        "header": {
-          "content": "Tài khoản mạng xã hội"
+        "header__sharing": {
+          "content": "Tùy chọn chia sẻ"
+        },
+        "share_facebook": {
+          "label": "Chia sẻ trên Facebook"
+        },
+        "share_x": {
+          "label": "Chia sẻ trên X (trước đây là Twitter)"
+        },
+        "share_pinterest": {
+          "label": "Ghim trên Pinterest"
+        },
+        "share_telegram": {
+          "label": "Chia sẻ trên Telegram"
+        },
+        "share_whatsapp": {
+          "label": "Chia sẻ trên WhatsApp"
+        },
+        "share_line": {
+          "label": "Chia sẻ trên LINE"
+        },
+        "share_email": {
+          "label": "Chia sẻ qua email"
         }
       }
     },
@@ -148,29 +495,6 @@
           "label": "Hiển thị mã đơn vị tiền tệ"
         },
         "paragraph": "Giá giỏ hàng và giá thanh toán luôn hiển thị mã đơn vị tiền tệ. Ví dụ: 1,00 USD."
-      }
-    },
-    "layout": {
-      "name": "Bố cục",
-      "settings": {
-        "page_width": {
-          "label": "Chiều rộng trang"
-        },
-        "spacing_sections": {
-          "label": "Khoảng cách giữa các mục mẫu"
-        },
-        "header__grid": {
-          "content": "Lưới"
-        },
-        "paragraph__grid": {
-          "content": "Ảnh hưởng đến vùng có nhiều cột hoặc hàng."
-        },
-        "spacing_grid_horizontal": {
-          "label": "Không gian ngang"
-        },
-        "spacing_grid_vertical": {
-          "label": "Không gian dọc"
-        }
       }
     },
     "search_input": {
@@ -389,6 +713,61 @@
         },
         "paragraph": {
           "content": "Thêm mô tả thương hiệu vào chân trang của cửa hàng."
+        }
+      }
+    },
+    "section": {
+      "name": "Mục",
+      "settings": {
+        "header__layout": {
+          "content": "Bố cục"
+        },
+        "section_layout": {
+          "label": "Bố cục",
+          "options__classic": "Cổ điển",
+          "options__bento": "Bento"
+        },
+        "section_spacing": {
+          "label": "Khoảng cách giữa các mục",
+          "info": "Khoảng cách giữa các mục trên trang."
+        },
+        "section_gutter": {
+          "label": "Khoảng cách lưới",
+          "info": "Khoảng cách giữa các cột và hàng của lưới bên trong mục."
+        },
+        "section_radius": {
+          "label": "Bán kính góc",
+          "options__main": "Góc chính",
+          "options__small": "Nhỏ",
+          "options__extra_small": "Rất nhỏ",
+          "options__none": "Không có",
+          "options__custom": "Tùy chỉnh"
+        },
+        "section_radius_custom": {
+          "label": "Bán kính góc tùy chỉnh"
+        },
+        "page_width": {
+          "label": "Chiều rộng trang"
+        },
+        "header__padding": {
+          "content": "Khoảng đệm"
+        },
+        "section_padding_device": {
+          "label": "Thiết bị",
+          "options__desktop": "Máy tính",
+          "options__mobile": "Di động"
+        },
+        "section_padding_top": {
+          "label": "Trên"
+        },
+        "section_padding_bottom": {
+          "label": "Dưới"
+        },
+        "section_padding_left": {
+          "label": "Trái"
+        },
+        "section_padding_right": {
+          "label": "Phải"
         }
       }
     }

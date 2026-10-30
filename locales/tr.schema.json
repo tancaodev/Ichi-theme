@@ -8,6 +8,220 @@
  * ------------------------------------------------------------
  */
 {
+  "blocks": {
+    "shared": {
+      "settings": {
+        "custom_mobile": {
+          "label": "Mobilde özel"
+        },
+        "header_layout": {
+          "content": "Düzen"
+        },
+        "header_spacing": {
+          "content": "Boşluk"
+        },
+        "margin_top": {
+          "label": "Üst"
+        },
+        "margin_bottom": {
+          "label": "Alt"
+        },
+        "margin_left": {
+          "label": "Sol"
+        },
+        "margin_right": {
+          "label": "Sağ"
+        }
+      }
+    },
+    "heading": {
+      "name": "Başlık",
+      "settings": {
+        "heading": {
+          "label": "Başlık"
+        },
+        "header_typography": {
+          "content": "Tipografi"
+        },
+        "size": {
+          "label": "Boyut",
+          "info": "Boyutları Tema ayarları > Tipografi bölümünden düzenleyin",
+          "options__display": "Display",
+          "options__h1": "Başlık 1",
+          "options__h2": "Başlık 2",
+          "options__h3": "Başlık 3",
+          "options__h4": "Başlık 4",
+          "options__h5": "Başlık 5",
+          "options__h6": "Başlık 6",
+          "options__subheading": "Alt başlıklar",
+          "options__custom": "Özel"
+        },
+        "heading_tag": {
+          "label": "HTML etiketi",
+          "info": "SEO için sayfa yapısına uygun başlık seviyesini seçin"
+        },
+        "font_family": {
+          "label": "Yazı tipi ailesi",
+          "options__heading": "Başlık",
+          "options__body": "Gövde",
+          "options__highlight": "Vurgu"
+        },
+        "font_size": {
+          "label": "Yazı tipi boyutu",
+          "info": "px"
+        },
+        "width": {
+          "label": "Genişlik",
+          "options__fit": "Sığdır",
+          "options__fill": "Doldur",
+          "options__custom": "Özel"
+        },
+        "width_unit": {
+          "label": "Birim",
+          "options__percent": "Yüzde",
+          "options__pixel": "Piksel"
+        },
+        "custom_width": {
+          "label": "Özel genişlik"
+        },
+        "alignment": {
+          "label": "Hizalama"
+        },
+        "header_highlight": {
+          "content": "Metin vurgusu",
+          "info": "Vurgu uygulamak için metni italik yapın"
+        },
+        "highlight_style": {
+          "label": "Vurgu stili",
+          "options__none": "Yok",
+          "options__text_color": "Metin rengi",
+          "options__underline_soft": "Alt çizgi (yumuşak)",
+          "options__underline_double": "Alt çizgi (çift)",
+          "options__underline_wavy": "Alt çizgi (dalgalı)",
+          "options__circle_outline": "Daire (dış çizgi)",
+          "options__highlight_bar": "Vurgu (çubuk)",
+          "options__highlight_solid": "Vurgu (dolu)"
+        },
+        "highlight_color": {
+          "label": "Vurgu rengi",
+          "info": "Varsayılan olarak vurgu rengi kullanılır"
+        },
+        "margin": {
+          "label": "Kenar boşluğu"
+        }
+      }
+    },
+    "divider": {
+      "name": "Ayırıcı",
+      "settings": {
+        "direction": {
+          "label": "Yön",
+          "options__horizontal": "Yatay",
+          "options__vertical": "Dikey"
+        },
+        "width": {
+          "label": "Genişlik"
+        },
+        "height": {
+          "label": "Yükseklik"
+        },
+        "thickness": {
+          "label": "Kalınlık"
+        },
+        "header_style": {
+          "content": "Stil"
+        },
+        "style": {
+          "label": "Stil",
+          "options__line": "Çizgi",
+          "options__dot": "Nokta"
+        },
+        "corner_radius": {
+          "label": "Köşe yarıçapı",
+          "options__square": "Kare",
+          "options__rounded": "Yuvarlak"
+        }
+      }
+    },
+    "icon": {
+      "name": "Simge",
+      "settings": {
+        "icon_source": {
+          "label": "Simge seç",
+          "options__library": "Kitaplık",
+          "options__upload": "Yükle"
+        },
+        "icon": {
+          "label": "Simge",
+          "options__arrow_up_right": "Sağ üst ok"
+        },
+        "icon_image": {
+          "label": "Görsel simgesi"
+        },
+        "icon_size": {
+          "label": "Simge boyutu",
+          "options__custom": "Özel"
+        },
+        "custom_size": {
+          "label": "Özel boyut"
+        },
+        "header_style": {
+          "content": "Stil"
+        },
+        "icon_style": {
+          "label": "Stil",
+          "info": "Kutulu stil varsayılan olarak 12 px iç boşluk ekler, Klasik stil eklemez",
+          "options__classic": "Klasik",
+          "options__boxed": "Kutulu"
+        },
+        "icon_box_style": {
+          "label": "Kutu stili",
+          "options__fill": "Dolgulu",
+          "options__outline": "Dış çizgi"
+        },
+        "icon_shape": {
+          "label": "Şekil",
+          "options__square": "Kare",
+          "options__rounded": "Yuvarlak",
+          "options__circle": "Daire"
+        },
+        "icon_corner_radius": {
+          "label": "Köşe yarıçapı",
+          "info": "Tema ayarlarındaki köşe yarıçapını kullanır",
+          "options__main": "Ana içerik",
+          "options__buttons": "Düğmeler",
+          "options__media": "Medya"
+        },
+        "icon_color": {
+          "label": "Renk",
+          "options__strong": "Güçlü",
+          "options__light": "Açık"
+        },
+        "padding": {
+          "label": "İç boşluk"
+        },
+        "padding_value": {
+          "label": "Değer"
+        },
+        "margin": {
+          "label": "Kenar boşluğu"
+        }
+      }
+    },
+    "spacer": {
+      "name": "Boşluk bloğu",
+      "settings": {
+        "unit": {
+          "label": "Birim",
+          "options__percent": "Yüzde",
+          "options__pixel": "Piksel"
+        },
+        "size": {
+          "label": "Boyut"
+        }
+      }
+    }
+  },
   "settings_schema": {
     "colors": {
       "name": "Renkler",
@@ -60,25 +274,97 @@
     "typography": {
       "name": "Tipografi",
       "settings": {
+        "header_font_family": {
+          "content": "Yazı tipi ailesi"
+        },
+        "header_paragraph": {
+          "content": "Paragraf"
+        },
+        "header_highlight": {
+          "content": "Vurgu"
+        },
+        "header_display": {
+          "content": "Display başlık"
+        },
+        "header_h1": {
+          "content": "Başlık 1"
+        },
+        "header_h2": {
+          "content": "Başlık 2"
+        },
+        "header_h3": {
+          "content": "Başlık 3"
+        },
+        "header_h4": {
+          "content": "Başlık 4"
+        },
+        "header_h5": {
+          "content": "Başlık 5"
+        },
+        "header_h6": {
+          "content": "Başlık 6"
+        },
+        "header_subheading": {
+          "content": "Alt başlıklar"
+        },
+        "header_description": {
+          "content": "Açıklama"
+        },
+        "header_label": {
+          "content": "Etiket"
+        },
         "type_header_font": {
           "label": "Yazı tipi",
           "info": "Farklı bir yazı tipi seçmeniz mağazanızın hızını etkileyebilir. [Sistem yazı tipleri hakkında daha fazla bilgi edinin.](https:\/\/help.shopify.com\/manual\/online-store\/os\/store-speed\/improving-speed#fonts)"
         },
-        "header__1": {
-          "content": "Başlıklar"
-        },
-        "header__2": {
-          "content": "Gövde"
+        "type_highlight_font": {
+          "label": "Vurgu",
+          "info": "Başlıklardaki vurgulanan kelimeler için kullanılır."
         },
         "type_body_font": {
           "label": "Yazı tipi",
           "info": "Farklı bir yazı tipi seçmeniz mağazanızın hızını etkileyebilir. [Sistem yazı tipleri hakkında daha fazla bilgi edinin.](https:\/\/help.shopify.com\/manual\/online-store\/os\/store-speed\/improving-speed#fonts)"
         },
-        "heading_scale": {
-          "label": "Yazı boyutu ölçeği"
+        "font_size": {
+          "label": "Boyut"
         },
-        "body_scale": {
-          "label": "Yazı boyutu ölçeği"
+        "mobile_font_size": {
+          "label": "Mobil boyut"
+        },
+        "line_height": {
+          "label": "Satır yüksekliği"
+        },
+        "letter_spacing": {
+          "label": "Harf aralığı"
+        },
+        "paragraph_spacing": {
+          "label": "Paragraf aralığı"
+        },
+        "font_weight": {
+          "label": "Yazı tipi kalınlığı",
+          "options__light": "İnce",
+          "options__regular": "Normal",
+          "options__medium": "Orta",
+          "options__semibold": "Yarı kalın",
+          "options__bold": "Kalın",
+          "options__extrabold": "Ekstra kalın"
+        },
+        "case": {
+          "label": "Büyük\/küçük harf",
+          "options__normal": "Normal",
+          "options__uppercase": "Büyük harf",
+          "options__lowercase": "Küçük harf",
+          "options__capitalize": "İlk harfler büyük"
+        },
+        "font_style": {
+          "label": "Yazı tipi stili",
+          "options__normal": "Normal",
+          "options__italic": "İtalik"
+        },
+        "subheading_font": {
+          "label": "Yazı tipi ailesi",
+          "options__heading": "Başlık",
+          "options__body": "Gövde"
         }
       }
     },
@@ -99,6 +385,43 @@
     "social-media": {
       "name": "Sosyal medya",
       "settings": {
+        "header__style": {
+          "content": "Stil"
+        },
+        "social_type": {
+          "label": "Tür",
+          "options__icon": "Simge",
+          "options__text": "Metin"
+        },
+        "social_style": {
+          "label": "Stil",
+          "options__classic": "Klasik",
+          "options__boxed": "Kutulu"
+        },
+        "social_box_style": {
+          "label": "Kutu stili",
+          "options__fill": "Dolgulu",
+          "options__outline": "Dış çizgi"
+        },
+        "social_shape": {
+          "label": "Şekil",
+          "options__square": "Kare",
+          "options__rounded": "Yuvarlak",
+          "options__full": "Daire \/ Hap"
+        },
+        "social_radius": {
+          "label": "Köşe yarıçapı",
+          "info": "Düğme köşe yarıçapını temel alır.",
+          "options__main": "Ana köşe",
+          "options__small": "Küçük",
+          "options__extra_small": "Çok küçük"
+        },
+        "social_size": {
+          "label": "Boyut",
+          "options__small": "Küçük",
+          "options__medium": "Orta",
+          "options__large": "Büyük"
+        },
         "social_twitter_link": {
           "label": "Twitter",
           "info": "https:\/\/twitter.com\/shopify"
@@ -135,6 +458,30 @@
           "label": "Vimeo",
           "info": "https:\/\/vimeo.com\/shopify"
         },
+        "header__sharing": {
+          "content": "Paylaşım seçenekleri"
+        },
+        "share_facebook": {
+          "label": "Facebook'ta paylaş"
+        },
+        "share_x": {
+          "label": "X'te (eski adıyla Twitter) paylaş"
+        },
+        "share_pinterest": {
+          "label": "Pinterest'te sabitle"
+        },
+        "share_telegram": {
+          "label": "Telegram'da paylaş"
+        },
+        "share_whatsapp": {
+          "label": "WhatsApp'ta paylaş"
+        },
+        "share_line": {
+          "label": "LINE'da paylaş"
+        },
+        "share_email": {
+          "label": "E-posta ile paylaş"
+        },
         "header": {
           "content": "Sosyal medya hesapları"
         }
@@ -148,29 +495,6 @@
           "label": "Para birimi kodlarını göster"
         },
         "paragraph": "Sepet ve ödeme ücretleri her zaman para birimi kodlarını gösterir. Örnek: 1,00 USD."
-      }
-    },
-    "layout": {
-      "name": "Düzen",
-      "settings": {
-        "page_width": {
-          "label": "Sayfa genişliği"
-        },
-        "spacing_sections": {
-          "label": "Şablon bölümleri arasındaki alan"
-        },
-        "header__grid": {
-          "content": "Izgara"
-        },
-        "paragraph__grid": {
-          "content": "Birden fazla sütun veya satır içeren alanları etkiler."
-        },
-        "spacing_grid_horizontal": {
-          "label": "Yatay boşluk"
-        },
-        "spacing_grid_vertical": {
-          "label": "Dikey boşluk"
-        }
       }
     },
     "search_input": {
@@ -311,6 +635,61 @@
             "label": "Koleksiyon",
             "info": "Sepet çekmecesi boşken görünür."
           }
+        }
+      }
+    },
+    "section": {
+      "name": "Bölüm",
+      "settings": {
+        "header__layout": {
+          "content": "Düzen"
+        },
+        "section_layout": {
+          "label": "Düzen",
+          "options__classic": "Klasik",
+          "options__bento": "Bento"
+        },
+        "section_spacing": {
+          "label": "Bölümler arası boşluk",
+          "info": "Sayfadaki bölümler arasındaki mesafe."
+        },
+        "section_gutter": {
+          "label": "Oluk",
+          "info": "Bir bölüm içindeki ızgara sütunları ve satırları arasındaki boşluk."
+        },
+        "section_radius": {
+          "label": "Köşe yarıçapı",
+          "options__main": "Ana köşe",
+          "options__small": "Küçük",
+          "options__extra_small": "Çok küçük",
+          "options__none": "Yok",
+          "options__custom": "Özel"
+        },
+        "section_radius_custom": {
+          "label": "Özel köşe yarıçapı"
+        },
+        "page_width": {
+          "label": "Sayfa genişliği"
+        },
+        "header__padding": {
+          "content": "İç boşluk"
+        },
+        "section_padding_device": {
+          "label": "Cihaz",
+          "options__desktop": "Masaüstü",
+          "options__mobile": "Mobil"
+        },
+        "section_padding_top": {
+          "label": "Üst"
+        },
+        "section_padding_bottom": {
+          "label": "Alt"
+        },
+        "section_padding_left": {
+          "label": "Sol"
+        },
+        "section_padding_right": {
+          "label": "Sağ"
         }
       }
     },

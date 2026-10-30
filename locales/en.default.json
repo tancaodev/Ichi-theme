@@ -8,6 +8,15 @@
  * ------------------------------------------------------------
  */
 {
+  "blocks": {
+    "video": {
+      "play": "Play video"
+    },
+    "copyright": {
+      "copyright_html": "Copyright &copy; {{ year }} {{ store_name }}.",
+      "powered_by_html": "Powered by {{ shopify }}"
+    }
+  },
   "general": {
     "password_page": {
       "login_form_heading": "Enter store using password:",
@@ -23,10 +32,15 @@
       "alt_text": {
         "share_on_facebook": "Share on Facebook",
         "share_on_twitter": "Tweet on Twitter",
-        "share_on_pinterest": "Pin on Pinterest"
+        "share_on_pinterest": "Pin on Pinterest",
+        "share_on_x": "Share on X",
+        "share_on_telegram": "Share on Telegram",
+        "share_on_whatsapp": "Share on WhatsApp",
+        "share_on_line": "Share on LINE",
+        "share_by_email": "Share by email"
       },
       "links": {
-        "twitter": "Twitter",
+        "twitter": "X",
         "facebook": "Facebook",
         "pinterest": "Pinterest",
         "instagram": "Instagram",

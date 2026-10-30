@@ -1,0 +1,98 @@
+{% render 'snip_spacer', component_settings: block.settings, component_id: block.id, attributes: block.shopify_attributes %}
+
+{% schema %}
+{
+  "name": "t:blocks.spacer.name",
+  "tag": null,
+  "settings": [
+    {
+      "type": "select",
+      "id": "spacer_unit",
+      "label": "t:blocks.spacer.settings.unit.label",
+      "options": [
+        {
+          "value": "percent",
+          "label": "t:blocks.spacer.settings.unit.options__percent"
+        },
+        {
+          "value": "pixel",
+          "label": "t:blocks.spacer.settings.unit.options__pixel"
+        }
+      ],
+      "default": "percent"
+    },
+    {
+      "type": "range",
+      "id": "spacer_size_percent",
+      "label": "t:blocks.spacer.settings.size.label",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "default": 100,
+      "visible_if": "{{ block.settings.spacer_unit == 'percent' }}"
+    },
+    {
+      "type": "range",
+      "id": "spacer_size_pixel",
+      "label": "t:blocks.spacer.settings.size.label",
+      "min": 0,
+      "max": 400,
+      "step": 4,
+      "unit": "px",
+      "default": 40,
+      "visible_if": "{{ block.settings.spacer_unit == 'pixel' }}"
+    },
+    {
+      "type": "checkbox",
+      "id": "spacer_size_custom_mobile",
+      "label": "t:blocks.shared.settings.custom_mobile.label",
+      "default": false
+    },
+    {
+      "type": "select",
+      "id": "spacer_unit_mobile",
+      "label": "t:blocks.spacer.settings.unit.label",
+      "options": [
+        {
+          "value": "percent",
+          "label": "t:blocks.spacer.settings.unit.options__percent"
+        },
+        {
+          "value": "pixel",
+          "label": "t:blocks.spacer.settings.unit.options__pixel"
+        }
+      ],
+      "default": "percent",
+      "visible_if": "{{ block.settings.spacer_size_custom_mobile }}"
+    },
+    {
+      "type": "range",
+      "id": "spacer_size_percent_mobile",
+      "label": "t:blocks.spacer.settings.size.label",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "default": 100,
+      "visible_if": "{{ block.settings.spacer_size_custom_mobile and block.settings.spacer_unit_mobile == 'percent' }}"
+    },
+    {
+      "type": "range",
+      "id": "spacer_size_pixel_mobile",
+      "label": "t:blocks.spacer.settings.size.label",
+      "min": 0,
+      "max": 400,
+      "step": 4,
+      "unit": "px",
+      "default": 40,
+      "visible_if": "{{ block.settings.spacer_size_custom_mobile and block.settings.spacer_unit_mobile == 'pixel' }}"
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:blocks.spacer.name"
+    }
+  ]
+}
+{% endschema %}

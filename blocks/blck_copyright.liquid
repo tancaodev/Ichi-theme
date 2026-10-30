@@ -1,0 +1,209 @@
+{% render 'snip_copyright', component_settings: block.settings, component_id: block.id, attributes: block.shopify_attributes %}
+
+{% schema %}
+{
+  "name": "t:blocks.copyright.name",
+  "tag": null,
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "copyright_show_powered_by",
+      "label": "t:blocks.copyright.settings.show_powered_by.label",
+      "default": true
+    },
+    {
+      "type": "paragraph",
+      "content": "t:blocks.copyright.settings.manage_store_name.content"
+    },
+    {
+      "type": "header",
+      "content": "t:blocks.copyright.settings.header_text.content"
+    },
+    {
+      "type": "select",
+      "id": "copyright_size",
+      "label": "t:blocks.copyright.settings.size.label",
+      "info": "t:blocks.copyright.settings.size.info",
+      "options": [
+        {
+          "value": "paragraph",
+          "label": "t:blocks.copyright.settings.size.options__paragraph"
+        },
+        {
+          "value": "description",
+          "label": "t:blocks.copyright.settings.size.options__description"
+        },
+        {
+          "value": "label",
+          "label": "t:blocks.copyright.settings.size.options__label"
+        },
+        {
+          "value": "custom",
+          "label": "t:blocks.copyright.settings.size.options__custom"
+        }
+      ],
+      "default": "paragraph"
+    },
+    {
+      "type": "select",
+      "id": "copyright_font_family",
+      "label": "t:blocks.copyright.settings.font_family.label",
+      "options": [
+        {
+          "value": "heading",
+          "label": "t:blocks.copyright.settings.font_family.options__heading"
+        },
+        {
+          "value": "body",
+          "label": "t:blocks.copyright.settings.font_family.options__body"
+        }
+      ],
+      "default": "body",
+      "visible_if": "{{ block.settings.copyright_size == 'custom' or block.settings.copyright_typography_custom_mobile and block.settings.copyright_size_mobile == 'custom' }}"
+    },
+    {
+      "type": "number",
+      "id": "copyright_font_size",
+      "label": "t:blocks.copyright.settings.font_size.label",
+      "info": "t:blocks.copyright.settings.font_size.info",
+      "default": 14,
+      "visible_if": "{{ block.settings.copyright_size == 'custom' }}"
+    },
+    {
+      "type": "range",
+      "id": "copyright_line_height",
+      "label": "t:settings_schema.typography.settings.line_height.label",
+      "min": 80,
+      "max": 200,
+      "step": 5,
+      "unit": "%",
+      "default": 140,
+      "visible_if": "{{ block.settings.copyright_size == 'custom' }}"
+    },
+    {
+      "type": "range",
+      "id": "copyright_letter_spacing",
+      "label": "t:settings_schema.typography.settings.letter_spacing.label",
+      "min": -20,
+      "max": 20,
+      "step": 1,
+      "unit": "%",
+      "default": 0,
+      "visible_if": "{{ block.settings.copyright_size == 'custom' or block.settings.copyright_typography_custom_mobile and block.settings.copyright_size_mobile == 'custom' }}"
+    },
+    {
+      "type": "select",
+      "id": "copyright_font_weight",
+      "label": "t:settings_schema.typography.settings.font_weight.label",
+      "options": [
+        {
+          "value": "300",
+          "label": "t:settings_schema.typography.settings.font_weight.options__light"
+        },
+        {
+          "value": "400",
+          "label": "t:settings_schema.typography.settings.font_weight.options__regular"
+        },
+        {
+          "value": "500",
+          "label": "t:settings_schema.typography.settings.font_weight.options__medium"
+        },
+        {
+          "value": "600",
+          "label": "t:settings_schema.typography.settings.font_weight.options__semibold"
+        },
+        {
+          "value": "700",
+          "label": "t:settings_schema.typography.settings.font_weight.options__bold"
+        },
+        {
+          "value": "800",
+          "label": "t:settings_schema.typography.settings.font_weight.options__extrabold"
+        }
+      ],
+      "default": "400",
+      "visible_if": "{{ block.settings.copyright_size == 'custom' or block.settings.copyright_typography_custom_mobile and block.settings.copyright_size_mobile == 'custom' }}"
+    },
+    {
+      "type": "select",
+      "id": "copyright_text_transform",
+      "label": "t:settings_schema.typography.settings.case.label",
+      "options": [
+        {
+          "value": "none",
+          "label": "t:settings_schema.typography.settings.case.options__normal"
+        },
+        {
+          "value": "uppercase",
+          "label": "t:settings_schema.typography.settings.case.options__uppercase"
+        },
+        {
+          "value": "lowercase",
+          "label": "t:settings_schema.typography.settings.case.options__lowercase"
+        },
+        {
+          "value": "capitalize",
+          "label": "t:settings_schema.typography.settings.case.options__capitalize"
+        }
+      ],
+      "default": "none",
+      "visible_if": "{{ block.settings.copyright_size == 'custom' or block.settings.copyright_typography_custom_mobile and block.settings.copyright_size_mobile == 'custom' }}"
+    },
+    {
+      "type": "checkbox",
+      "id": "copyright_typography_custom_mobile",
+      "label": "t:blocks.shared.settings.custom_mobile.label",
+      "default": false
+    },
+    {
+      "type": "select",
+      "id": "copyright_size_mobile",
+      "label": "t:blocks.copyright.settings.size.label",
+      "options": [
+        {
+          "value": "paragraph",
+          "label": "t:blocks.copyright.settings.size.options__paragraph"
+        },
+        {
+          "value": "description",
+          "label": "t:blocks.copyright.settings.size.options__description"
+        },
+        {
+          "value": "label",
+          "label": "t:blocks.copyright.settings.size.options__label"
+        },
+        {
+          "value": "custom",
+          "label": "t:blocks.copyright.settings.size.options__custom"
+        }
+      ],
+      "default": "paragraph",
+      "visible_if": "{{ block.settings.copyright_typography_custom_mobile }}"
+    },
+    {
+      "type": "number",
+      "id": "copyright_font_size_mobile",
+      "label": "t:blocks.copyright.settings.font_size.label",
+      "info": "t:blocks.copyright.settings.font_size.info",
+      "default": 14,
+      "visible_if": "{{ block.settings.copyright_typography_custom_mobile and block.settings.copyright_size_mobile == 'custom' }}"
+    },
+    {
+      "type": "range",
+      "id": "copyright_line_height_mobile",
+      "label": "t:settings_schema.typography.settings.line_height.label",
+      "min": 80,
+      "max": 200,
+      "step": 5,
+      "unit": "%",
+      "default": 140,
+      "visible_if": "{{ block.settings.copyright_typography_custom_mobile and block.settings.copyright_size_mobile == 'custom' }}"
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:blocks.copyright.name"
+    }
+  ]
+}
+{% endschema %}

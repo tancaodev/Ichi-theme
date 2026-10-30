@@ -1,0 +1,29 @@
+{%- doc -%}
+  Renders an empty spacer that takes its size along the main axis of its flex parent:
+  width in a row, height in a column. The cross axis always fills the parent.
+  Settings are read by the `spacer_` prefix, so any block or section exposing the same setting ids
+  can reuse this snippet.
+
+  @param {object} component_settings - Settings object holding the `spacer_*` settings (block.settings or section.settings).
+  @param {string} component_id - Unique id used to scope the instance CSS variables (block.id or section.id).
+  @param {string} [attributes] - Theme editor attributes for the spacer (block.shopify_attributes).
+
+  @example
+  {% render 'snip_spacer', component_settings: block.settings, component_id: block.id, attributes: block.shopify_attributes %}
+{%- enddoc -%}
+{%- assign spacer_id = 'Spacer-' | append: component_id -%}
+{% render 'spacer_styles', component_settings: component_settings, spacer_id: spacer_id %}
+<div id="{{ spacer_id }}" class="spacer" aria-hidden="true" {{ attributes }}></div>
+
+{% stylesheet %}
+  .spacer {
+    flex: 0 0 var(--spacer-size-mobile);
+    align-self: stretch;
+  }
+
+  @media screen and (min-width: 750px) {
+    .spacer {
+      flex-basis: var(--spacer-size);
+    }
+  }
+{% endstylesheet %}
