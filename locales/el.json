@@ -23,10 +23,15 @@
       "alt_text": {
         "share_on_facebook": "Κοινοποίηση στο Facebook",
         "share_on_twitter": "Tweet στο Twitter",
-        "share_on_pinterest": "Καρφίτσωμα στο Pinterest"
+        "share_on_pinterest": "Καρφίτσωμα στο Pinterest",
+        "share_on_x": "Κοινοποίηση στο X",
+        "share_on_telegram": "Κοινοποίηση στο Telegram",
+        "share_on_whatsapp": "Κοινοποίηση στο WhatsApp",
+        "share_on_line": "Κοινοποίηση στο LINE",
+        "share_by_email": "Κοινοποίηση μέσω email"
       },
       "links": {
-        "twitter": "Twitter",
+        "twitter": "X",
         "facebook": "Facebook",
         "pinterest": "Pinterest",
         "instagram": "Instagram",
@@ -134,6 +139,9 @@
         "regular_price": "Κανονική τιμή",
         "sale_price": "Τιμή έκπτωσης",
         "unit_price": "Τιμή μονάδας"
+      },
+      "selling_plans": {
+        "one_time_purchase": "Εφάπαξ αγορά"
       },
       "share": "Κοινοποιήστε αυτό το προϊόν",
       "sold_out": "Εξαντλήθηκε",
@@ -476,5 +484,18 @@
       "message": "Μήνυμα",
       "max_characters": "Έως {{ max_chars }} χαρακτήρες"
     }
+  },
+  "gift_wrapping": {
+    "title": "Συσκευασία δώρου; (+£15)",
+    "to": "Προς",
+    "to_placeholder": "Όνομα παραλήπτη",
+    "from": "Από",
+    "from_placeholder": "Όνομα αποστολέα",
+    "message": "Μήνυμα δώρου",
+    "message_placeholder": "Πληκτρολογήστε το μήνυμά σας εδώ",
+    "edit": "Επεξεργασία",
+    "cancel": "Ακύρωση",
+    "update": "Ενημέρωση",
+    "updating": "Ενημέρωση..."
   }
 }

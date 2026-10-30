@@ -23,10 +23,15 @@
       "alt_text": {
         "share_on_facebook": "Bagikan di Facebook",
         "share_on_twitter": "Tweet di Twitter",
-        "share_on_pinterest": "Pin di Pinterest"
+        "share_on_pinterest": "Pin di Pinterest",
+        "share_on_x": "Bagikan di X",
+        "share_on_telegram": "Bagikan di Telegram",
+        "share_on_whatsapp": "Bagikan di WhatsApp",
+        "share_on_line": "Bagikan di LINE",
+        "share_by_email": "Bagikan melalui email"
       },
       "links": {
-        "twitter": "Twitter",
+        "twitter": "X",
         "facebook": "Facebook",
         "pinterest": "Pinterest",
         "instagram": "Instagram",
@@ -134,6 +139,9 @@
         "regular_price": "Harga reguler",
         "sale_price": "Harga obral",
         "unit_price": "Harga satuan"
+      },
+      "selling_plans": {
+        "one_time_purchase": "Pembelian satu kali"
       },
       "share": "Bagikan produk ini",
       "sold_out": "Habis",
@@ -476,5 +484,18 @@
       "message": "Pesan",
       "max_characters": "Maksimum {{ max_chars }} karakter"
     }
+  },
+  "gift_wrapping": {
+    "title": "Bungkus sebagai hadiah? (+£15)",
+    "to": "Untuk",
+    "to_placeholder": "Nama penerima",
+    "from": "Dari",
+    "from_placeholder": "Nama pengirim",
+    "message": "Pesan hadiah",
+    "message_placeholder": "Ketik pesan Anda di sini",
+    "edit": "Edit",
+    "cancel": "Batal",
+    "update": "Perbarui",
+    "updating": "Memperbarui..."
   }
 }

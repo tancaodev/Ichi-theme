@@ -8,6 +8,220 @@
  * ------------------------------------------------------------
  */
 {
+  "blocks": {
+    "shared": {
+      "settings": {
+        "custom_mobile": {
+          "label": "Personalizado en móvil"
+        },
+        "header_layout": {
+          "content": "Diseño"
+        },
+        "header_spacing": {
+          "content": "Espaciado"
+        },
+        "margin_top": {
+          "label": "Arriba"
+        },
+        "margin_bottom": {
+          "label": "Abajo"
+        },
+        "margin_left": {
+          "label": "Izquierda"
+        },
+        "margin_right": {
+          "label": "Derecha"
+        }
+      }
+    },
+    "heading": {
+      "name": "Título",
+      "settings": {
+        "heading": {
+          "label": "Título"
+        },
+        "header_typography": {
+          "content": "Tipografía"
+        },
+        "size": {
+          "label": "Tamaño",
+          "info": "Edita los tamaños en Configuración del tema > Tipografía",
+          "options__display": "Display",
+          "options__h1": "Título 1",
+          "options__h2": "Título 2",
+          "options__h3": "Título 3",
+          "options__h4": "Título 4",
+          "options__h5": "Título 5",
+          "options__h6": "Título 6",
+          "options__subheading": "Subtítulos",
+          "options__custom": "Personalizado"
+        },
+        "heading_tag": {
+          "label": "Etiqueta HTML",
+          "info": "Elige el nivel de título que se ajuste a la estructura de la página para el SEO"
+        },
+        "font_family": {
+          "label": "Familia de fuentes",
+          "options__heading": "Título",
+          "options__body": "Cuerpo",
+          "options__highlight": "Acento"
+        },
+        "font_size": {
+          "label": "Tamaño de fuente",
+          "info": "px"
+        },
+        "width": {
+          "label": "Ancho",
+          "options__fit": "Ajustado",
+          "options__fill": "Rellenar",
+          "options__custom": "Personalizado"
+        },
+        "width_unit": {
+          "label": "Unidad",
+          "options__percent": "Porcentaje",
+          "options__pixel": "Píxel"
+        },
+        "custom_width": {
+          "label": "Ancho personalizado"
+        },
+        "alignment": {
+          "label": "Alineación"
+        },
+        "header_highlight": {
+          "content": "Resaltado de texto",
+          "info": "Para aplicar un resaltado, pon el texto en cursiva"
+        },
+        "highlight_style": {
+          "label": "Estilo de resaltado",
+          "options__none": "Ninguno",
+          "options__text_color": "Color del texto",
+          "options__underline_soft": "Subrayado (suave)",
+          "options__underline_double": "Subrayado (doble)",
+          "options__underline_wavy": "Subrayado (ondulado)",
+          "options__circle_outline": "Círculo (contorno)",
+          "options__highlight_bar": "Resaltado (barra)",
+          "options__highlight_solid": "Resaltado (sólido)"
+        },
+        "highlight_color": {
+          "label": "Color de resaltado",
+          "info": "Por defecto, el color de acento"
+        },
+        "margin": {
+          "label": "Margen"
+        }
+      }
+    },
+    "divider": {
+      "name": "Divisor",
+      "settings": {
+        "direction": {
+          "label": "Dirección",
+          "options__horizontal": "Horizontal",
+          "options__vertical": "Vertical"
+        },
+        "width": {
+          "label": "Ancho"
+        },
+        "height": {
+          "label": "Altura"
+        },
+        "thickness": {
+          "label": "Grosor"
+        },
+        "header_style": {
+          "content": "Estilo"
+        },
+        "style": {
+          "label": "Estilo",
+          "options__line": "Línea",
+          "options__dot": "Punto"
+        },
+        "corner_radius": {
+          "label": "Radio de esquina",
+          "options__square": "Cuadrado",
+          "options__rounded": "Redondeado"
+        }
+      }
+    },
+    "icon": {
+      "name": "Ícono",
+      "settings": {
+        "icon_source": {
+          "label": "Elegir ícono",
+          "options__library": "Biblioteca",
+          "options__upload": "Subir"
+        },
+        "icon": {
+          "label": "Ícono",
+          "options__arrow_up_right": "Flecha arriba a la derecha"
+        },
+        "icon_image": {
+          "label": "Ícono de imagen"
+        },
+        "icon_size": {
+          "label": "Tamaño del ícono",
+          "options__custom": "Personalizado"
+        },
+        "custom_size": {
+          "label": "Tamaño personalizado"
+        },
+        "header_style": {
+          "content": "Estilo"
+        },
+        "icon_style": {
+          "label": "Estilo",
+          "info": "El estilo En caja añade 12 px de relleno por defecto; el Clásico no añade ninguno",
+          "options__classic": "Clásico",
+          "options__boxed": "En caja"
+        },
+        "icon_box_style": {
+          "label": "Estilo de caja",
+          "options__fill": "Relleno",
+          "options__outline": "Contorno"
+        },
+        "icon_shape": {
+          "label": "Forma",
+          "options__square": "Cuadrado",
+          "options__rounded": "Redondeado",
+          "options__circle": "Círculo"
+        },
+        "icon_corner_radius": {
+          "label": "Radio de esquina",
+          "info": "Usa el radio de esquina de la configuración del tema",
+          "options__main": "Contenido principal",
+          "options__buttons": "Botones",
+          "options__media": "Multimedia"
+        },
+        "icon_color": {
+          "label": "Color",
+          "options__strong": "Intenso",
+          "options__light": "Claro"
+        },
+        "padding": {
+          "label": "Relleno"
+        },
+        "padding_value": {
+          "label": "Valor"
+        },
+        "margin": {
+          "label": "Margen"
+        }
+      }
+    },
+    "spacer": {
+      "name": "Espaciador",
+      "settings": {
+        "unit": {
+          "label": "Unidad",
+          "options__percent": "Porcentaje",
+          "options__pixel": "Píxel"
+        },
+        "size": {
+          "label": "Tamaño"
+        }
+      }
+    }
+  },
   "settings_schema": {
     "colors": {
       "name": "Colores",
@@ -60,25 +274,97 @@
     "typography": {
       "name": "Tipografía",
       "settings": {
+        "header_font_family": {
+          "content": "Familia de fuentes"
+        },
+        "header_paragraph": {
+          "content": "Párrafo"
+        },
+        "header_highlight": {
+          "content": "Resaltado"
+        },
+        "header_display": {
+          "content": "Título Display"
+        },
+        "header_h1": {
+          "content": "Título 1"
+        },
+        "header_h2": {
+          "content": "Título 2"
+        },
+        "header_h3": {
+          "content": "Título 3"
+        },
+        "header_h4": {
+          "content": "Título 4"
+        },
+        "header_h5": {
+          "content": "Título 5"
+        },
+        "header_h6": {
+          "content": "Título 6"
+        },
+        "header_subheading": {
+          "content": "Subtítulos"
+        },
+        "header_description": {
+          "content": "Descripción"
+        },
+        "header_label": {
+          "content": "Etiqueta"
+        },
         "type_header_font": {
           "label": "Fuente",
           "info": "Seleccionar una fuente diferente puede afectar la velocidad de tu tienda online. [Más información sobre fuentes de sistema.](https:\/\/help.shopify.com\/manual\/online-store\/os\/store-speed\/improving-speed#fonts)"
         },
-        "header__1": {
-          "content": "Títulos"
-        },
-        "header__2": {
-          "content": "Cuerpo"
+        "type_highlight_font": {
+          "label": "Resaltado",
+          "info": "Se usa para las palabras resaltadas dentro de los títulos."
         },
         "type_body_font": {
           "label": "Fuente",
           "info": "Seleccionar una fuente diferente puede afectar la velocidad de tu tienda online. [Más información sobre fuentes de sistema.](https:\/\/help.shopify.com\/manual\/online-store\/os\/store-speed\/improving-speed#fonts)"
         },
-        "heading_scale": {
-          "label": "Escala de tamaño de fuente"
+        "font_size": {
+          "label": "Tamaño"
         },
-        "body_scale": {
-          "label": "Escala de tamaño de fuente"
+        "mobile_font_size": {
+          "label": "Tamaño en móvil"
+        },
+        "line_height": {
+          "label": "Altura de línea"
+        },
+        "letter_spacing": {
+          "label": "Espaciado entre letras"
+        },
+        "paragraph_spacing": {
+          "label": "Espaciado entre párrafos"
+        },
+        "font_weight": {
+          "label": "Grosor de fuente",
+          "options__light": "Fina",
+          "options__regular": "Normal",
+          "options__medium": "Media",
+          "options__semibold": "Seminegrita",
+          "options__bold": "Negrita",
+          "options__extrabold": "Extranegrita"
+        },
+        "case": {
+          "label": "Mayúsculas\/minúsculas",
+          "options__normal": "Normal",
+          "options__uppercase": "Mayúsculas",
+          "options__lowercase": "Minúsculas",
+          "options__capitalize": "Primera letra en mayúscula"
+        },
+        "font_style": {
+          "label": "Estilo de fuente",
+          "options__normal": "Normal",
+          "options__italic": "Cursiva"
+        },
+        "subheading_font": {
+          "label": "Familia de fuentes",
+          "options__heading": "Título",
+          "options__body": "Cuerpo"
         }
       }
     },
@@ -99,6 +385,43 @@
     "social-media": {
       "name": "Redes sociales",
       "settings": {
+        "header__style": {
+          "content": "Estilo"
+        },
+        "social_type": {
+          "label": "Tipo",
+          "options__icon": "Ícono",
+          "options__text": "Texto"
+        },
+        "social_style": {
+          "label": "Estilo",
+          "options__classic": "Clásico",
+          "options__boxed": "En caja"
+        },
+        "social_box_style": {
+          "label": "Estilo de caja",
+          "options__fill": "Relleno",
+          "options__outline": "Contorno"
+        },
+        "social_shape": {
+          "label": "Forma",
+          "options__square": "Cuadrado",
+          "options__rounded": "Redondeado",
+          "options__full": "Círculo \/ Píldora"
+        },
+        "social_radius": {
+          "label": "Radio de esquina",
+          "info": "Basado en el radio de esquina de los botones.",
+          "options__main": "Esquina principal",
+          "options__small": "Pequeño",
+          "options__extra_small": "Extrapequeño"
+        },
+        "social_size": {
+          "label": "Tamaño",
+          "options__small": "Pequeño",
+          "options__medium": "Media",
+          "options__large": "Grande"
+        },
         "social_twitter_link": {
           "label": "Twitter",
           "info": "https:\/\/twitter.com\/shopify"
@@ -135,6 +458,30 @@
           "label": "Vimeo",
           "info": "https:\/\/vimeo.com\/shopify"
         },
+        "header__sharing": {
+          "content": "Opciones para compartir"
+        },
+        "share_facebook": {
+          "label": "Compartir en Facebook"
+        },
+        "share_x": {
+          "label": "Compartir en X (antes Twitter)"
+        },
+        "share_pinterest": {
+          "label": "Pinear en Pinterest"
+        },
+        "share_telegram": {
+          "label": "Compartir en Telegram"
+        },
+        "share_whatsapp": {
+          "label": "Compartir en WhatsApp"
+        },
+        "share_line": {
+          "label": "Compartir en LINE"
+        },
+        "share_email": {
+          "label": "Compartir por correo electrónico"
+        },
         "header": {
           "content": "Cuentas de redes sociales"
         }
@@ -148,29 +495,6 @@
           "label": "Mostrar códigos de moneda"
         },
         "paragraph": "Los precios en el carrito y la pantalla de pago siempre muestran códigos de moneda. Ejemplo: USD 1,00."
-      }
-    },
-    "layout": {
-      "name": "Diseño",
-      "settings": {
-        "page_width": {
-          "label": "Ancho de página"
-        },
-        "spacing_sections": {
-          "label": "Espacio entre las secciones de la plantilla"
-        },
-        "header__grid": {
-          "content": "Cuadrícula"
-        },
-        "paragraph__grid": {
-          "content": "Afecta a áreas con varias columnas o filas."
-        },
-        "spacing_grid_horizontal": {
-          "label": "Espacio horizontal"
-        },
-        "spacing_grid_vertical": {
-          "label": "Espacio vertical"
-        }
       }
     },
     "search_input": {
@@ -311,6 +635,61 @@
             "label": "Colección",
             "info": "Visible cuando el carrito lateral está vacío."
           }
+        }
+      }
+    },
+    "section": {
+      "name": "Sección",
+      "settings": {
+        "header__layout": {
+          "content": "Diseño"
+        },
+        "section_layout": {
+          "label": "Diseño",
+          "options__classic": "Clásico",
+          "options__bento": "Bento"
+        },
+        "section_spacing": {
+          "label": "Espaciado entre secciones",
+          "info": "Distancia entre las secciones de la página."
+        },
+        "section_gutter": {
+          "label": "Medianil",
+          "info": "Espacio entre las columnas y filas de la cuadrícula dentro de una sección."
+        },
+        "section_radius": {
+          "label": "Radio de esquina",
+          "options__main": "Esquina principal",
+          "options__small": "Pequeño",
+          "options__extra_small": "Extrapequeño",
+          "options__none": "Ninguno",
+          "options__custom": "Personalizado"
+        },
+        "section_radius_custom": {
+          "label": "Radio de esquina personalizado"
+        },
+        "page_width": {
+          "label": "Ancho de página"
+        },
+        "header__padding": {
+          "content": "Relleno"
+        },
+        "section_padding_device": {
+          "label": "Dispositivo",
+          "options__desktop": "Escritorio",
+          "options__mobile": "Móvil"
+        },
+        "section_padding_top": {
+          "label": "Arriba"
+        },
+        "section_padding_bottom": {
+          "label": "Abajo"
+        },
+        "section_padding_left": {
+          "label": "Izquierda"
+        },
+        "section_padding_right": {
+          "label": "Derecha"
         }
       }
     },

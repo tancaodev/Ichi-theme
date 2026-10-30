@@ -1,0 +1,75 @@
+{%- doc -%}
+  Outputs the instance CSS variables for one copyright line, scoped to `#<copyright_id>`.
+  A preset (paragraph, description, label) maps to the global typography variables from theme settings;
+  'custom' uses `copyright_font_family`, `copyright_font_weight`, `copyright_letter_spacing`,
+  `copyright_text_transform` plus the breakpoint's font size and line height.
+  Mobile reads `copyright_size_mobile`, `copyright_font_size_mobile` and `copyright_line_height_mobile`
+  when `copyright_typography_custom_mobile` is on, otherwise it repeats desktop.
+  The static rules in `snip_copyright.liquid` read them, with mobile as the base and desktop from 750px.
+
+  @param {object} component_settings - Settings object holding the `copyright_*` settings.
+  @param {string} copyright_id - DOM id of the copyright element the variables are scoped to.
+
+  @example
+  {% render 'copyright_styles', component_settings: block.settings, copyright_id: 'Copyright-' | append: block.id %}
+{%- enddoc -%}
+{%- liquid
+  assign st = component_settings
+  assign breakpoints = 'desktop,mobile' | split: ','
+-%}
+{%- capture instance_variables -%}
+  {%- for breakpoint in breakpoints -%}
+    {%- liquid
+      assign setting_suffix = ''
+      assign var_suffix = ''
+      if breakpoint == 'mobile'
+        assign var_suffix = '-mobile'
+        if st.copyright_typography_custom_mobile
+          assign setting_suffix = '_mobile'
+        endif
+      endif
+
+      assign size_key = 'copyright_size' | append: setting_suffix
+      assign size = st[size_key] | default: 'paragraph'
+
+      if size == 'custom'
+        assign font_size_key = 'copyright_font_size' | append: setting_suffix
+        assign line_height_key = 'copyright_line_height' | append: setting_suffix
+        assign family = st.copyright_font_family | default: 'body'
+
+        assign font_family = 'var(--font-' | append: family | append: '-family)'
+        assign font_size = 'inherit'
+        if st[font_size_key] != blank
+          assign font_size = st[font_size_key] | divided_by: 10.0 | append: 'rem'
+        endif
+        assign line_height = st[line_height_key] | default: 140 | divided_by: 100.0
+        assign letter_spacing = st.copyright_letter_spacing | default: 0 | divided_by: 100.0 | append: 'em'
+        assign font_weight = st.copyright_font_weight | default: 400
+        assign text_transform = st.copyright_text_transform | default: 'none'
+      else
+        assign token = '--' | append: size
+        assign line_height_fallback = '1.4'
+        if size == 'label'
+          assign line_height_fallback = '1.2'
+        endif
+        assign font_family = 'var(--font-body-family)'
+        assign font_size = 'var(' | append: token | append: '-font-size)'
+        assign line_height = 'var(' | append: token | append: '-line-height, ' | append: line_height_fallback | append: ')'
+        assign letter_spacing = 'var(' | append: token | append: '-letter-spacing, 0)'
+        assign font_weight = 'var(' | append: token | append: '-font-weight, 400)'
+        assign text_transform = 'var(' | append: token | append: '-text-transform, none)'
+      endif
+    -%}
+    --copyright-font-family{{ var_suffix }}: {{ font_family }};
+    --copyright-font-size{{ var_suffix }}: {{ font_size }};
+    --copyright-line-height{{ var_suffix }}: {{ line_height }};
+    --copyright-letter-spacing{{ var_suffix }}: {{ letter_spacing }};
+    --copyright-font-weight{{ var_suffix }}: {{ font_weight }};
+    --copyright-text-transform{{ var_suffix }}: {{ text_transform }};
+  {%- endfor -%}
+{%- endcapture -%}
+{% style %}
+  #{{ copyright_id }} {
+    {{ instance_variables }}
+  }
+{% endstyle %}

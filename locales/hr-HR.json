@@ -23,10 +23,15 @@
       "alt_text": {
         "share_on_facebook": "Podijeli na Facebooku",
         "share_on_twitter": "Tweetaj na Twitteru",
-        "share_on_pinterest": "Prikvači na Pinterest"
+        "share_on_pinterest": "Prikvači na Pinterest",
+        "share_on_x": "Podijeli na X-u",
+        "share_on_telegram": "Podijeli na Telegramu",
+        "share_on_whatsapp": "Podijeli na WhatsAppu",
+        "share_on_line": "Podijeli na LINE-u",
+        "share_by_email": "Podijeli e-poštom"
       },
       "links": {
-        "twitter": "Twitter",
+        "twitter": "X",
         "facebook": "Facebook",
         "pinterest": "Pinterest",
         "instagram": "Instagram",
@@ -142,6 +147,9 @@
         "regular_price": "Redovna cijena",
         "sale_price": "Prodajna cijena",
         "unit_price": "Jedinična cijena"
+      },
+      "selling_plans": {
+        "one_time_purchase": "Jednokratna kupnja"
       },
       "pickup_availability": {
         "view_store_info": "Prikaži informacije o trgovini",
@@ -486,5 +494,18 @@
       "message": "Poruka",
       "max_characters": "Najveći dopušteni broj znakova: {{ max_chars }}"
     }
+  },
+  "gift_wrapping": {
+    "title": "Zamotati kao poklon? (+£15)",
+    "to": "Za",
+    "to_placeholder": "Ime primatelja",
+    "from": "Od",
+    "from_placeholder": "Ime pošiljatelja",
+    "message": "Poruka uz poklon",
+    "message_placeholder": "Ovdje upišite svoju poruku",
+    "edit": "Uredi",
+    "cancel": "Odustani",
+    "update": "Ažuriraj",
+    "updating": "Ažuriranje..."
   }
 }

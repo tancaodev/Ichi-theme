@@ -1,0 +1,74 @@
+{%- doc -%}
+  Outputs the instance CSS variables for one icon block, scoped to `#<icon_id>`.
+  Size and padding read `icon_size` / `icon_padding_value` and their `_mobile` settings when the matching
+  `*_custom_mobile` toggle is on, otherwise mobile repeats desktop. With the padding toggle off, the
+  padding follows the style default: 12px for Boxed, 0 for Classic.
+  The static rules in `snip_icon_block.liquid` read them, with mobile as the base and desktop from 750px.
+
+  @param {object} component_settings - Settings object holding the `icon_*` settings.
+  @param {string} icon_id - DOM id of the icon wrapper the variables are scoped to.
+
+  @example
+  {% render 'icon_block_styles', component_settings: block.settings, icon_id: 'Icon-' | append: block.id %}
+{%- enddoc -%}
+{%- liquid
+  assign st = component_settings
+  assign breakpoints = 'desktop,mobile' | split: ','
+
+  assign default_padding = 0
+  if st.icon_style == 'boxed'
+    assign default_padding = 12
+  endif
+
+  case st.icon_corner_radius
+    when 'buttons'
+      assign corner_radius = 'var(--buttons-radius)'
+    when 'media'
+      assign corner_radius = 'var(--media-radius)'
+    else
+      assign corner_radius = 'var(--text-boxes-radius)'
+  endcase
+-%}
+{%- capture instance_variables -%}
+  {% render 'css_var_margin', component_settings: st, prefix: 'icon' %}
+  {%- for breakpoint in breakpoints -%}
+    {%- liquid
+      assign size_suffix = ''
+      assign padding_suffix = ''
+      assign var_suffix = ''
+      if breakpoint == 'mobile'
+        assign var_suffix = '-mobile'
+        if st.icon_size_custom_mobile
+          assign size_suffix = '_mobile'
+        endif
+        if st.icon_padding_custom_mobile
+          assign padding_suffix = '_mobile'
+        endif
+      endif
+
+      assign size_key = 'icon_size' | append: size_suffix
+      assign custom_size_key = 'icon_custom_size' | append: size_suffix
+      assign padding_key = 'icon_padding_value' | append: padding_suffix
+
+      assign size = st[size_key] | default: 16
+      if size == 'custom'
+        assign size = st[custom_size_key] | default: 16
+      endif
+
+      assign padding = default_padding
+      if st.icon_padding
+        assign padding = st[padding_key] | default: 0
+      endif
+    -%}
+    --icon-size{{ var_suffix }}: {{ size | divided_by: 10.0 }}rem;
+    --icon-padding{{ var_suffix }}: {{ padding | divided_by: 10.0 }}rem;
+  {%- endfor -%}
+{%- endcapture -%}
+{% style %}
+  #{{ icon_id }} {
+    {{ instance_variables }}
+    {%- if st.icon_shape == 'rounded' %}
+      --icon-radius: {{ corner_radius }};
+    {%- endif %}
+  }
+{% endstyle %}

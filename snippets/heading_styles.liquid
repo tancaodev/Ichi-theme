@@ -1,0 +1,29 @@
+{%- doc -%}
+  Outputs the instance CSS variables for one heading, scoped to `#<heading_id>`.
+  The static rules in `snip_heading.liquid` read them, with mobile as the base and desktop from 750px.
+
+  @param {object} component_settings - Settings object holding the `heading_*` settings.
+  @param {string} heading_id - DOM id of the heading wrapper the variables are scoped to.
+
+  @example
+  {% render 'heading_styles', component_settings: block.settings, heading_id: 'Heading-' | append: block.id %}
+{%- enddoc -%}
+{%- liquid
+  assign st = component_settings
+  assign highlight_family = st.heading_highlight_font_family | default: 'highlight'
+-%}
+{%- capture instance_variables -%}
+  {% render 'css_var_layout', component_settings: st, prefix: 'heading' %}
+  {% render 'css_var_typography', component_settings: st, prefix: 'heading' %}
+  {% render 'css_var_margin', component_settings: st, prefix: 'heading' %}
+{%- endcapture -%}
+{% style %}
+  #{{ heading_id }} {
+    {{ instance_variables }}
+    --heading-highlight-font-family: var(--font-{{ highlight_family }}-family);
+    {%- if st.heading_highlight_color != blank %}
+      --heading-highlight-color: {{ st.heading_highlight_color }};
+    {%- endif %}
+  }
+{% endstyle %}
+

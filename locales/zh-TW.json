@@ -23,10 +23,15 @@
       "alt_text": {
         "share_on_facebook": "分享至 Facebook",
         "share_on_twitter": "在 Twitter 上發佈 Twitter 貼文",
-        "share_on_pinterest": "在 Pinterest 上發佈 Pin 貼文"
+        "share_on_pinterest": "在 Pinterest 上發佈 Pin 貼文",
+        "share_on_x": "分享至 X",
+        "share_on_telegram": "分享至 Telegram",
+        "share_on_whatsapp": "分享至 WhatsApp",
+        "share_on_line": "分享至 LINE",
+        "share_by_email": "透過電子郵件分享"
       },
       "links": {
-        "twitter": "Twitter",
+        "twitter": "X",
         "facebook": "Facebook",
         "pinterest": "Pinterest",
         "instagram": "Instagram",
@@ -134,6 +139,9 @@
         "regular_price": "定價",
         "sale_price": "售價",
         "unit_price": "單價"
+      },
+      "selling_plans": {
+        "one_time_purchase": "單次購買"
       },
       "share": "分享產品",
       "sold_out": "售罄",
@@ -476,5 +484,18 @@
       "message": "訊息",
       "max_characters": "最多 {{ max_chars }} 個字元"
     }
+  },
+  "gift_wrapping": {
+    "title": "包裝成禮品？(+£15)",
+    "to": "收件人",
+    "to_placeholder": "收件人姓名",
+    "from": "寄件人",
+    "from_placeholder": "寄件人姓名",
+    "message": "禮品訊息",
+    "message_placeholder": "在此輸入你的訊息",
+    "edit": "編輯",
+    "cancel": "取消",
+    "update": "更新",
+    "updating": "正在更新..."
   }
 }

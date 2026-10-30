@@ -1,0 +1,529 @@
+{% render 'snip_video', component_settings: block.settings, component_id: block.id, attributes: block.shopify_attributes %}
+
+{% schema %}
+{
+  "name": "t:blocks.video.name",
+  "tag": null,
+  "settings": [
+    {
+      "type": "select",
+      "id": "video_source",
+      "label": "t:blocks.video.settings.source.label",
+      "options": [
+        {
+          "value": "uploaded",
+          "label": "t:blocks.video.settings.source.options__uploaded"
+        },
+        {
+          "value": "external",
+          "label": "t:blocks.video.settings.source.options__external"
+        }
+      ],
+      "default": "uploaded"
+    },
+    {
+      "type": "video",
+      "id": "video",
+      "label": "t:blocks.video.settings.video.label",
+      "visible_if": "{{ block.settings.video_source == 'uploaded' }}"
+    },
+    {
+      "type": "video_url",
+      "id": "video_url",
+      "label": "t:blocks.video.settings.video_url.label",
+      "info": "t:blocks.video.settings.video_url.info",
+      "accept": [
+        "youtube",
+        "vimeo"
+      ],
+      "placeholder": "t:blocks.video.settings.video_url.placeholder",
+      "visible_if": "{{ block.settings.video_source == 'external' }}"
+    },
+    {
+      "type": "image_picker",
+      "id": "video_cover_image",
+      "label": "t:blocks.video.settings.cover_image.label"
+    },
+    {
+      "type": "text",
+      "id": "video_alt",
+      "label": "t:blocks.video.settings.alt.label",
+      "info": "t:blocks.video.settings.alt.info"
+    },
+    {
+      "type": "checkbox",
+      "id": "video_autoplay",
+      "label": "t:blocks.video.settings.autoplay.label",
+      "info": "t:blocks.video.settings.autoplay.info",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "video_controls",
+      "label": "t:blocks.video.settings.controls.label",
+      "default": false,
+      "visible_if": "{{ block.settings.video_autoplay }}"
+    },
+    {
+      "type": "checkbox",
+      "id": "video_loop",
+      "label": "t:blocks.video.settings.loop.label",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "t:blocks.shared.settings.header_layout.content"
+    },
+    {
+      "type": "select",
+      "id": "video_orientation",
+      "label": "t:blocks.video.settings.orientation.label",
+      "options": [
+        {
+          "value": "auto",
+          "label": "t:blocks.video.settings.orientation.options__auto"
+        },
+        {
+          "value": "landscape",
+          "label": "t:blocks.video.settings.orientation.options__landscape"
+        },
+        {
+          "value": "portrait",
+          "label": "t:blocks.video.settings.orientation.options__portrait"
+        },
+        {
+          "value": "square",
+          "label": "t:blocks.video.settings.orientation.options__square"
+        }
+      ],
+      "default": "landscape"
+    },
+    {
+      "type": "select",
+      "id": "video_ratio_landscape",
+      "label": "t:blocks.video.settings.ratio.label",
+      "options": [
+        {
+          "value": "16/9",
+          "label": "16:9"
+        },
+        {
+          "value": "4/3",
+          "label": "4:3"
+        },
+        {
+          "value": "3/2",
+          "label": "3:2"
+        },
+        {
+          "value": "21/9",
+          "label": "21:9"
+        }
+      ],
+      "default": "16/9",
+      "visible_if": "{{ block.settings.video_orientation == 'landscape' }}"
+    },
+    {
+      "type": "select",
+      "id": "video_ratio_portrait",
+      "label": "t:blocks.video.settings.ratio.label",
+      "options": [
+        {
+          "value": "9/16",
+          "label": "9:16"
+        },
+        {
+          "value": "3/4",
+          "label": "3:4"
+        },
+        {
+          "value": "2/3",
+          "label": "2:3"
+        },
+        {
+          "value": "4/5",
+          "label": "4:5"
+        }
+      ],
+      "default": "9/16",
+      "visible_if": "{{ block.settings.video_orientation == 'portrait' }}"
+    },
+    {
+      "type": "select",
+      "id": "video_width",
+      "label": "t:blocks.video.settings.width.label",
+      "options": [
+        {
+          "value": "fill",
+          "label": "t:blocks.video.settings.width.options__fill"
+        },
+        {
+          "value": "custom",
+          "label": "t:blocks.video.settings.width.options__custom"
+        }
+      ],
+      "default": "fill"
+    },
+    {
+      "type": "select",
+      "id": "video_width_unit",
+      "label": "t:blocks.video.settings.width_unit.label",
+      "options": [
+        {
+          "value": "percent",
+          "label": "t:blocks.video.settings.width_unit.options__percent"
+        },
+        {
+          "value": "pixel",
+          "label": "t:blocks.video.settings.width_unit.options__pixel"
+        }
+      ],
+      "default": "percent",
+      "visible_if": "{{ block.settings.video_width == 'custom' }}"
+    },
+    {
+      "type": "range",
+      "id": "video_width_percent",
+      "label": "t:blocks.video.settings.custom_width.label",
+      "min": 10,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "default": 100,
+      "visible_if": "{{ block.settings.video_width == 'custom' and block.settings.video_width_unit == 'percent' }}"
+    },
+    {
+      "type": "range",
+      "id": "video_width_pixel",
+      "label": "t:blocks.video.settings.custom_width.label",
+      "min": 100,
+      "max": 2000,
+      "step": 20,
+      "unit": "px",
+      "default": 800,
+      "visible_if": "{{ block.settings.video_width == 'custom' and block.settings.video_width_unit == 'pixel' }}"
+    },
+    {
+      "type": "checkbox",
+      "id": "video_layout_custom_mobile",
+      "label": "t:blocks.shared.settings.custom_mobile.label",
+      "default": false
+    },
+    {
+      "type": "select",
+      "id": "video_orientation_mobile",
+      "label": "t:blocks.video.settings.orientation.label",
+      "options": [
+        {
+          "value": "auto",
+          "label": "t:blocks.video.settings.orientation.options__auto"
+        },
+        {
+          "value": "landscape",
+          "label": "t:blocks.video.settings.orientation.options__landscape"
+        },
+        {
+          "value": "portrait",
+          "label": "t:blocks.video.settings.orientation.options__portrait"
+        },
+        {
+          "value": "square",
+          "label": "t:blocks.video.settings.orientation.options__square"
+        }
+      ],
+      "default": "auto",
+      "visible_if": "{{ block.settings.video_layout_custom_mobile }}"
+    },
+    {
+      "type": "select",
+      "id": "video_ratio_landscape_mobile",
+      "label": "t:blocks.video.settings.ratio.label",
+      "options": [
+        {
+          "value": "16/9",
+          "label": "16:9"
+        },
+        {
+          "value": "4/3",
+          "label": "4:3"
+        },
+        {
+          "value": "3/2",
+          "label": "3:2"
+        },
+        {
+          "value": "21/9",
+          "label": "21:9"
+        }
+      ],
+      "default": "16/9",
+      "visible_if": "{{ block.settings.video_layout_custom_mobile and block.settings.video_orientation_mobile == 'landscape' }}"
+    },
+    {
+      "type": "select",
+      "id": "video_ratio_portrait_mobile",
+      "label": "t:blocks.video.settings.ratio.label",
+      "options": [
+        {
+          "value": "9/16",
+          "label": "9:16"
+        },
+        {
+          "value": "3/4",
+          "label": "3:4"
+        },
+        {
+          "value": "2/3",
+          "label": "2:3"
+        },
+        {
+          "value": "4/5",
+          "label": "4:5"
+        }
+      ],
+      "default": "9/16",
+      "visible_if": "{{ block.settings.video_layout_custom_mobile and block.settings.video_orientation_mobile == 'portrait' }}"
+    },
+    {
+      "type": "select",
+      "id": "video_width_mobile",
+      "label": "t:blocks.video.settings.width.label",
+      "options": [
+        {
+          "value": "fill",
+          "label": "t:blocks.video.settings.width.options__fill"
+        },
+        {
+          "value": "custom",
+          "label": "t:blocks.video.settings.width.options__custom"
+        }
+      ],
+      "default": "fill",
+      "visible_if": "{{ block.settings.video_layout_custom_mobile }}"
+    },
+    {
+      "type": "select",
+      "id": "video_width_unit_mobile",
+      "label": "t:blocks.video.settings.width_unit.label",
+      "options": [
+        {
+          "value": "percent",
+          "label": "t:blocks.video.settings.width_unit.options__percent"
+        },
+        {
+          "value": "pixel",
+          "label": "t:blocks.video.settings.width_unit.options__pixel"
+        }
+      ],
+      "default": "percent",
+      "visible_if": "{{ block.settings.video_layout_custom_mobile and block.settings.video_width_mobile == 'custom' }}"
+    },
+    {
+      "type": "range",
+      "id": "video_width_percent_mobile",
+      "label": "t:blocks.video.settings.custom_width.label",
+      "min": 10,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "default": 100,
+      "visible_if": "{{ block.settings.video_layout_custom_mobile and block.settings.video_width_mobile == 'custom' and block.settings.video_width_unit_mobile == 'percent' }}"
+    },
+    {
+      "type": "range",
+      "id": "video_width_pixel_mobile",
+      "label": "t:blocks.video.settings.custom_width.label",
+      "min": 100,
+      "max": 2000,
+      "step": 20,
+      "unit": "px",
+      "default": 800,
+      "visible_if": "{{ block.settings.video_layout_custom_mobile and block.settings.video_width_mobile == 'custom' and block.settings.video_width_unit_mobile == 'pixel' }}"
+    },
+    {
+      "type": "header",
+      "content": "t:blocks.video.settings.header_style.content"
+    },
+    {
+      "type": "select",
+      "id": "video_corner_radius",
+      "label": "t:blocks.video.settings.corner_radius.label",
+      "info": "t:blocks.video.settings.corner_radius.info",
+      "options": [
+        {
+          "value": "none",
+          "label": "t:blocks.video.settings.corner_radius.options__none"
+        },
+        {
+          "value": "main",
+          "label": "t:blocks.video.settings.corner_radius.options__main"
+        },
+        {
+          "value": "buttons",
+          "label": "t:blocks.video.settings.corner_radius.options__buttons"
+        },
+        {
+          "value": "media",
+          "label": "t:blocks.video.settings.corner_radius.options__media"
+        }
+      ],
+      "default": "main"
+    },
+    {
+      "type": "checkbox",
+      "id": "video_overlay",
+      "label": "t:blocks.video.settings.overlay.label",
+      "default": false
+    },
+    {
+      "type": "color_background",
+      "id": "video_overlay_color",
+      "label": "t:blocks.video.settings.overlay_color.label",
+      "default": "rgba(0, 0, 0, 0.25)",
+      "visible_if": "{{ block.settings.video_overlay }}"
+    },
+    {
+      "type": "select",
+      "id": "video_filter",
+      "label": "t:blocks.video.settings.filter.label",
+      "options": [
+        {
+          "value": "normal",
+          "label": "t:blocks.video.settings.filter.options__normal"
+        },
+        {
+          "value": "grayscale",
+          "label": "t:blocks.video.settings.filter.options__grayscale"
+        },
+        {
+          "value": "vintage",
+          "label": "t:blocks.video.settings.filter.options__vintage"
+        },
+        {
+          "value": "warm",
+          "label": "t:blocks.video.settings.filter.options__warm"
+        },
+        {
+          "value": "high_contrast",
+          "label": "t:blocks.video.settings.filter.options__high_contrast"
+        },
+        {
+          "value": "fade",
+          "label": "t:blocks.video.settings.filter.options__fade"
+        }
+      ],
+      "default": "normal"
+    },
+    {
+      "type": "header",
+      "content": "t:blocks.shared.settings.header_spacing.content"
+    },
+    {
+      "type": "checkbox",
+      "id": "video_margin",
+      "label": "t:blocks.video.settings.margin.label",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "video_margin_top",
+      "label": "t:blocks.shared.settings.margin_top.label",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "default": 0,
+      "visible_if": "{{ block.settings.video_margin }}"
+    },
+    {
+      "type": "range",
+      "id": "video_margin_bottom",
+      "label": "t:blocks.shared.settings.margin_bottom.label",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "default": 0,
+      "visible_if": "{{ block.settings.video_margin }}"
+    },
+    {
+      "type": "range",
+      "id": "video_margin_left",
+      "label": "t:blocks.shared.settings.margin_left.label",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "default": 0,
+      "visible_if": "{{ block.settings.video_margin }}"
+    },
+    {
+      "type": "range",
+      "id": "video_margin_right",
+      "label": "t:blocks.shared.settings.margin_right.label",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "default": 0,
+      "visible_if": "{{ block.settings.video_margin }}"
+    },
+    {
+      "type": "checkbox",
+      "id": "video_margin_custom_mobile",
+      "label": "t:blocks.shared.settings.custom_mobile.label",
+      "default": false,
+      "visible_if": "{{ block.settings.video_margin }}"
+    },
+    {
+      "type": "range",
+      "id": "video_margin_top_mobile",
+      "label": "t:blocks.shared.settings.margin_top.label",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "default": 0,
+      "visible_if": "{{ block.settings.video_margin and block.settings.video_margin_custom_mobile }}"
+    },
+    {
+      "type": "range",
+      "id": "video_margin_bottom_mobile",
+      "label": "t:blocks.shared.settings.margin_bottom.label",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "default": 0,
+      "visible_if": "{{ block.settings.video_margin and block.settings.video_margin_custom_mobile }}"
+    },
+    {
+      "type": "range",
+      "id": "video_margin_left_mobile",
+      "label": "t:blocks.shared.settings.margin_left.label",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "default": 0,
+      "visible_if": "{{ block.settings.video_margin and block.settings.video_margin_custom_mobile }}"
+    },
+    {
+      "type": "range",
+      "id": "video_margin_right_mobile",
+      "label": "t:blocks.shared.settings.margin_right.label",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "default": 0,
+      "visible_if": "{{ block.settings.video_margin and block.settings.video_margin_custom_mobile }}"
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:blocks.video.name"
+    }
+  ]
+}
+{% endschema %}

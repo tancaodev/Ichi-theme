@@ -8,6 +8,220 @@
  * ------------------------------------------------------------
  */
 {
+  "blocks": {
+    "shared": {
+      "settings": {
+        "custom_mobile": {
+          "label": "모바일에서 사용자 지정"
+        },
+        "header_layout": {
+          "content": "레이아웃"
+        },
+        "header_spacing": {
+          "content": "간격"
+        },
+        "margin_top": {
+          "label": "위"
+        },
+        "margin_bottom": {
+          "label": "아래"
+        },
+        "margin_left": {
+          "label": "왼쪽"
+        },
+        "margin_right": {
+          "label": "오른쪽"
+        }
+      }
+    },
+    "heading": {
+      "name": "제목",
+      "settings": {
+        "heading": {
+          "label": "제목"
+        },
+        "header_typography": {
+          "content": "타이포그래피"
+        },
+        "size": {
+          "label": "크기",
+          "info": "테마 설정 > 타이포그래피에서 크기를 편집하세요",
+          "options__display": "디스플레이",
+          "options__h1": "제목 1",
+          "options__h2": "제목 2",
+          "options__h3": "제목 3",
+          "options__h4": "제목 4",
+          "options__h5": "제목 5",
+          "options__h6": "제목 6",
+          "options__subheading": "부제목",
+          "options__custom": "사용자 지정"
+        },
+        "heading_tag": {
+          "label": "HTML 태그",
+          "info": "SEO를 위해 페이지 구조에 맞는 제목 수준을 선택하세요"
+        },
+        "font_family": {
+          "label": "글꼴 패밀리",
+          "options__heading": "제목",
+          "options__body": "본문",
+          "options__highlight": "강조"
+        },
+        "font_size": {
+          "label": "글꼴 크기",
+          "info": "px"
+        },
+        "width": {
+          "label": "너비",
+          "options__fit": "맞춤",
+          "options__fill": "채우기",
+          "options__custom": "사용자 지정"
+        },
+        "width_unit": {
+          "label": "단위",
+          "options__percent": "퍼센트",
+          "options__pixel": "픽셀"
+        },
+        "custom_width": {
+          "label": "사용자 지정 너비"
+        },
+        "alignment": {
+          "label": "정렬"
+        },
+        "header_highlight": {
+          "content": "텍스트 강조",
+          "info": "강조를 적용하려면 텍스트를 기울임꼴로 만드세요"
+        },
+        "highlight_style": {
+          "label": "강조 스타일",
+          "options__none": "없음",
+          "options__text_color": "텍스트 색상",
+          "options__underline_soft": "밑줄(부드럽게)",
+          "options__underline_double": "밑줄(이중)",
+          "options__underline_wavy": "밑줄(물결)",
+          "options__circle_outline": "원(윤곽선)",
+          "options__highlight_bar": "형광펜(막대)",
+          "options__highlight_solid": "형광펜(채우기)"
+        },
+        "highlight_color": {
+          "label": "강조 색상",
+          "info": "기본값은 강조 색상입니다"
+        },
+        "margin": {
+          "label": "여백"
+        }
+      }
+    },
+    "divider": {
+      "name": "구분선",
+      "settings": {
+        "direction": {
+          "label": "방향",
+          "options__horizontal": "가로",
+          "options__vertical": "세로"
+        },
+        "width": {
+          "label": "너비"
+        },
+        "height": {
+          "label": "높이"
+        },
+        "thickness": {
+          "label": "두께"
+        },
+        "header_style": {
+          "content": "스타일"
+        },
+        "style": {
+          "label": "스타일",
+          "options__line": "선",
+          "options__dot": "점"
+        },
+        "corner_radius": {
+          "label": "모서리 반경",
+          "options__square": "사각형",
+          "options__rounded": "둥근 모서리"
+        }
+      }
+    },
+    "icon": {
+      "name": "아이콘",
+      "settings": {
+        "icon_source": {
+          "label": "아이콘 선택",
+          "options__library": "라이브러리",
+          "options__upload": "업로드"
+        },
+        "icon": {
+          "label": "아이콘",
+          "options__arrow_up_right": "오른쪽 위 화살표"
+        },
+        "icon_image": {
+          "label": "이미지 아이콘"
+        },
+        "icon_size": {
+          "label": "아이콘 크기",
+          "options__custom": "사용자 지정"
+        },
+        "custom_size": {
+          "label": "사용자 지정 크기"
+        },
+        "header_style": {
+          "content": "스타일"
+        },
+        "icon_style": {
+          "label": "스타일",
+          "info": "박스형은 기본적으로 12px 안쪽 여백을 추가하며 클래식은 추가하지 않습니다",
+          "options__classic": "클래식",
+          "options__boxed": "박스형"
+        },
+        "icon_box_style": {
+          "label": "박스 스타일",
+          "options__fill": "채우기",
+          "options__outline": "윤곽선"
+        },
+        "icon_shape": {
+          "label": "모양",
+          "options__square": "사각형",
+          "options__rounded": "둥근 모서리",
+          "options__circle": "원"
+        },
+        "icon_corner_radius": {
+          "label": "모서리 반경",
+          "info": "테마 설정의 모서리 반경을 사용합니다",
+          "options__main": "기본 콘텐츠",
+          "options__buttons": "버튼",
+          "options__media": "미디어"
+        },
+        "icon_color": {
+          "label": "색상",
+          "options__strong": "진하게",
+          "options__light": "연하게"
+        },
+        "padding": {
+          "label": "안쪽 여백"
+        },
+        "padding_value": {
+          "label": "값"
+        },
+        "margin": {
+          "label": "여백"
+        }
+      }
+    },
+    "spacer": {
+      "name": "스페이서",
+      "settings": {
+        "unit": {
+          "label": "단위",
+          "options__percent": "퍼센트",
+          "options__pixel": "픽셀"
+        },
+        "size": {
+          "label": "크기"
+        }
+      }
+    }
+  },
   "settings_schema": {
     "colors": {
       "name": "색상",
@@ -60,25 +274,97 @@
     "typography": {
       "name": "입력 체계",
       "settings": {
+        "header_font_family": {
+          "content": "글꼴 패밀리"
+        },
+        "header_paragraph": {
+          "content": "단락"
+        },
+        "header_highlight": {
+          "content": "강조"
+        },
+        "header_display": {
+          "content": "디스플레이 제목"
+        },
+        "header_h1": {
+          "content": "제목 1"
+        },
+        "header_h2": {
+          "content": "제목 2"
+        },
+        "header_h3": {
+          "content": "제목 3"
+        },
+        "header_h4": {
+          "content": "제목 4"
+        },
+        "header_h5": {
+          "content": "제목 5"
+        },
+        "header_h6": {
+          "content": "제목 6"
+        },
+        "header_subheading": {
+          "content": "부제목"
+        },
+        "header_description": {
+          "content": "설명"
+        },
+        "header_label": {
+          "content": "레이블"
+        },
         "type_header_font": {
           "label": "글꼴",
           "info": "다른 글꼴을 선택하면 스토어 속도가 영향을 받을 수 있습니다. [시스템 글꼴에 대해 자세히 알아보십시오.](https:\/\/help.shopify.com\/manual\/online-store\/os\/store-speed\/improving-speed#fonts)"
         },
-        "header__1": {
-          "content": "제목"
-        },
-        "header__2": {
-          "content": "본문"
+        "type_highlight_font": {
+          "label": "강조",
+          "info": "제목 안의 강조된 단어에 사용됩니다."
         },
         "type_body_font": {
           "label": "글꼴",
           "info": "다른 글꼴을 선택하면 스토어 속도가 영향을 받을 수 있습니다. [시스템 글꼴에 대해 자세히 알아보십시오.](https:\/\/help.shopify.com\/manual\/online-store\/os\/store-speed\/improving-speed#fonts)"
         },
-        "heading_scale": {
-          "label": "글꼴 크기 배율"
+        "font_size": {
+          "label": "크기"
         },
-        "body_scale": {
-          "label": "글꼴 크기 배율"
+        "mobile_font_size": {
+          "label": "모바일 크기"
+        },
+        "line_height": {
+          "label": "줄 높이"
+        },
+        "letter_spacing": {
+          "label": "자간"
+        },
+        "paragraph_spacing": {
+          "label": "단락 간격"
+        },
+        "font_weight": {
+          "label": "글꼴 두께",
+          "options__light": "얇게",
+          "options__regular": "보통",
+          "options__medium": "중간",
+          "options__semibold": "세미볼드",
+          "options__bold": "볼드",
+          "options__extrabold": "엑스트라볼드"
+        },
+        "case": {
+          "label": "대소문자",
+          "options__normal": "보통",
+          "options__uppercase": "대문자",
+          "options__lowercase": "소문자",
+          "options__capitalize": "첫 글자 대문자"
+        },
+        "font_style": {
+          "label": "글꼴 스타일",
+          "options__normal": "보통",
+          "options__italic": "기울임꼴"
+        },
+        "subheading_font": {
+          "label": "글꼴 패밀리",
+          "options__heading": "제목",
+          "options__body": "본문"
         }
       }
     },
@@ -99,6 +385,43 @@
     "social-media": {
       "name": "소셜 미디어",
       "settings": {
+        "header__style": {
+          "content": "스타일"
+        },
+        "social_type": {
+          "label": "유형",
+          "options__icon": "아이콘",
+          "options__text": "텍스트"
+        },
+        "social_style": {
+          "label": "스타일",
+          "options__classic": "클래식",
+          "options__boxed": "박스형"
+        },
+        "social_box_style": {
+          "label": "박스 스타일",
+          "options__fill": "채우기",
+          "options__outline": "윤곽선"
+        },
+        "social_shape": {
+          "label": "모양",
+          "options__square": "사각형",
+          "options__rounded": "둥근 모서리",
+          "options__full": "원 \/ 알약형"
+        },
+        "social_radius": {
+          "label": "모서리 반경",
+          "info": "버튼 모서리 반경을 기준으로 합니다.",
+          "options__main": "기본 모서리",
+          "options__small": "작게",
+          "options__extra_small": "아주 작게"
+        },
+        "social_size": {
+          "label": "크기",
+          "options__small": "작게",
+          "options__medium": "중간",
+          "options__large": "크게"
+        },
         "social_twitter_link": {
           "label": "Twitter",
           "info": "https:\/\/twitter.com\/shopify"
@@ -135,6 +458,30 @@
           "label": "Vimeo",
           "info": "https:\/\/vimeo.com\/shopify"
         },
+        "header__sharing": {
+          "content": "공유 옵션"
+        },
+        "share_facebook": {
+          "label": "Facebook에 공유"
+        },
+        "share_x": {
+          "label": "X(이전 Twitter)에 공유"
+        },
+        "share_pinterest": {
+          "label": "Pinterest에 핀하기"
+        },
+        "share_telegram": {
+          "label": "Telegram에 공유"
+        },
+        "share_whatsapp": {
+          "label": "WhatsApp에 공유"
+        },
+        "share_line": {
+          "label": "LINE에 공유"
+        },
+        "share_email": {
+          "label": "이메일로 공유"
+        },
         "header": {
           "content": "소셜 계정"
         }
@@ -147,29 +494,6 @@
         "paragraph": "카트 및 결제 가격에는 항상 통화 코드가 표시됩니다. 예: $1.00(USD)",
         "currency_code_enabled": {
           "label": "통화 코드 표시"
-        }
-      }
-    },
-    "layout": {
-      "name": "레이아웃",
-      "settings": {
-        "page_width": {
-          "label": "페이지 너비"
-        },
-        "spacing_sections": {
-          "label": "템플릿 섹션 사이 간격"
-        },
-        "header__grid": {
-          "content": "그리드"
-        },
-        "paragraph__grid": {
-          "content": "여러 열이나 행이 있는 영역에 영향을 미칩니다."
-        },
-        "spacing_grid_horizontal": {
-          "label": "수평 영역"
-        },
-        "spacing_grid_vertical": {
-          "label": "수직 영역"
         }
       }
     },
@@ -311,6 +635,61 @@
             "label": "컬렉션",
             "info": "카트 서랍이 비어 있으면 표시됩니다."
           }
+        }
+      }
+    },
+    "section": {
+      "name": "섹션",
+      "settings": {
+        "header__layout": {
+          "content": "레이아웃"
+        },
+        "section_layout": {
+          "label": "레이아웃",
+          "options__classic": "클래식",
+          "options__bento": "벤토"
+        },
+        "section_spacing": {
+          "label": "섹션 간 간격",
+          "info": "페이지의 섹션 사이 거리입니다."
+        },
+        "section_gutter": {
+          "label": "거터",
+          "info": "섹션 내부의 그리드 열과 행 사이의 간격입니다."
+        },
+        "section_radius": {
+          "label": "모서리 반경",
+          "options__main": "기본 모서리",
+          "options__small": "작게",
+          "options__extra_small": "아주 작게",
+          "options__none": "없음",
+          "options__custom": "사용자 지정"
+        },
+        "section_radius_custom": {
+          "label": "사용자 지정 모서리 반경"
+        },
+        "page_width": {
+          "label": "페이지 너비"
+        },
+        "header__padding": {
+          "content": "안쪽 여백"
+        },
+        "section_padding_device": {
+          "label": "기기",
+          "options__desktop": "데스크톱",
+          "options__mobile": "모바일"
+        },
+        "section_padding_top": {
+          "label": "위"
+        },
+        "section_padding_bottom": {
+          "label": "아래"
+        },
+        "section_padding_left": {
+          "label": "왼쪽"
+        },
+        "section_padding_right": {
+          "label": "오른쪽"
         }
       }
     },

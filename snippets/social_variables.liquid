@@ -1,0 +1,65 @@
+{% comment %}
+  Social variables
+  Outputs the CSS custom properties driven by the Social media theme settings.
+  Mobile values are the base; desktop values are applied from 750px.
+
+  Rounded corner radius is derived from the button corner radius (Button & Input):
+  Main corner = button radius, Small = 2/3, Extra small = 1/3.
+  TODO: switch radius, font weight and letter spacing to the Button & Input settings once they are added.
+
+  Usage:
+  {% style %}
+    {% render 'social_variables' %}
+  {% endstyle %}
+{% endcomment %}
+
+{%- liquid
+  case settings.social_radius
+    when 'small'
+      assign radius = settings.buttons_radius | times: 2 | divided_by: 3.0
+    when 'extra_small'
+      assign radius = settings.buttons_radius | divided_by: 3.0
+    else
+      assign radius = settings.buttons_radius
+  endcase
+
+  case settings.social_shape
+    when 'square'
+      assign radius = 0
+    when 'full'
+      assign radius = 999
+  endcase
+
+  # Size scale, in px: icon,box,font
+  assign scales = 'small:16,32,12|medium:20,40,14|large:24,48,16' | split: '|'
+  assign size_desktop = settings.social_size
+  assign size_mobile = settings.social_size
+  if settings.social_size_custom_mobile
+    assign size_mobile = settings.social_size_mobile
+  endif
+
+  for scale in scales
+    assign parts = scale | split: ':'
+    if parts[0] == size_desktop
+      assign values_desktop = parts[1] | split: ','
+    endif
+    if parts[0] == size_mobile
+      assign values_mobile = parts[1] | split: ','
+    endif
+  endfor
+-%}
+
+:root {
+  --social-radius: {{ radius | divided_by: 10.0 }}rem;
+  --social-icon-size: {{ values_mobile[0] | divided_by: 10.0 }}rem;
+  --social-box-size: {{ values_mobile[1] | divided_by: 10.0 }}rem;
+  --social-font-size: {{ values_mobile[2] | divided_by: 10.0 }}rem;
+}
+
+@media screen and (min-width: 750px) {
+  :root {
+    --social-icon-size: {{ values_desktop[0] | divided_by: 10.0 }}rem;
+    --social-box-size: {{ values_desktop[1] | divided_by: 10.0 }}rem;
+    --social-font-size: {{ values_desktop[2] | divided_by: 10.0 }}rem;
+  }
+}

@@ -16,6 +16,18 @@ When adding a feature or option to a component, determine the intended audience:
 
 ## 2. Component Design & Abstraction
 
+- **File Names:** Newly added files use `_` (never `-`) as the word separator, and sections, blocks and HTML-rendering snippets get a type prefix so they are distinguishable from Dawn files. Existing Dawn files keep their names.
+
+  | Type | Prefix | Example |
+  | :--- | :--- | :--- |
+  | Section | `sc_` | `sections/sc_hero.liquid` |
+  | Theme block (public) | `blck_` | `blocks/blck_heading.liquid` |
+  | Private block (only usable by sections/blocks that name it) | `_blck_` | `blocks/_blck_slide.liquid` |
+  | Snippet that renders HTML markup | `snip_` | `snippets/snip_heading.liquid` |
+  | Helper snippet (CSS variables / `{% style %}` output, no markup) | none | `snippets/heading_styles.liquid`, `snippets/css_var_margin.liquid` |
+
+  The prefix applies to the file name (and therefore the block `type` / render name) only; setting ids, locale keys and CSS classes keep the bare component name (`heading_*`, `blocks.heading`, `.heading`).
+
 - **Self-Contained Components:** Think in modular components. A Liquid section should be responsible for its own markup, settings, assets, and logic. This keeps components portable and backportable.
 - **Check Existing Solutions:**
   1. Check the CORE inventory first to see if a component already exists.

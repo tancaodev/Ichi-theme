@@ -1,0 +1,73 @@
+{%- doc -%}
+  Outputs the instance CSS variables for one video, scoped to `#<video_id>`.
+  Aspect ratio comes from `video_orientation` (auto uses the uploaded video's own ratio, 16:9 for external URLs)
+  with `video_ratio_landscape` or `video_ratio_portrait`. Mobile reads the `_mobile` settings when
+  `video_layout_custom_mobile` is on, otherwise it repeats desktop. Width and margin come from the shared
+  `css_var_layout` and `css_var_margin` helpers.
+  The static rules in `snip_video.liquid` read them, with mobile as the base and desktop from 750px.
+
+  @param {object} component_settings - Settings object holding the `video_*` settings.
+  @param {string} video_id - DOM id of the video wrapper the variables are scoped to.
+
+  @example
+  {% render 'video_styles', component_settings: block.settings, video_id: 'Video-' | append: block.id %}
+{%- enddoc -%}
+{%- liquid
+  assign st = component_settings
+  assign breakpoints = 'desktop,mobile' | split: ','
+
+  assign auto_ratio = '16 / 9'
+  if st.video_source != 'external' and st.video != blank
+    assign auto_ratio = st.video.aspect_ratio
+  endif
+
+  case st.video_corner_radius
+    when 'none'
+      assign corner_radius = '0'
+    when 'buttons'
+      assign corner_radius = 'var(--buttons-radius)'
+    when 'media'
+      assign corner_radius = 'var(--media-radius)'
+    else
+      assign corner_radius = 'var(--text-boxes-radius)'
+  endcase
+-%}
+{%- capture instance_variables -%}
+  {%- for breakpoint in breakpoints -%}
+    {%- liquid
+      assign setting_suffix = ''
+      assign var_suffix = ''
+      if breakpoint == 'mobile'
+        assign var_suffix = '-mobile'
+        if st.video_layout_custom_mobile
+          assign setting_suffix = '_mobile'
+        endif
+      endif
+
+      assign orientation_key = 'video_orientation' | append: setting_suffix
+      assign landscape_key = 'video_ratio_landscape' | append: setting_suffix
+      assign portrait_key = 'video_ratio_portrait' | append: setting_suffix
+
+      case st[orientation_key]
+        when 'landscape'
+          assign ratio = st[landscape_key] | default: '16/9'
+        when 'portrait'
+          assign ratio = st[portrait_key] | default: '9/16'
+        when 'square'
+          assign ratio = '1'
+        else
+          assign ratio = auto_ratio
+      endcase
+    -%}
+    --video-aspect-ratio{{ var_suffix }}: {{ ratio }};
+  {%- endfor -%}
+  {% render 'css_var_layout', component_settings: st, prefix: 'video' %}
+  {% render 'css_var_margin', component_settings: st, prefix: 'video' %}
+{%- endcapture -%}
+{% style %}
+  #{{ video_id }} {
+    {{ instance_variables }}
+    --video-corner-radius: {{ corner_radius }};
+    --video-overlay: {{ st.video_overlay_color | default: 'rgba(0, 0, 0, 0.25)' }};
+  }
+{% endstyle %}

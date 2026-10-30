@@ -8,6 +8,220 @@
  * ------------------------------------------------------------
  */
 {
+  "blocks": {
+    "shared": {
+      "settings": {
+        "custom_mobile": {
+          "label": "Benutzerdefiniert auf Mobilgeräten"
+        },
+        "header_layout": {
+          "content": "Layout"
+        },
+        "header_spacing": {
+          "content": "Abstand"
+        },
+        "margin_top": {
+          "label": "Oben"
+        },
+        "margin_bottom": {
+          "label": "Unten"
+        },
+        "margin_left": {
+          "label": "Links"
+        },
+        "margin_right": {
+          "label": "Rechts"
+        }
+      }
+    },
+    "heading": {
+      "name": "Überschrift",
+      "settings": {
+        "heading": {
+          "label": "Überschrift"
+        },
+        "header_typography": {
+          "content": "Typografie"
+        },
+        "size": {
+          "label": "Größe",
+          "info": "Größen in den Theme-Einstellungen > Typografie bearbeiten",
+          "options__display": "Display",
+          "options__h1": "Überschrift 1",
+          "options__h2": "Überschrift 2",
+          "options__h3": "Überschrift 3",
+          "options__h4": "Überschrift 4",
+          "options__h5": "Überschrift 5",
+          "options__h6": "Überschrift 6",
+          "options__subheading": "Unterüberschriften",
+          "options__custom": "Benutzerdefiniert"
+        },
+        "heading_tag": {
+          "label": "HTML-Tag",
+          "info": "Wähle die Überschriftenebene, die zur Seitenstruktur passt, für die SEO"
+        },
+        "font_family": {
+          "label": "Schriftfamilie",
+          "options__heading": "Überschrift",
+          "options__body": "Text",
+          "options__highlight": "Akzent"
+        },
+        "font_size": {
+          "label": "Schriftgröße",
+          "info": "px"
+        },
+        "width": {
+          "label": "Breite",
+          "options__fit": "Anpassen",
+          "options__fill": "Füllen",
+          "options__custom": "Benutzerdefiniert"
+        },
+        "width_unit": {
+          "label": "Einheit",
+          "options__percent": "Prozent",
+          "options__pixel": "Pixel"
+        },
+        "custom_width": {
+          "label": "Benutzerdefinierte Breite"
+        },
+        "alignment": {
+          "label": "Ausrichtung"
+        },
+        "header_highlight": {
+          "content": "Texthervorhebung",
+          "info": "Setze den Text kursiv, um eine Hervorhebung anzuwenden"
+        },
+        "highlight_style": {
+          "label": "Hervorhebungsstil",
+          "options__none": "Keine",
+          "options__text_color": "Textfarbe",
+          "options__underline_soft": "Unterstreichung (weich)",
+          "options__underline_double": "Unterstreichung (doppelt)",
+          "options__underline_wavy": "Unterstreichung (wellig)",
+          "options__circle_outline": "Kreis (Kontur)",
+          "options__highlight_bar": "Hervorhebung (Balken)",
+          "options__highlight_solid": "Hervorhebung (voll)"
+        },
+        "highlight_color": {
+          "label": "Hervorhebungsfarbe",
+          "info": "Standardmäßig die Akzentfarbe"
+        },
+        "margin": {
+          "label": "Außenabstand"
+        }
+      }
+    },
+    "divider": {
+      "name": "Trennlinie",
+      "settings": {
+        "direction": {
+          "label": "Richtung",
+          "options__horizontal": "Horizontal",
+          "options__vertical": "Vertikal"
+        },
+        "width": {
+          "label": "Breite"
+        },
+        "height": {
+          "label": "Höhe"
+        },
+        "thickness": {
+          "label": "Stärke"
+        },
+        "header_style": {
+          "content": "Stil"
+        },
+        "style": {
+          "label": "Stil",
+          "options__line": "Linie",
+          "options__dot": "Punkt"
+        },
+        "corner_radius": {
+          "label": "Eckenradius",
+          "options__square": "Eckig",
+          "options__rounded": "Abgerundet"
+        }
+      }
+    },
+    "icon": {
+      "name": "Symbol",
+      "settings": {
+        "icon_source": {
+          "label": "Symbol auswählen",
+          "options__library": "Bibliothek",
+          "options__upload": "Hochladen"
+        },
+        "icon": {
+          "label": "Symbol",
+          "options__arrow_up_right": "Pfeil nach oben rechts"
+        },
+        "icon_image": {
+          "label": "Bildsymbol"
+        },
+        "icon_size": {
+          "label": "Symbolgröße",
+          "options__custom": "Benutzerdefiniert"
+        },
+        "custom_size": {
+          "label": "Benutzerdefinierte Größe"
+        },
+        "header_style": {
+          "content": "Stil"
+        },
+        "icon_style": {
+          "label": "Stil",
+          "info": "„Box“ fügt standardmäßig 12 px Innenabstand hinzu, „Klassisch“ keinen",
+          "options__classic": "Klassisch",
+          "options__boxed": "Box"
+        },
+        "icon_box_style": {
+          "label": "Box-Stil",
+          "options__fill": "Gefüllt",
+          "options__outline": "Kontur"
+        },
+        "icon_shape": {
+          "label": "Form",
+          "options__square": "Eckig",
+          "options__rounded": "Abgerundet",
+          "options__circle": "Kreis"
+        },
+        "icon_corner_radius": {
+          "label": "Eckenradius",
+          "info": "Verwendet den Eckenradius aus den Theme-Einstellungen",
+          "options__main": "Hauptinhalt",
+          "options__buttons": "Schaltflächen",
+          "options__media": "Medien"
+        },
+        "icon_color": {
+          "label": "Farbe",
+          "options__strong": "Kräftig",
+          "options__light": "Hell"
+        },
+        "padding": {
+          "label": "Innenabstand"
+        },
+        "padding_value": {
+          "label": "Wert"
+        },
+        "margin": {
+          "label": "Außenabstand"
+        }
+      }
+    },
+    "spacer": {
+      "name": "Abstandhalter",
+      "settings": {
+        "unit": {
+          "label": "Einheit",
+          "options__percent": "Prozent",
+          "options__pixel": "Pixel"
+        },
+        "size": {
+          "label": "Größe"
+        }
+      }
+    }
+  },
   "settings_schema": {
     "colors": {
       "name": "Farben",
@@ -60,25 +274,97 @@
     "typography": {
       "name": "Typografie",
       "settings": {
+        "header_font_family": {
+          "content": "Schriftfamilie"
+        },
+        "header_paragraph": {
+          "content": "Absatz"
+        },
+        "header_highlight": {
+          "content": "Hervorhebung"
+        },
+        "header_display": {
+          "content": "Display-Überschrift"
+        },
+        "header_h1": {
+          "content": "Überschrift 1"
+        },
+        "header_h2": {
+          "content": "Überschrift 2"
+        },
+        "header_h3": {
+          "content": "Überschrift 3"
+        },
+        "header_h4": {
+          "content": "Überschrift 4"
+        },
+        "header_h5": {
+          "content": "Überschrift 5"
+        },
+        "header_h6": {
+          "content": "Überschrift 6"
+        },
+        "header_subheading": {
+          "content": "Unterüberschriften"
+        },
+        "header_description": {
+          "content": "Beschreibung"
+        },
+        "header_label": {
+          "content": "Label"
+        },
         "type_header_font": {
           "label": "Schriftart",
           "info": "Die Auswahl einer anderen Schriftart kann sich auf die Geschwindigkeit deines Shops auswirken. [Weitere Informationen zu Systemschriftarten.](https:\/\/help.shopify.com\/manual\/online-store\/os\/store-speed\/improving-speed#fonts)"
         },
-        "header__1": {
-          "content": "Überschriften"
-        },
-        "header__2": {
-          "content": "Nachricht"
+        "type_highlight_font": {
+          "label": "Hervorhebung",
+          "info": "Wird für hervorgehobene Wörter in Überschriften verwendet."
         },
         "type_body_font": {
           "label": "Schriftart",
           "info": "Die Auswahl einer anderen Schriftart kann sich auf die Geschwindigkeit deines Shops auswirken. [Weitere Informationen zu Systemschriftarten.](https:\/\/help.shopify.com\/manual\/online-store\/os\/store-speed\/improving-speed#fonts)"
         },
-        "heading_scale": {
-          "label": "Schriftgrößenmaßstab"
+        "font_size": {
+          "label": "Größe"
         },
-        "body_scale": {
-          "label": "Schriftgrößenmaßstab"
+        "mobile_font_size": {
+          "label": "Größe auf Mobilgeräten"
+        },
+        "line_height": {
+          "label": "Zeilenhöhe"
+        },
+        "letter_spacing": {
+          "label": "Buchstabenabstand"
+        },
+        "paragraph_spacing": {
+          "label": "Absatzabstand"
+        },
+        "font_weight": {
+          "label": "Schriftstärke",
+          "options__light": "Leicht",
+          "options__regular": "Normal",
+          "options__medium": "Mittel",
+          "options__semibold": "Halbfett",
+          "options__bold": "Fett",
+          "options__extrabold": "Extrafett"
+        },
+        "case": {
+          "label": "Groß-\/Kleinschreibung",
+          "options__normal": "Normal",
+          "options__uppercase": "Großbuchstaben",
+          "options__lowercase": "Kleinbuchstaben",
+          "options__capitalize": "Wortanfänge groß"
+        },
+        "font_style": {
+          "label": "Schriftstil",
+          "options__normal": "Normal",
+          "options__italic": "Kursiv"
+        },
+        "subheading_font": {
+          "label": "Schriftfamilie",
+          "options__heading": "Überschrift",
+          "options__body": "Text"
         }
       }
     },
@@ -99,6 +385,43 @@
     "social-media": {
       "name": "Social Media",
       "settings": {
+        "header__style": {
+          "content": "Stil"
+        },
+        "social_type": {
+          "label": "Typ",
+          "options__icon": "Symbol",
+          "options__text": "Text"
+        },
+        "social_style": {
+          "label": "Stil",
+          "options__classic": "Klassisch",
+          "options__boxed": "Box"
+        },
+        "social_box_style": {
+          "label": "Box-Stil",
+          "options__fill": "Gefüllt",
+          "options__outline": "Kontur"
+        },
+        "social_shape": {
+          "label": "Form",
+          "options__square": "Eckig",
+          "options__rounded": "Abgerundet",
+          "options__full": "Kreis \/ Pille"
+        },
+        "social_radius": {
+          "label": "Eckenradius",
+          "info": "Basiert auf dem Eckenradius der Schaltflächen.",
+          "options__main": "Haupt-Eckenradius",
+          "options__small": "Klein",
+          "options__extra_small": "Extra klein"
+        },
+        "social_size": {
+          "label": "Größe",
+          "options__small": "Klein",
+          "options__medium": "Mittel",
+          "options__large": "Groß"
+        },
         "social_twitter_link": {
           "label": "Twitter",
           "info": "https:\/\/twitter.com\/shopify"
@@ -135,6 +458,30 @@
           "label": "Vimeo",
           "info": "https:\/\/vimeo.com\/shopify"
         },
+        "header__sharing": {
+          "content": "Teilen-Optionen"
+        },
+        "share_facebook": {
+          "label": "Auf Facebook teilen"
+        },
+        "share_x": {
+          "label": "Auf X (ehemals Twitter) teilen"
+        },
+        "share_pinterest": {
+          "label": "Auf Pinterest pinnen"
+        },
+        "share_telegram": {
+          "label": "Auf Telegram teilen"
+        },
+        "share_whatsapp": {
+          "label": "Auf WhatsApp teilen"
+        },
+        "share_line": {
+          "label": "Auf LINE teilen"
+        },
+        "share_email": {
+          "label": "Per E-Mail teilen"
+        },
         "header": {
           "content": "Social-Media-Konten"
         }
@@ -148,29 +495,6 @@
           "label": "Währungscodes anzeigen"
         },
         "paragraph": "Warenkorb- und Checkout-Preise zeigen immer Währungscodes an. Beispiel: 1,00 USD."
-      }
-    },
-    "layout": {
-      "name": "Layout",
-      "settings": {
-        "page_width": {
-          "label": "Seitenbreite"
-        },
-        "spacing_sections": {
-          "label": "Platz zwischen Vorlagenabschnitten"
-        },
-        "header__grid": {
-          "content": "Raster"
-        },
-        "paragraph__grid": {
-          "content": "Wirkt sich auf Bereiche mit mehreren Spalten oder Reihen aus."
-        },
-        "spacing_grid_horizontal": {
-          "label": "Horizontaler Abstand"
-        },
-        "spacing_grid_vertical": {
-          "label": "Vertikaler Abstand"
-        }
       }
     },
     "search_input": {
@@ -311,6 +635,61 @@
             "label": "Kategorie",
             "info": "Sichtbar, wenn der Warenkorbeinschub leer ist."
           }
+        }
+      }
+    },
+    "section": {
+      "name": "Abschnitt",
+      "settings": {
+        "header__layout": {
+          "content": "Layout"
+        },
+        "section_layout": {
+          "label": "Layout",
+          "options__classic": "Klassisch",
+          "options__bento": "Bento"
+        },
+        "section_spacing": {
+          "label": "Abstand zwischen Abschnitten",
+          "info": "Abstand zwischen den Abschnitten auf der Seite."
+        },
+        "section_gutter": {
+          "label": "Rasterabstand",
+          "info": "Abstand zwischen Rasterspalten und -zeilen innerhalb eines Abschnitts."
+        },
+        "section_radius": {
+          "label": "Eckenradius",
+          "options__main": "Haupt-Eckenradius",
+          "options__small": "Klein",
+          "options__extra_small": "Extra klein",
+          "options__none": "Keine",
+          "options__custom": "Benutzerdefiniert"
+        },
+        "section_radius_custom": {
+          "label": "Benutzerdefinierter Eckenradius"
+        },
+        "page_width": {
+          "label": "Seitenbreite"
+        },
+        "header__padding": {
+          "content": "Innenabstand"
+        },
+        "section_padding_device": {
+          "label": "Gerät",
+          "options__desktop": "Desktop",
+          "options__mobile": "Mobil"
+        },
+        "section_padding_top": {
+          "label": "Oben"
+        },
+        "section_padding_bottom": {
+          "label": "Unten"
+        },
+        "section_padding_left": {
+          "label": "Links"
+        },
+        "section_padding_right": {
+          "label": "Rechts"
         }
       }
     },

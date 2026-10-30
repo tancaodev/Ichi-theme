@@ -1,0 +1,46 @@
+{%- doc -%}
+  Outputs the instance CSS variables for one spacer, scoped to `#<spacer_id>`.
+  Reads `spacer_unit` with `spacer_size_percent` or `spacer_size_pixel`, and their `_mobile` settings
+  when `spacer_size_custom_mobile` is on, otherwise mobile repeats desktop.
+  The static rules in `snip_spacer.liquid` read them, with mobile as the base and desktop from 750px.
+
+  @param {object} component_settings - Settings object holding the `spacer_*` settings.
+  @param {string} spacer_id - DOM id of the spacer the variables are scoped to.
+
+  @example
+  {% render 'spacer_styles', component_settings: block.settings, spacer_id: 'Spacer-' | append: block.id %}
+{%- enddoc -%}
+{%- liquid
+  assign st = component_settings
+  assign breakpoints = 'desktop,mobile' | split: ','
+-%}
+{%- capture instance_variables -%}
+  {%- for breakpoint in breakpoints -%}
+    {%- liquid
+      assign setting_suffix = ''
+      assign var_suffix = ''
+      if breakpoint == 'mobile'
+        assign var_suffix = '-mobile'
+        if st.spacer_size_custom_mobile
+          assign setting_suffix = '_mobile'
+        endif
+      endif
+
+      assign unit_key = 'spacer_unit' | append: setting_suffix
+      assign percent_key = 'spacer_size_percent' | append: setting_suffix
+      assign pixel_key = 'spacer_size_pixel' | append: setting_suffix
+
+      if st[unit_key] == 'pixel'
+        assign size = st[pixel_key] | default: 0 | divided_by: 10.0 | append: 'rem'
+      else
+        assign size = st[percent_key] | default: 0 | append: '%'
+      endif
+    -%}
+    --spacer-size{{ var_suffix }}: {{ size }};
+  {%- endfor -%}
+{%- endcapture -%}
+{% style %}
+  #{{ spacer_id }} {
+    {{ instance_variables }}
+  }
+{% endstyle %}

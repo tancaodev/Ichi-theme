@@ -1,0 +1,285 @@
+{%- doc -%}
+  Renders an uploaded (Shopify-hosted) or external (YouTube, Vimeo) video.
+  With autoplay on, the video plays muted inline right away. Otherwise a cover image with a play button
+  is shown and the player is created from a <template> on click, so nothing heavy loads until needed.
+  Layout (orientation, ratio, width), corner radius, overlay, filter and margin come from the `video_` settings.
+  Settings are read by the `video_` prefix, so any block or section exposing the same setting ids
+  can reuse this snippet.
+
+  @param {object} component_settings - Settings object holding the `video_*` settings (block.settings or section.settings).
+  @param {string} component_id - Unique id used to scope the instance CSS variables (block.id or section.id).
+  @param {string} [attributes] - Theme editor attributes for the wrapper (block.shopify_attributes).
+
+  @example
+  {% render 'snip_video', component_settings: block.settings, component_id: block.id, attributes: block.shopify_attributes %}
+{%- enddoc -%}
+{%- liquid
+  assign st = component_settings
+  assign video_id = 'Video-' | append: component_id
+  assign is_external = false
+  if st.video_source == 'external'
+    assign is_external = true
+  endif
+
+  assign has_video = false
+  if is_external and st.video_url != blank
+    assign has_video = true
+  elsif is_external == false and st.video != blank
+    assign has_video = true
+  endif
+
+  assign alt = st.video_alt | default: st.video.alt | escape
+  assign cover = st.video_cover_image
+  if cover == blank and is_external == false
+    assign cover = st.video.preview_image
+  endif
+
+  assign controls = true
+  if st.video_autoplay and st.video_controls == false
+    assign controls = false
+  endif
+
+  if is_external and has_video
+    assign external_id = st.video_url.id
+    if st.video_url.type == 'youtube'
+      assign embed_url = 'https://www.youtube.com/embed/' | append: external_id | append: '?autoplay=1&playsinline=1&rel=0&enablejsapi=1'
+      if st.video_autoplay
+        assign embed_url = embed_url | append: '&mute=1'
+      endif
+      if st.video_loop
+        assign embed_url = embed_url | append: '&loop=1&playlist=' | append: external_id
+      endif
+      unless controls
+        assign embed_url = embed_url | append: '&controls=0'
+      endunless
+    else
+      assign embed_url = 'https://player.vimeo.com/video/' | append: external_id | append: '?autoplay=1&playsinline=1'
+      if st.video_autoplay
+        assign embed_url = embed_url | append: '&muted=1'
+      endif
+      if st.video_loop
+        assign embed_url = embed_url | append: '&loop=1'
+      endif
+      unless controls
+        assign embed_url = embed_url | append: '&controls=0'
+      endunless
+    endif
+  endif
+-%}
+{%- capture player -%}
+  {%- if is_external -%}
+    <iframe
+      class="video-block__player"
+      src="{{ embed_url }}"
+      title="{{ alt | default: shop.name }}"
+      allow="autoplay; encrypted-media; fullscreen; picture-in-picture"
+      allowfullscreen
+    ></iframe>
+  {%- else -%}
+    <video
+      class="video-block__player"
+      playsinline
+      autoplay
+      {% if st.video_autoplay %}muted{% endif %}
+      {% if st.video_loop %}loop{% endif %}
+      {% if controls %}controls{% endif %}
+      preload="metadata"
+      {% if cover != blank %}poster="{{ cover | image_url: width: 1920 }}"{% endif %}
+      {% if alt != blank %}aria-label="{{ alt }}"{% endif %}
+    >
+      {%- for source in st.video.sources -%}
+        <source src="{{ source.url }}" type="{{ source.mime_type }}">
+      {%- endfor -%}
+    </video>
+  {%- endif -%}
+{%- endcapture -%}
+{% render 'video_styles', component_settings: st, video_id: video_id %}
+<video-block
+  id="{{ video_id }}"
+  class="video-block"
+  data-filter="{{ st.video_filter | default: 'normal' }}"
+  {% if st.video_autoplay and has_video %}data-autoplay loaded{% endif %}
+  {{ attributes }}
+>
+  <div class="video-block__media">
+    {%- if has_video == false -%}
+      {{ 'hero-apparel-1' | placeholder_svg_tag: 'video-block__placeholder' }}
+    {%- elsif st.video_autoplay -%}
+      {{ player }}
+    {%- else -%}
+      <button type="button" class="video-block__poster" aria-label="{{ 'blocks.video.play' | t }}{% if alt != blank %}: {{ alt }}{% endif %}">
+        {%- if cover != blank -%}
+          {{
+            cover
+            | image_url: width: 3840
+            | image_tag:
+              class: 'video-block__cover',
+              widths: '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840',
+              sizes: '100vw',
+              loading: 'lazy',
+              alt: ''
+          }}
+        {%- endif -%}
+        <span class="video-block__play">{% render 'icon-play' %}</span>
+      </button>
+      <template>{{ player }}</template>
+    {%- endif -%}
+    {%- if st.video_overlay -%}
+      <div class="video-block__overlay" aria-hidden="true"></div>
+    {%- endif -%}
+  </div>
+</video-block>
+
+{% stylesheet %}
+  .video-block {
+    display: block;
+    width: var(--video-width-mobile);
+    max-width: var(--video-max-width-mobile);
+    margin: var(--video-margin-top-mobile, 0) var(--video-margin-right-mobile, 0) var(--video-margin-bottom-mobile, 0)
+      var(--video-margin-left-mobile, 0);
+  }
+
+  .video-block .video-block__media {
+    position: relative;
+    aspect-ratio: var(--video-aspect-ratio-mobile);
+    overflow: hidden;
+    border-radius: var(--video-corner-radius);
+    background-color: rgba(var(--color-foreground), 0.04);
+    isolation: isolate;
+  }
+
+  .video-block .video-block__player,
+  .video-block .video-block__poster,
+  .video-block .video-block__cover,
+  .video-block .video-block__placeholder,
+  .video-block .video-block__overlay {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .video-block .video-block__player {
+    border: 0;
+    object-fit: cover;
+  }
+
+  .video-block .video-block__poster {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border: 0;
+    background: none;
+    cursor: pointer;
+  }
+
+  .video-block .video-block__cover {
+    object-fit: cover;
+  }
+
+  .video-block .video-block__play {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 6.4rem;
+    height: 6.4rem;
+    border-radius: 50%;
+    color: rgb(var(--color-foreground));
+    background-color: rgb(var(--color-background));
+    box-shadow: 0 0.2rem 1.2rem rgba(0, 0, 0, 0.15);
+    transition: transform var(--duration-short, 100ms) ease;
+  }
+
+  .video-block .video-block__play .icon {
+    width: 1.6rem;
+    height: 1.6rem;
+    margin-left: 0.3rem;
+  }
+
+  .video-block .video-block__poster:hover .video-block__play {
+    transform: scale(1.06);
+  }
+
+  .video-block .video-block__poster:focus-visible {
+    outline: 0.2rem solid rgba(var(--color-foreground), 0.5);
+    outline-offset: -0.4rem;
+  }
+
+  .video-block .video-block__placeholder {
+    fill: rgba(var(--color-foreground), 0.4);
+    background-color: rgba(var(--color-foreground), 0.04);
+  }
+
+  .video-block .video-block__overlay {
+    z-index: 1;
+    background: var(--video-overlay);
+    pointer-events: none;
+  }
+
+  /* Once a click-to-play video is loaded, the overlay would sit over the player. */
+  .video-block[loaded]:not([data-autoplay]) .video-block__overlay {
+    display: none;
+  }
+
+  .video-block[data-filter='grayscale'] :is(.video-block__player, .video-block__cover) {
+    filter: grayscale(1);
+  }
+
+  .video-block[data-filter='vintage'] :is(.video-block__player, .video-block__cover) {
+    filter: sepia(0.5) contrast(0.9) brightness(1.05) saturate(0.8);
+  }
+
+  .video-block[data-filter='warm'] :is(.video-block__player, .video-block__cover) {
+    filter: sepia(0.25) saturate(1.3) hue-rotate(-10deg);
+  }
+
+  .video-block[data-filter='high_contrast'] :is(.video-block__player, .video-block__cover) {
+    filter: contrast(1.4) saturate(1.1);
+  }
+
+  .video-block[data-filter='fade'] :is(.video-block__player, .video-block__cover) {
+    filter: contrast(0.8) brightness(1.1) saturate(0.7);
+  }
+
+  @media screen and (min-width: 750px) {
+    .video-block {
+      width: var(--video-width);
+      max-width: var(--video-max-width);
+      margin: var(--video-margin-top, 0) var(--video-margin-right, 0) var(--video-margin-bottom, 0)
+        var(--video-margin-left, 0);
+    }
+
+    .video-block .video-block__media {
+      aspect-ratio: var(--video-aspect-ratio);
+    }
+  }
+{% endstylesheet %}
+
+{% javascript %}
+  if (!customElements.get('video-block')) {
+    customElements.define(
+      'video-block',
+      class VideoBlock extends HTMLElement {
+        connectedCallback() {
+          this.poster = this.querySelector('.video-block__poster');
+          this.poster?.addEventListener('click', () => this.load(), { once: true });
+        }
+
+        load() {
+          const template = this.querySelector('template');
+          if (!template) return;
+
+          const player = template.content.firstElementChild.cloneNode(true);
+          this.poster.replaceWith(player);
+          template.remove();
+          this.setAttribute('loaded', '');
+          player.focus();
+          if (player.tagName === 'VIDEO') player.play?.().catch(() => {});
+        }
+      }
+    );
+  }
+{% endjavascript %}

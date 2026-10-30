@@ -23,10 +23,15 @@
       "alt_text": {
         "share_on_facebook": "Bendrinti „Facebook“",
         "share_on_twitter": "Skelbti „Twitter“",
-        "share_on_pinterest": "Skelbti „Pinterest“"
+        "share_on_pinterest": "Skelbti „Pinterest“",
+        "share_on_x": "Bendrinti „X“",
+        "share_on_telegram": "Bendrinti „Telegram“",
+        "share_on_whatsapp": "Bendrinti „WhatsApp“",
+        "share_on_line": "Bendrinti „LINE“",
+        "share_by_email": "Bendrinti el. paštu"
       },
       "links": {
-        "twitter": "„Twitter“",
+        "twitter": "X",
         "facebook": "„Facebook“",
         "pinterest": "„Pinterest“",
         "instagram": "„Instagram“",
@@ -143,6 +148,9 @@
         "regular_price": "Įprasta kaina",
         "sale_price": "Išpardavimo kaina",
         "unit_price": "Vieneto kaina"
+      },
+      "selling_plans": {
+        "one_time_purchase": "Vienkartinis pirkimas"
       },
       "pickup_availability": {
         "view_store_info": "Žiūrėti parduotuvės informaciją",
@@ -496,5 +504,18 @@
       "message": "Žinutė",
       "max_characters": "Daugiausia {{ max_chars }} simbolių"
     }
+  },
+  "gift_wrapping": {
+    "title": "Supakuoti kaip dovaną? (+£15)",
+    "to": "Kam",
+    "to_placeholder": "Gavėjo vardas",
+    "from": "Nuo",
+    "from_placeholder": "Siuntėjo vardas",
+    "message": "Dovanos žinutė",
+    "message_placeholder": "Įveskite savo žinutę čia",
+    "edit": "Redaguoti",
+    "cancel": "Atšaukti",
+    "update": "Atnaujinti",
+    "updating": "Atnaujinama..."
   }
 }

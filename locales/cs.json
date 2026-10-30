@@ -23,10 +23,15 @@
       "alt_text": {
         "share_on_facebook": "Sdílet na Facebooku",
         "share_on_twitter": "Tweetnout na Twitteru",
-        "share_on_pinterest": "Připnout na Pinterestu"
+        "share_on_pinterest": "Připnout na Pinterestu",
+        "share_on_x": "Sdílet na X",
+        "share_on_telegram": "Sdílet na Telegramu",
+        "share_on_whatsapp": "Sdílet na WhatsAppu",
+        "share_on_line": "Sdílet na LINE",
+        "share_by_email": "Sdílet e-mailem"
       },
       "links": {
-        "twitter": "Twitter",
+        "twitter": "X",
         "facebook": "Facebook",
         "pinterest": "Pinterest",
         "instagram": "Instagram",
@@ -143,6 +148,9 @@
         "regular_price": "Běžná cena",
         "sale_price": "Výprodejová cena",
         "unit_price": "Jednotková cena"
+      },
+      "selling_plans": {
+        "one_time_purchase": "Jednorázový nákup"
       },
       "pickup_availability": {
         "view_store_info": "Zobrazit informace o obchodě",
@@ -496,5 +504,18 @@
       "message": "Zpráva",
       "max_characters": "Maximální počet znaků: {{ max_chars }}"
     }
+  },
+  "gift_wrapping": {
+    "title": "Zabalit jako dárek? (+£15)",
+    "to": "Pro",
+    "to_placeholder": "Jméno příjemce",
+    "from": "Od",
+    "from_placeholder": "Jméno odesílatele",
+    "message": "Dárková zpráva",
+    "message_placeholder": "Sem napište svou zprávu",
+    "edit": "Upravit",
+    "cancel": "Zrušit",
+    "update": "Aktualizovat",
+    "updating": "Aktualizace..."
   }
 }

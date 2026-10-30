@@ -1,0 +1,84 @@
+{% comment %}
+  Renders share links for the platforms enabled in the Social media theme settings (Sharing options).
+  Uses the same type/style as the social account links; icons come from `snip_icon`.
+
+  Accepts:
+  - share_link: {String} absolute URL to share.
+  - share_title: {String} title to share. Defaults to page_title.
+
+  Usage:
+  {% render 'snip_share_links', share_link: share_url %}
+{% endcomment %}
+{%- liquid
+  assign platforms = 'facebook,x,pinterest,telegram,whatsapp,line,email' | split: ','
+  assign has_share = false
+  for platform in platforms
+    assign key = 'share_' | append: platform
+    if settings[key]
+      assign has_share = true
+      break
+    endif
+  endfor
+
+  assign title = share_title | default: page_title
+  assign url_encoded = share_link | url_encode
+  assign title_encoded = title | url_encode
+  assign list_class = 'list-social--' | append: settings.social_type | append: ' list-social--' | append: settings.social_style
+  if settings.social_style == 'boxed'
+    assign list_class = list_class | append: ' list-social--' | append: settings.social_box_style
+  endif
+-%}
+{%- if has_share -%}
+  {{ 'component-list-social.css' | asset_url | stylesheet_tag }}
+  <ul class="share-links list-unstyled list-social {{ list_class }}">
+    {%- for platform in platforms -%}
+      {%- assign key = 'share_' | append: platform -%}
+      {%- unless settings[key] -%}{%- continue -%}{%- endunless -%}
+      {%- liquid
+        case platform
+          when 'facebook'
+            assign href = 'https://www.facebook.com/sharer/sharer.php?u=' | append: url_encoded
+            assign label = 'general.social.alt_text.share_on_facebook' | t
+          when 'x'
+            assign href = 'https://x.com/intent/post?url=' | append: url_encoded | append: '&text=' | append: title_encoded
+            assign label = 'general.social.alt_text.share_on_x' | t
+          when 'pinterest'
+            assign href = 'https://pinterest.com/pin/create/button/?url=' | append: url_encoded | append: '&description=' | append: title_encoded
+            if page_image
+              assign media_encoded = page_image | image_url: width: 1200 | prepend: 'https:' | url_encode
+              assign href = href | append: '&media=' | append: media_encoded
+            endif
+            assign label = 'general.social.alt_text.share_on_pinterest' | t
+          when 'telegram'
+            assign href = 'https://t.me/share/url?url=' | append: url_encoded | append: '&text=' | append: title_encoded
+            assign label = 'general.social.alt_text.share_on_telegram' | t
+          when 'whatsapp'
+            assign href = 'https://wa.me/?text=' | append: title_encoded | append: '%20' | append: url_encoded
+            assign label = 'general.social.alt_text.share_on_whatsapp' | t
+          when 'line'
+            assign href = 'https://social-plugins.line.me/lineit/share?url=' | append: url_encoded
+            assign label = 'general.social.alt_text.share_on_line' | t
+          when 'email'
+            assign href = 'mailto:?subject=' | append: title_encoded | append: '&body=' | append: url_encoded
+            assign label = 'general.social.alt_text.share_by_email' | t
+        endcase
+      -%}
+      <li class="list-social__item">
+        <a
+          href="{{ href }}"
+          class="link list-social__link"
+          {% unless platform == 'email' %}
+            target="_blank" rel="noopener"
+          {% endunless %}
+        >
+          {%- if settings.social_type == 'text' -%}
+            {{ label }}
+          {%- else -%}
+            {%- render 'snip_icon', icon: platform -%}
+            <span class="visually-hidden">{{ label }}</span>
+          {%- endif -%}
+        </a>
+      </li>
+    {%- endfor -%}
+  </ul>
+{%- endif -%}

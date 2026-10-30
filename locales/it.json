@@ -23,10 +23,15 @@
       "alt_text": {
         "share_on_facebook": "Condividi su Facebook",
         "share_on_twitter": "Twitta su Twitter",
-        "share_on_pinterest": "Aggiungi un pin su Pinterest"
+        "share_on_pinterest": "Aggiungi un pin su Pinterest",
+        "share_on_x": "Condividi su X",
+        "share_on_telegram": "Condividi su Telegram",
+        "share_on_whatsapp": "Condividi su WhatsApp",
+        "share_on_line": "Condividi su LINE",
+        "share_by_email": "Condividi via e-mail"
       },
       "links": {
-        "twitter": "Twitter",
+        "twitter": "X",
         "facebook": "Facebook",
         "pinterest": "Pinterest",
         "instagram": "Instagram",
@@ -135,6 +140,9 @@
         "regular_price": "Prezzo di listino",
         "sale_price": "Prezzo scontato",
         "unit_price": "Prezzo unitario"
+      },
+      "selling_plans": {
+        "one_time_purchase": "Acquisto singolo"
       },
       "share": "Condividi questo prodotto",
       "sold_out": "Esaurito",
@@ -486,5 +494,18 @@
       "message": "Messaggio",
       "max_characters": "Massimo {{ max_chars }} caratteri"
     }
+  },
+  "gift_wrapping": {
+    "title": "Confezione regalo? (+£15)",
+    "to": "A",
+    "to_placeholder": "Nome del destinatario",
+    "from": "Da",
+    "from_placeholder": "Nome del mittente",
+    "message": "Messaggio regalo",
+    "message_placeholder": "Scrivi qui il tuo messaggio",
+    "edit": "Modifica",
+    "cancel": "Annulla",
+    "update": "Aggiorna",
+    "updating": "Aggiornamento in corso..."
   }
 }

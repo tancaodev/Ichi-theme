@@ -23,10 +23,15 @@
       "alt_text": {
         "share_on_facebook": "Delen op Facebook",
         "share_on_twitter": "Twitteren op Twitter",
-        "share_on_pinterest": "Pinnen op Pinterest"
+        "share_on_pinterest": "Pinnen op Pinterest",
+        "share_on_x": "Delen op X",
+        "share_on_telegram": "Delen op Telegram",
+        "share_on_whatsapp": "Delen op WhatsApp",
+        "share_on_line": "Delen op LINE",
+        "share_by_email": "Delen via e-mail"
       },
       "links": {
-        "twitter": "Twitter",
+        "twitter": "X",
         "facebook": "Facebook",
         "pinterest": "Pinterest",
         "instagram": "Instagram",
@@ -134,6 +139,9 @@
         "regular_price": "Normale prijs",
         "sale_price": "Aanbiedingsprijs",
         "unit_price": "Eenheidsprijs"
+      },
+      "selling_plans": {
+        "one_time_purchase": "Eenmalige aankoop"
       },
       "share": "Dit product delen",
       "sold_out": "Uitverkocht",
@@ -476,5 +484,18 @@
       "message": "Bericht",
       "max_characters": "Maximaal {{ max_chars }} tekens"
     }
+  },
+  "gift_wrapping": {
+    "title": "Inpakken als cadeau? (+£15)",
+    "to": "Aan",
+    "to_placeholder": "Naam ontvanger",
+    "from": "Van",
+    "from_placeholder": "Naam afzender",
+    "message": "Cadeaubericht",
+    "message_placeholder": "Typ hier je bericht",
+    "edit": "Bewerken",
+    "cancel": "Annuleren",
+    "update": "Bijwerken",
+    "updating": "Bijwerken..."
   }
 }

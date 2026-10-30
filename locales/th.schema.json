@@ -8,6 +8,220 @@
  * ------------------------------------------------------------
  */
 {
+  "blocks": {
+    "shared": {
+      "settings": {
+        "custom_mobile": {
+          "label": "กำหนดเองบนมือถือ"
+        },
+        "header_layout": {
+          "content": "เลย์เอาต์"
+        },
+        "header_spacing": {
+          "content": "ระยะห่าง"
+        },
+        "margin_top": {
+          "label": "บน"
+        },
+        "margin_bottom": {
+          "label": "ล่าง"
+        },
+        "margin_left": {
+          "label": "ซ้าย"
+        },
+        "margin_right": {
+          "label": "ขวา"
+        }
+      }
+    },
+    "heading": {
+      "name": "หัวข้อ",
+      "settings": {
+        "heading": {
+          "label": "หัวข้อ"
+        },
+        "header_typography": {
+          "content": "การพิมพ์"
+        },
+        "size": {
+          "label": "ขนาด",
+          "info": "แก้ไขขนาดได้ในการตั้งค่าธีม > การพิมพ์",
+          "options__display": "ดิสเพลย์",
+          "options__h1": "หัวข้อ 1",
+          "options__h2": "หัวข้อ 2",
+          "options__h3": "หัวข้อ 3",
+          "options__h4": "หัวข้อ 4",
+          "options__h5": "หัวข้อ 5",
+          "options__h6": "หัวข้อ 6",
+          "options__subheading": "หัวข้อย่อย",
+          "options__custom": "กำหนดเอง"
+        },
+        "heading_tag": {
+          "label": "แท็ก HTML",
+          "info": "เลือกระดับหัวข้อที่เหมาะกับโครงสร้างหน้าเพื่อ SEO"
+        },
+        "font_family": {
+          "label": "ตระกูลแบบอักษร",
+          "options__heading": "หัวข้อ",
+          "options__body": "เนื้อหา",
+          "options__highlight": "เน้น"
+        },
+        "font_size": {
+          "label": "ขนาดแบบอักษร",
+          "info": "px"
+        },
+        "width": {
+          "label": "ความกว้าง",
+          "options__fit": "พอดีเนื้อหา",
+          "options__fill": "เต็ม",
+          "options__custom": "กำหนดเอง"
+        },
+        "width_unit": {
+          "label": "หน่วย",
+          "options__percent": "เปอร์เซ็นต์",
+          "options__pixel": "พิกเซล"
+        },
+        "custom_width": {
+          "label": "ความกว้างที่กำหนดเอง"
+        },
+        "alignment": {
+          "label": "การจัดแนว"
+        },
+        "header_highlight": {
+          "content": "การไฮไลต์ข้อความ",
+          "info": "หากต้องการไฮไลต์ ให้ทำข้อความเป็นตัวเอียง"
+        },
+        "highlight_style": {
+          "label": "รูปแบบไฮไลต์",
+          "options__none": "ไม่มี",
+          "options__text_color": "สีข้อความ",
+          "options__underline_soft": "ขีดเส้นใต้ (นุ่มนวล)",
+          "options__underline_double": "ขีดเส้นใต้ (คู่)",
+          "options__underline_wavy": "ขีดเส้นใต้ (หยัก)",
+          "options__circle_outline": "วงกลม (เส้นขอบ)",
+          "options__highlight_bar": "ไฮไลต์ (แถบ)",
+          "options__highlight_solid": "ไฮไลต์ (ทึบ)"
+        },
+        "highlight_color": {
+          "label": "สีไฮไลต์",
+          "info": "ค่าเริ่มต้นเป็นสีเน้น"
+        },
+        "margin": {
+          "label": "ระยะขอบ"
+        }
+      }
+    },
+    "divider": {
+      "name": "เส้นแบ่ง",
+      "settings": {
+        "direction": {
+          "label": "ทิศทาง",
+          "options__horizontal": "แนวนอน",
+          "options__vertical": "แนวตั้ง"
+        },
+        "width": {
+          "label": "ความกว้าง"
+        },
+        "height": {
+          "label": "ความสูง"
+        },
+        "thickness": {
+          "label": "ความหนา"
+        },
+        "header_style": {
+          "content": "รูปแบบ"
+        },
+        "style": {
+          "label": "รูปแบบ",
+          "options__line": "เส้น",
+          "options__dot": "จุด"
+        },
+        "corner_radius": {
+          "label": "รัศมีมุม",
+          "options__square": "สี่เหลี่ยม",
+          "options__rounded": "มุมมน"
+        }
+      }
+    },
+    "icon": {
+      "name": "ไอคอน",
+      "settings": {
+        "icon_source": {
+          "label": "เลือกไอคอน",
+          "options__library": "คลัง",
+          "options__upload": "อัปโหลด"
+        },
+        "icon": {
+          "label": "ไอคอน",
+          "options__arrow_up_right": "ลูกศรขึ้นขวา"
+        },
+        "icon_image": {
+          "label": "ไอคอนรูปภาพ"
+        },
+        "icon_size": {
+          "label": "ขนาดไอคอน",
+          "options__custom": "กำหนดเอง"
+        },
+        "custom_size": {
+          "label": "ขนาดที่กำหนดเอง"
+        },
+        "header_style": {
+          "content": "รูปแบบ"
+        },
+        "icon_style": {
+          "label": "รูปแบบ",
+          "info": "แบบกล่องจะเพิ่มระยะห่างภายใน 12px โดยค่าเริ่มต้น แบบคลาสสิกไม่มี",
+          "options__classic": "คลาสสิก",
+          "options__boxed": "กล่อง"
+        },
+        "icon_box_style": {
+          "label": "รูปแบบกล่อง",
+          "options__fill": "เติมสี",
+          "options__outline": "เส้นขอบ"
+        },
+        "icon_shape": {
+          "label": "รูปทรง",
+          "options__square": "สี่เหลี่ยม",
+          "options__rounded": "มุมมน",
+          "options__circle": "วงกลม"
+        },
+        "icon_corner_radius": {
+          "label": "รัศมีมุม",
+          "info": "ใช้รัศมีมุมจากการตั้งค่าธีม",
+          "options__main": "เนื้อหาหลัก",
+          "options__buttons": "ปุ่ม",
+          "options__media": "สื่อ"
+        },
+        "icon_color": {
+          "label": "สี",
+          "options__strong": "เข้ม",
+          "options__light": "อ่อน"
+        },
+        "padding": {
+          "label": "ระยะห่างภายใน"
+        },
+        "padding_value": {
+          "label": "ค่า"
+        },
+        "margin": {
+          "label": "ระยะขอบ"
+        }
+      }
+    },
+    "spacer": {
+      "name": "ตัวเว้นระยะ",
+      "settings": {
+        "unit": {
+          "label": "หน่วย",
+          "options__percent": "เปอร์เซ็นต์",
+          "options__pixel": "พิกเซล"
+        },
+        "size": {
+          "label": "ขนาด"
+        }
+      }
+    }
+  },
   "settings_schema": {
     "colors": {
       "name": "สี",
@@ -60,25 +274,97 @@
     "typography": {
       "name": "ตัวพิมพ์",
       "settings": {
+        "header_font_family": {
+          "content": "ตระกูลแบบอักษร"
+        },
+        "header_paragraph": {
+          "content": "ย่อหน้า"
+        },
+        "header_highlight": {
+          "content": "ไฮไลต์"
+        },
+        "header_display": {
+          "content": "หัวข้อดิสเพลย์"
+        },
+        "header_h1": {
+          "content": "หัวข้อ 1"
+        },
+        "header_h2": {
+          "content": "หัวข้อ 2"
+        },
+        "header_h3": {
+          "content": "หัวข้อ 3"
+        },
+        "header_h4": {
+          "content": "หัวข้อ 4"
+        },
+        "header_h5": {
+          "content": "หัวข้อ 5"
+        },
+        "header_h6": {
+          "content": "หัวข้อ 6"
+        },
+        "header_subheading": {
+          "content": "หัวข้อย่อย"
+        },
+        "header_description": {
+          "content": "คำอธิบาย"
+        },
+        "header_label": {
+          "content": "ป้ายกำกับ"
+        },
         "type_header_font": {
           "label": "แบบอักษร",
           "info": "การเลือกแบบอักษรอื่นอาจส่งผลต่อความเร็วของร้านค้าได้ [ดูข้อมูลเพิ่มเติมเกี่ยวกับแบบอักษรของระบบ](https:\/\/help.shopify.com\/manual\/online-store\/os\/store-speed\/improving-speed#fonts)"
         },
-        "header__1": {
-          "content": "หัวเรื่อง"
-        },
-        "header__2": {
-          "content": "เนื้อหา"
+        "type_highlight_font": {
+          "label": "ไฮไลต์",
+          "info": "ใช้สำหรับคำที่ไฮไลต์ในหัวข้อ"
         },
         "type_body_font": {
           "label": "แบบอักษร",
           "info": "การเลือกแบบอักษรอื่นอาจส่งผลต่อความเร็วของร้านค้าได้ [ดูข้อมูลเพิ่มเติมเกี่ยวกับแบบอักษรของระบบ](https:\/\/help.shopify.com\/manual\/online-store\/os\/store-speed\/improving-speed#fonts)"
         },
-        "heading_scale": {
-          "label": "ขนาดแบบอักษร"
+        "font_size": {
+          "label": "ขนาด"
         },
-        "body_scale": {
-          "label": "ขนาดแบบอักษร"
+        "mobile_font_size": {
+          "label": "ขนาดบนมือถือ"
+        },
+        "line_height": {
+          "label": "ความสูงบรรทัด"
+        },
+        "letter_spacing": {
+          "label": "ระยะห่างตัวอักษร"
+        },
+        "paragraph_spacing": {
+          "label": "ระยะห่างย่อหน้า"
+        },
+        "font_weight": {
+          "label": "น้ำหนักแบบอักษร",
+          "options__light": "บาง",
+          "options__regular": "ปกติ",
+          "options__medium": "ปานกลาง",
+          "options__semibold": "กึ่งหนา",
+          "options__bold": "หนา",
+          "options__extrabold": "หนาพิเศษ"
+        },
+        "case": {
+          "label": "ตัวพิมพ์",
+          "options__normal": "ปกติ",
+          "options__uppercase": "ตัวพิมพ์ใหญ่",
+          "options__lowercase": "ตัวพิมพ์เล็ก",
+          "options__capitalize": "ขึ้นต้นด้วยตัวพิมพ์ใหญ่"
+        },
+        "font_style": {
+          "label": "รูปแบบแบบอักษร",
+          "options__normal": "ปกติ",
+          "options__italic": "ตัวเอียง"
+        },
+        "subheading_font": {
+          "label": "ตระกูลแบบอักษร",
+          "options__heading": "หัวข้อ",
+          "options__body": "เนื้อหา"
         }
       }
     },
@@ -99,6 +385,43 @@
     "social-media": {
       "name": "โซเชียลมีเดีย",
       "settings": {
+        "header__style": {
+          "content": "รูปแบบ"
+        },
+        "social_type": {
+          "label": "ประเภท",
+          "options__icon": "ไอคอน",
+          "options__text": "ข้อความ"
+        },
+        "social_style": {
+          "label": "รูปแบบ",
+          "options__classic": "คลาสสิก",
+          "options__boxed": "กล่อง"
+        },
+        "social_box_style": {
+          "label": "รูปแบบกล่อง",
+          "options__fill": "เติมสี",
+          "options__outline": "เส้นขอบ"
+        },
+        "social_shape": {
+          "label": "รูปทรง",
+          "options__square": "สี่เหลี่ยม",
+          "options__rounded": "มุมมน",
+          "options__full": "วงกลม \/ ทรงแคปซูล"
+        },
+        "social_radius": {
+          "label": "รัศมีมุม",
+          "info": "อิงตามรัศมีมุมของปุ่ม",
+          "options__main": "มุมหลัก",
+          "options__small": "เล็ก",
+          "options__extra_small": "เล็กพิเศษ"
+        },
+        "social_size": {
+          "label": "ขนาด",
+          "options__small": "เล็ก",
+          "options__medium": "ปานกลาง",
+          "options__large": "ใหญ่"
+        },
         "social_twitter_link": {
           "label": "Twitter",
           "info": "https:\/\/twitter.com\/shopify"
@@ -135,6 +458,30 @@
           "label": "Vimeo",
           "info": "https:\/\/vimeo.com\/shopify"
         },
+        "header__sharing": {
+          "content": "ตัวเลือกการแชร์"
+        },
+        "share_facebook": {
+          "label": "แชร์บน Facebook"
+        },
+        "share_x": {
+          "label": "แชร์บน X (เดิมคือ Twitter)"
+        },
+        "share_pinterest": {
+          "label": "ปักหมุดบน Pinterest"
+        },
+        "share_telegram": {
+          "label": "แชร์บน Telegram"
+        },
+        "share_whatsapp": {
+          "label": "แชร์บน WhatsApp"
+        },
+        "share_line": {
+          "label": "แชร์บน LINE"
+        },
+        "share_email": {
+          "label": "แชร์ทางอีเมล"
+        },
         "header": {
           "content": "บัญชีผู้ใช้โซเชียลมีเดีย"
         }
@@ -147,29 +494,6 @@
         "paragraph": "ราคาในตะกร้าสินค้าและการชำระเงินจะแสดงรหัสสกุลเงินเสมอ ตัวอย่าง: $1.00 USD",
         "currency_code_enabled": {
           "label": "แสดงรหัสสกุลเงิน"
-        }
-      }
-    },
-    "layout": {
-      "name": "เลย์เอาต์",
-      "settings": {
-        "page_width": {
-          "label": "ความกว้างของหน้า"
-        },
-        "spacing_sections": {
-          "label": "ช่องว่างระหว่างส่วนเทมเพลต"
-        },
-        "header__grid": {
-          "content": "กริด"
-        },
-        "paragraph__grid": {
-          "content": "ส่งผลต่อพื้นที่ที่มีหลายคอลัมน์หรือหลายแถว"
-        },
-        "spacing_grid_horizontal": {
-          "label": "ช่องว่างแนวนอน"
-        },
-        "spacing_grid_vertical": {
-          "label": "ช่องว่างแนวตั้ง"
         }
       }
     },
@@ -325,6 +649,61 @@
             "label": "คอลเลกชัน",
             "info": "ปรากฏขึ้นเมื่อตะกร้าสินค้าแบบเลื่อนด้านข้างว่างเปล่า"
           }
+        }
+      }
+    },
+    "section": {
+      "name": "ส่วน",
+      "settings": {
+        "header__layout": {
+          "content": "เลย์เอาต์"
+        },
+        "section_layout": {
+          "label": "เลย์เอาต์",
+          "options__classic": "คลาสสิก",
+          "options__bento": "เบนโตะ"
+        },
+        "section_spacing": {
+          "label": "ระยะห่างระหว่างส่วน",
+          "info": "ระยะห่างระหว่างส่วนต่างๆ บนหน้า"
+        },
+        "section_gutter": {
+          "label": "ระยะห่างกริด",
+          "info": "ระยะห่างระหว่างคอลัมน์และแถวของกริดภายในส่วน"
+        },
+        "section_radius": {
+          "label": "รัศมีมุม",
+          "options__main": "มุมหลัก",
+          "options__small": "เล็ก",
+          "options__extra_small": "เล็กพิเศษ",
+          "options__none": "ไม่มี",
+          "options__custom": "กำหนดเอง"
+        },
+        "section_radius_custom": {
+          "label": "รัศมีมุมที่กำหนดเอง"
+        },
+        "page_width": {
+          "label": "ความกว้างหน้า"
+        },
+        "header__padding": {
+          "content": "ระยะห่างภายใน"
+        },
+        "section_padding_device": {
+          "label": "อุปกรณ์",
+          "options__desktop": "เดสก์ท็อป",
+          "options__mobile": "มือถือ"
+        },
+        "section_padding_top": {
+          "label": "บน"
+        },
+        "section_padding_bottom": {
+          "label": "ล่าง"
+        },
+        "section_padding_left": {
+          "label": "ซ้าย"
+        },
+        "section_padding_right": {
+          "label": "ขวา"
         }
       }
     },

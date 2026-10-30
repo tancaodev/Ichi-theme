@@ -23,10 +23,15 @@
       "alt_text": {
         "share_on_facebook": "Dela på Facebook",
         "share_on_twitter": "Tweet på Twitter",
-        "share_on_pinterest": "Spara en pin på Pinterest"
+        "share_on_pinterest": "Spara en pin på Pinterest",
+        "share_on_x": "Dela på X",
+        "share_on_telegram": "Dela på Telegram",
+        "share_on_whatsapp": "Dela på WhatsApp",
+        "share_on_line": "Dela på LINE",
+        "share_by_email": "Dela via e-post"
       },
       "links": {
-        "twitter": "Twitter",
+        "twitter": "X",
         "facebook": "Facebook",
         "pinterest": "Pinterest",
         "instagram": "Instagram",
@@ -134,6 +139,9 @@
         "regular_price": "Ordinarie pris",
         "sale_price": "Försäljningspris",
         "unit_price": "Enhetspris"
+      },
+      "selling_plans": {
+        "one_time_purchase": "Engångsköp"
       },
       "share": "Dela den här produkten",
       "sold_out": "Slutsåld",
@@ -476,5 +484,18 @@
       "message": "Meddelande",
       "max_characters": "Max. {{ max_chars }} tecken"
     }
+  },
+  "gift_wrapping": {
+    "title": "Slå in som present? (+£15)",
+    "to": "Till",
+    "to_placeholder": "Mottagarens namn",
+    "from": "Från",
+    "from_placeholder": "Avsändarens namn",
+    "message": "Presentmeddelande",
+    "message_placeholder": "Skriv ditt meddelande här",
+    "edit": "Redigera",
+    "cancel": "Avbryt",
+    "update": "Uppdatera",
+    "updating": "Uppdaterar ..."
   }
 }

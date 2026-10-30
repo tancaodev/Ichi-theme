@@ -23,10 +23,15 @@
       "alt_text": {
         "share_on_facebook": "Chia sẻ trên Facebook",
         "share_on_twitter": "Tweet trên Twitter",
-        "share_on_pinterest": "Ghim trên Pinterest"
+        "share_on_pinterest": "Ghim trên Pinterest",
+        "share_on_x": "Chia sẻ trên X",
+        "share_on_telegram": "Chia sẻ trên Telegram",
+        "share_on_whatsapp": "Chia sẻ trên WhatsApp",
+        "share_on_line": "Chia sẻ trên LINE",
+        "share_by_email": "Chia sẻ qua email"
       },
       "links": {
-        "twitter": "Twitter",
+        "twitter": "X",
         "facebook": "Facebook",
         "pinterest": "Pinterest",
         "instagram": "Instagram",
@@ -134,6 +139,9 @@
         "regular_price": "Giá thông thường",
         "sale_price": "Giá bán",
         "unit_price": "Đơn giá"
+      },
+      "selling_plans": {
+        "one_time_purchase": "Mua một lần"
       },
       "share": "Chia sẻ sản phẩm này",
       "sold_out": "Đã bán hết",
@@ -476,5 +484,18 @@
       "message": "Tin nhắn",
       "max_characters": "Tối đa {{ max_chars }} ký tự"
     }
+  },
+  "gift_wrapping": {
+    "title": "Gói quà? (+£15)",
+    "to": "Đến",
+    "to_placeholder": "Tên người nhận",
+    "from": "Từ",
+    "from_placeholder": "Tên người gửi",
+    "message": "Lời nhắn kèm quà",
+    "message_placeholder": "Nhập lời nhắn của bạn tại đây",
+    "edit": "Chỉnh sửa",
+    "cancel": "Hủy",
+    "update": "Cập nhật",
+    "updating": "Đang cập nhật..."
   }
 }

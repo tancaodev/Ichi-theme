@@ -23,10 +23,15 @@
       "alt_text": {
         "share_on_facebook": "Delite v Facebooku",
         "share_on_twitter": "Tvitnite v Twitterju",
-        "share_on_pinterest": "Pripnite v Pinterestu"
+        "share_on_pinterest": "Pripnite v Pinterestu",
+        "share_on_x": "Deli na X",
+        "share_on_telegram": "Deli na Telegramu",
+        "share_on_whatsapp": "Deli na WhatsAppu",
+        "share_on_line": "Deli na LINE",
+        "share_by_email": "Deli po e-pošti"
       },
       "links": {
-        "twitter": "Twitter",
+        "twitter": "X",
         "facebook": "Facebook",
         "pinterest": "Pinterest",
         "instagram": "Instagram",
@@ -143,6 +148,9 @@
         "regular_price": "Redna cena",
         "sale_price": "Znižana cena",
         "unit_price": "Cena na enoto"
+      },
+      "selling_plans": {
+        "one_time_purchase": "Enkratni nakup"
       },
       "pickup_availability": {
         "view_store_info": "Prikaži podatke o trgovini",
@@ -496,5 +504,18 @@
       "message": "Sporočilo",
       "max_characters": "Največje št. znakov: {{ max_chars }}"
     }
+  },
+  "gift_wrapping": {
+    "title": "Zaviti kot darilo? (+£15)",
+    "to": "Za",
+    "to_placeholder": "Ime prejemnika",
+    "from": "Od",
+    "from_placeholder": "Ime pošiljatelja",
+    "message": "Sporočilo ob darilu",
+    "message_placeholder": "Tukaj vnesite svoje sporočilo",
+    "edit": "Uredi",
+    "cancel": "Prekliči",
+    "update": "Posodobi",
+    "updating": "Posodabljanje ..."
   }
 }

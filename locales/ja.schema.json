@@ -8,6 +8,220 @@
  * ------------------------------------------------------------
  */
 {
+  "blocks": {
+    "shared": {
+      "settings": {
+        "custom_mobile": {
+          "label": "モバイルでカスタム"
+        },
+        "header_layout": {
+          "content": "レイアウト"
+        },
+        "header_spacing": {
+          "content": "間隔"
+        },
+        "margin_top": {
+          "label": "上"
+        },
+        "margin_bottom": {
+          "label": "下"
+        },
+        "margin_left": {
+          "label": "左"
+        },
+        "margin_right": {
+          "label": "右"
+        }
+      }
+    },
+    "heading": {
+      "name": "見出し",
+      "settings": {
+        "heading": {
+          "label": "見出し"
+        },
+        "header_typography": {
+          "content": "タイポグラフィ"
+        },
+        "size": {
+          "label": "サイズ",
+          "info": "サイズはテーマ設定 > タイポグラフィで編集できます",
+          "options__display": "ディスプレイ",
+          "options__h1": "見出し1",
+          "options__h2": "見出し2",
+          "options__h3": "見出し3",
+          "options__h4": "見出し4",
+          "options__h5": "見出し5",
+          "options__h6": "見出し6",
+          "options__subheading": "サブ見出し",
+          "options__custom": "カスタム"
+        },
+        "heading_tag": {
+          "label": "HTMLタグ",
+          "info": "SEOのため、ページ構造に合った見出しレベルを選択してください"
+        },
+        "font_family": {
+          "label": "フォントファミリー",
+          "options__heading": "見出し",
+          "options__body": "本文",
+          "options__highlight": "アクセント"
+        },
+        "font_size": {
+          "label": "フォントサイズ",
+          "info": "px"
+        },
+        "width": {
+          "label": "幅",
+          "options__fit": "フィット",
+          "options__fill": "全幅",
+          "options__custom": "カスタム"
+        },
+        "width_unit": {
+          "label": "単位",
+          "options__percent": "パーセント",
+          "options__pixel": "ピクセル"
+        },
+        "custom_width": {
+          "label": "カスタム幅"
+        },
+        "alignment": {
+          "label": "配置"
+        },
+        "header_highlight": {
+          "content": "テキストのハイライト",
+          "info": "ハイライトを適用するには、テキストを斜体にします"
+        },
+        "highlight_style": {
+          "label": "ハイライトのスタイル",
+          "options__none": "なし",
+          "options__text_color": "テキストの色",
+          "options__underline_soft": "下線（ソフト）",
+          "options__underline_double": "下線（二重）",
+          "options__underline_wavy": "下線（波線）",
+          "options__circle_outline": "円（アウトライン）",
+          "options__highlight_bar": "ハイライト（バー）",
+          "options__highlight_solid": "ハイライト（塗りつぶし）"
+        },
+        "highlight_color": {
+          "label": "ハイライトの色",
+          "info": "デフォルトはアクセントカラー"
+        },
+        "margin": {
+          "label": "マージン"
+        }
+      }
+    },
+    "divider": {
+      "name": "区切り線",
+      "settings": {
+        "direction": {
+          "label": "方向",
+          "options__horizontal": "横",
+          "options__vertical": "縦"
+        },
+        "width": {
+          "label": "幅"
+        },
+        "height": {
+          "label": "高さ"
+        },
+        "thickness": {
+          "label": "太さ"
+        },
+        "header_style": {
+          "content": "スタイル"
+        },
+        "style": {
+          "label": "スタイル",
+          "options__line": "線",
+          "options__dot": "ドット"
+        },
+        "corner_radius": {
+          "label": "角の丸み",
+          "options__square": "四角",
+          "options__rounded": "丸み"
+        }
+      }
+    },
+    "icon": {
+      "name": "アイコン",
+      "settings": {
+        "icon_source": {
+          "label": "アイコンを選択",
+          "options__library": "ライブラリ",
+          "options__upload": "アップロード"
+        },
+        "icon": {
+          "label": "アイコン",
+          "options__arrow_up_right": "右上矢印"
+        },
+        "icon_image": {
+          "label": "画像アイコン"
+        },
+        "icon_size": {
+          "label": "アイコンサイズ",
+          "options__custom": "カスタム"
+        },
+        "custom_size": {
+          "label": "カスタムサイズ"
+        },
+        "header_style": {
+          "content": "スタイル"
+        },
+        "icon_style": {
+          "label": "スタイル",
+          "info": "ボックスはデフォルトで12pxのパディングを追加し、クラシックは追加しません",
+          "options__classic": "クラシック",
+          "options__boxed": "ボックス"
+        },
+        "icon_box_style": {
+          "label": "ボックスのスタイル",
+          "options__fill": "塗りつぶし",
+          "options__outline": "アウトライン"
+        },
+        "icon_shape": {
+          "label": "形",
+          "options__square": "四角",
+          "options__rounded": "丸み",
+          "options__circle": "円"
+        },
+        "icon_corner_radius": {
+          "label": "角の丸み",
+          "info": "テーマ設定の角の丸みを使用します",
+          "options__main": "メインコンテンツ",
+          "options__buttons": "ボタン",
+          "options__media": "メディア"
+        },
+        "icon_color": {
+          "label": "色",
+          "options__strong": "濃い",
+          "options__light": "薄い"
+        },
+        "padding": {
+          "label": "パディング"
+        },
+        "padding_value": {
+          "label": "値"
+        },
+        "margin": {
+          "label": "マージン"
+        }
+      }
+    },
+    "spacer": {
+      "name": "スペーサー",
+      "settings": {
+        "unit": {
+          "label": "単位",
+          "options__percent": "パーセント",
+          "options__pixel": "ピクセル"
+        },
+        "size": {
+          "label": "サイズ"
+        }
+      }
+    }
+  },
   "settings_schema": {
     "colors": {
       "name": "色",
@@ -60,25 +274,97 @@
     "typography": {
       "name": "タイポグラフィー",
       "settings": {
+        "header_font_family": {
+          "content": "フォントファミリー"
+        },
+        "header_paragraph": {
+          "content": "段落"
+        },
+        "header_highlight": {
+          "content": "ハイライト"
+        },
+        "header_display": {
+          "content": "ディスプレイ見出し"
+        },
+        "header_h1": {
+          "content": "見出し1"
+        },
+        "header_h2": {
+          "content": "見出し2"
+        },
+        "header_h3": {
+          "content": "見出し3"
+        },
+        "header_h4": {
+          "content": "見出し4"
+        },
+        "header_h5": {
+          "content": "見出し5"
+        },
+        "header_h6": {
+          "content": "見出し6"
+        },
+        "header_subheading": {
+          "content": "サブ見出し"
+        },
+        "header_description": {
+          "content": "説明"
+        },
+        "header_label": {
+          "content": "ラベル"
+        },
         "type_header_font": {
           "label": "フォント",
           "info": "異なるフォントを選択すると、ストアの速度に影響を与える可能性があります。[システムフォントについて詳しく知る。](https:\/\/help.shopify.com\/manual\/online-store\/os\/store-speed\/improving-speed#fonts)"
         },
-        "header__1": {
-          "content": "見出し"
-        },
-        "header__2": {
-          "content": "本文"
+        "type_highlight_font": {
+          "label": "ハイライト",
+          "info": "見出し内のハイライトされた単語に使用されます。"
         },
         "type_body_font": {
           "label": "フォント",
           "info": "異なるフォントを選択すると、ストアの速度に影響を与える可能性があります。[システムフォントについて詳しく知る。](https:\/\/help.shopify.com\/manual\/online-store\/os\/store-speed\/improving-speed#fonts)"
         },
-        "heading_scale": {
-          "label": "フォント・サイズ・スケール"
+        "font_size": {
+          "label": "サイズ"
         },
-        "body_scale": {
-          "label": "フォント・サイズ・スケール"
+        "mobile_font_size": {
+          "label": "モバイルでのサイズ"
+        },
+        "line_height": {
+          "label": "行の高さ"
+        },
+        "letter_spacing": {
+          "label": "文字間隔"
+        },
+        "paragraph_spacing": {
+          "label": "段落間隔"
+        },
+        "font_weight": {
+          "label": "フォントの太さ",
+          "options__light": "ライト",
+          "options__regular": "レギュラー",
+          "options__medium": "ミディアム",
+          "options__semibold": "セミボールド",
+          "options__bold": "ボールド",
+          "options__extrabold": "エクストラボールド"
+        },
+        "case": {
+          "label": "大文字\/小文字",
+          "options__normal": "標準",
+          "options__uppercase": "大文字",
+          "options__lowercase": "小文字",
+          "options__capitalize": "先頭を大文字"
+        },
+        "font_style": {
+          "label": "フォントスタイル",
+          "options__normal": "標準",
+          "options__italic": "斜体"
+        },
+        "subheading_font": {
+          "label": "フォントファミリー",
+          "options__heading": "見出し",
+          "options__body": "本文"
         }
       }
     },
@@ -99,6 +385,43 @@
     "social-media": {
       "name": "SNS",
       "settings": {
+        "header__style": {
+          "content": "スタイル"
+        },
+        "social_type": {
+          "label": "タイプ",
+          "options__icon": "アイコン",
+          "options__text": "テキスト"
+        },
+        "social_style": {
+          "label": "スタイル",
+          "options__classic": "クラシック",
+          "options__boxed": "ボックス"
+        },
+        "social_box_style": {
+          "label": "ボックスのスタイル",
+          "options__fill": "塗りつぶし",
+          "options__outline": "アウトライン"
+        },
+        "social_shape": {
+          "label": "形",
+          "options__square": "四角",
+          "options__rounded": "丸み",
+          "options__full": "円 \/ ピル"
+        },
+        "social_radius": {
+          "label": "角の丸み",
+          "info": "ボタンの角の丸みに基づきます。",
+          "options__main": "メインの角",
+          "options__small": "小",
+          "options__extra_small": "極小"
+        },
+        "social_size": {
+          "label": "サイズ",
+          "options__small": "小",
+          "options__medium": "ミディアム",
+          "options__large": "大"
+        },
         "social_twitter_link": {
           "label": "Twitter",
           "info": "https:\/\/twitter.com\/shopify"
@@ -135,6 +458,30 @@
           "label": "Vimeo",
           "info": "https:\/\/vimeo.com\/shopify"
         },
+        "header__sharing": {
+          "content": "共有オプション"
+        },
+        "share_facebook": {
+          "label": "Facebookでシェア"
+        },
+        "share_x": {
+          "label": "X（旧Twitter）でシェア"
+        },
+        "share_pinterest": {
+          "label": "Pinterestでピン"
+        },
+        "share_telegram": {
+          "label": "Telegramでシェア"
+        },
+        "share_whatsapp": {
+          "label": "WhatsAppでシェア"
+        },
+        "share_line": {
+          "label": "LINEでシェア"
+        },
+        "share_email": {
+          "label": "メールでシェア"
+        },
         "header": {
           "content": "ソーシャルアカウント"
         }
@@ -147,29 +494,6 @@
         "paragraph": "カート価格とチェックアウト価格には常に通貨コードが表示されます。例: $1.00 USD。",
         "currency_code_enabled": {
           "label": "通貨コードを表示する"
-        }
-      }
-    },
-    "layout": {
-      "name": "レイアウト",
-      "settings": {
-        "page_width": {
-          "label": "ページの幅"
-        },
-        "spacing_sections": {
-          "label": "セクション間のスペース"
-        },
-        "header__grid": {
-          "content": "グリッド"
-        },
-        "paragraph__grid": {
-          "content": "複数の列または行のある部分に影響します。"
-        },
-        "spacing_grid_horizontal": {
-          "label": "水平スペース"
-        },
-        "spacing_grid_vertical": {
-          "label": "垂直スペース"
         }
       }
     },
@@ -325,6 +649,61 @@
             "label": "コレクション",
             "info": "カートドロワーが空の場合に表示されます。"
           }
+        }
+      }
+    },
+    "section": {
+      "name": "セクション",
+      "settings": {
+        "header__layout": {
+          "content": "レイアウト"
+        },
+        "section_layout": {
+          "label": "レイアウト",
+          "options__classic": "クラシック",
+          "options__bento": "ベントー"
+        },
+        "section_spacing": {
+          "label": "セクション間の間隔",
+          "info": "ページ上のセクション間の距離。"
+        },
+        "section_gutter": {
+          "label": "ガター",
+          "info": "セクション内のグリッドの列と行の間隔。"
+        },
+        "section_radius": {
+          "label": "角の丸み",
+          "options__main": "メインの角",
+          "options__small": "小",
+          "options__extra_small": "極小",
+          "options__none": "なし",
+          "options__custom": "カスタム"
+        },
+        "section_radius_custom": {
+          "label": "カスタムの角の丸み"
+        },
+        "page_width": {
+          "label": "ページ幅"
+        },
+        "header__padding": {
+          "content": "パディング"
+        },
+        "section_padding_device": {
+          "label": "デバイス",
+          "options__desktop": "デスクトップ",
+          "options__mobile": "モバイル"
+        },
+        "section_padding_top": {
+          "label": "上"
+        },
+        "section_padding_bottom": {
+          "label": "下"
+        },
+        "section_padding_left": {
+          "label": "左"
+        },
+        "section_padding_right": {
+          "label": "右"
         }
       }
     },

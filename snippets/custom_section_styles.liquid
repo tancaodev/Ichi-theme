@@ -1,0 +1,101 @@
+{%- doc -%}
+  Outputs the instance CSS variables for one custom section, scoped to `#<section_dom_id>`.
+  The static rules in `snip_custom_section.liquid` read them, with mobile as the base and desktop from 750px.
+
+  Horizontal and vertical alignment are mapped onto justify-content / align-items according to the
+  direction, so merchants always think in screen axes. "Space between" only applies along the
+  direction axis; on the cross axis it falls back to the start.
+
+  @param {object} component_settings - Settings object holding the `custom_section_*` settings.
+  @param {string} section_dom_id - DOM id of the section wrapper the variables are scoped to.
+
+  @example
+  {% render 'custom_section_styles', component_settings: section.settings, section_dom_id: 'CustomSection-' | append: section.id %}
+{%- enddoc -%}
+{%- liquid
+  assign st = component_settings
+  assign breakpoints = 'desktop,mobile' | split: ','
+
+  case st.custom_section_height
+    when 'small'
+      assign min_height = '30svh'
+    when 'medium'
+      assign min_height = '50svh'
+    when 'large'
+      assign min_height = '70svh'
+    when 'full_screen'
+      assign min_height = '100svh'
+    when 'custom'
+      assign min_height = st.custom_section_height_custom | append: 'svh'
+    else
+      assign min_height = 'auto'
+  endcase
+-%}
+{%- capture layout_variables -%}
+  {%- for breakpoint in breakpoints -%}
+    {%- liquid
+      assign setting_suffix = ''
+      assign var_suffix = ''
+      if breakpoint == 'mobile'
+        assign var_suffix = '-mobile'
+        if st.custom_section_layout_custom_mobile
+          assign setting_suffix = '_mobile'
+        endif
+      endif
+
+      assign direction_key = 'custom_section_direction' | append: setting_suffix
+      assign horizontal_key = 'custom_section_horizontal_alignment' | append: setting_suffix
+      assign vertical_key = 'custom_section_vertical_alignment' | append: setting_suffix
+      assign gap_key = 'custom_section_gap' | append: setting_suffix
+
+      assign direction = st[direction_key] | default: 'column'
+      assign horizontal = st[horizontal_key] | default: 'flex-start'
+      assign vertical = st[vertical_key] | default: 'flex-start'
+
+      if direction == 'row'
+        assign justify = horizontal
+        assign align = vertical
+      else
+        assign justify = vertical
+        assign align = horizontal
+      endif
+      if align == 'space-between'
+        assign align = 'flex-start'
+      endif
+
+      case horizontal
+        when 'center'
+          assign text_align = 'center'
+        when 'flex-end'
+          assign text_align = 'right'
+        else
+          assign text_align = 'left'
+      endcase
+
+      assign gap = st[gap_key] | default: 0 | divided_by: 10.0 | append: 'rem'
+    -%}
+    --custom-section-direction{{ var_suffix }}: {{ direction }};
+    --custom-section-justify{{ var_suffix }}: {{ justify }};
+    --custom-section-align{{ var_suffix }}: {{ align }};
+    --custom-section-text-align{{ var_suffix }}: {{ text_align }};
+    --custom-section-gap{{ var_suffix }}: {{ gap }};
+  {%- endfor -%}
+{%- endcapture -%}
+{%- capture padding_variables -%}
+  {% render 'css_var_padding', component_settings: st, prefix: 'custom_section' %}
+{%- endcapture -%}
+{% style %}
+  #{{ section_dom_id }} {
+    {{ layout_variables }}
+    {{ padding_variables }}
+    --custom-section-min-height: {{ min_height }};
+    --custom-section-border-width: {{ st.custom_section_border_width | default: 0 | divided_by: 10.0 }}rem;
+    --custom-section-radius: {{ st.custom_section_border_radius | default: 0 | divided_by: 10.0 }}rem;
+    {%- if st.custom_section_border_color != blank %}
+      --custom-section-border-color: {{ st.custom_section_border_color }};
+    {%- endif %}
+    {%- if st.custom_section_overlay_color != blank %}
+      --custom-section-overlay-color: {{ st.custom_section_overlay_color }};
+    {%- endif %}
+  }
+{% endstyle %}

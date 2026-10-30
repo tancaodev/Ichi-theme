@@ -8,6 +8,220 @@
  * ------------------------------------------------------------
  */
 {
+  "blocks": {
+    "shared": {
+      "settings": {
+        "custom_mobile": {
+          "label": "Aangepast op mobiel"
+        },
+        "header_layout": {
+          "content": "Opmaak"
+        },
+        "header_spacing": {
+          "content": "Afstand"
+        },
+        "margin_top": {
+          "label": "Boven"
+        },
+        "margin_bottom": {
+          "label": "Onder"
+        },
+        "margin_left": {
+          "label": "Links"
+        },
+        "margin_right": {
+          "label": "Rechts"
+        }
+      }
+    },
+    "heading": {
+      "name": "Kop",
+      "settings": {
+        "heading": {
+          "label": "Kop"
+        },
+        "header_typography": {
+          "content": "Typografie"
+        },
+        "size": {
+          "label": "Grootte",
+          "info": "Bewerk groottes in Thema-instellingen > Typografie",
+          "options__display": "Display",
+          "options__h1": "Kop 1",
+          "options__h2": "Kop 2",
+          "options__h3": "Kop 3",
+          "options__h4": "Kop 4",
+          "options__h5": "Kop 5",
+          "options__h6": "Kop 6",
+          "options__subheading": "Subkoppen",
+          "options__custom": "Aangepast"
+        },
+        "heading_tag": {
+          "label": "HTML-tag",
+          "info": "Kies het kopniveau dat past bij de paginastructuur voor SEO"
+        },
+        "font_family": {
+          "label": "Lettertypefamilie",
+          "options__heading": "Kop",
+          "options__body": "Hoofdtekst",
+          "options__highlight": "Accent"
+        },
+        "font_size": {
+          "label": "Lettergrootte",
+          "info": "px"
+        },
+        "width": {
+          "label": "Breedte",
+          "options__fit": "Passend",
+          "options__fill": "Vullen",
+          "options__custom": "Aangepast"
+        },
+        "width_unit": {
+          "label": "Eenheid",
+          "options__percent": "Procent",
+          "options__pixel": "Pixel"
+        },
+        "custom_width": {
+          "label": "Aangepaste breedte"
+        },
+        "alignment": {
+          "label": "Uitlijning"
+        },
+        "header_highlight": {
+          "content": "Tekstmarkering",
+          "info": "Maak de tekst cursief om een markering toe te passen"
+        },
+        "highlight_style": {
+          "label": "Markeringsstijl",
+          "options__none": "Geen",
+          "options__text_color": "Tekstkleur",
+          "options__underline_soft": "Onderstreping (zacht)",
+          "options__underline_double": "Onderstreping (dubbel)",
+          "options__underline_wavy": "Onderstreping (golvend)",
+          "options__circle_outline": "Cirkel (omtrek)",
+          "options__highlight_bar": "Markering (balk)",
+          "options__highlight_solid": "Markering (volledig)"
+        },
+        "highlight_color": {
+          "label": "Markeringskleur",
+          "info": "Standaard de accentkleur"
+        },
+        "margin": {
+          "label": "Marge"
+        }
+      }
+    },
+    "divider": {
+      "name": "Scheidingslijn",
+      "settings": {
+        "direction": {
+          "label": "Richting",
+          "options__horizontal": "Horizontaal",
+          "options__vertical": "Verticaal"
+        },
+        "width": {
+          "label": "Breedte"
+        },
+        "height": {
+          "label": "Hoogte"
+        },
+        "thickness": {
+          "label": "Dikte"
+        },
+        "header_style": {
+          "content": "Stijl"
+        },
+        "style": {
+          "label": "Stijl",
+          "options__line": "Lijn",
+          "options__dot": "Punt"
+        },
+        "corner_radius": {
+          "label": "Hoekradius",
+          "options__square": "Vierkant",
+          "options__rounded": "Afgerond"
+        }
+      }
+    },
+    "icon": {
+      "name": "Pictogram",
+      "settings": {
+        "icon_source": {
+          "label": "Pictogram kiezen",
+          "options__library": "Bibliotheek",
+          "options__upload": "Uploaden"
+        },
+        "icon": {
+          "label": "Pictogram",
+          "options__arrow_up_right": "Pijl rechtsboven"
+        },
+        "icon_image": {
+          "label": "Afbeeldingspictogram"
+        },
+        "icon_size": {
+          "label": "Pictogramgrootte",
+          "options__custom": "Aangepast"
+        },
+        "custom_size": {
+          "label": "Aangepaste grootte"
+        },
+        "header_style": {
+          "content": "Stijl"
+        },
+        "icon_style": {
+          "label": "Stijl",
+          "info": "Omkaderd voegt standaard 12 px opvulling toe, Klassiek heeft geen opvulling",
+          "options__classic": "Klassiek",
+          "options__boxed": "Omkaderd"
+        },
+        "icon_box_style": {
+          "label": "Kaderstijl",
+          "options__fill": "Gevuld",
+          "options__outline": "Omtrek"
+        },
+        "icon_shape": {
+          "label": "Vorm",
+          "options__square": "Vierkant",
+          "options__rounded": "Afgerond",
+          "options__circle": "Cirkel"
+        },
+        "icon_corner_radius": {
+          "label": "Hoekradius",
+          "info": "Gebruikt de hoekradius uit de thema-instellingen",
+          "options__main": "Hoofdcontent",
+          "options__buttons": "Knoppen",
+          "options__media": "Media"
+        },
+        "icon_color": {
+          "label": "Kleur",
+          "options__strong": "Sterk",
+          "options__light": "Licht"
+        },
+        "padding": {
+          "label": "Opvulling"
+        },
+        "padding_value": {
+          "label": "Waarde"
+        },
+        "margin": {
+          "label": "Marge"
+        }
+      }
+    },
+    "spacer": {
+      "name": "Witruimte",
+      "settings": {
+        "unit": {
+          "label": "Eenheid",
+          "options__percent": "Procent",
+          "options__pixel": "Pixel"
+        },
+        "size": {
+          "label": "Grootte"
+        }
+      }
+    }
+  },
   "settings_schema": {
     "colors": {
       "name": "Kleuren",
@@ -60,25 +274,97 @@
     "typography": {
       "name": "Typografie",
       "settings": {
+        "header_font_family": {
+          "content": "Lettertypefamilie"
+        },
+        "header_paragraph": {
+          "content": "Alinea"
+        },
+        "header_highlight": {
+          "content": "Markering"
+        },
+        "header_display": {
+          "content": "Display-kop"
+        },
+        "header_h1": {
+          "content": "Kop 1"
+        },
+        "header_h2": {
+          "content": "Kop 2"
+        },
+        "header_h3": {
+          "content": "Kop 3"
+        },
+        "header_h4": {
+          "content": "Kop 4"
+        },
+        "header_h5": {
+          "content": "Kop 5"
+        },
+        "header_h6": {
+          "content": "Kop 6"
+        },
+        "header_subheading": {
+          "content": "Subkoppen"
+        },
+        "header_description": {
+          "content": "Beschrijving"
+        },
+        "header_label": {
+          "content": "Label"
+        },
         "type_header_font": {
           "label": "Lettertype",
           "info": "Als je een ander lettertype selecteert, kan dit de snelheid van je winkel beïnvloeden. Meer informatie over systeemlettertypen.](https:\/\/help.shopify.com\/manual\/online-store\/os\/store-speed\/improving-speed#fonts)"
         },
-        "header__1": {
-          "content": "Kopteksten"
-        },
-        "header__2": {
-          "content": "Hoofdtekst"
+        "type_highlight_font": {
+          "label": "Markering",
+          "info": "Gebruikt voor gemarkeerde woorden in koppen."
         },
         "type_body_font": {
           "label": "Lettertype",
           "info": "Als je een ander lettertype selecteert, kan dit de snelheid van je winkel beïnvloeden. Meer informatie over systeemlettertypen.](https:\/\/help.shopify.com\/manual\/online-store\/os\/store-speed\/improving-speed#fonts)"
         },
-        "heading_scale": {
-          "label": "Schaal lettertypegrootte"
+        "font_size": {
+          "label": "Grootte"
         },
-        "body_scale": {
-          "label": "Schaal lettertypegrootte"
+        "mobile_font_size": {
+          "label": "Grootte op mobiel"
+        },
+        "line_height": {
+          "label": "Regelhoogte"
+        },
+        "letter_spacing": {
+          "label": "Letterafstand"
+        },
+        "paragraph_spacing": {
+          "label": "Alinea-afstand"
+        },
+        "font_weight": {
+          "label": "Lettergewicht",
+          "options__light": "Dun",
+          "options__regular": "Normaal",
+          "options__medium": "Gemiddeld",
+          "options__semibold": "Halfvet",
+          "options__bold": "Vet",
+          "options__extrabold": "Extra vet"
+        },
+        "case": {
+          "label": "Hoofdlettergebruik",
+          "options__normal": "Normaal",
+          "options__uppercase": "Hoofdletters",
+          "options__lowercase": "Kleine letters",
+          "options__capitalize": "Eerste letter hoofdletter"
+        },
+        "font_style": {
+          "label": "Letterstijl",
+          "options__normal": "Normaal",
+          "options__italic": "Cursief"
+        },
+        "subheading_font": {
+          "label": "Lettertypefamilie",
+          "options__heading": "Kop",
+          "options__body": "Hoofdtekst"
         }
       }
     },
@@ -99,6 +385,43 @@
     "social-media": {
       "name": "Social media",
       "settings": {
+        "header__style": {
+          "content": "Stijl"
+        },
+        "social_type": {
+          "label": "Type",
+          "options__icon": "Pictogram",
+          "options__text": "Tekst"
+        },
+        "social_style": {
+          "label": "Stijl",
+          "options__classic": "Klassiek",
+          "options__boxed": "Omkaderd"
+        },
+        "social_box_style": {
+          "label": "Kaderstijl",
+          "options__fill": "Gevuld",
+          "options__outline": "Omtrek"
+        },
+        "social_shape": {
+          "label": "Vorm",
+          "options__square": "Vierkant",
+          "options__rounded": "Afgerond",
+          "options__full": "Cirkel \/ Pil"
+        },
+        "social_radius": {
+          "label": "Hoekradius",
+          "info": "Gebaseerd op de hoekradius van knoppen.",
+          "options__main": "Hoofdhoek",
+          "options__small": "Klein",
+          "options__extra_small": "Extra klein"
+        },
+        "social_size": {
+          "label": "Grootte",
+          "options__small": "Klein",
+          "options__medium": "Gemiddeld",
+          "options__large": "Groot"
+        },
         "social_twitter_link": {
           "label": "Twitter",
           "info": "https:\/\/twitter.com\/shopify"
@@ -135,6 +458,30 @@
           "label": "Vimeo",
           "info": "https:\/\/vimeo.com\/shopify"
         },
+        "header__sharing": {
+          "content": "Deelopties"
+        },
+        "share_facebook": {
+          "label": "Delen op Facebook"
+        },
+        "share_x": {
+          "label": "Delen op X (voorheen Twitter)"
+        },
+        "share_pinterest": {
+          "label": "Pinnen op Pinterest"
+        },
+        "share_telegram": {
+          "label": "Delen op Telegram"
+        },
+        "share_whatsapp": {
+          "label": "Delen op WhatsApp"
+        },
+        "share_line": {
+          "label": "Delen op LINE"
+        },
+        "share_email": {
+          "label": "Delen via e-mail"
+        },
         "header": {
           "content": "Socialmedia-accounts"
         }
@@ -148,29 +495,6 @@
           "label": "Valutacodes tonen"
         },
         "paragraph": "Prijzen in winkelwagen en bij checkout tonen altijd de valutacodes. Voorbeeld: $1,00 USD."
-      }
-    },
-    "layout": {
-      "name": "Opmaak",
-      "settings": {
-        "page_width": {
-          "label": "Paginabreedte"
-        },
-        "spacing_sections": {
-          "label": "Ruimte tussen secties in een template"
-        },
-        "header__grid": {
-          "content": "Grid"
-        },
-        "paragraph__grid": {
-          "content": "Is van invloed op secties met meerdere kolommen of rijen."
-        },
-        "spacing_grid_horizontal": {
-          "label": "Horizontale ruimte"
-        },
-        "spacing_grid_vertical": {
-          "label": "Verticale ruimte"
-        }
       }
     },
     "search_input": {
@@ -311,6 +635,61 @@
             "label": "Collectie",
             "info": "Zichtbaar wanneer winkelwagenoptie leeg is."
           }
+        }
+      }
+    },
+    "section": {
+      "name": "Sectie",
+      "settings": {
+        "header__layout": {
+          "content": "Opmaak"
+        },
+        "section_layout": {
+          "label": "Opmaak",
+          "options__classic": "Klassiek",
+          "options__bento": "Bento"
+        },
+        "section_spacing": {
+          "label": "Afstand tussen secties",
+          "info": "Afstand tussen secties op de pagina."
+        },
+        "section_gutter": {
+          "label": "Tussenruimte",
+          "info": "Ruimte tussen rasterkolommen en -rijen binnen een sectie."
+        },
+        "section_radius": {
+          "label": "Hoekradius",
+          "options__main": "Hoofdhoek",
+          "options__small": "Klein",
+          "options__extra_small": "Extra klein",
+          "options__none": "Geen",
+          "options__custom": "Aangepast"
+        },
+        "section_radius_custom": {
+          "label": "Aangepaste hoekradius"
+        },
+        "page_width": {
+          "label": "Paginabreedte"
+        },
+        "header__padding": {
+          "content": "Opvulling"
+        },
+        "section_padding_device": {
+          "label": "Apparaat",
+          "options__desktop": "Desktop",
+          "options__mobile": "Mobiel"
+        },
+        "section_padding_top": {
+          "label": "Boven"
+        },
+        "section_padding_bottom": {
+          "label": "Onder"
+        },
+        "section_padding_left": {
+          "label": "Links"
+        },
+        "section_padding_right": {
+          "label": "Rechts"
         }
       }
     },

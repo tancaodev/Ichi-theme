@@ -23,10 +23,15 @@
       "alt_text": {
         "share_on_facebook": "Споделяне чрез Facebook",
         "share_on_twitter": "Изпращане на туит в Twitter",
-        "share_on_pinterest": "Отбелязване в Pinterest"
+        "share_on_pinterest": "Отбелязване в Pinterest",
+        "share_on_x": "Споделяне в X",
+        "share_on_telegram": "Споделяне в Telegram",
+        "share_on_whatsapp": "Споделяне в WhatsApp",
+        "share_on_line": "Споделяне в LINE",
+        "share_by_email": "Споделяне по имейл"
       },
       "links": {
-        "twitter": "Twitter",
+        "twitter": "X",
         "facebook": "Facebook",
         "pinterest": "Pinterest",
         "instagram": "Instagram",
@@ -134,6 +139,9 @@
         "regular_price": "Обичайна цена",
         "sale_price": "Цена при разпродажба",
         "unit_price": "Единична цена"
+      },
+      "selling_plans": {
+        "one_time_purchase": "Еднократна покупка"
       },
       "share": "Споделяне на този продукт",
       "unavailable": "Неналично",
@@ -476,5 +484,18 @@
       "message": "Съобщение",
       "max_characters": "Макс. {{ max_chars }} знака"
     }
+  },
+  "gift_wrapping": {
+    "title": "Опаковане като подарък? (+£15)",
+    "to": "До",
+    "to_placeholder": "Име на получателя",
+    "from": "От",
+    "from_placeholder": "Име на подателя",
+    "message": "Съобщение към подаръка",
+    "message_placeholder": "Въведете съобщението си тук",
+    "edit": "Редактиране",
+    "cancel": "Отказ",
+    "update": "Актуализиране",
+    "updating": "Актуализиране..."
   }
 }

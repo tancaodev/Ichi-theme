@@ -23,10 +23,15 @@
       "alt_text": {
         "share_on_facebook": "Compartir en Facebook",
         "share_on_twitter": "Compartir en Twitter",
-        "share_on_pinterest": "Guardar en Pinterest"
+        "share_on_pinterest": "Guardar en Pinterest",
+        "share_on_x": "Compartir en X",
+        "share_on_telegram": "Compartir en Telegram",
+        "share_on_whatsapp": "Compartir en WhatsApp",
+        "share_on_line": "Compartir en LINE",
+        "share_by_email": "Compartir por correo electrónico"
       },
       "links": {
-        "twitter": "Twitter",
+        "twitter": "X",
         "facebook": "Facebook",
         "pinterest": "Pinterest",
         "instagram": "Instagram",
@@ -135,6 +140,9 @@
         "regular_price": "Precio habitual",
         "sale_price": "Precio de oferta",
         "unit_price": "Precio unitario"
+      },
+      "selling_plans": {
+        "one_time_purchase": "Compra única"
       },
       "share": "Compartir este producto",
       "sold_out": "Agotado",
@@ -486,5 +494,18 @@
       "message": "Mensaje",
       "max_characters": "{{ max_chars }} caracteres máx."
     }
+  },
+  "gift_wrapping": {
+    "title": "¿Envolver para regalo? (+£15)",
+    "to": "Para",
+    "to_placeholder": "Nombre del destinatario",
+    "from": "De",
+    "from_placeholder": "Nombre del remitente",
+    "message": "Mensaje de regalo",
+    "message_placeholder": "Escribe tu mensaje aquí",
+    "edit": "Editar",
+    "cancel": "Cancelar",
+    "update": "Actualizar",
+    "updating": "Actualizando..."
   }
 }

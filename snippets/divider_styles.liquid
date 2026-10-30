@@ -1,0 +1,77 @@
+{%- doc -%}
+  Outputs the instance CSS variables for one divider, scoped to `#<divider_id>`.
+  Mobile direction, size and thickness come from the `*_mobile` settings when
+  `divider_layout_custom_mobile` is on, otherwise they repeat desktop.
+  The static rules in `snip_divider.liquid` read them, with mobile as the base and desktop from 750px.
+
+  @param {object} component_settings - Settings object holding the `divider_*` settings.
+  @param {string} divider_id - DOM id of the divider the variables are scoped to.
+
+  @example
+  {% render 'divider_styles', component_settings: block.settings, divider_id: 'Divider-' | append: block.id %}
+{%- enddoc -%}
+{%- liquid
+  assign st = component_settings
+  assign breakpoints = 'desktop,mobile' | split: ','
+  assign is_dot = false
+  if st.divider_style == 'dot'
+    assign is_dot = true
+  endif
+  assign is_rounded = false
+  if st.divider_corner_radius == 'rounded'
+    assign is_rounded = true
+  endif
+-%}
+{%- capture instance_variables -%}
+  {% render 'css_var_margin', component_settings: st, prefix: 'divider' %}
+  {%- for breakpoint in breakpoints -%}
+    {%- liquid
+      assign setting_suffix = ''
+      assign var_suffix = ''
+      if breakpoint == 'mobile'
+        assign var_suffix = '-mobile'
+        if st.divider_layout_custom_mobile
+          assign setting_suffix = '_mobile'
+        endif
+      endif
+
+      assign direction_key = 'divider_direction' | append: setting_suffix
+      assign width_key = 'divider_width' | append: setting_suffix
+      assign height_key = 'divider_height' | append: setting_suffix
+      assign thickness_key = 'divider_thickness' | append: setting_suffix
+
+      assign direction = st[direction_key] | default: 'horizontal'
+      assign thickness = st[thickness_key] | default: 1 | append: 'px'
+      assign double_thickness = st[thickness_key] | default: 1 | times: 2 | append: 'px'
+    -%}
+    {%- if direction == 'vertical' %}
+      --divider-width{{ var_suffix }}: {{ thickness }};
+      --divider-height{{ var_suffix }}: calc({{ st[height_key] | default: 100 }}% - var(--divider-margin-top{{ var_suffix }}, 0px) - var(--divider-margin-bottom{{ var_suffix }}, 0px));
+      --divider-min-height{{ var_suffix }}: 2rem;
+      --divider-align-self{{ var_suffix }}: stretch;
+      --divider-background-size{{ var_suffix }}: {{ thickness }} {{ double_thickness }};
+      {%- assign gradient_direction = 'to bottom' %}
+    {%- else %}
+      --divider-width{{ var_suffix }}: calc({{ st[width_key] | default: 100 }}% - var(--divider-margin-left{{ var_suffix }}, 0px) - var(--divider-margin-right{{ var_suffix }}, 0px));
+      --divider-height{{ var_suffix }}: {{ thickness }};
+      --divider-min-height{{ var_suffix }}: 0;
+      --divider-align-self{{ var_suffix }}: auto;
+      --divider-background-size{{ var_suffix }}: {{ double_thickness }} {{ thickness }};
+      {%- assign gradient_direction = 'to right' %}
+    {%- endif %}
+    {%- if is_dot and is_rounded %}
+      --divider-background{{ var_suffix }}: radial-gradient(circle closest-side, var(--divider-color) 96%, transparent);
+    {%- elsif is_dot %}
+      --divider-background{{ var_suffix }}: linear-gradient({{ gradient_direction }}, var(--divider-color) 50%, transparent 50%);
+    {%- else %}
+      --divider-background{{ var_suffix }}: var(--divider-color);
+      --divider-background-size{{ var_suffix }}: auto;
+    {%- endif %}
+  {%- endfor -%}
+{%- endcapture -%}
+{% style %}
+  #{{ divider_id }} {
+    {{ instance_variables }}
+    --divider-radius: {% if is_rounded and is_dot == false %}9999px{% else %}0{% endif %};
+  }
+{% endstyle %}
