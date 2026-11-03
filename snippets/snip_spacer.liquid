@@ -16,7 +16,9 @@
 <div id="{{ spacer_id }}" class="spacer" aria-hidden="true" {{ attributes }}></div>
 
 {% stylesheet %}
-  .spacer {
+  .spacer,
+  .spacer:empty {
+    display: block;
     flex: 0 0 var(--spacer-size-mobile);
     align-self: stretch;
   }

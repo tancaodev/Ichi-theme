@@ -4,6 +4,8 @@
   `<prefix>_width_pixel` and `<prefix>_alignment`. Mobile values come from the same ids suffixed
   with `_mobile` when `<prefix>_layout_custom_mobile` is on, otherwise they repeat desktop.
   "Fit" has no alignment of its own and inherits it from the parent.
+  Full widths ("fill" and pixel max-widths) subtract `--<prefix>-margin-left|right`, so the block's
+  margin must sit on the same element as its width (the one carrying `shopify_attributes`).
 
   Outputs: --<prefix>-width, --<prefix>-max-width, --<prefix>-alignment and their -mobile variants.
 
@@ -34,7 +36,9 @@
     assign pixel_key = prefix | append: '_width_pixel' | append: setting_suffix
     assign alignment_key = prefix | append: '_alignment' | append: setting_suffix
 
-    assign width = '100%'
+    assign margin_left_var = '--' | append: prefix | append: '-margin-left' | append: var_suffix
+    assign margin_right_var = '--' | append: prefix | append: '-margin-right' | append: var_suffix
+    assign width = 'calc(100% - var(' | append: margin_left_var | append: ', 0px) - var(' | append: margin_right_var | append: ', 0px))'
     assign max_width = 'none'
     assign alignment = st[alignment_key] | default: 'left'
 

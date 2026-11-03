@@ -44,11 +44,13 @@
     max-width: var(--heading-max-width-mobile);
     min-width: 1px;
     text-align: var(--heading-alignment-mobile);
-  }
-
-  .heading .heading__text {
     margin: var(--heading-margin-top-mobile, 0) var(--heading-margin-right-mobile, 0)
       var(--heading-margin-bottom-mobile, 0) var(--heading-margin-left-mobile, 0);
+  }
+
+  /* Margin lives on .heading (the element with shopify_attributes) so the editor outline excludes it. */
+  .heading .heading__text {
+    margin: 0;
   }
 
   .heading .heading__text.heading--custom {
@@ -65,9 +67,6 @@
       width: var(--heading-width);
       max-width: var(--heading-max-width);
       text-align: var(--heading-alignment);
-    }
-
-    .heading .heading__text {
       margin: var(--heading-margin-top, 0) var(--heading-margin-right, 0) var(--heading-margin-bottom, 0)
         var(--heading-margin-left, 0);
     }

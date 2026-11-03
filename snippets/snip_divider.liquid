@@ -24,7 +24,9 @@
 ></div>
 
 {% stylesheet %}
-  .divider {
+  .divider,
+  .divider:empty {
+    display: block;
     --divider-color: rgba(var(--color-foreground), 0.15);
 
     flex-shrink: 0;
