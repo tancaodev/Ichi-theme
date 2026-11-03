@@ -1,0 +1,60 @@
+{%- doc -%}
+  Outputs the instance CSS variables for one logo, scoped to `#<logo_id>`.
+  Reads `logo_unit` with `logo_width_percent` (percent of the parent) or `logo_height_pixel`, and their
+  `_mobile` settings when `logo_size_custom_mobile` is on, otherwise mobile repeats desktop.
+  In pixel mode the text logo uses the height as its font size; in percent mode it uses the H2 size.
+  The static rules in `snip_logo.liquid` read them, with mobile as the base and desktop from 750px.
+
+  @param {object} component_settings - Settings object holding the `logo_*` settings.
+  @param {string} logo_id - DOM id of the logo wrapper the variables are scoped to.
+
+  @example
+  {% render 'logo_styles', component_settings: block.settings, logo_id: 'Logo-' | append: block.id %}
+{%- enddoc -%}
+{%- liquid
+  assign st = component_settings
+  assign breakpoints = 'desktop,mobile' | split: ','
+-%}
+{%- capture instance_variables -%}
+  {%- for breakpoint in breakpoints -%}
+    {%- liquid
+      assign setting_suffix = ''
+      assign var_suffix = ''
+      if breakpoint == 'mobile'
+        assign var_suffix = '-mobile'
+        if st.logo_size_custom_mobile
+          assign setting_suffix = '_mobile'
+        endif
+      endif
+
+      assign unit_key = 'logo_unit' | append: setting_suffix
+      assign percent_key = 'logo_width_percent' | append: setting_suffix
+      assign pixel_key = 'logo_height_pixel' | append: setting_suffix
+
+      if st[unit_key] == 'percent'
+        assign width = st[percent_key] | default: 100 | append: '%'
+        assign image_width = '100%'
+        assign image_height = 'auto'
+        assign text_size = 'var(--h2-font-size)'
+      else
+        assign width = 'fit-content'
+        assign image_width = 'auto'
+        assign image_height = st[pixel_key] | default: 40 | divided_by: 10.0 | append: 'rem'
+        assign text_size = image_height
+      endif
+    -%}
+    --logo-width{{ var_suffix }}: {{ width }};
+    --logo-image-width{{ var_suffix }}: {{ image_width }};
+    --logo-image-height{{ var_suffix }}: {{ image_height }};
+    --logo-text-size{{ var_suffix }}: {{ text_size }};
+  {%- endfor -%}
+  {% render 'css_var_margin', component_settings: st, prefix: 'logo' %}
+{%- endcapture -%}
+{% style %}
+  #{{ logo_id }} {
+    {{ instance_variables }}
+    {%- if st.logo_use_inverse and st.logo_inverse_color != blank %}
+      --logo-text-color: {{ st.logo_inverse_color }};
+    {%- endif %}
+  }
+{% endstyle %}

@@ -1,0 +1,93 @@
+{% comment %}
+  Section variables
+  Outputs the CSS custom properties driven by the Section theme settings.
+  Mobile values are the base; desktop values are applied from 750px.
+
+  Corner radius presets are a scale: the section radius followed by the radii for nested
+  elements (md, sm, xs). Custom sets the section radius (halved on mobile); nested radii follow
+  the main scale, capped by it. Radii are 0 unless the layout is Bento.
+
+  The legacy Dawn variables (--spacing-sections-*, --grid-*-spacing) are kept as aliases
+  so existing section CSS keeps working.
+
+  Usage:
+  {% style %}
+    {% render 'section_variables' %}
+  {% endstyle %}
+{% endcomment %}
+
+{%- liquid
+  # Radius scale per preset, in px: section,md,sm,xs
+  case settings.section_radius
+    when 'main'
+      assign radius_desktop = '30,20,10,5'
+      assign radius_mobile = '15,10,5,5'
+    when 'small'
+      assign radius_desktop = '20,10,5,0'
+      assign radius_mobile = '10,5,5,0'
+    when 'extra_small'
+      assign radius_desktop = '10,5,2.5,0'
+      assign radius_mobile = '10,5,2.5,0'
+    when 'custom'
+      # Nested radii follow the main scale, capped by the custom value
+      assign r = settings.section_radius_custom
+      assign r_md = r | at_most: 20
+      assign r_sm = r | at_most: 10
+      assign r_xs = r | at_most: 5
+      assign radius_desktop = r | append: ',' | append: r_md | append: ',' | append: r_sm | append: ',' | append: r_xs
+      assign r = r | divided_by: 2.0
+      assign r_md = r | at_most: 10
+      assign r_sm = r | at_most: 5
+      assign r_xs = r | at_most: 5
+      assign radius_mobile = r | append: ',' | append: r_md | append: ',' | append: r_sm | append: ',' | append: r_xs
+    else
+      assign radius_desktop = '0,0,0,0'
+      assign radius_mobile = '0,0,0,0'
+  endcase
+
+  if settings.section_layout != 'bento'
+    assign radius_desktop = '0,0,0,0'
+    assign radius_mobile = '0,0,0,0'
+  endif
+
+  assign radius_desktop = radius_desktop | split: ','
+  assign radius_mobile = radius_mobile | split: ','
+  assign radius_levels = 'section-radius,section-radius-md,section-radius-sm,section-radius-xs' | split: ','
+  assign sides = 'top,right,bottom,left' | split: ','
+  assign spacing = settings.section_spacing | divided_by: 10.0
+  assign gutter = settings.section_gutter | divided_by: 10.0
+-%}
+
+:root {
+  --section-spacing: {{ spacing }}rem;
+  --section-gutter: {{ gutter }}rem;
+
+  {%- for level in radius_levels %}
+    --{{ level }}: {{ radius_mobile[forloop.index0] | divided_by: 10.0 }}rem;
+  {%- endfor %}
+
+  {%- for side in sides %}
+    {%- assign key = 'section_padding_' | append: side | append: '_mobile' %}
+    --section-padding-{{ side }}: {{ settings[key] | divided_by: 10.0 }}rem;
+  {%- endfor %}
+
+  --spacing-sections-desktop: {{ settings.section_spacing }}px;
+  --spacing-sections-mobile: {{ settings.section_spacing }}px;
+  --grid-desktop-vertical-spacing: {{ settings.section_gutter }}px;
+  --grid-desktop-horizontal-spacing: {{ settings.section_gutter }}px;
+  --grid-mobile-vertical-spacing: {{ settings.section_gutter }}px;
+  --grid-mobile-horizontal-spacing: {{ settings.section_gutter }}px;
+}
+
+@media screen and (min-width: 750px) {
+  :root {
+    {%- for level in radius_levels %}
+      --{{ level }}: {{ radius_desktop[forloop.index0] | divided_by: 10.0 }}rem;
+    {%- endfor %}
+
+    {%- for side in sides %}
+      {%- assign key = 'section_padding_' | append: side %}
+      --section-padding-{{ side }}: {{ settings[key] | divided_by: 10.0 }}rem;
+    {%- endfor %}
+  }
+}

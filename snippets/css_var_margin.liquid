@@ -1,0 +1,41 @@
+{%- doc -%}
+  Outputs margin CSS variables, read from settings named by a prefix.
+  When the block has a `<prefix>_margin` toggle, nothing is output while it is off, so consumers
+  should fall back to 0. Blocks without that toggle always output the variables.
+  Desktop values come from `<prefix>_margin_top|right|bottom|left` (px). Mobile values come from the
+  same ids suffixed with `_mobile` when `<prefix>_margin_custom_mobile` is on, otherwise they repeat desktop.
+
+  Outputs: --<prefix>-margin-top|right|bottom|left and their -mobile variants.
+
+  @param {object} component_settings - Settings object holding the prefixed settings (block.settings or section.settings).
+  @param {string} prefix - Setting id and CSS variable prefix, e.g. 'heading'.
+
+  @example
+  {% render 'css_var_margin', component_settings: block.settings, prefix: 'heading' %}
+{%- enddoc -%}
+{%- liquid
+  assign st = component_settings
+  assign enabled_key = prefix | append: '_margin'
+  assign mobile_toggle_key = prefix | append: '_margin_custom_mobile'
+  assign breakpoints = 'desktop,mobile' | split: ','
+  assign sides = 'top,right,bottom,left' | split: ','
+
+  if st[enabled_key] != false
+    for breakpoint in breakpoints
+      assign setting_suffix = ''
+      assign var_suffix = ''
+      if breakpoint == 'mobile'
+        assign var_suffix = '-mobile'
+        if st[mobile_toggle_key]
+          assign setting_suffix = '_mobile'
+        endif
+      endif
+
+      for side in sides
+        assign side_key = prefix | append: '_margin_' | append: side | append: setting_suffix
+        assign value = st[side_key] | default: 0 | divided_by: 10.0 | append: 'rem'
+        echo '--' | append: prefix | append: '-margin-' | append: side | append: var_suffix | append: ': ' | append: value | append: ';'
+      endfor
+    endfor
+  endif
+-%}

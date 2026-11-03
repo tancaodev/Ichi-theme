@@ -48,5 +48,27 @@
     "submit": "Search",
     "no_results_html": "No results found for {{ terms }}",
     "results_for_html": "{{ count }} results found for {{ terms }}"
+  },
+  "blocks": {
+    "copyright": {
+      "copyright_html": "Copyright &copy; {{ year }} {{ store_name }}.",
+      "powered_by_html": "Powered by {{ shopify }}"
+    },
+    "video": {
+      "play": "Play video"
+    }
+  },
+  "general": {
+    "social": {
+      "alt_text": {
+        "share_on_facebook": "Share on Facebook",
+        "share_on_x": "Share on X",
+        "share_on_pinterest": "Pin on Pinterest",
+        "share_on_telegram": "Share on Telegram",
+        "share_on_whatsapp": "Share on WhatsApp",
+        "share_on_line": "Share on LINE",
+        "share_by_email": "Share by email"
+      }
+    }
   }
 }

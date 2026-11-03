@@ -1,0 +1,94 @@
+{% doc %}
+  Renders an icon from the theme icon library (ported from bear-theme) as an inline SVG.
+  Paths live in `snip_icon_path`.
+
+  @param {string} icon - Icon name, e.g. 'facebook', 'x', 'whatsapp', 'email', 'chevron-down'.
+  @param {number} [icon_size] - Size class suffix (12-32), sets --icon-size. Defaults to 20.
+  @param {string} [frame_width] - SVG viewBox width. Defaults to '24'.
+  @param {string} [frame_height] - SVG viewBox height. Defaults to frame_width.
+  @param {string} [stroke] - Stroke width for outline icons. Defaults to '2'.
+  @param {string} [class] - Extra classes on the <svg>.
+  @param {boolean} [cart_not_empty] - Masks the icon to leave room for a cart dot.
+
+  @example
+  {% render 'snip_icon', icon: 'whatsapp' %}
+{% enddoc %}
+{% liquid
+  assign icon = icon | default: 'none'
+  assign icon_size = icon_size | default: 20
+  assign frame_width = frame_width | default: '24'
+  assign frame_height = frame_height | default: frame_width | default: '24'
+  assign stroke = stroke | default: '2'
+  assign class = class | default: ''
+  assign cart_not_empty = cart_not_empty | default: null
+%}
+{% stylesheet %}
+  .icon-size-12 {
+    --icon-size: 1.2rem;
+  }
+  .icon-size-14 {
+    --icon-size: 1.4rem;
+  }
+  .icon-size-16 {
+    --icon-size: 1.6rem;
+  }
+  .icon-size-18 {
+    --icon-size: 1.8rem;
+  }
+  .icon-size-20 {
+    --icon-size: 2rem;
+  }
+  .icon-size-24 {
+    --icon-size: 2.4rem;
+  }
+  .icon-size-28 {
+    --icon-size: 2.8rem;
+  }
+  .icon-size-32 {
+    --icon-size: 3.2rem;
+  }
+  .icon-svg {
+    width: 100%;
+    height: 100%;
+  }
+  .svg-anim {
+    transform-origin: center;
+    transition: all var(--trans-duration, 0.3s) var(--trans-easing, ease);
+  }
+  .icon-close-x-1,
+  .icon-close-x-2 {
+    transform-origin: center;
+    transition: transform var(--trans-duration, 0.3s) var(--trans-easing, ease);
+  }
+
+  @media (hover: hover) {
+    .icon-close-x:hover {
+      .icon-close-x-1 {
+        transform: rotate(135deg);
+      }
+      .icon-close-x-2 {
+        transform: rotate(225deg);
+      }
+    }
+  }
+{% endstylesheet %}
+
+<svg
+  width="{{ frame_width }}"
+  height="{{ frame_height }}"
+  viewBox="0 0 {{ frame_width }} {{ frame_height }}"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+  focusable="false"
+  aria-hidden="true"
+  class="icon-svg icon-size-{{ icon_size }} {{ class }}"
+>
+  {% if cart_not_empty == true %}
+  <mask id="mask0_2572_23871" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
+    <path d="M13.7278 0.888855C13.3871 1.72594 13.1985 2.64132 13.1985 3.60077C13.1986 7.57711 16.4223 10.801 20.3987 10.801C21.3588 10.8009 22.274 10.6099 23.1115 10.2687V23.1115H0.888885V0.888855H13.7278Z" fill="white"/>
+  </mask>
+  <g mask="url(#mask0_2572_23871)">
+  {% endif %}
+  {%- render 'snip_icon_path', icon: icon, stroke: stroke -%}
+  {% if cart_not_empty == true %}</g>{% endif %}
+</svg>

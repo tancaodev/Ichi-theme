@@ -1,1 +1,5 @@
 extends: theme-check:recommended
+
+ignore:
+  - _reference/**
+  - node_modules/**

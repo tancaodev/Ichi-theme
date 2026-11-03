@@ -1,0 +1,120 @@
+{%- doc -%}
+  Renders the store logo from theme settings, or the store name as text when no logo is uploaded.
+  The inverse option swaps in `settings.logo_inverse` (falling back to `settings.logo`) and recolors the text logo.
+  Size is a width in percent of the parent or a height in pixels, with an optional mobile override.
+  Settings are read by the `logo_` prefix, so any block or section exposing the same setting ids
+  can reuse this snippet.
+
+  @param {object} component_settings - Settings object holding the `logo_*` settings (block.settings or section.settings).
+  @param {string} component_id - Unique id used to scope the instance CSS variables (block.id or section.id).
+  @param {string} [attributes] - Theme editor attributes for the wrapper (block.shopify_attributes).
+
+  @example
+  {% render 'snip_logo', component_settings: block.settings, component_id: block.id, attributes: block.shopify_attributes %}
+{%- enddoc -%}
+{%- liquid
+  assign st = component_settings
+  assign logo_id = 'Logo-' | append: component_id
+
+  assign logo_image = settings.logo
+  if st.logo_use_inverse and settings.logo_inverse != blank
+    assign logo_image = settings.logo_inverse
+  endif
+
+  assign breakpoints = 'desktop,mobile' | split: ','
+  assign sizes = ''
+  for breakpoint in breakpoints
+    assign setting_suffix = ''
+    if breakpoint == 'mobile' and st.logo_size_custom_mobile
+      assign setting_suffix = '_mobile'
+    endif
+    assign unit_key = 'logo_unit' | append: setting_suffix
+    assign percent_key = 'logo_width_percent' | append: setting_suffix
+    assign pixel_key = 'logo_height_pixel' | append: setting_suffix
+
+    if st[unit_key] == 'percent'
+      assign size = st[percent_key] | append: 'vw'
+    elsif logo_image != blank
+      assign size = st[pixel_key] | times: logo_image.aspect_ratio | ceil | append: 'px'
+    endif
+
+    if breakpoint == 'desktop'
+      assign sizes = '(min-width: 750px) ' | append: size
+    else
+      assign sizes = sizes | append: ', ' | append: size
+    endif
+  endfor
+-%}
+{% render 'logo_styles', component_settings: st, logo_id: logo_id %}
+<div id="{{ logo_id }}" class="logo" {{ attributes }}>
+  {%- if st.logo_link -%}
+    <a href="{{ routes.root_url }}" class="logo__link">
+  {%- endif -%}
+  {%- if logo_image != blank -%}
+    {{
+      logo_image
+      | image_url: width: 2000
+      | image_tag:
+        class: 'logo__image',
+        widths: '100, 200, 300, 400, 600, 800, 1000, 1200, 1600, 2000',
+        sizes: sizes,
+        alt: logo_image.alt | default: shop.name
+    }}
+  {%- else -%}
+    <span class="logo__text">{{ shop.name }}</span>
+  {%- endif -%}
+  {%- if st.logo_link -%}
+    </a>
+  {%- endif -%}
+</div>
+
+{% stylesheet %}
+  .logo {
+    width: var(--logo-width-mobile);
+    max-width: 100%;
+    margin: var(--logo-margin-top-mobile, 0) var(--logo-margin-right-mobile, 0) var(--logo-margin-bottom-mobile, 0)
+      var(--logo-margin-left-mobile, 0);
+  }
+
+  .logo .logo__link {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .logo .logo__image {
+    display: block;
+    width: var(--logo-image-width-mobile);
+    max-width: 100%;
+    height: var(--logo-image-height-mobile);
+    object-fit: contain;
+  }
+
+  .logo .logo__text {
+    display: block;
+    color: var(--logo-text-color, rgb(var(--color-foreground)));
+    font-family: var(--font-heading-family);
+    font-style: var(--font-heading-style);
+    font-weight: var(--font-heading-weight);
+    font-size: var(--logo-text-size-mobile);
+    line-height: 1;
+    word-break: break-word;
+  }
+
+  @media screen and (min-width: 750px) {
+    .logo {
+      width: var(--logo-width);
+      margin: var(--logo-margin-top, 0) var(--logo-margin-right, 0) var(--logo-margin-bottom, 0)
+        var(--logo-margin-left, 0);
+    }
+
+    .logo .logo__image {
+      width: var(--logo-image-width);
+      height: var(--logo-image-height);
+    }
+
+    .logo .logo__text {
+      font-size: var(--logo-text-size);
+    }
+  }
+{% endstylesheet %}

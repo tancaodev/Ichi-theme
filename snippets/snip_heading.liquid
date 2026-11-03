@@ -1,0 +1,135 @@
+{%- doc -%}
+  Renders a heading with a size preset or custom typography, layout, text highlight and margin.
+  Settings are read by the `heading_` prefix, so any block or section exposing the same setting ids
+  can reuse this snippet.
+
+  @param {object} component_settings - Settings object holding the `heading_*` settings (block.settings or section.settings).
+  @param {string} component_id - Unique id used to scope the instance CSS variables (block.id or section.id).
+  @param {string} [attributes] - Theme editor attributes for the wrapper (block.shopify_attributes).
+
+  @example
+  {% render 'snip_heading', component_settings: block.settings, component_id: block.id, attributes: block.shopify_attributes %}
+{%- enddoc -%}
+{%- liquid
+  assign st = component_settings
+  assign heading_id = 'Heading-' | append: component_id
+  assign tag = st.heading_tag | default: 'h2'
+
+  case st.heading_size
+    when 'display'
+      assign size_class = 'h0'
+    when 'subheading'
+      assign size_class = 'subheading'
+    when 'custom'
+      assign size_class = 'heading--custom'
+    else
+      assign size_class = st.heading_size | default: 'h2'
+  endcase
+-%}
+{%- if st.heading != blank -%}
+  {% render 'heading_styles', component_settings: st, heading_id: heading_id %}
+  <div
+    id="{{ heading_id }}"
+    class="heading"
+    data-highlight="{{ st.heading_highlight_style | default: 'none' }}"
+    {{ attributes }}
+  >
+    <{{ tag }} class="heading__text {{ size_class }}">{{ st.heading }}</{{ tag }}>
+  </div>
+{%- endif -%}
+
+{% stylesheet %}
+  .heading {
+    width: var(--heading-width-mobile);
+    max-width: var(--heading-max-width-mobile);
+    min-width: 1px;
+    text-align: var(--heading-alignment-mobile);
+    margin: var(--heading-margin-top-mobile, 0) var(--heading-margin-right-mobile, 0)
+      var(--heading-margin-bottom-mobile, 0) var(--heading-margin-left-mobile, 0);
+  }
+
+  /* Margin lives on .heading (the element with shopify_attributes) so the editor outline excludes it. */
+  .heading .heading__text {
+    margin: 0;
+  }
+
+  .heading .heading__text.heading--custom {
+    font-family: var(--heading-font-family);
+    font-size: var(--heading-font-size-mobile);
+    line-height: var(--heading-line-height-mobile);
+    letter-spacing: var(--heading-letter-spacing);
+    font-weight: var(--heading-font-weight);
+    text-transform: var(--heading-text-transform);
+  }
+
+  @media screen and (min-width: 750px) {
+    .heading {
+      width: var(--heading-width);
+      max-width: var(--heading-max-width);
+      text-align: var(--heading-alignment);
+      margin: var(--heading-margin-top, 0) var(--heading-margin-right, 0) var(--heading-margin-bottom, 0)
+        var(--heading-margin-left, 0);
+    }
+
+    .heading .heading__text.heading--custom {
+      font-size: var(--heading-font-size);
+      line-height: var(--heading-line-height);
+    }
+  }
+
+  /* Text highlight: merchants mark highlighted words as italic (<em>). */
+  .heading {
+    --heading-highlight-color: rgb(var(--color-base-accent-1));
+  }
+
+  .heading .heading__text em {
+    font-family: var(--heading-highlight-font-family);
+  }
+
+  .heading[data-highlight='text_color'] em {
+    color: var(--heading-highlight-color);
+  }
+
+  .heading[data-highlight^='underline'] em {
+    text-decoration-line: underline;
+    text-decoration-color: var(--heading-highlight-color);
+    text-decoration-thickness: 0.06em;
+    text-decoration-skip-ink: none;
+    text-underline-offset: 0.15em;
+  }
+
+  .heading[data-highlight='underline_soft'] em {
+    text-decoration-color: color-mix(in srgb, var(--heading-highlight-color) 40%, transparent);
+    text-decoration-thickness: 0.12em;
+  }
+
+  .heading[data-highlight='underline_double'] em {
+    text-decoration-style: double;
+  }
+
+  .heading[data-highlight='underline_wavy'] em {
+    text-decoration-style: wavy;
+  }
+
+  .heading[data-highlight='circle_outline'] em,
+  .heading[data-highlight='highlight_bar'] em,
+  .heading[data-highlight='highlight_solid'] em {
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+  }
+
+  .heading[data-highlight='circle_outline'] em {
+    padding: 0 0.2em;
+    border: 0.05em solid var(--heading-highlight-color);
+    border-radius: 50%;
+  }
+
+  .heading[data-highlight='highlight_bar'] em {
+    background-image: linear-gradient(transparent 60%, var(--heading-highlight-color) 60%);
+  }
+
+  .heading[data-highlight='highlight_solid'] em {
+    padding: 0 0.15em;
+    background-color: var(--heading-highlight-color);
+  }
+{% endstylesheet %}
