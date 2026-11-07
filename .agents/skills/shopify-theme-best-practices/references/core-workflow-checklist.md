@@ -1,5 +1,7 @@
 # CORE Development Workflow & Component Checklist
 
+> **Optional.** This applies only when an Ichi component is backported to a shared CORE repository. It is not part of the normal Ichi development flow; for Ichi PRs use the rules in `SKILL.md`.
+
 This document details the process for developing components on client themes, backporting candidates to the CORE repository, preparing Pull Requests, and completing final verification.
 
 ---
@@ -16,7 +18,6 @@ This document details the process for developing components on client themes, ba
    - Create a feature branch on the `CORE` repository for your component.
 4. **Sanitization for CORE:**
    - Remove any client-specific logic, hardcoded IDs, handles, store names, or proprietary assets.
-   - Strip client-site-specific Tailwind prefixes (e.g. normalize `tw-` prefix to CORE's convention).
    - Ensure all data/metafields/settings your component requires are defined in CORE or included in your branch.
 5. **Pull Request Submission:**
    - Open a PR targeting the `CORE` `main` branch.
@@ -39,10 +40,8 @@ Before marking a component ready or submitting a PR to CORE, verify each checkli
 - [ ] **Design Review:** Component has passed design review against the provided specs.
 - [ ] **CORE Inventory Confirmed:** Component is on the CORE inventory and does not already exist in CORE.
 - [ ] **Code Comments:** Any complex or non-obvious logic is clearly documented with inline comments.
-- [ ] **Snippet Documentation:** All snippets include the standardized comment header (Name, Accepts with types, and Usage example).
+- [ ] **Snippet Documentation:** All snippets include a `{% doc %}` header (`@param` with types and an `@example`).
 - [ ] **Client References Purged:** All client-specific identifiers, URLs, strings, and hardcoded values are removed.
-- [ ] **Tailwind Prefixes Cleaned:** Client-specific Tailwind prefixes are removed/normalized.
-- [ ] **No Arbitrary Bracket Classes:** No arbitrary value brackets (e.g. `[1.2rem]`) or parent bracketed selectors (e.g. `[&>*]`).
 - [ ] **Standards Adherence:** Component strictly follows Liquid, CSS, and JS guidelines from this skill.
 - [ ] **PR Created:** PR opened against the CORE repository `main` branch.
 - [ ] **Theme Preview Link:** PR description contains a direct link to a live preview theme.

@@ -48,7 +48,7 @@
         assign alignment = 'inherit'
       when 'custom'
         if st[unit_key] == 'pixel'
-          assign max_width = st[pixel_key] | divided_by: 10.0 | append: 'rem'
+          assign max_width = st[pixel_key] | divided_by: 16.0 | append: 'rem'
         else
           assign width = st[percent_key] | append: '%'
         endif

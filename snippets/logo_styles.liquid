@@ -3,7 +3,7 @@
   Reads `logo_unit` with `logo_width_percent` (percent of the parent) or `logo_height_pixel`, and their
   `_mobile` settings when `logo_size_custom_mobile` is on, otherwise mobile repeats desktop.
   In pixel mode the text logo uses the height as its font size; in percent mode it uses the H2 size.
-  The static rules in `snip_logo.liquid` read them, with mobile as the base and desktop from 750px.
+  The static rules in `snip_logo.liquid` read them, with mobile as the base and desktop from 992px.
 
   @param {object} component_settings - Settings object holding the `logo_*` settings.
   @param {string} logo_id - DOM id of the logo wrapper the variables are scoped to.
@@ -39,7 +39,7 @@
       else
         assign width = 'fit-content'
         assign image_width = 'auto'
-        assign image_height = st[pixel_key] | default: 40 | divided_by: 10.0 | append: 'rem'
+        assign image_height = st[pixel_key] | default: 40 | divided_by: 16.0 | append: 'rem'
         assign text_size = image_height
       endif
     -%}

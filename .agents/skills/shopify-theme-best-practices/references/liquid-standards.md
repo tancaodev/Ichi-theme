@@ -16,7 +16,7 @@ When adding a feature or option to a component, determine the intended audience:
 
 ## 2. Component Design & Abstraction
 
-- **File Names:** Newly added files use `_` (never `-`) as the word separator, and sections, blocks and HTML-rendering snippets get a type prefix so they are distinguishable from Dawn files. Existing Dawn files keep their names.
+- **File Names:** Newly added files use `_` (never `-`) as the word separator, and sections, blocks and HTML-rendering snippets get a type prefix so they are distinguishable from Shopify Skeleton's original files. Skeleton files (`css-variables`, `meta-tags`, `image`, `hello-world`, `custom-section`, header/footer groups) keep their names.
 
   | Type | Prefix | Example |
   | :--- | :--- | :--- |
@@ -30,11 +30,12 @@ When adding a feature or option to a component, determine the intended audience:
 
 - **Self-Contained Components:** Think in modular components. A Liquid section should be responsible for its own markup, settings, assets, and logic. This keeps components portable and backportable.
 - **Check Existing Solutions:**
-  1. Check the CORE inventory first to see if a component already exists.
-  2. If not, check Dawn components as a base. Feel free to use Dawn as an initial base and cull unwanted features.
-  3. If Dawn is insufficient or styling requires Tailwind, use Tailwind UI components as a basis for markup and styling.
-- **Cull Dawn Bloat:** If a Dawn component includes complex functionality rarely needed by clients, strip it out. We do not track Dawn updates.
-- **Avoid Hard-Coded Client Data:** Avoid hard-coding client-specific IDs, handles, text, or URLs. If temporary hardcoding is unavoidable during rapid client work, flag it clearly with `{% comment %} TODO: Remove client-specific reference for CORE {% endcomment %}`.
+  1. Reuse an existing Ichi block/snippet (`blck_*`, `snip_*`, `css_var_*`, `*_variables`) before writing a new one.
+  2. Read Skeleton and Shopify's docs for the platform pattern.
+  3. Dawn (`_reference/dawn`) may be read to understand expected **behavior** (accessibility, edge cases). **Never copy Dawn code, markup or class names**: Theme Store does not accept Dawn-derived themes.
+  4. Do not base markup on paid UI kits (e.g. Tailwind UI) whose license does not allow redistribution in a sold theme.
+- **Keep it lean:** build only the features the design needs; no speculative options.
+- **No store-specific data:** never hard-code store IDs, handles, product/collection references, text or URLs. Defaults must work on any store (Theme Store requirement).
 
 ---
 
@@ -64,41 +65,17 @@ Always build for Shopify native features, multi-currency, and internationalizati
 
 ## 4. Snippet Documentation Header Standard
 
-Every snippet must begin with a structured Liquid comment describing its name, purpose, accepted parameters (with types), and an example `{% render %}` call.
+Every snippet starts with a Liquid `{%- doc -%}` block: a short description, each parameter with `@param {type} name - description` (optional ones in `[brackets]`), and an `@example` render call. Theme check reads this format to validate `{% render %}` arguments. Follow the `liquid-doc-comments` skill for the exact format; do not use `{% comment %}` headers for new snippets.
 
 ### Template:
 ```liquid
-{% comment %}
-  Snippet Name
-  Brief description of what the snippet does.
+{%- doc -%}
+  Renders the product badge for sale / sold-out states.
 
-  Accepts:
-  - variable_name: {Type} - Description of the variable and its role.
-  - optional_variable: {Type} - Description (Optional)
+  @param {object} product - The product to evaluate.
+  @param {string} [class] - Extra classes on the wrapper.
 
-  Usage:
-  {% render 'snippet-name',
-    variable_name: value,
-    optional_variable: value
-  %}
-{% endcomment %}
-```
-
-### Real-world Example:
-```liquid
-{% comment %}
-  Layered image
-  Renders layered product images with customizable sheet and duvet covers.
-
-  Accepts:
-  - pillow_cover_product: {Object} - The product object for pillow cover
-  - sheet_product: {Object} - The product object for sheet
-  - duvet_cover_product: {Object} - The product object for duvet cover (Optional)
-
-  Usage:
-  {% render 'layered-image',
-    pillow_cover_product: product,
-    sheet_product: product.metafields.custom.sheet_product
-  %}
-{% endcomment %}
+  @example
+  {% render 'snip_product_badge', product: product %}
+{%- enddoc -%}
 ```

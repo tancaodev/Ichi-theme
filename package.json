@@ -1,0 +1,11 @@
+{
+  "name": "ichi-theme",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Ichi Shopify theme (built on Shopify Skeleton)",
+  "scripts": {
+    "dev": "shopify theme dev --store ichi-eqdepwbe",
+    "check": "shopify theme check --fail-level error",
+    "package": "shopify theme package"
+  }
+}

@@ -1,7 +1,7 @@
 {% comment %}
   Social variables
   Outputs the CSS custom properties driven by the Social media theme settings.
-  Mobile values are the base; desktop values are applied from 750px.
+  Mobile values are the base; desktop values are applied from 992px.
 
   Rounded corner radius is derived from the button corner radius (Button & Input):
   Main corner = button radius, Small = 2/3, Extra small = 1/3.
@@ -50,16 +50,16 @@
 -%}
 
 :root {
-  --social-radius: {{ radius | divided_by: 10.0 }}rem;
-  --social-icon-size: {{ values_mobile[0] | divided_by: 10.0 }}rem;
-  --social-box-size: {{ values_mobile[1] | divided_by: 10.0 }}rem;
-  --social-font-size: {{ values_mobile[2] | divided_by: 10.0 }}rem;
+  --social-radius: {{ radius | divided_by: 16.0 }}rem;
+  --social-icon-size: {{ values_mobile[0] | divided_by: 16.0 }}rem;
+  --social-box-size: {{ values_mobile[1] | divided_by: 16.0 }}rem;
+  --social-font-size: {{ values_mobile[2] | divided_by: 16.0 }}rem;
 }
 
-@media screen and (min-width: 750px) {
+@media screen and (min-width: 992px) {
   :root {
-    --social-icon-size: {{ values_desktop[0] | divided_by: 10.0 }}rem;
-    --social-box-size: {{ values_desktop[1] | divided_by: 10.0 }}rem;
-    --social-font-size: {{ values_desktop[2] | divided_by: 10.0 }}rem;
+    --social-icon-size: {{ values_desktop[0] | divided_by: 16.0 }}rem;
+    --social-box-size: {{ values_desktop[1] | divided_by: 16.0 }}rem;
+    --social-font-size: {{ values_desktop[2] | divided_by: 16.0 }}rem;
   }
 }

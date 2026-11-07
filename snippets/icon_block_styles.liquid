@@ -3,7 +3,7 @@
   Size and padding read `icon_size` / `icon_padding_value` and their `_mobile` settings when the matching
   `*_custom_mobile` toggle is on, otherwise mobile repeats desktop. With the padding toggle off, the
   padding follows the style default: 12px for Boxed, 0 for Classic.
-  The static rules in `snip_icon_block.liquid` read them, with mobile as the base and desktop from 750px.
+  The static rules in `snip_icon_block.liquid` read them, with mobile as the base and desktop from 992px.
 
   @param {object} component_settings - Settings object holding the `icon_*` settings.
   @param {string} icon_id - DOM id of the icon wrapper the variables are scoped to.
@@ -60,8 +60,8 @@
         assign padding = st[padding_key] | default: 0
       endif
     -%}
-    --icon-size{{ var_suffix }}: {{ size | divided_by: 10.0 }}rem;
-    --icon-padding{{ var_suffix }}: {{ padding | divided_by: 10.0 }}rem;
+    --icon-size{{ var_suffix }}: {{ size | divided_by: 16.0 }}rem;
+    --icon-padding{{ var_suffix }}: {{ padding | divided_by: 16.0 }}rem;
   {%- endfor -%}
 {%- endcapture -%}
 {% style %}

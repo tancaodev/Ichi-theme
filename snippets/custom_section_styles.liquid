@@ -1,6 +1,6 @@
 {%- doc -%}
   Outputs the instance CSS variables for one custom section, scoped to `#<section_dom_id>`.
-  The static rules in `snip_custom_section.liquid` read them, with mobile as the base and desktop from 750px.
+  The static rules in `snip_custom_section.liquid` read them, with mobile as the base and desktop from 992px.
 
   Horizontal and vertical alignment are mapped onto justify-content / align-items according to the
   direction, so merchants always think in screen axes. "Space between" only applies along the
@@ -72,7 +72,7 @@
           assign text_align = 'left'
       endcase
 
-      assign gap = st[gap_key] | default: 0 | divided_by: 10.0 | append: 'rem'
+      assign gap = st[gap_key] | default: 0 | divided_by: 16.0 | append: 'rem'
     -%}
     --custom-section-direction{{ var_suffix }}: {{ direction }};
     --custom-section-justify{{ var_suffix }}: {{ justify }};
@@ -89,8 +89,8 @@
     {{ layout_variables }}
     {{ padding_variables }}
     --custom-section-min-height: {{ min_height }};
-    --custom-section-border-width: {{ st.custom_section_border_width | default: 0 | divided_by: 10.0 }}rem;
-    --custom-section-radius: {{ st.custom_section_border_radius | default: 0 | divided_by: 10.0 }}rem;
+    --custom-section-border-width: {{ st.custom_section_border_width | default: 0 }}px;
+    --custom-section-radius: {{ st.custom_section_border_radius | default: 0 | divided_by: 16.0 }}rem;
     {%- if st.custom_section_border_color != blank %}
       --custom-section-border-color: {{ st.custom_section_border_color }};
     {%- endif %}

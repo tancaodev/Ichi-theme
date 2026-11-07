@@ -39,7 +39,7 @@
     endif
 
     if breakpoint == 'desktop'
-      assign sizes = '(min-width: 750px) ' | append: size
+      assign sizes = '(min-width: 992px) ' | append: size
     else
       assign sizes = sizes | append: ', ' | append: size
     endif
@@ -92,16 +92,16 @@
 
   .logo .logo__text {
     display: block;
-    color: var(--logo-text-color, rgb(var(--color-foreground)));
-    font-family: var(--font-heading-family);
-    font-style: var(--font-heading-style);
-    font-weight: var(--font-heading-weight);
+    color: var(--logo-text-color, var(--color-foreground));
+    font-family: var(--font-heading--family);
+    font-style: var(--font-heading--style);
+    font-weight: var(--font-heading--weight);
     font-size: var(--logo-text-size-mobile);
     line-height: 1;
     word-break: break-word;
   }
 
-  @media screen and (min-width: 750px) {
+  @media screen and (min-width: 992px) {
     .logo {
       width: var(--logo-width);
       margin: var(--logo-margin-top, 0) var(--logo-margin-right, 0) var(--logo-margin-bottom, 0)

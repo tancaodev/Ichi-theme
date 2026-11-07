@@ -62,7 +62,7 @@
     text-transform: var(--heading-text-transform);
   }
 
-  @media screen and (min-width: 750px) {
+  @media screen and (min-width: 992px) {
     .heading {
       width: var(--heading-width);
       max-width: var(--heading-max-width);
@@ -79,7 +79,7 @@
 
   /* Text highlight: merchants mark highlighted words as italic (<em>). */
   .heading {
-    --heading-highlight-color: rgb(var(--color-base-accent-1));
+    --heading-highlight-color: var(--color-accent, var(--color-foreground));
   }
 
   .heading .heading__text em {

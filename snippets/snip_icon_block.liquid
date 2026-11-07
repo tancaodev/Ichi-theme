@@ -52,9 +52,9 @@
 
 {% stylesheet %}
   .icon-block {
-    --icon-color: rgb(var(--color-foreground));
-    --icon-box-color: rgba(var(--color-foreground), 0.08);
-    --icon-border-color: rgba(var(--color-foreground), 0.15);
+    --icon-color: var(--color-foreground);
+    --icon-box-color: color-mix(in srgb, var(--color-foreground) 8%, transparent);
+    --icon-border-color: color-mix(in srgb, var(--color-foreground) 15%, transparent);
 
     display: flex;
     width: fit-content;
@@ -63,7 +63,7 @@
   }
 
   .icon-block[data-color='light'] {
-    --icon-color: rgba(var(--color-foreground), 0.75);
+    --icon-color: color-mix(in srgb, var(--color-foreground) 75%, transparent);
   }
 
   .icon-block .icon-block__media {
@@ -72,7 +72,7 @@
     justify-content: center;
     padding: var(--icon-padding-mobile);
     color: var(--icon-color);
-    border: 0.1rem solid transparent;
+    border: 1px solid transparent;
     border-radius: var(--icon-radius, 0);
   }
 
@@ -103,7 +103,7 @@
     border-radius: 0;
   }
 
-  @media screen and (min-width: 750px) {
+  @media screen and (min-width: 992px) {
     .icon-block {
       margin: var(--icon-margin-top, 0) var(--icon-margin-right, 0) var(--icon-margin-bottom, 0)
         var(--icon-margin-left, 0);

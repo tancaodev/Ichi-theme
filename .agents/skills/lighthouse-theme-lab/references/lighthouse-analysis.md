@@ -61,7 +61,7 @@ Treat runs as directly comparable only when all material conditions match:
 - throttling method and settings;
 - Lighthouse major version;
 - store data/theme settings and app/pixel state;
-- preview mode (`npm run dev` with Tailwind watch, development theme with minified `tailwind:build` output, unpublished preview, or live);
+- preview mode (development theme via `npm run dev`, unpublished preview, or live);
 - cold/warm cache policy and consent state.
 
 Use at least three runs per case and compare medians; five is better for noisy pages. Keep individual values and ranges. Do not describe a single-run difference as a regression or win unless the change is far larger than normal variance and the causal evidence agrees.
