@@ -67,9 +67,18 @@ All of these are supported by the browsers the Theme Store requires:
 
 ## 5. Units and breakpoints
 
-- **Design frame: 1920×1080 (Full HD). Root font-size is fluid: `1rem = 16px` at 1920px wide**, scaling down on narrower desktops. Write sizes in `rem` as `px-in-design / 16` (a 24px heading in the 1920 design is `1.5rem`).
-  - The root rule lives in `critical.css` only; components never set `html` font-size.
-  - Bound it with `clamp()` using `%`/`rem` limits so the user's browser font-size preference still applies (pure `vw` would ignore it). The exact min and the mobile value are recorded in `TODO.md`.
+- **Design frames: 1920px desktop, 393px mobile. Root font-size is fluid, `1rem = 16px` at both frames.** Write sizes in `rem` as `px-in-design / 16` (a 24px heading is `1.5rem`). Settings entered in px are converted the same way in Liquid: `{{ settings.x | divided_by: 16.0 }}rem`.
+  - The root rule lives in `assets/critical.css` only; components never set `html` font-size:
+
+    | Viewport | Root font-size |
+    | :--- | :--- |
+    | ≥ 1920px | `100%` (16px) |
+    | 992–1919px | `clamp(75%, 100vw * 16 / 1920, 100%)` (12 → 16px) |
+    | ≤ 991.98px | `clamp(87.5%, 100vw * 16 / 393, 112.5%)` (14 → 18px, 16px at 393) |
+
+  - Limits are in `%`, never `px`, so the visitor's browser font-size preference still applies (WCAG 1.4.4). The caps avoid tiny text on small laptops and oversized text on tablets.
+  - Line-height and letter-spacing in `em` (unitless line-height is fine) so they follow the font size.
+  - Typography styles that differ on mobile get a `-mb` token (`--typo-h1-size-mb`) applied in the `max-width: 991.98px` query.
 - **Breakpoints** (desktop / mobile split at 992px):
   ```css
   @media screen and (max-width: 991.98px) { /* mobile + tablet */ }
