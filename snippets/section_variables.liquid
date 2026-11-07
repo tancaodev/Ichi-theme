@@ -1,7 +1,7 @@
 {% comment %}
   Section variables
   Outputs the CSS custom properties driven by the Section theme settings.
-  Mobile values are the base; desktop values are applied from 750px.
+  Mobile values are the base; desktop values are applied from 992px.
 
   Corner radius presets are a scale: the section radius followed by the radii for nested
   elements (md, sm, xs). Custom sets the section radius (halved on mobile); nested radii follow
@@ -54,8 +54,8 @@
   assign radius_mobile = radius_mobile | split: ','
   assign radius_levels = 'section-radius,section-radius-md,section-radius-sm,section-radius-xs' | split: ','
   assign sides = 'top,right,bottom,left' | split: ','
-  assign spacing = settings.section_spacing | divided_by: 10.0
-  assign gutter = settings.section_gutter | divided_by: 10.0
+  assign spacing = settings.section_spacing | divided_by: 16.0
+  assign gutter = settings.section_gutter | divided_by: 16.0
 -%}
 
 :root {
@@ -63,12 +63,12 @@
   --section-gutter: {{ gutter }}rem;
 
   {%- for level in radius_levels %}
-    --{{ level }}: {{ radius_mobile[forloop.index0] | divided_by: 10.0 }}rem;
+    --{{ level }}: {{ radius_mobile[forloop.index0] | divided_by: 16.0 }}rem;
   {%- endfor %}
 
   {%- for side in sides %}
     {%- assign key = 'section_padding_' | append: side | append: '_mobile' %}
-    --section-padding-{{ side }}: {{ settings[key] | divided_by: 10.0 }}rem;
+    --section-padding-{{ side }}: {{ settings[key] | divided_by: 16.0 }}rem;
   {%- endfor %}
 
   --spacing-sections-desktop: {{ settings.section_spacing }}px;
@@ -79,15 +79,15 @@
   --grid-mobile-horizontal-spacing: {{ settings.section_gutter }}px;
 }
 
-@media screen and (min-width: 750px) {
+@media screen and (min-width: 992px) {
   :root {
     {%- for level in radius_levels %}
-      --{{ level }}: {{ radius_desktop[forloop.index0] | divided_by: 10.0 }}rem;
+      --{{ level }}: {{ radius_desktop[forloop.index0] | divided_by: 16.0 }}rem;
     {%- endfor %}
 
     {%- for side in sides %}
       {%- assign key = 'section_padding_' | append: side %}
-      --section-padding-{{ side }}: {{ settings[key] | divided_by: 10.0 }}rem;
+      --section-padding-{{ side }}: {{ settings[key] | divided_by: 16.0 }}rem;
     {%- endfor %}
   }
 }

@@ -1,7 +1,7 @@
 {% comment %}
   Typography variables
   Outputs the @font-face rules and CSS custom properties driven by the Typography theme settings.
-  Mobile font sizes are the base; desktop font sizes are applied from 750px.
+  Mobile font sizes are the base; desktop font sizes are applied from 992px.
 
   Usage:
   {% style %}
@@ -80,7 +80,7 @@
   --highlight-text-transform: {{ settings.highlight_text_transform }};
 
   --subheading-font-family: var(--font-{{ settings.subheading_font }}-family);
-  --paragraph-spacing: {{ settings.paragraph_spacing | divided_by: 10.0 }}rem;
+  --paragraph-spacing: {{ settings.paragraph_spacing | divided_by: 16.0 }}rem;
 
   {%- comment %} Legacy Dawn scale variables, kept so component styles keep working. {% endcomment %}
   --font-body-scale: 1;
@@ -93,7 +93,7 @@
       assign weight_key = style | append: '_font_weight'
       assign transform_key = style | append: '_text_transform'
     %}
-  --{{ style }}-font-size: {{ settings[size_key] | times: 1 | divided_by: 10.0 }}rem;
+  --{{ style }}-font-size: {{ settings[size_key] | times: 1 | divided_by: 16.0 }}rem;
     {%- if settings[line_height_key] %}
   --{{ style }}-line-height: {{ settings[line_height_key] | divided_by: 100.0 }};
     {%- endif %}
@@ -105,11 +105,11 @@
   {%- endfor %}
 }
 
-@media screen and (min-width: 750px) {
+@media screen and (min-width: 992px) {
   :root {
     {%- for style in styles %}
       {%- assign size_key = style | append: '_font_size' %}
-    --{{ style }}-font-size: {{ settings[size_key] | times: 1 | divided_by: 10.0 }}rem;
+    --{{ style }}-font-size: {{ settings[size_key] | times: 1 | divided_by: 16.0 }}rem;
     {%- endfor %}
   }
 }

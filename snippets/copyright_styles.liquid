@@ -5,7 +5,7 @@
   `copyright_text_transform` plus the breakpoint's font size and line height.
   Mobile reads `copyright_size_mobile`, `copyright_font_size_mobile` and `copyright_line_height_mobile`
   when `copyright_typography_custom_mobile` is on, otherwise it repeats desktop.
-  The static rules in `snip_copyright.liquid` read them, with mobile as the base and desktop from 750px.
+  The static rules in `snip_copyright.liquid` read them, with mobile as the base and desktop from 992px.
 
   @param {object} component_settings - Settings object holding the `copyright_*` settings.
   @param {string} copyright_id - DOM id of the copyright element the variables are scoped to.
@@ -40,7 +40,7 @@
         assign font_family = 'var(--font-' | append: family | append: '-family)'
         assign font_size = 'inherit'
         if st[font_size_key] != blank
-          assign font_size = st[font_size_key] | divided_by: 10.0 | append: 'rem'
+          assign font_size = st[font_size_key] | divided_by: 16.0 | append: 'rem'
         endif
         assign line_height = st[line_height_key] | default: 140 | divided_by: 100.0
         assign letter_spacing = st.copyright_letter_spacing | default: 0 | divided_by: 100.0 | append: 'em'

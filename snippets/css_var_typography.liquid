@@ -48,7 +48,7 @@
 
       assign font_size = 'inherit'
       if st[font_size_key] != blank
-        assign font_size = st[font_size_key] | divided_by: 10.0 | append: 'rem'
+        assign font_size = st[font_size_key] | divided_by: 16.0 | append: 'rem'
       endif
       assign line_height = st[line_height_key] | default: 100 | divided_by: 100.0
 

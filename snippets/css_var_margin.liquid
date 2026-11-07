@@ -33,7 +33,7 @@
 
       for side in sides
         assign side_key = prefix | append: '_margin_' | append: side | append: setting_suffix
-        assign value = st[side_key] | default: 0 | divided_by: 10.0 | append: 'rem'
+        assign value = st[side_key] | default: 0 | divided_by: 16.0 | append: 'rem'
         echo '--' | append: prefix | append: '-margin-' | append: side | append: var_suffix | append: ': ' | append: value | append: ';'
       endfor
     endfor

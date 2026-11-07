@@ -39,7 +39,7 @@
     endif
 
     if breakpoint == 'desktop'
-      assign sizes = '(min-width: 750px) ' | append: size
+      assign sizes = '(min-width: 992px) ' | append: size
     else
       assign sizes = sizes | append: ', ' | append: size
     endif
@@ -101,7 +101,7 @@
     word-break: break-word;
   }
 
-  @media screen and (min-width: 750px) {
+  @media screen and (min-width: 992px) {
     .logo {
       width: var(--logo-width);
       margin: var(--logo-margin-top, 0) var(--logo-margin-right, 0) var(--logo-margin-bottom, 0)

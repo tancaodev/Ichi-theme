@@ -2,7 +2,7 @@
   Outputs the instance CSS variables for one divider, scoped to `#<divider_id>`.
   Mobile direction, size and thickness come from the `*_mobile` settings when
   `divider_layout_custom_mobile` is on, otherwise they repeat desktop.
-  The static rules in `snip_divider.liquid` read them, with mobile as the base and desktop from 750px.
+  The static rules in `snip_divider.liquid` read them, with mobile as the base and desktop from 992px.
 
   @param {object} component_settings - Settings object holding the `divider_*` settings.
   @param {string} divider_id - DOM id of the divider the variables are scoped to.
@@ -47,7 +47,7 @@
     {%- if direction == 'vertical' %}
       --divider-width{{ var_suffix }}: {{ thickness }};
       --divider-height{{ var_suffix }}: calc({{ st[height_key] | default: 100 }}% - var(--divider-margin-top{{ var_suffix }}, 0px) - var(--divider-margin-bottom{{ var_suffix }}, 0px));
-      --divider-min-height{{ var_suffix }}: 2rem;
+      --divider-min-height{{ var_suffix }}: 1.25rem;
       --divider-align-self{{ var_suffix }}: stretch;
       --divider-background-size{{ var_suffix }}: {{ thickness }} {{ double_thickness }};
       {%- assign gradient_direction = 'to bottom' %}
