@@ -365,12 +365,12 @@ _initAnimejs() {
 
 ### JavaScript Loading
 
-1. **Per-section scripts** — load each component's JS only in the section that needs it, deferred (Dawn pattern):
+1. **Per-section scripts** — load each component's JS only in the section that needs it, deferred:
    ```liquid
    <script src="{{ 'my-component.js' | asset_url }}" defer="defer"></script>
    ```
-   Keep `global.js` / `pubsub.js` / `constants.js` shared; do not inline large scripts into `theme.liquid`.
-2. **Keep Tailwind output lean** — `assets/tailwind.css` is built from `src/tailwind.css` (`npm run tailwind:build` minifies); make sure `tailwind.config.js` `content` globs cover only Liquid/JS that actually uses utilities, and never commit the unminified watch output for release
+   Keep shared helpers in a small number of modules; do not inline large scripts into `theme.liquid`.
+2. **Keep shared CSS lean** — everything in `{% stylesheet %}` ships on every page; move large or template-specific styles into `assets/sc_*.css` loaded by the section, and keep `critical.css` to above-the-fold essentials
 3. **Avoid synchronous data parsing** in constructors — defer to `connectedCallback`
 
 ### Deferred Interaction and INP

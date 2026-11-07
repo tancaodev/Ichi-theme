@@ -1,14 +1,14 @@
 ---
 name: shopify-theme-best-practices
 description: >-
-  Provides development guidelines and best practices for Shopify theme and CORE component development.
-  Use when creating or refactoring Liquid sections or snippets, styling with Tailwind CSS, writing theme
-  JavaScript (vanilla ES6, Web Components), reviewing pull requests, or preparing components for backporting to CORE.
+  Provides development guidelines and best practices for the Ichi Shopify theme (built on Shopify Skeleton).
+  Use when creating or refactoring Liquid sections, blocks or snippets, writing CSS (vanilla CSS + custom
+  properties, critical.css, {% stylesheet %}), writing theme JavaScript (vanilla ES6, Web Components), or reviewing pull requests.
 ---
 
-# Shopify Theme & CORE Best Practices
+# Ichi Theme Best Practices
 
-This skill outlines the architectural standards, code style, and review processes required when building Shopify themes and reusable CORE components. Adhering to these guidelines ensures portability, high performance, clean abstraction, and seamless backporting into the CORE repository.
+Ichi is built on **Shopify Skeleton** (not Dawn) and targets the **Shopify Theme Store**. These guidelines keep the code original, portable, fast and compliant. For the full submission checklist, use the `theme-store-requirements` skill.
 
 ---
 
@@ -16,66 +16,81 @@ This skill outlines the architectural standards, code style, and review processe
 
 | Domain | Key Rules |
 | :--- | :--- |
-| **General** | • Do **not** track Dawn updates (rip out Dawn styles in favor of Tailwind; cull unused features).<br>• Check the **CORE inventory doc** before building from scratch.<br>• Use **Tailwind build tools for CSS**; **no build tools for JS** (native ES6). |
-| **Liquid** | • **Client toggles**: add setting to section/block schema.<br>• **Dev toggles**: define a Liquid variable (`{% assign ... %}`).<br>• **Self-contained components**: sections handle their own markup/logic.<br>• **New file names**: `_` as separator (no `-`); prefixes: sections `sc_`, theme blocks `blck_`, private blocks `_blck_`, HTML-rendering snippets `snip_` (Dawn files keep their names).<br>• **Native Shopify**: use translation strings (`| t`), relative URLs (`routes.*`), and `{{ product.url \| within: collection }}`.<br>• **Snippet header comment**: mandatory documentation format with `Accepts:` and `Usage:`. |
-| **CSS (Tailwind)** | • **Abstraction**: extract repeated elements into Liquid snippets, or use `@apply` in CSS.<br>• Avoid standalone `.css` files where possible (keep components self-contained).<br>• **No arbitrary brackets `[ ]`**: use standard Tailwind scale (e.g. avoid `tw-p-[1.2rem]`).<br>• **No bracketed parent selectors**: avoid `[&>*]:...` to minimize bundle size. |
-| **JavaScript** | • **HTML/CSS first**: use native tags like `<details>/<summary>` instead of JS toggles.<br>• **Modular**: single-purpose JS file or inline `<script>` if only used once on a page.<br>• **Flat code**: use early returns; avoid nested `if` statements.<br>• **Modern ES6**: `const`/`let` (no `var`), `async/await` (no `.then`), arrow functions, JSDoc typing.<br>• **Arrays/Strings**: use `.includes()`, avoid `.contains()`; prefer `for...of` over `reduce`.<br>• **Naming**: booleans (`is*`, `has*`), plurals (`items`), DOM elements (`buttonEl`, `cardEls`).<br>• **Web Components**: use DOM `dataset` for state, `querySelector`, `connectedCallback`/`disconnectedCallback` for event listener cleanup. |
-| **CORE & PR** | • Pass client QA & design review before backporting.<br>• Remove client-specific code, IDs, handles, and client Tailwind prefixes before PR to CORE.<br>• Include live theme preview URL and setting/variable documentation in the PR description. |
+| **General** | • Base is **Skeleton**. Dawn is reference only (`_reference/dawn`): read for behavior, **never copy code**.<br>• **No build tools**: vanilla CSS and native ES6 ship as written. Do **not** minify theme CSS/JS (Theme Store rule).<br>• Every PR passes `shopify theme check` with 0 errors (CI enforces it). |
+| **Liquid** | • **Merchant toggles**: add a setting to the section/block schema.<br>• **Dev toggles**: define a Liquid variable (`{% assign ... %}`).<br>• **Self-contained components**: sections/blocks own their markup, settings, styles and logic.<br>• **New file names**: `_` as separator (no `-`); prefixes: sections `sc_`, theme blocks `blck_`, private blocks `_blck_`, HTML-rendering snippets `snip_` (Skeleton's original files keep their names).<br>• **Native Shopify**: translation strings (`\| t`), locale-aware URLs (`routes.*`), `{{ product.url \| within: collection }}`.<br>• **Snippet docs**: `{% doc %}` header with `@param` and `@example` (see `liquid-doc-comments` skill). |
+| **CSS** | • **Vanilla CSS + custom properties**. Settings → `{% style %}` variables; static CSS reads them.<br>• Where CSS lives: global tokens in `css-variables.liquid`, base in `critical.css`, components in `{% stylesheet %}`, large/rare sections in `assets/sc_*.css` loaded by the section.<br>• Colors as full values + `color-mix()` for opacity (no Dawn `rgb` triplets).<br>• Modern CSS: nesting, `@layer`, `:has()`, logical properties, `clamp()`, container queries. |
+| **JavaScript** | • **HTML/CSS first**: native `<details>/<summary>`, `<dialog>` instead of JS toggles.<br>• **Modular**: single-purpose file per component, loaded with `defer` only where used; inline `<script>` only if tiny and used once.<br>• **Flat code**: early returns; avoid nested `if`.<br>• **Modern ES6**: `const`/`let`, `async/await`, arrow functions, JSDoc typing.<br>• **Naming**: booleans (`is*`, `has*`), plurals (`items`), DOM elements (`buttonEl`, `cardEls`).<br>• **Web Components**: `dataset` for state, `connectedCallback`/`disconnectedCallback` for listener cleanup. |
+| **PR** | • Theme check 0 errors; test with `shopify theme dev`.<br>• Document new settings, blocks, presets and global variables in the PR description. |
 
 ---
 
 ## Detailed Guidelines & References
 
-For comprehensive instructions, examples, and edge-case handling, refer to the specialized reference documents:
+1. **Liquid Standards**: [references/liquid-standards.md](./references/liquid-standards.md)
+   - Feature toggles, component design, file naming.
+   - Internationalization, Markets, collection URL context.
+   - Snippet documentation with `{% doc %}`.
 
-1. **Liquid Standards**:
-   [Read Liquid Guidelines](./references/liquid-standards.md)
-   - Feature toggles (client schema settings vs developer variables).
-   - Component independence and culling Dawn functionality.
-   - Internationalization, Markets, and collection URL preservation.
-   - Standardized snippet comment headers.
+2. **CSS Standards**: [references/css-standards.md](./references/css-standards.md)
+   - Where CSS lives (tokens, critical, `{% stylesheet %}`, section assets, per-instance `{% style %}`).
+   - Custom property conventions, `color-mix()`, modern CSS features.
+   - Selectors, units, breakpoints, shipping without minification.
 
-2. **Tailwind CSS Standards**:
-   [Read Tailwind CSS Guidelines](./references/tailwind-css-standards.md)
-   - Proper abstraction (snippet extraction vs `@apply`).
-   - Maintaining self-contained components without extra `.css` files.
-   - Avoiding arbitrary value classes (`[1.2rem]`) and bracketed descendant selectors (`[&>*]`).
-   - Handling client-specific Tailwind prefixes (`tw-`).
-
-3. **JavaScript & Web Components**:
-   [Read JavaScript Guidelines](./references/javascript-standards.md)
+3. **JavaScript & Web Components**: [references/javascript-standards.md](./references/javascript-standards.md)
    - Minimizing JS in favor of HTML5 semantic elements and CSS.
-   - Flat architecture with early return pattern.
-   - Strict ES6 conventions, `async/await`, and JSDoc typing.
-   - Web Components API (`customElements.define`), DOM state management, and lifecycle hooks (`connectedCallback`, `disconnectedCallback`).
+   - Flat architecture, ES6 conventions, Web Component lifecycle.
 
-4. **CORE Development Workflow & Checklist**:
-   [Read CORE Workflow & Checklist](./references/core-workflow-checklist.md)
-   - The end-to-end backporting workflow from client theme to CORE repo.
-   - Pre-PR verification checklist.
-   - Fallback to official [Shopify Theme Best Practices](https://shopify.dev/docs/storefronts/themes/best-practices).
+4. **CORE Workflow (optional)**: [references/core-workflow-checklist.md](./references/core-workflow-checklist.md)
+   - Only when a component is backported to a shared CORE repository. Not part of the normal Ichi flow.
+
+Fallback: [Shopify Theme Best Practices](https://shopify.dev/docs/storefronts/themes/best-practices).
 
 ---
 
 ## Snippet Documentation Format (Quick Copy)
 
-When authoring any snippet, place this header at the very top:
+```liquid
+{%- doc -%}
+  Brief description of what the snippet renders.
+
+  @param {object} product - The product to render.
+  @param {string} [variant] - Optional visual variant. Defaults to 'default'.
+
+  @example
+  {% render 'snip_example', product: product %}
+{%- enddoc -%}
+```
+
+---
+
+## Component CSS Pattern (Quick Copy)
 
 ```liquid
-{% comment %}
-  Snippet Name
-  Brief description of what the snippet does.
+{%- liquid
+  assign st = block.settings
+  assign block_id = 'example-' | append: block.id
+-%}
+{% style %}
+  #{{ block_id }} {
+    --example-gap: {{ st.gap }}px;
+  }
+{% endstyle %}
 
-  Accepts:
-  - param_one: {Object} - Description of param_one
-  - optional_param: {String} - Description of optional_param (Optional)
+<div id="{{ block_id }}" class="example" data-style="{{ st.style }}" {{ block.shopify_attributes }}>
+  ...
+</div>
 
-  Usage:
-  {% render 'snippet-name',
-    param_one: product,
-    optional_param: 'value'
-  %}
-{% endcomment %}
+{% stylesheet %}
+  .example {
+    display: flex;
+    gap: var(--example-gap, 1.6rem);
+    border: 1px solid color-mix(in srgb, var(--color-foreground) 15%, transparent);
+
+    &[data-style='boxed'] {
+      padding: 1.6rem;
+    }
+  }
+{% endstylesheet %}
 ```
 
 ---

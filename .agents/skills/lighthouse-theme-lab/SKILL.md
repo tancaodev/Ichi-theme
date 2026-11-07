@@ -1,6 +1,6 @@
 ---
 name: lighthouse-theme-lab
-description: Analyze Lighthouse JSON reports for the Ichi Shopify theme, turn evidence into prioritized improvement plans or scoped fixes, and validate them on a development theme with production-like (minified) assets. Use for Lighthouse triage and before/after performance work.
+description: Analyze Lighthouse JSON reports for the Ichi Shopify theme, turn evidence into prioritized improvement plans or scoped fixes, and validate them on a development theme with the assets as shipped. Use for Lighthouse triage and before/after performance work.
 ---
 
 # Lighthouse Theme Lab
@@ -50,16 +50,16 @@ Order work by confidence and user impact:
 4. App, pixel, or platform findings that require external coordination.
 5. Low-confidence micro-optimizations.
 
-Before changing code, identify the relevant route/template, LCP element or interaction, owning section/snippet, and loading path (`assets/*.js` loaded per section, `assets/base.css`, `assets/tailwind.css`). Preserve the existing Dawn-based structure. Never "fix" third-party or Shopify platform work by deleting functionality without explicit scope.
+Before changing code, identify the relevant route/template, LCP element or interaction, owning section/snippet, and loading path (`assets/*.js` loaded per section, `assets/critical.css`, bundled `{% stylesheet %}` CSS, `assets/sc_*.css` section files). Preserve the existing Skeleton-based structure. Never "fix" third-party or Shopify platform work by deleting functionality without explicit scope.
 
-After a fix, run targeted verification (`shopify theme check`, syntax/format checks). If the fix touches Tailwind classes or `tailwind.config.js`, rebuild with `npm run tailwind:build`.
+After a fix, run targeted verification (`npm run check` / `shopify theme check`, syntax/format checks).
 
 ## Preview for measurement
 
-Ichi has a single store (`ichi-eqdepwbe`) and no build step other than Tailwind.
+Ichi has a single store (`ichi-eqdepwbe`) and **no build step**: CSS/JS ship unminified as written (Theme Store rule), so there is nothing to build before measuring.
 
-1. Build minified CSS: `npm run tailwind:build`. Never measure while `npm run dev` / `tailwind:dev` is running — the watch output is unminified and numbers are not comparable.
-2. With explicit current-turn authorization from the user, start a development theme: `shopify theme dev --store ichi-eqdepwbe`. Omit `--theme` so the CLI uses the caller's development theme. Never use `--allow-live`.
+1. Shopify's CDN compresses assets and bundles `{% stylesheet %}` CSS; measure the theme as served, not local files.
+2. With explicit current-turn authorization from the user, start a development theme: `npm run dev` (= `shopify theme dev --store ichi-eqdepwbe`). Omit `--theme` so the CLI uses the caller's development theme. Never use `--allow-live`.
 3. Run Lighthouse against the HTTPS preview URL printed by Shopify, not the `127.0.0.1` proxy.
 4. For a closer-to-production run, an unpublished theme (`shopify theme push --unpublished`) may be used only with explicit authorization.
 
