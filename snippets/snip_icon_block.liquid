@@ -52,9 +52,9 @@
 
 {% stylesheet %}
   .icon-block {
-    --icon-color: rgb(var(--color-foreground));
-    --icon-box-color: rgba(var(--color-foreground), 0.08);
-    --icon-border-color: rgba(var(--color-foreground), 0.15);
+    --icon-color: var(--color-foreground);
+    --icon-box-color: color-mix(in srgb, var(--color-foreground) 8%, transparent);
+    --icon-border-color: color-mix(in srgb, var(--color-foreground) 15%, transparent);
 
     display: flex;
     width: fit-content;
@@ -63,7 +63,7 @@
   }
 
   .icon-block[data-color='light'] {
-    --icon-color: rgba(var(--color-foreground), 0.75);
+    --icon-color: color-mix(in srgb, var(--color-foreground) 75%, transparent);
   }
 
   .icon-block .icon-block__media {

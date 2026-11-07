@@ -52,7 +52,7 @@
         if size == 'label'
           assign line_height_fallback = '1.2'
         endif
-        assign font_family = 'var(--font-body-family)'
+        assign font_family = 'var(--font-body--family)'
         assign font_size = 'var(' | append: token | append: '-font-size)'
         assign line_height = 'var(' | append: token | append: '-line-height, ' | append: line_height_fallback | append: ')'
         assign letter_spacing = 'var(' | append: token | append: '-letter-spacing, 0)'

@@ -27,7 +27,7 @@
   .divider,
   .divider:empty {
     display: block;
-    --divider-color: rgba(var(--color-foreground), 0.15);
+    --divider-color: color-mix(in srgb, var(--color-foreground) 15%, transparent);
 
     flex-shrink: 0;
     align-self: var(--divider-align-self-mobile);

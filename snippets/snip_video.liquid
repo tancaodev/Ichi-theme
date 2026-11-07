@@ -144,7 +144,7 @@
     aspect-ratio: var(--video-aspect-ratio-mobile);
     overflow: hidden;
     border-radius: var(--video-corner-radius);
-    background-color: rgba(var(--color-foreground), 0.04);
+    background-color: color-mix(in srgb, var(--color-foreground) 4%, transparent);
     isolation: isolate;
   }
 
@@ -187,8 +187,8 @@
     width: 4rem;
     height: 4rem;
     border-radius: 50%;
-    color: rgb(var(--color-foreground));
-    background-color: rgb(var(--color-background));
+    color: var(--color-foreground);
+    background-color: var(--color-background);
     box-shadow: 0 0.125rem 0.75rem rgba(0, 0, 0, 0.15);
     transition: transform var(--duration-short, 100ms) ease;
   }
@@ -204,13 +204,13 @@
   }
 
   .video-block .video-block__poster:focus-visible {
-    outline: 2px solid rgba(var(--color-foreground), 0.5);
+    outline: 2px solid color-mix(in srgb, var(--color-foreground) 50%, transparent);
     outline-offset: -0.25rem;
   }
 
   .video-block .video-block__placeholder {
-    fill: rgba(var(--color-foreground), 0.4);
-    background-color: rgba(var(--color-foreground), 0.04);
+    fill: color-mix(in srgb, var(--color-foreground) 40%, transparent);
+    background-color: color-mix(in srgb, var(--color-foreground) 4%, transparent);
   }
 
   .video-block .video-block__overlay {
