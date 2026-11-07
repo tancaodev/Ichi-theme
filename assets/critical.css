@@ -121,21 +121,22 @@
    * only apply until those settings exist. Font families fall back to Skeleton's primary font.
    */
   body {
-    font-family: var(--font-body--family, var(--font-primary--family));
+    font-family: var(--font-body--family, sans-serif);
     font-style: var(--font-body--style, normal);
     font-size: var(--paragraph-font-size, 1rem);
     font-weight: var(--paragraph-font-weight, var(--font-body--weight, 400));
     line-height: var(--paragraph-line-height, 1.5);
     letter-spacing: var(--paragraph-letter-spacing, normal);
-    background-color: var(--color-background);
+    background: var(--color-background-gradient, var(--color-background));
     color: var(--color-foreground);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
 
   :is(h1, h2, h3, h4, h5, h6, .h0, .h1, .h2, .h3, .h4, .h5, .h6) {
-    font-family: var(--font-heading--family, var(--font-primary--family));
+    font-family: var(--font-heading--family, sans-serif);
     font-style: var(--font-heading--style, normal);
+    color: var(--color-heading, inherit);
     font-weight: var(--font-heading--weight, 700);
     line-height: 1.2;
   }
@@ -209,8 +210,21 @@
     margin-block-start: var(--paragraph-spacing, 1em);
   }
 
+  /* Elements switched to another scheme with `color-<scheme id>` repaint with its colors. */
+  [class^='color-scheme-'],
+  [class*=' color-scheme-'] {
+    background: var(--color-background-gradient, var(--color-background));
+    color: var(--color-foreground);
+  }
+
   a {
-    color: inherit;
+    color: var(--color-link, inherit);
+  }
+
+  @media (hover: hover) {
+    a:hover {
+      color: var(--color-link-hover, inherit);
+    }
   }
 
   :focus-visible {
