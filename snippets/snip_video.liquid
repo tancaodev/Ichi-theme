@@ -120,7 +120,7 @@
               alt: ''
           }}
         {%- endif -%}
-        <span class="video-block__play">{% render 'icon-play' %}</span>
+        <span class="video-block__play">{% render 'snip_icon', icon: 'media-play' %}</span>
       </button>
       <template>{{ player }}</template>
     {%- endif -%}
@@ -193,7 +193,7 @@
     transition: transform var(--duration-short, 100ms) ease;
   }
 
-  .video-block .video-block__play .icon {
+  .video-block .video-block__play .icon-svg {
     width: 1.6rem;
     height: 1.6rem;
     margin-left: 0.3rem;

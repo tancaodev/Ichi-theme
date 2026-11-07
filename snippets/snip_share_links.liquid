@@ -29,7 +29,6 @@
   endif
 -%}
 {%- if has_share -%}
-  {{ 'component-list-social.css' | asset_url | stylesheet_tag }}
   <ul class="share-links list-unstyled list-social {{ list_class }}">
     {%- for platform in platforms -%}
       {%- assign key = 'share_' | append: platform -%}
@@ -82,3 +81,55 @@
     {%- endfor -%}
   </ul>
 {%- endif -%}
+
+{% stylesheet %}
+  /* Sizes and radius come from `social_variables` (--social-*). */
+  .share-links {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.8rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .share-links .list-social__link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: inherit;
+    font-size: var(--social-font-size, 1.4rem);
+    text-decoration: none;
+  }
+
+  .share-links .list-social__link .icon-svg {
+    width: var(--social-icon-size, 2rem);
+    height: var(--social-icon-size, 2rem);
+  }
+
+  .share-links.list-social--boxed .list-social__link {
+    min-width: var(--social-box-size, 4rem);
+    height: var(--social-box-size, 4rem);
+    padding: 0 0.8rem;
+    border: 0.1rem solid currentColor;
+    border-radius: var(--social-radius, 0);
+  }
+
+  .share-links.list-social--fill .list-social__link {
+    border-color: transparent;
+    background-color: color-mix(in srgb, currentColor 8%, transparent);
+  }
+
+  .share-links .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+    border: 0;
+  }
+{% endstylesheet %}
