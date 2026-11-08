@@ -127,7 +127,8 @@
     font-weight: var(--paragraph-font-weight, var(--font-body--weight, 400));
     line-height: var(--paragraph-line-height, 1.5);
     letter-spacing: var(--paragraph-letter-spacing, normal);
-    background: var(--color-background-gradient, var(--color-background));
+    /* Page background: the layer of the whole website behind the sections (may be a gradient). */
+    background: var(--color-page-background, var(--color-background));
     color: var(--color-foreground);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -266,6 +267,9 @@
     );
     --content-margin: minmax(var(--page-margin), 1fr);
     --content-grid: var(--content-margin) var(--content-width) var(--content-margin);
+
+    /* Sections paint their color scheme on top of the page background. */
+    background: var(--color-background-gradient, var(--color-background));
 
     /* This is required to make <img> elements work as background images */
     position: relative;

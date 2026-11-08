@@ -3,7 +3,7 @@
     "name": "theme_info",
     "theme_name": "Ichi",
     "theme_version": "0.1.0",
-    "theme_author": "Shopify",
+    "theme_author": "Tom",
     "theme_documentation_url": "https://help.shopify.com/manual/online-store/themes",
     "theme_support_url": "https://support.shopify.com/"
   },
@@ -1521,6 +1521,13 @@
         "id": "default_color_scheme",
         "label": "t:settings_schema.colors.settings.default_color_scheme.label",
         "default": "scheme-1"
+      },
+      {
+        "type": "color_background",
+        "id": "page_color_background",
+        "label": "t:settings_schema.colors.settings.page_color_background.label",
+        "info": "t:settings_schema.colors.settings.page_color_background.info",
+        "default": "#F5F5F5"
       }
     ]
   },

@@ -29,6 +29,7 @@
   {% render 'social_variables' %}
 
   :root {
+    --color-page-background: {{ settings.page_color_background | default: '#F5F5F5' }};
     --page-width: {{ settings.page_width | divided_by: 16.0 }}rem;
     --page-margin: {{ settings.min_page_margin }}px;
 

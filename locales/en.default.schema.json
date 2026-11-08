@@ -718,6 +718,10 @@
         },
         "default_color_scheme": {
           "label": "Default color scheme"
+        },
+        "page_color_background": {
+          "label": "Page background",
+          "info": "Background of the whole website, behind the sections. Visible between sections and around Bento cards."
         }
       },
       "name": "Colors"
