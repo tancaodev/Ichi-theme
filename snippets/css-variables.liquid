@@ -1,18 +1,83 @@
+{%- doc -%}
+  Inlines every global CSS custom property driven by the theme settings:
+  fonts and type scale, color schemes, layout, buttons and inputs, sections and social links.
+  Rendered once in the `<head>` of each layout.
+
+  Color schemes: the default scheme is applied to `:root`; any element can switch scheme with
+  the `color-<scheme id>` class (e.g. `color-scheme-2`).
+
+  @example
+  {% render 'css-variables' %}
+{%- enddoc -%}
+
+{%- liquid
+  case settings.button_shape
+    when 'rounded'
+      assign button_radius = settings.button_radius | divided_by: 16.0 | append: 'rem'
+    when 'pill'
+      assign button_radius = '999px'
+    else
+      assign button_radius = '0px'
+  endcase
+
+  assign default_scheme_id = settings.default_color_scheme.id | default: 'scheme-1'
+-%}
+
 {% style %}
-  {% # Loads all font variantions with display: swap %}
-  {{ settings.type_primary_font | font_face: font_display: 'swap' }}
-  {{ settings.type_primary_font | font_modify: 'weight', 'bold' | font_face: font_display: 'swap' }}
-  {{ settings.type_primary_font | font_modify: 'weight', 'bold' | font_modify: 'style', 'italic' | font_face: font_display: 'swap' }}
-  {{ settings.type_primary_font | font_modify: 'style', 'italic' | font_face: font_display: 'swap' }}
+  {% render 'typography_variables' %}
+  {% render 'section_variables' %}
+  {% render 'social_variables' %}
 
   :root {
-    --font-primary--family: {{ settings.type_primary_font.family }}, {{ settings.type_primary_font.fallback_families }};
-    --font-primary--style: {{ settings.type_primary_font.style }};
-    --font-primary--weight: {{ settings.type_primary_font.weight }};
-    --page-width: {{ settings.max_page_width }};
+    --color-page-background: {{ settings.page_color_background | default: '#F5F5F5' }};
+    --page-width: {{ settings.page_width | divided_by: 16.0 }}rem;
     --page-margin: {{ settings.min_page_margin }}px;
-    --color-background: {{ settings.background_color }};
-    --color-foreground: {{ settings.foreground_color }};
-    --style-border-radius-inputs: {{ settings.input_corner_radius }}px;
+
+    --button-radius: {{ button_radius }};
+    --button-font-weight: {% if settings.button_advanced %}{{ settings.button_font_weight }}{% else %}500{% endif %};
+    --button-letter-spacing: {% if settings.button_advanced %}{{ settings.button_letter_spacing | divided_by: 100.0 }}em{% else %}0em{% endif %};
+    --button-text-transform: {% if settings.button_advanced %}{{ settings.button_text_transform }}{% else %}none{% endif %};
+    --style-border-radius-inputs: {% if settings.input_style == 'underline' %}0px{% else %}{{ button_radius }}{% endif %};
   }
+
+  {%- for scheme in settings.color_schemes %}
+    {%- assign c = scheme.settings %}
+  {% if scheme.id == default_scheme_id %}:root,{% endif %}
+  .color-{{ scheme.id }} {
+    --color-background: {{ c.background }};
+    {%- if c.background_gradient != blank %}
+    --color-background-gradient: {{ c.background_gradient }};
+    {%- endif %}
+    --color-accent: {{ c.primary }};
+    --color-heading: {{ c.heading }};
+    --color-foreground: {{ c.text }};
+    --color-link: {{ c.link }};
+    --color-link-hover: {{ c.link_hover }};
+
+    --color-button-background: {{ c.button_background }};
+    --color-button-background-hover: {{ c.button_background_hover }};
+    --color-button-text: {{ c.button_text }};
+    --color-button-text-hover: {{ c.button_text_hover }};
+    --color-button-border: {{ c.button_border }};
+    --color-button-border-hover: {{ c.button_border_hover }};
+
+    --color-secondary-button-background: {{ c.secondary_button_background }};
+    --color-secondary-button-background-hover: {{ c.secondary_button_background_hover }};
+    --color-secondary-button-text: {{ c.secondary_button_text }};
+    --color-secondary-button-text-hover: {{ c.secondary_button_text_hover }};
+    --color-secondary-button-border: {{ c.secondary_button_border }};
+    --color-secondary-button-border-hover: {{ c.secondary_button_border_hover }};
+  }
+  {%- endfor %}
+
+  {%- if settings.reduce_motion %}
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+  {%- endif %}
 {% endstyle %}

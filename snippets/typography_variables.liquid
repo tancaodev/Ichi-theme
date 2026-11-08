@@ -83,13 +83,20 @@
   --paragraph-spacing: {{ settings.paragraph_spacing | divided_by: 16.0 }}rem;
   {%- for style in styles %}
     {%- liquid
-      assign size_key = style | append: '_font_size_mobile'
-      assign line_height_key = style | append: '_line_height'
-      assign letter_spacing_key = style | append: '_letter_spacing'
-      assign weight_key = style | append: '_font_weight'
-      assign transform_key = style | append: '_text_transform'
+      # Description has no settings of its own: it follows Paragraph, 2px smaller (DS: 16 → 14, 14 → 12).
+      assign source = style
+      assign size_offset = 0
+      if style == 'description'
+        assign source = 'paragraph'
+        assign size_offset = 2
+      endif
+      assign size_key = source | append: '_font_size_mobile'
+      assign line_height_key = source | append: '_line_height'
+      assign letter_spacing_key = source | append: '_letter_spacing'
+      assign weight_key = source | append: '_font_weight'
+      assign transform_key = source | append: '_text_transform'
     %}
-  --{{ style }}-font-size: {{ settings[size_key] | times: 1 | divided_by: 16.0 }}rem;
+  --{{ style }}-font-size: {{ settings[size_key] | times: 1 | minus: size_offset | divided_by: 16.0 }}rem;
     {%- if settings[line_height_key] %}
   --{{ style }}-line-height: {{ settings[line_height_key] | divided_by: 100.0 }};
     {%- endif %}
@@ -104,8 +111,16 @@
 @media screen and (min-width: 992px) {
   :root {
     {%- for style in styles %}
-      {%- assign size_key = style | append: '_font_size' %}
-    --{{ style }}-font-size: {{ settings[size_key] | times: 1 | divided_by: 16.0 }}rem;
+      {%- liquid
+        assign source = style
+        assign size_offset = 0
+        if style == 'description'
+          assign source = 'paragraph'
+          assign size_offset = 2
+        endif
+        assign size_key = source | append: '_font_size'
+      -%}
+    --{{ style }}-font-size: {{ settings[size_key] | times: 1 | minus: size_offset | divided_by: 16.0 }}rem;
     {%- endfor %}
   }
 }

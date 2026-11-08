@@ -14,7 +14,7 @@
 {%- liquid
   assign st = component_settings
   assign section_dom_id = 'CustomSection-' | append: component_id
-  assign color_scheme = st.color_scheme | default: 'background-1'
+  assign color_scheme = st.color_scheme | default: 'scheme-1'
 
   assign media_class = 'custom-section__media'
   if st.custom_section_background_fit == 'contain'
@@ -29,7 +29,7 @@
 {% render 'custom_section_styles', component_settings: st, section_dom_id: section_dom_id %}
 <div
   id="{{ section_dom_id }}"
-  class="custom-section color-{{ color_scheme }} gradient"
+  class="custom-section color-{{ color_scheme }}"
   data-width="{{ st.custom_section_width | default: 'page' }}"
 >
   {%- if st.custom_section_background_image != blank -%}

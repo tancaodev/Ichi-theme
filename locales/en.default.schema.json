@@ -521,8 +521,400 @@
           "options__uppercase": "Uppercase",
           "options__lowercase": "Lowercase",
           "options__capitalize": "Capitalize"
+        },
+        "type_header_font": {
+          "label": "Heading"
+        },
+        "type_highlight_font": {
+          "label": "Highlight"
+        },
+        "type_body_font": {
+          "label": "Body"
+        },
+        "paragraph_font_size": {
+          "options__14": "14px",
+          "options__16": "16px",
+          "options__18": "18px"
+        },
+        "paragraph_spacing": {
+          "label": "Paragraph spacing"
+        },
+        "highlight_font_style": {
+          "options__normal": "Normal",
+          "options__italic": "Italic"
+        },
+        "subheading_font": {
+          "options__heading": "Heading",
+          "options__body": "Body",
+          "label": "Font family"
+        },
+        "label_font_size": {
+          "options__12": "12px",
+          "options__14": "14px",
+          "options__16": "16px"
+        }
+      },
+      "headers": {
+        "font_family": "Font family",
+        "paragraph": "Paragraph",
+        "highlight": "Highlight",
+        "display": "Display heading",
+        "h1": "Heading 1",
+        "h2": "Heading 2",
+        "h3": "Heading 3",
+        "h4": "Heading 4",
+        "h5": "Heading 5",
+        "h6": "Heading 6",
+        "subheading": "Subheadings",
+        "label": "Label"
+      },
+      "name": "Typography"
+    },
+    "shared": {
+      "size": "Size",
+      "mobile_size": "Mobile size",
+      "line_height": "Line height",
+      "letter_spacing": "Letter spacing",
+      "font_weight": "Font weight",
+      "case": "Case",
+      "font_style": "Font style",
+      "weights": {
+        "thin": "Thin",
+        "extra_light": "Extra-light",
+        "light": "Light",
+        "regular": "Regular",
+        "medium": "Medium",
+        "semibold": "Semi-bold",
+        "bold": "Bold",
+        "extra_bold": "Extra-bold",
+        "black": "Black"
+      },
+      "cases": {
+        "none": "Normal",
+        "uppercase": "Uppercase",
+        "lowercase": "Lowercase",
+        "capitalize": "Capitalize"
+      },
+      "sizes": {
+        "small": "Small",
+        "medium": "Medium",
+        "large": "Large"
+      },
+      "desktop": "Desktop",
+      "mobile": "Mobile"
+    },
+    "logo_favicon": {
+      "name": "Logo and favicon",
+      "settings": {
+        "logo": {
+          "label": "Default logo"
+        },
+        "logo_inverse": {
+          "label": "Inverse logo",
+          "info": "Used when transparent header background is set to Inverse."
+        },
+        "favicon": {
+          "label": "Favicon",
+          "info": "Displayed at 32 × 32px."
         }
       }
+    },
+    "layout": {
+      "name": "Layout",
+      "headers": {
+        "global_style": "Global style",
+        "container_width": "Container width"
+      },
+      "settings": {
+        "main_corner": {
+          "options__30": "30",
+          "options__20": "20",
+          "options__10": "10",
+          "options__0": "0",
+          "label": "Main corner",
+          "info": "Sets the default corner radius for all new elements."
+        },
+        "page_width": {
+          "label": "Standard"
+        },
+        "min_page_margin": {
+          "label": "Minimum page margin"
+        }
+      }
+    },
+    "animations": {
+      "name": "Animations",
+      "settings": {
+        "reduce_motion": {
+          "label": "Reduce motion",
+          "info": "Turns off theme animations and transitions."
+        }
+      }
+    },
+    "colors": {
+      "headers": {
+        "general": "General",
+        "primary_button": "Primary button",
+        "secondary_button": "Secondary button"
+      },
+      "settings": {
+        "background": {
+          "label": "Background"
+        },
+        "background_gradient": {
+          "label": "Background gradient",
+          "info": "Replaces the background color when set."
+        },
+        "primary": {
+          "label": "Primary color"
+        },
+        "heading": {
+          "label": "Headings"
+        },
+        "text": {
+          "label": "Body"
+        },
+        "link": {
+          "label": "Links"
+        },
+        "link_hover": {
+          "label": "Hover links"
+        },
+        "button_background": {
+          "label": "Background"
+        },
+        "button_background_hover": {
+          "label": "Hover background"
+        },
+        "button_text": {
+          "label": "Text"
+        },
+        "button_text_hover": {
+          "label": "Hover text"
+        },
+        "button_border": {
+          "label": "Borders"
+        },
+        "button_border_hover": {
+          "label": "Hover borders"
+        },
+        "secondary_button_background": {
+          "label": "Background"
+        },
+        "secondary_button_background_hover": {
+          "label": "Hover background"
+        },
+        "secondary_button_text": {
+          "label": "Text"
+        },
+        "secondary_button_text_hover": {
+          "label": "Hover text"
+        },
+        "secondary_button_border": {
+          "label": "Borders"
+        },
+        "secondary_button_border_hover": {
+          "label": "Hover borders"
+        },
+        "default_color_scheme": {
+          "label": "Default color scheme"
+        },
+        "page_color_background": {
+          "label": "Page background",
+          "info": "Background of the whole website, behind the sections. Visible between sections and around Bento cards."
+        }
+      },
+      "name": "Colors"
+    },
+    "section": {
+      "headers": {
+        "layout": "Layout",
+        "padding_desktop": "Padding desktop",
+        "padding_mobile": "Padding mobile"
+      },
+      "settings": {
+        "section_layout": {
+          "options__classic": "Classic",
+          "options__bento": "Bento",
+          "label": "Layout",
+          "info": "Bento shows sections as rounded cards with a page margin."
+        },
+        "section_spacing": {
+          "label": "Spacing between sections",
+          "info": "Distance between sections on the page."
+        },
+        "section_gutter": {
+          "label": "Gutter",
+          "info": "Space between grid columns and rows inside a section."
+        },
+        "section_radius": {
+          "options__main": "Main corner",
+          "options__small": "Small",
+          "options__extra_small": "Extra small",
+          "options__none": "None",
+          "options__custom": "Custom",
+          "label": "Corner radius"
+        },
+        "section_radius_custom": {
+          "label": "Custom corner radius"
+        }
+      },
+      "sides": {
+        "top": "Top",
+        "bottom": "Bottom",
+        "left": "Left",
+        "right": "Right"
+      },
+      "name": "Section"
+    },
+    "button_input": {
+      "name": "Button and input",
+      "headers": {
+        "general_style": "General style",
+        "button": "Button",
+        "input": "Input"
+      },
+      "settings": {
+        "button_height": {
+          "label": "Desktop height"
+        },
+        "button_height_mobile": {
+          "label": "Mobile height"
+        },
+        "button_shape": {
+          "options__square": "Square",
+          "options__rounded": "Rounded",
+          "options__pill": "Pill",
+          "label": "Shape"
+        },
+        "button_radius": {
+          "label": "Corner radius",
+          "info": "Base corner radius for buttons, inputs, social media links and close buttons. Other sizes are scaled automatically."
+        },
+        "button_hover_effect": {
+          "options__fade": "Fade",
+          "options__slide": "Slide",
+          "options__circle": "Circle",
+          "options__bloom": "Bloom",
+          "label": "Hover effect"
+        },
+        "button_link_style": {
+          "options__underline": "Underline",
+          "options__classic": "Classic",
+          "label": "Button link style"
+        },
+        "button_advanced": {
+          "label": "Advanced settings"
+        },
+        "input_style": {
+          "options__underline": "Underline",
+          "options__boxed": "Boxed",
+          "label": "Style"
+        },
+        "input_box_style": {
+          "options__fill": "Fill",
+          "options__outline": "Outline",
+          "label": "Box style"
+        },
+        "input_show_labels": {
+          "label": "Show labels"
+        }
+      }
+    },
+    "social_media": {
+      "headers": {
+        "style": "Style",
+        "accounts": "Social accounts",
+        "sharing": "Sharing options"
+      },
+      "settings": {
+        "social_type": {
+          "options__icon": "Icon",
+          "options__text": "Text",
+          "label": "Type"
+        },
+        "social_style": {
+          "options__classic": "Classic",
+          "options__boxed": "Boxed",
+          "label": "Style"
+        },
+        "social_box_style": {
+          "options__fill": "Fill",
+          "options__outline": "Outline",
+          "label": "Box style"
+        },
+        "social_icon_shape": {
+          "options__square": "Square",
+          "options__rounded": "Rounded",
+          "options__circle": "Circle",
+          "label": "Shape"
+        },
+        "social_text_shape": {
+          "options__square": "Square",
+          "options__rounded": "Rounded",
+          "options__pill": "Pill",
+          "label": "Shape"
+        },
+        "social_radius": {
+          "options__main": "Main corner",
+          "options__small": "Small",
+          "options__extra_small": "Extra small",
+          "label": "Corner radius",
+          "info": "Based on the corner radius in Button and input."
+        },
+        "social_size_custom_mobile": {
+          "label": "Custom on mobile"
+        },
+        "social_facebook_link": {
+          "label": "Facebook"
+        },
+        "social_instagram_link": {
+          "label": "Instagram"
+        },
+        "social_tiktok_link": {
+          "label": "TikTok"
+        },
+        "social_twitter_link": {
+          "label": "X (formerly Twitter)"
+        },
+        "social_snapchat_link": {
+          "label": "Snapchat"
+        },
+        "social_pinterest_link": {
+          "label": "Pinterest"
+        },
+        "social_tumblr_link": {
+          "label": "Tumblr"
+        },
+        "social_youtube_link": {
+          "label": "YouTube"
+        },
+        "social_vimeo_link": {
+          "label": "Vimeo"
+        },
+        "share_facebook": {
+          "label": "Share on Facebook"
+        },
+        "share_x": {
+          "label": "Share on X (formerly Twitter)"
+        },
+        "share_pinterest": {
+          "label": "Pin on Pinterest"
+        },
+        "share_telegram": {
+          "label": "Share on Telegram"
+        },
+        "share_whatsapp": {
+          "label": "Share on WhatsApp"
+        },
+        "share_line": {
+          "label": "Share on LINE"
+        },
+        "share_email": {
+          "label": "Share by email"
+        }
+      },
+      "name": "Social media"
     }
   },
   "sections": {

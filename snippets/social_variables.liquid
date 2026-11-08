@@ -4,8 +4,7 @@
   Mobile values are the base; desktop values are applied from 992px.
 
   Rounded corner radius is derived from the button corner radius (Button & Input):
-  Main corner = button radius, Small = 2/3, Extra small = 1/3.
-  TODO: switch radius, font weight and letter spacing to the Button & Input settings once they are added.
+  Main corner = button radius, Small = 2/3, Extra small = 1/3. Square = 0, Circle / Pill = fully rounded.
 
   Usage:
   {% style %}
@@ -16,17 +15,23 @@
 {%- liquid
   case settings.social_radius
     when 'small'
-      assign radius = settings.buttons_radius | times: 2 | divided_by: 3.0
+      assign radius = settings.button_radius | times: 2 | divided_by: 3.0
     when 'extra_small'
-      assign radius = settings.buttons_radius | divided_by: 3.0
+      assign radius = settings.button_radius | divided_by: 3.0
     else
-      assign radius = settings.buttons_radius
+      assign radius = settings.button_radius
   endcase
 
-  case settings.social_shape
+  if settings.social_type == 'text'
+    assign shape = settings.social_text_shape
+  else
+    assign shape = settings.social_icon_shape
+  endif
+
+  case shape
     when 'square'
       assign radius = 0
-    when 'full'
+    when 'circle', 'pill'
       assign radius = 999
   endcase
 
